@@ -10,13 +10,16 @@
   <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
   <head>
     <meta charset="UTF-8">
-    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <!-- ccs -->
     <link rel="stylesheet" href="https://github.com/spitriziv/Viatic/blob/main/www/css/navbar.css">
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
 
-    <!-- Boxiocns CDN Link -->
+    <!--other -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    </head>
    <style>
    /* Google Fonts Import Link */
@@ -36,7 +39,7 @@ text-left{text-align:left}
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background: #a8a8a8;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -51,7 +54,7 @@ text-left{text-align:left}
 }
 .sidebar .logo-details i{
   font-size: 30px;
-  color: #fff;
+  color: #2e2e2e;
   height: 50px;
   min-width: 78px;
   text-align: center;
@@ -86,7 +89,7 @@ text-left{text-align:left}
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #7a7a7a;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -130,7 +133,7 @@ text-left{text-align:left}
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: #7a7a7a;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -191,7 +194,7 @@ text-left{text-align:left}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d1b31;
+  background: #828282;
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -211,7 +214,7 @@ text-left{text-align:left}
   object-fit: cover;
   border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #1d1b31;
+  background: #828282;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{
@@ -234,7 +237,7 @@ text-left{text-align:left}
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: #e8f7ff;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -258,10 +261,13 @@ text-left{text-align:left}
   margin: 0 15px;
   cursor: pointer;
 }
-.home-section .home-content .text{
+.home-section .home-content .title{
   font-size: 26px;
-  
+  color: #2e2e2e;
   font-weight: 600;
+}
+.home-section .home-content .text{
+  color: #2e2e2e;
 }
 @media (max-width: 400px) {
   .sidebar.close .nav-links li .sub-menu{
@@ -275,6 +281,7 @@ text-left{text-align:left}
   }
   .home-section{
     left: 78px;
+    color: #2e2e2e;
     width: calc(100% - 78px);
     z-index: 100;
   }
@@ -283,67 +290,101 @@ text-left{text-align:left}
     left: 0;
   }
 }
+::-moz-selection {
+      color: black;
+      background: #ff726e;
+      opacity: 1;
+    }
 
+    ::selection {
+      color: black;
+      background: #ff726e;
+      opacity: 1;
+    }
+    .blink {
+        animation: blinker 0.6s linear infinite;
+      }
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }  
    </style>
-<body>
+<body class="w3-animate-left">
   <div class="sidebar close">
     <div class="logo-details">
-      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <i><img class="w3-animate-top" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
       <span class="logo_name">Viatic</span>
     </div>
     <ul class="nav-links">
       <li>
-        <a href="#">
-          <i class='bx bx-grid-alt' ></i>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
           <span class="link_name">Dashboard</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Category</a></li>
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
         </ul>
       </li>
       <li>
         <div class="iocn-link">
-          <a href="#">
+          <a>
             <i class='bx bx-collection' ></i>
-            <span class="link_name">Category</span>
+            <span class="link_name">Main</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Category</a></li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP & MySQL</a></li>
+          <li><a class="link_name" href="#">Viatic Main</a></li>
+          <li><a href="#">Viatic Server</a></li>
+          <li><a href="#">Viatic Web Bugs list</a></li>
+          <li><a href="#">Viatic Web Info</a></li>
+          <li><a href="#">Viatic Update Info</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Chrome C/S</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Miscellaneous</a></li>
+          <li><a href="#">Code Editor</a></li>
+          <li><a href="#">Color Picker</a></li>
+          <li><a href="#">must think of more</a></li>
         </ul>
       </li>
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Posts</span>
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Miscellaneous</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
+          <li><a class="link_name" href="#">Miscellaneous</a></li>
+          <li><a href="#">Code Editor</a></li>
+          <li><a href="#">Color Picker</a></li>
+          <li><a href="#">must think of more</a></li>
         </ul>
       </li>
       <li>
         <a href="#">
           <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Analytics</span>
+          <span class="link_name">Device Info</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Analytics</a></li>
+          <li><a class="link_name" href="#">Device Info</a></li>
         </ul>
       </li>
       <li>
         <a href="#">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Chart</span>
+          <span class="link_name">Website Statis</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Chart</a></li>
@@ -383,12 +424,12 @@ text-left{text-align:left}
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
           <i class='bx bx-cog' ></i>
           <span class="link_name">Setting</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Setting</a></li>
         </ul>
       </li>
       <li>
@@ -400,7 +441,7 @@ text-left{text-align:left}
         <div class="profile_name">SpiritXIV</div>
         <div class="job">Creator and Desginer</div>
       </div>
-      <i class='bx bx-log-out' ></i>
+      <i><img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
     </div>
   </li>
 </ul>
@@ -408,10 +449,9 @@ text-left{text-align:left}
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Welcome Back :)</span>
+      <span class="title">Welcome Back :)</span>
     </div>
-    <div class="col-sm-8 text-left"> 
-    <p style = "position:relative; left:70px;">being worked on, just wait</p>
+    <p class="text" style ="position:relative; left:70px;">being worked on, just wait</p>
         </div>
             </div>
                 </div>
