@@ -1,18 +1,21 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+text-left{text-align:left}
+
 .sidebar{
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background: #a8a8a8;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -27,7 +30,7 @@
 }
 .sidebar .logo-details i{
   font-size: 30px;
-  color: #fff;
+  color: #2e2e2e;
   height: 50px;
   min-width: 78px;
   text-align: center;
@@ -62,7 +65,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #7a7a7a;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -106,7 +109,7 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: #7a7a7a;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -167,7 +170,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d1b31;
+  background: #828282;
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -187,7 +190,7 @@
   object-fit: cover;
   border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #1d1b31;
+  background: #828282;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{
@@ -210,7 +213,7 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: #e8f7ff;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -234,9 +237,13 @@
   margin: 0 15px;
   cursor: pointer;
 }
-.home-section .home-content .text{
+.home-section .home-content .title{
   font-size: 26px;
+  color: #2e2e2e;
   font-weight: 600;
+}
+.home-section .home-content .text{
+  color: #2e2e2e;
 }
 @media (max-width: 400px) {
   .sidebar.close .nav-links li .sub-menu{
@@ -250,6 +257,7 @@
   }
   .home-section{
     left: 78px;
+    color: #2e2e2e;
     width: calc(100% - 78px);
     z-index: 100;
   }
@@ -257,4 +265,55 @@
     width: 100%;
     left: 0;
   }
+}
+::-moz-selection {
+      color: black;
+      background: #ff726e;
+      opacity: 1;
+    }
+
+    ::selection {
+      color: black;
+      background: #ff726e;
+      opacity: 1;
+    }
+    .blink {
+        animation: blinker 0.6s linear infinite;
+      }
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        } 
+        
+        /*dark mode*/
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #909090;
+}
+
+[data-theme="dark"] .sidebar{
+  background: #222222;
+}
+[data-theme="dark"] .home-section{
+  background: #363636;
+}
+[data-theme="dark"] .home-section .home-content .title{
+  color: #e8e8e8;
+}
+[data-theme="dark"] .home-section .home-content .text{
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .sidebar .nav-links li:hover{
+  background: #454545;
+}
+[data-theme="dark"] .sidebar .nav-links li .sub-menu{
+  background: #454545;
+}
+
+[data-theme="dark"] .sidebar .profile-details{
+  background: #2e2e2e;
+}
+[data-theme="dark"] .sidebar .profile-details img{
+  background: #2e2e2e;
 }
