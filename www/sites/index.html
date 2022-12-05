@@ -135,6 +135,8 @@ text-left{text-align:left}
   margin-top: -10px;
   background: #7a7a7a;
   display: none;
+  transition: all 0.5s ease;
+
 }
 .sidebar .nav-links li.showMenu .sub-menu{
   display: block;
@@ -149,6 +151,7 @@ text-left{text-align:left}
 }
 .sidebar .nav-links li .sub-menu a:hover{
   opacity: 1;
+  transition: all 0.5s ease;
 }
 .sidebar.close .nav-links li .sub-menu{
   position: absolute;
@@ -256,6 +259,7 @@ text-left{text-align:left}
 .home-section .home-content .text{
   color: #11101d;
   font-size: 35px;
+  transition: all 0.5s ease;
 }
 .home-section .home-content .bx-menu{
   margin: 0 15px;
@@ -290,16 +294,17 @@ text-left{text-align:left}
     left: 0;
   }
 }
+
 ::-moz-selection {
       color: black;
       background: #ff726e;
-      opacity: 1;
+      opacity: 0.1;
     }
 
     ::selection {
       color: black;
       background: #ff726e;
-      opacity: 1;
+      opacity: 0.1;
     }
     .blink {
         animation: blinker 0.6s linear infinite;
@@ -392,15 +397,6 @@ text-left{text-align:left}
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-compass' ></i>
-          <span class="link_name">Explore</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Explore</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
           <i class='bx bx-history'></i>
           <span class="link_name">History</span>
         </a>
@@ -436,11 +432,24 @@ text-left{text-align:left}
   <section  class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="title">Welcome Back :)</span>
-      
+      <span style="position:relative;left:0px;top:-3px;" class="title">Dashboard</span>
     </div>
-<img src="https://github.com/spitriziv/Viatic/blob/main/www/image/new.png?raw=true" alt="" style="width:960px;height:600px;"></div>
-            </div>
+    <br><br>
+    <h1 style="text-align: center;color: white;" class="w3-animate-top" class="title">Viatic</h1>
+        <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
+    <i style='font-size:50px;text-align: center;position:relative;top:15px;' class='fas'>&#xf107;</i></h3>
+            <br>
+    <hr>
+<br>
+<h3 style="text-align: center;" class="w3-animate-bottom" class="text">Whats New!</h3>
+<h3 style="text-align: center;" class="w3-animate-bottom" class="text">
+    <img src="https://github.com/spitriziv/Viatic/blob/main/www/image/chromecslogo.png?raw=true" alt="" class="w3-animate-bottom" style="width:90px;height:90px;">
+    <i style='font-size:50px;text-align: center;position:relative;top:15px;' class='fas'>&#xf105;</i>
+        <img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:90px;height:90px;"></h3>
+        <p style="text-align: center;" class="w3-animate-bottom" class="text">Chrome C/S has been undergoing some changes, just slight changes, that involving changing the name, logo, web ui, and more.</p>
+         <p style="text-align: center;" class="w3-animate-bottom" class="text">Note that the website is still being developed and this is the only page currently, but the website will be done with the old stuff, and the new stuff with start to come in.</p>
+         <br><br><br><br><br><br><br><br><br><br>
+    </div>
                 </div>
   </section>
   <script>
