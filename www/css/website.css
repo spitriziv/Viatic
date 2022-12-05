@@ -306,3 +306,35 @@
 [data-theme="dark"] .sidebar .profile-details img{
   background: #2e2e2e;
 }
+
+        [data-theme="dark"] {
+  background-color: #111 !important;
+  color: #909090;
+}
+
+[data-theme="dark"] .sidebar{
+  background: #222222;
+}
+[data-theme="dark"] .home-section{
+  background: #363636;
+}
+[data-theme="dark"] .home-section .home-content .title{
+  color: #e8e8e8;
+}
+[data-theme="dark"] .home-section .home-content .text{
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .sidebar .nav-links li:hover{
+  background: #454545;
+}
+[data-theme="dark"] .sidebar .nav-links li .sub-menu{
+  background: #454545;
+}
+
+[data-theme="dark"] .sidebar .profile-details{
+  background: #2e2e2e;
+}
+[data-theme="dark"] .sidebar .profile-details img{
+  background: #2e2e2e;
+}
