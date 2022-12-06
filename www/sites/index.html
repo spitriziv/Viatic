@@ -6,7 +6,7 @@
   <meta name="description" img src="image.png" content="The Viatic Website"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="chromelogo.png">
-  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
   <head>
   <body onload="typeWriter()"></body>
     <!-- ccs -->
@@ -14,17 +14,34 @@
         <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <!-- Javascript-->
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/Metaballs.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src=""></script>
           <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
 <script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
     <!--other -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    </head>
-   
+  <style>
+    body {
+  margin: 0;
+  background-color: #f7f9fb;
+}
+
+#splash{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+  </style>
 <body class="w3-animate-left">
   <div class="sidebar close">
-    <div class="logo-details">
+    <div class="logo-details"> 
       <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
       <span class="logo_name">Viatic</span>
     </div>
@@ -133,17 +150,17 @@
   </li>
 </ul>
   </div>
-  <section  class="home-section">
+  <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span style="position:relative;left:0px;top:-3px;"  id="type" class="title"></span>
+
+      <span style="position:relative;left:30px;top:-3px;"  id="type" class="title">Dashboard</span> 
+            <canvas id="splash"></canvas>
     </div>
     <br><br>
     <h1 style="text-align: center;" class="w3-animate-top" class="title"><img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwordlogo.png?raw=true" alt="" style="width:434.5px;height:219px;"></h1>
         <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
     <i style='font-size:50px;text-align: center;position:relative;top:15px;' class='fas'>&#xf107;</i></h3>
             <br>
-    <hr>
 <br>
 <h3 style="text-align: center;" class="w3-animate-bottom" class="text">Whats New!</h3>
 <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
@@ -154,8 +171,9 @@
          <p style="text-align: center;" class="w3-animate-bottom" class="text">Note that the website is still being developed and this is the only page currently, but the website will be done with the old stuff, and the new stuff with start to come in.</p>
          <br><br><br><br><br><br><br><br><br><br>
     </div>
-                </div>
+    </div>
   </section>
+
   <script>
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
@@ -232,19 +250,325 @@ function resetTheme() {
  */
 var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
 </script>
-<script>
-var i = 0;
-var txt = 'Dashboard';
-var speed = 50;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("type").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
+      <script type="x-shader/x-vertex" id="vertexMetaballs">
+	attribute vec2 position;
+  void main() {
+  	gl_Position = vec4(position, 0.0, 1.0);
+	}
 </script>
+  <!--CANVAS Rendering-->
+<script type="x-shader/x-fragment" id="fragmentMetaballs">
+	precision highp float;
+  const int NUM_METABALLS = 15;
+
+  uniform vec3 metaballs[15];
+  uniform vec2 uResolution;
+  uniform sampler2D uColorSampler;
+  uniform sampler2D uNoiseSampler;
+  uniform float uTime;
+  
+	void main(){
+  	float x = gl_FragCoord.x;
+    float y = gl_FragCoord.y;
+    float v = 0.0;
+    float radius = 2.0;
+    float speed = 1.5;
+    for (int i = 0; i < NUM_METABALLS; i++) {
+    	vec3 mb = metaballs[i];
+			float dx = mb.x - x;
+			float dy = mb.y - y;
+
+      float r = mb.z;
+      v += r*r/(dx*dx + dy*dy);
+		}
+
+    vec4 color;
+    if (v > 1.0) {
+    	vec4 textureColor = texture2D(uColorSampler, vec2(gl_FragCoord.x / uResolution.x, gl_FragCoord.y / uResolution.y) );
+      vec4 noiseColor = (texture2D(uNoiseSampler, gl_FragCoord.xy / 100.0 )) / 1.;
+      float l = length(noiseColor);
+      if(l > 1.05){
+      	vec4 mixedColor = textureColor + (noiseColor * 0.001);
+				color = mixedColor;
+			}
+      else{
+      	//discard;
+        color = textureColor * 0.85;
+			}
+		}
+    else {
+    	discard;
+		}
+    gl_FragColor = vec4(color.rgb, 0.8);
+	}
+
+</script>
+  
+<!-- MAIN CANVAS-->
+  <script>
+    
+var canvas;
+var gl;
+var realToCSSPixels = window.devicePixelRatio;
+var displayWidth;
+var displayHeight;
+var rings;
+var createdMetaballs = [];
+var assetsIndexToLoad = 0;
+var assetsToLoad = [
+    {path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/', src: 'noise3.png', name: 'noise3', type: 'texture'}
+];
+var assets = {};
+
+window.onload = preloadAssets;
+
+function preloadAssets() {
+
+
+    function checkIfAllAssetsAreLoaded() {
+        initialize();
+    }
+
+    function loadAssetIndex(index) {
+        var objectToLoad = assetsToLoad[index];
+
+        switch (objectToLoad.type) {
+            case 'texture':
+                var image = new Image();
+                image.onload = function(event) {
+                    assets[objectToLoad.name] = this;
+                    assetsIndexToLoad++;
+                    checkIfAllAssetsAreLoaded();
+                };
+            image.crossOrigin = '';
+                image.src = objectToLoad.path + objectToLoad.src;
+                break;
+        }
+    }
+
+    loadAssetIndex(assetsIndexToLoad);
+}
+
+function initialize(){
+
+    canvas = document.getElementById('splash');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var glConfig = {
+        premultipliedAlpha: true,
+        antialias: true,
+        depth:true,
+        alpha: true
+    }
+    
+    gl = canvas.getContext('webgl', glConfig) || canvas.getContext('experimental-webgl', glConfig);
+  
+    if(!gl){
+        console.error('cannot find gl', gl);
+        return;
+    }
+    displayWidth  = Math.floor(gl.canvas.clientWidth  / realToCSSPixels);
+    displayHeight = Math.floor(gl.canvas.clientHeight / realToCSSPixels);
+  
+    var minSpeed = 0.2;
+    var maxSpeed = 2.5;
+    var minMultiplierArcX = -.25;
+    var maxMultiplierArcX = .75;
+    var minMultiplierArcY = -.25;
+    var maxMultiplierArcY = .25;
+    var scale = 1.0;
+
+  
+    var metaballsGroup1 = {
+        metaballs:[
+            { centerOffsetX:26 * scale, centerOffsetY:155 * scale, radius: 70 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-110 * scale, centerOffsetY:10 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:12 * scale, centerOffsetY:-114 * scale, radius: 48 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-300 * scale, centerOffsetY:20 * scale, radius: 160 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-570 * scale, centerOffsetY:-20 * scale, radius: 50 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#c66df2', stop:0.2}, {color:'#c8246c', stop:.35}, {color:'#4120fa', stop:.55}, {color:'#d633ff', stop:.75}, {color:'#4ae7ff', stop:1.0}], false, false)
+    };
+    var metaballsGroup2 = {
+        metaballs:[
+            { centerOffsetX:-290 * scale, centerOffsetY:60 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-100 * scale, centerOffsetY:45 * scale, radius: 70 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-60 * scale, centerOffsetY:60 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:160 * scale, centerOffsetY:170 * scale, radius: 90 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:310 * scale, centerOffsetY:40 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:450 * scale, centerOffsetY:-120 * scale, radius: 50 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:230 * scale, centerOffsetY:-240 * scale, radius: 70 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:320 * scale, centerOffsetY:-130 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:110 * scale, centerOffsetY:-70 * scale, radius: 80 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+
+            { centerOffsetX:-1070 * scale, centerOffsetY:-500 * scale, radius: 20 * scale, speed: getRandomFloat(0.07, 0.014), t:0.0, arcMultiplierX:getRandomFloat(30.0, 30.0), arcMultiplierY:getRandomFloat(10.0, 10.0) },
+        ],
+        texture:generateGradientTexture([{color:'#a600a0', stop:0.0}, {color:'#4120fa', stop:0.3}, {color:'#c8246c', stop:.4}, {color:'#4ae7ff', stop:.7}], true, false)
+    };
+    var metaballsGroup3 = {
+        metaballs:[
+            { centerOffsetX:410 * scale, centerOffsetY:-120 * scale, radius: 18 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:340 * scale, centerOffsetY:-200 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:200 * scale, centerOffsetY:-190 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:250 * scale, centerOffsetY:-280 * scale, radius: 16 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#c66df2', stop:0.56}, {color:'#c8246c', stop:.63}, {color:'#4ae7ff', stop:.7}], false, false)
+    };
+    var metaballsGroup4 = {
+        metaballs:[
+            { centerOffsetX:-410 * scale, centerOffsetY:-270 * scale, radius: 28 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-490 * scale, centerOffsetY:-230 * scale, radius: 34 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-470 * scale, centerOffsetY:-320 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-470 * scale, centerOffsetY:320 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-430 * scale, centerOffsetY:360 * scale, radius: 30 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#a600a0', stop:0.1}, {color:'#c8246c', stop:.20}, {color:'#4120fa', stop:.4}], false, false)
+    };
+    var metaballsGroup5 = {
+        metaballs:[
+            { centerOffsetX:-500 * scale, centerOffsetY:-100 * scale, radius: 24 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:30 * scale, centerOffsetY:-120 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:480 * scale, centerOffsetY:170 * scale, radius: 21 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#4120fa', stop:0.25}, {color:'#c8246c', stop:.60}, {color:'#4ae7ff', stop:0.78}], true, false)
+    };
+    var metaballsGroup6 = {
+        metaballs:[
+            { centerOffsetX:820 * scale, centerOffsetY:20 * scale, radius: 200 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:480 * scale, centerOffsetY:30 * scale, radius: 70 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:500 * scale, centerOffsetY:-10 * scale, radius: 65 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:1080 * scale, centerOffsetY:30 * scale, radius: 35 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:400 * scale, centerOffsetY:160 * scale, radius: 55 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:350 * scale, centerOffsetY:-120 * scale, radius: 75 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+
+            { centerOffsetX:1670 * scale, centerOffsetY:500 * scale, radius: 15 * scale, speed: getRandomFloat(0.21, 0.22), t:13.0, arcMultiplierX:30.0, arcMultiplierY:6.0 },
+        ],
+        texture:generateGradientTexture([{color:'#4120fa', stop:0.0}, {color:'#4120fa', stop:0.7}, {color:'#c8246c', stop:.8}, {color:'#4ae7ff', stop:1.0}], false, false)
+    };
+    var metaballsGroup7 = {
+        metaballs:[
+            { centerOffsetX:-930 * scale, centerOffsetY:40 * scale, radius: 30 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-800 * scale, centerOffsetY:90 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-640 * scale, centerOffsetY:270 * scale, radius: 50 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-590 * scale, centerOffsetY:150 * scale, radius: 90 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-400 * scale, centerOffsetY:240 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-300 * scale, centerOffsetY:120 * scale, radius: 35 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-450 * scale, centerOffsetY:50 * scale, radius: 70 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-590 * scale, centerOffsetY:-40 * scale, radius: 60 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-370 * scale, centerOffsetY:-70 * scale, radius: 50 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#c66df2', stop:0.2}, {color:'#a600a0', stop:.4}, {color:'#4120fa', stop:.7}], true, false)
+    };
+
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup6));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup7));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup2));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup1));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup3));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup4));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup5));
+
+    for (var i = 0; i < createdMetaballs.length; i++) {
+        setTimeout(createdMetaballs[i].fadeIn, i * 200);
+    };
+    window.addEventListener('resize', onWindowResize);
+    window.addEventListener('mousemove', onWindowMouseMove);
+  
+    resizeGL(gl);
+
+    step();
+}
+
+function generateGradientTexture(colors, vertical, debug) {
+
+    colors = colors || [{color:'#000000', stop:0.0}, {color:'#FFF000', stop:.5}, {color:'#642054', stop:1.0}];
+    vertical = vertical !== undefined ? vertical : false;
+
+    var size = 512;
+
+    // create canvas
+    var textureCanvas = document.createElement( 'canvas' );
+    textureCanvas.width = size;
+    textureCanvas.height = size;
+
+    if(debug == true){
+        textureCanvas.style.position = 'absolute';
+        textureCanvas.style.top = '0px';
+        textureCanvas.style.left = '0px';
+        document.body.appendChild(textureCanvas);
+    }
+
+    // get context
+    var context = textureCanvas.getContext( '2d' );
+
+    // draw gradient
+    context.rect( 0, 0, size, size );
+
+    var grd = vertical ? context.createLinearGradient(0, size, 0, 0) : context.createLinearGradient(0, 0, size, 0);
+    for(var i = 0; i < colors.length; i++){
+        grd.addColorStop(colors[i].stop, colors[i].color);
+    }
+    context.fillStyle = grd;
+    context.fillRect(0, 0, size, size);
+
+    return textureCanvas;
+}
+
+
+
+function getRandomFloat(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function onWindowResize(event){
+    canvas.width   = canvas.clientWidth;
+    canvas.height  = canvas.clientHeight;
+   
+  
+    resizeGL(gl);
+    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+}
+
+function onWindowMouseMove(event){
+    createdMetaballs.forEach(function(metaball){
+        metaball.handleMouseMove(event.clientX, event.clientY);
+    });
+}
+
+function resizeGL(gl) {
+    realToCSSPixels = window.devicePixelRatio;
+
+    // Lookup the size the browser is displaying the canvas in CSS pixels
+    // and compute a size needed to make our drawingbuffer match it in
+    // device pixels.
+    displayWidth  = Math.floor(gl.canvas.clientWidth  /** realToCSSPixels*/);
+    displayHeight = Math.floor(gl.canvas.clientHeight /** realToCSSPixels*/);
+  
+    // Check if the canvas is not the same size.
+    if (gl.canvas.width  !== displayWidth ||
+        gl.canvas.height !== displayHeight) {
+
+        // Make the canvas the same size
+        gl.canvas.width  = displayWidth;
+        gl.canvas.height = displayHeight;
+      
+    }
+
+    gl.viewport(0, 0, displayWidth, displayHeight);
+
+    createdMetaballs.forEach(function(metaball){
+        metaball.handleResize(displayWidth, displayHeight);
+    });
+}
+
+var step = function() {
+    
+    createdMetaballs.forEach(function(metaball){
+        metaball.updateSimulation();
+    });
+    requestAnimationFrame(step);
+};
+  </script>
 </body>
 <style>
 /* customizable snowflake styling */
