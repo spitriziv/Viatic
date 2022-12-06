@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="chromelogo.png">
   <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+	<body onload="typeWriter()"></body>
   <style>
 
 /* The container */
@@ -248,7 +249,7 @@
   <section  class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span style="position:relative;left:0px;top:-3px;" class="title">Setting</span>
+      <span style="position:relative;left:0px;top:-3px;"  id="type" class="title"></span>
     </div>
     <h3 style="position:relative;left:67px;top:0px;" class="w3-animate-bottom;text">Theme</h3>
     <p style="position:relative;left:67px;top:-10px;" class="w3-animate-bottom;text">Here you can change what the page will look to you.</p>
@@ -399,6 +400,19 @@ function resetTheme() {
  * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
  */
 var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+	<script>
+var i = 0;
+var txt = 'Dashboard';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
 </script>
 </body>
 </html>
