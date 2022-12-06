@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Binary Code</title>
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+  <head>
+  <body onload="typeWriter()"></body>
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a>
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Viatic Main</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Viatic Main</a></li>
+          <li><a class="w3-animate-left" href="server.html">Viatic Server</a></li>
+          <li><a class="w3-animate-left" href="buglist.html">Viatic Web Bugs list</a></li>
+          <li><a class="w3-animate-left" href="viaticinfo.html">Viatic Web Info</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Utilities</a></li>
+          <li class="w3-animate-left">Code</li>
+          <li><a class="w3-animate-left" href="codeeditor.html">Code Editor</a></li>
+          <li><a class="w3-animate-left" href="binarycode.html">Binary Code</a></li>
+           <li><a class="w3-animate-left" href="morsecode.html">Morse Code</a></li>
+          <li class="w3-animate-left">----------------</li>
+          <li class="w3-animate-left">Art</li>
+          <li><a class="w3-animate-left" href="colorpicker.html">Color Picker</a></li>
+          <li><a class="w3-animate-left" href="canvas.html">Canvas</a></li>
+          <li><a class="w3-animate-left" href="pixelart.html">Pixel Art</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Infomation</a></li>
+           <li class="w3-animate-left">Device Info</li>
+          <li><a class="w3-animate-left" href="deviceinfo.html">Main Info</a></li>
+          <li><a class="w3-animate-left" href="extentions.html">Extentions</a></li>
+          <li><a class="w3-animate-left" href="chromeurls.html">chrome://</a></li>
+          <li><a class="w3-animate-left" href="shortcuts.html">Keyboard Shortcuts</a></li>
+          <li><a class="w3-animate-left" href="charactersets.html">Character Sets</a></li>
+          <li class="w3-animate-left">----------------</li>
+          <li class="w3-animate-left">Website Info</li>
+          <li><a class="w3-animate-left" href="weberrorcodes.html">Error Codes</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Others</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Others</a></li>
+          <li><a class="w3-animate-left" href="bookmarklets.html">JS Bookmarklets</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section  class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span style="position:relative;left:0px;top:-3px;"  id="type" class="title"></span>
+    </div>
+<o style="position:relative;left:67px;top:-10px;"><h6 style="position:relative;top:-0px;"><b><span id="user_ip"><span class="icon"><i class="loader"></i></span></span></b></h6>
+  <h6 style="position:relative;top:-16px;"><b><span id="user_citycode"><span class="icon"><i class="loader"></i></span></span>,  <span id="user_statecode"><span class="icon"><i class="loader"></i></span></span>  (<span id="user_countrycode"><span class="icon"><i class="loader"></i></span></span>)</b></h6>
+  <h6 style="position:relative;top:-31px;"><b><span id="user_org"><span class="icon"><i class="loader"></i></span></span></b></h6>
+<script type="application/javascript">
+function geoip(json){
+var userip      = document.getElementById("user_ip");
+var countrycode = document.getElementById("user_countrycode");
+var statecode = document.getElementById("user_statecode");
+var citycode = document.getElementById("user_citycode");
+var orgcode = document.getElementById("user_org");
+userip.textContent      = json.ip;
+countrycode.textContent = json.country_code;
+statecode.textContent = json.region;
+citycode.textContent = json.city;
+orgcode.textContent = json.organization;
+}
+</script>
+<script async src="https://get.geojs.io/v1/ip/geo.js"></script>
+      <body>
+          <div class="cursor"></div>
+      </body>
+      <script>
+                const cursor = document.querySelector('.cursor');
+      
+              document.addEventListener('mousemove', e => {
+                  cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+              })
+      
+              document.addEventListener('click', () => {
+                  cursor.classList.add("expand");
+      
+                  setTimeout(() => {
+                      cursor.classList.remove("expand");
+                  }, 500)
+              })
+      </script>
+      <body>
+<body>
+<h3><b>Device Info:</h3></b>
+
+<h4><b>User and Web Navagator/App</b></h4>
+<div class="container">
+ <script>
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  document.write("Interface: Mobile");
+}else{
+  document.write("Interface: Desktop / Laptop");
+}
+</script>
+<div id="log"></div>
+      <script>
+(function () {
+    'use strict';
+    
+    var module = {
+        options: [],
+        header: [navigator.platform, navigator.userAgent, navigator.appVersion, navigator.vendor, window.opera],
+        dataos: [
+            { name: 'Windows Phone', value: 'Windows Phone', version: 'OS' },
+            { name: 'Windows', value: 'Win', version: 'NT' },
+            { name: 'iPhone', value: 'iPhone', version: 'OS' },
+            { name: 'iPad', value: 'iPad', version: 'OS' },
+            { name: 'Kindle', value: 'Silk', version: 'Silk' },
+            { name: 'Android', value: 'Android', version: 'Android' },
+            { name: 'PlayBook', value: 'PlayBook', version: 'OS' },
+            { name: 'BlackBerry', value: 'BlackBerry', version: '/' },
+            { name: 'Macintosh', value: 'Mac', version: 'OS X' },
+            { name: 'Linux', value: 'Linux', version: 'rv' },
+            { name: 'Palm', value: 'Palm', version: 'PalmOS' }
+        ],
+        databrowser: [
+            { name: 'Chrome', value: 'Chrome', version: 'Chrome' },
+            { name: 'Firefox', value: 'Firefox', version: 'Firefox' },
+            { name: 'Safari', value: 'Safari', version: 'Version' },
+            { name: 'Internet Explorer', value: 'MSIE', version: 'MSIE' },
+            { name: 'Opera', value: 'Opera', version: 'Opera' },
+            { name: 'BlackBerry', value: 'CLDC', version: 'CLDC' },
+            { name: 'Mozilla', value: 'Mozilla', version: 'Mozilla' }
+        ],
+        init: function () {
+            var agent = this.header.join(' '),
+                os = this.matchItem(agent, this.dataos),
+                browser = this.matchItem(agent, this.databrowser);
+            
+            return { os: os, browser: browser };
+        },
+        matchItem: function (string, data) {
+            var i = 0,
+                j = 0,
+                html = '',
+                regex,
+                regexv,
+                match,
+                matches,
+                version;
+            
+            for (i = 0; i < data.length; i += 1) {
+                regex = new RegExp(data[i].value, 'i');
+                match = regex.test(string);
+                if (match) {
+                    regexv = new RegExp(data[i].version + '[- /:;]([\\d._]+)', 'i');
+                    matches = string.match(regexv);
+                    version = '';
+                    if (matches) { if (matches[1]) { matches = matches[1]; } }
+                    if (matches) {
+                        matches = matches.split(/[._]+/);
+                        for (j = 0; j < matches.length; j += 1) {
+                            if (j === 0) {
+                                version += matches[j] + '.';
+                            } else {
+                                version += matches[j];
+                            }
+                        }
+                    } else {
+                        version = '0';
+                    }
+                    return {
+                        name: data[i].name,
+                        version: parseFloat(version)
+                    };
+                }
+            }
+            return { name: 'unknown', version: 0 };
+        }
+    };
+    
+    var e = module.init(),
+        debug = '';
+    
+    debug += 'Sofware Name: ' + e.os.name + '<br/>';
+    debug += 'Software Version: ' + e.os.version + '<br/>';
+    debug += 'Browser Name: ' + e.browser.name + '<br/>';
+    debug += 'Browser Version: ' + e.browser.version + '<br/>';
+    
+    debug += '<br/>';
+    debug += '  ' + navigator.userAgent + '<br/>';
+    debug += '  ' + navigator.appVersion + '<br/>';
+    debug += '  ' + navigator.platform + '<br/>';
+    debug += '  ' + navigator.vendor + '<br/>';
+    
+    document.getElementById('log').innerHTML = debug;
+}());
+</script>
+</div>
+<html>
+<h4><b>Hardware</b></h4>
+<body>
+<div class="container">
+  <canvas id="glcanvas" width="0" height="0"></canvas>
+  <script>
+    var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {};
+
+
+    var canvas;
+    canvas = document.getElementById("glcanvas");
+    var gl = canvas.getContext("experimental-webgl");
+
+    document.write(gl.getParameter(gl.RENDERER) + "<br>Renderer: ");
+    document.write(gl.getParameter(gl.VENDOR) + "<br>Vendor: ");
+    document.write(getUnmaskedInfo(gl).vendor + "<br>GPU : ");
+    document.write(getUnmaskedInfo(gl).renderer + "<br> ");
+
+    function getUnmaskedInfo(gl) {
+      var unMaskedInfo = {
+        renderer: '',
+        vendor: ''
+      };
+
+      var dbgRenderInfo = gl.getExtension("WEBGL_debug_renderer_info");
+      if (dbgRenderInfo != null) {
+        unMaskedInfo.renderer = gl.getParameter(dbgRenderInfo.UNMASKED_RENDERER_WEBGL);
+        unMaskedInfo.vendor = gl.getParameter(dbgRenderInfo.UNMASKED_VENDOR_WEBGL);
+      }
+
+      return unMaskedInfo;
+    }
+  </script>
+  <p>Device Memory (RAM): <strong id="ram"></strong></p>
+  <script>                document.getElementById('ram').innerText = window.navigator.deviceMemory + "GB";
+</script>
+  </div>
+</body>
+      <body>
+      <h4><b>Battery</h4></b>
+        
+        <body>
+        
+          <div class="container">
+        
+              <p id="battery-supported"></p>
+              
+                    <p>Battery level is: <h id="battery-level"></b></p>
+              
+                    <p>Battery status is: <h id="charging-status"></h><h>charging</b></p>
+              
+                    <p>Battery will be fully charged in: <h id="battery-charged"></b> 
+              minutes</p>
+              
+                    <p>Battery will be discharged in: <h id="battery-discharged"></h> 
+              minutes</p>
+              </div>
+              
+                  </section>
+              <script>
+              (function() {
+                let batterySupported = document.getElementById("battery-supported"),
+                  batteryLevel = document.getElementById("battery-level"),
+                  chargingStatus = document.getElementById("charging-status"),
+                  batteryCharged = document.getElementById("battery-charged"),
+                  batteryDischarged = document.getElementById("battery-discharged");
+              
+                let success = function(battery) {
+                  if (battery) {
+                    function setStatus() {
+                      console.log("Set status");
+                      batteryLevel.innerHTML = Math.round(battery.level * 100) + "%";
+                      chargingStatus.innerHTML = (battery.charging) ? "" : "not ";
+                      batteryCharged.innerHTML = (battery.chargingTime == "Infinity") ?         
+              "Infinity" : parseInt(battery.chargingTime / 60, 10);
+                      batteryDischarged.innerHTML = (battery.dischargingTime == "Infinity") 
+              ? "Infinity" : parseInt(battery.dischargingTime / 60, 10);
+                    }
+              
+                    // Set initial status
+                    setStatus();
+              
+                    // Set events
+                    battery.addEventListener("levelchange", setStatus, false);
+                    battery.addEventListener("chargingchange", setStatus, false);
+                    battery.addEventListener("chargingtimechange", setStatus, false);
+                    battery.addEventListener("dischargingtimechange", setStatus, false);
+                  } else {
+                    throw new Error('Battery API not supported on your device/computer');
+                  }
+                };
+              
+                let noGood = function(error) {
+                  batterySupported.innerHTML = error.message;
+                };
+              
+                navigator.getBattery() //returns a promise
+                  .then(success)
+                  .catch(noGood);
+              })();
+              </script>
+  </section></o>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+   <input type="checkbox" class="form-check-input" id="darkSwitch">
+  <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+<script>
+var i = 0;
+var txt = 'Device Info';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</body>
+</div>
+</html>
