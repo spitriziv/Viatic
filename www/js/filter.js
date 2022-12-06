@@ -1,10 +1,7 @@
 function display_access_denied_error() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
-        + '<link rel='stylesheet' href="https://spitriziv.github.io/Viatic/www/css/website.css">'
-        + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/503.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
-        + '</div>'
+        + '<meta http-equiv="refresh" content="0.1;url=https://spitriziv.github.io/Viatic/www/sites/503.html" />'
         + '</div>'
 }
 /* BLACKLIST COUNTRIES */
@@ -80,10 +77,7 @@ block_blacklist_countries() // Block blacklist countries
 function display_access_denied_error_ip_ban() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
-        + '<link rel='stylesheet' href="https://spitriziv.github.io/Viatic/www/css/website.css">'
-        + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/403.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
-        + '</div>'
+        + '<meta http-equiv="refresh" content="0.1;url=https://spitriziv.github.io/Viatic/www/sites/403.html" />'
         + '</div>'
 }
 /* BLACKLIST ip_ban */
