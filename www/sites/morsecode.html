@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Morse Code</a></li></title>
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+  <head>
+  <body onload="typeWriter()"></body>
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a>
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Viatic Main</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Viatic Main</a></li>
+          <li><a class="w3-animate-left" href="server.html">Viatic Server</a></li>
+          <li><a class="w3-animate-left" href="buglist.html">Viatic Web Bugs list</a></li>
+          <li><a class="w3-animate-left" href="viaticinfo.html">Viatic Web Info</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Utilities</a></li>
+          <li class="w3-animate-left">Code</li>
+          <li><a class="w3-animate-left" href="codeeditor.html">Code Editor</a></li>
+          <li><a class="w3-animate-left" href="binarycode.html">Binary Code</a></li>
+           <li><a class="w3-animate-left" href="binarycode.html">Morse Code</a></li>
+          <li class="w3-animate-left">----------------</li>
+          <li class="w3-animate-left">Art</li>
+          <li><a class="w3-animate-left" href="colorpicker.html">Color Picker</a></li>
+          <li><a class="w3-animate-left" href="canvas.html">Canvas</a></li>
+          <li><a class="w3-animate-left" href="pixelart.html">Pixel Art</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Infomation</a></li>
+           <li class="w3-animate-left">Device Info</li>
+          <li><a class="w3-animate-left" href="deviceinfo.html">Main Info</a></li>
+          <li><a class="w3-animate-left" href="extentions.html">Extentions</a></li>
+          <li><a class="w3-animate-left" href="chromeurls.html">chrome://</a></li>
+          <li><a class="w3-animate-left" href="shortcuts.html">Keyboard Shortcuts</a></li>
+          <li><a class="w3-animate-left" href="charactersets.html">Character Sets</a></li>
+          <li class="w3-animate-left">----------------</li>
+          <li class="w3-animate-left">Website Info</li>
+          <li><a class="w3-animate-left" href="weberrorcodes.html">Error Codes</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Others</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name">Others</a></li>
+          <li><a class="w3-animate-left" href="bookmarklets.html">JS Bookmarklets</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section  class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span style="position:relative;left:0px;top:-3px;"  id="type" class="title"></span>
+    </div>
+<h3 style="position:relative;left:67px;top:-3px;" class="w3-animate-bottom" class="text">This feature is still in development</h3>
+    </div>
+                </div>
+  </section>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+ <input type="checkbox" class="form-check-input" id="darkSwitch">
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+<script>
+var i = 0;
+var txt = 'Morse Code';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</body>
+</div>
+</html>
