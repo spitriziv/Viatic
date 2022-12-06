@@ -2,7 +2,7 @@ function display_access_denied_error() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spiritxiv.github.io/Chrome-Hidden-Files/www/503.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
+        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/503.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
         + '</div>'
         + '</div>'
 }
@@ -80,7 +80,7 @@ function display_access_denied_error_ip_ban() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spiritxiv.github.io/Chrome-Hidden-Files/www/403.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
+        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/403.html" id="iframe" width="100%" height="720" frameborder="0"></iframe>'
         + '</div>'
         + '</div>'
 }
