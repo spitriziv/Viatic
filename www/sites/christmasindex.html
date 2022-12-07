@@ -137,8 +137,26 @@
     </div>
     <br><br>
     <h1 style="text-align: center;" class="w3-animate-top" class="title"><img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/christmasviaticwordlogo.png?raw=true" alt="" style="width:434.5px;height:219px;"></h1>
+          <h2 style="text-align: center;color:#f26b61;" class="w3-animate-bottom" class="text" id="days"> </h2>
         <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
     <i style='font-size:50px;text-align: center;position:relative;top:15px;' class='fas'>&#xf107;</i></h3>
+    <script>
+      const myDate = new Date(); 
+const xmas = Date.parse("Dec 25, "+myDate.getFullYear()) 
+const today = Date.parse(myDate) 
+
+const daysToChristmas = Math.round((xmas-today)/(1000*60*60*24)) 
+
+
+if (daysToChristmas == 0) 
+$('#days').text("It's Christmas!! Merry Christmas!");
+
+if (daysToChristmas < 0) 
+$('#days').text("Christmas was "+-1*(daysToChristmas)+" days ago.");
+
+if (daysToChristmas > 0) 
+$('#days').text(daysToChristmas+" days to Christmas!");
+      </script>
             <br>
 <br>
 </div>
