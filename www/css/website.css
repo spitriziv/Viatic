@@ -1,5 +1,5 @@
-body {
-background: #e8f7ff;
+body{
+background-color: #e8f7ff ;
 }
 /* The container */
 .container {
@@ -271,7 +271,7 @@ background: #e8f7ff;
 }
 .home-section{
   position: relative;
-  background: #e8f7ff ;
+  background: #e8f7ff;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -285,7 +285,6 @@ background: #e8f7ff;
   height: 60px;
   display: flex;
   align-items: center;
-  background: #e8f7ff ;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
