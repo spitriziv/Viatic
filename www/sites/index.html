@@ -747,6 +747,23 @@ var metaballsGroup10 = {
         ],
         texture:generateGradientTexture([{color:'#4120fa', stop:0.10}, {color:'#4120fa', stop:0.7}, {color:'#c8246c', stop:.8}, {color:'#4ae7ff', stop:1.0}], false, false)
     };
+    
+    var metaballsGroup11 = {
+        metaballs:[
+            { centerOffsetX:-198 * scale, centerOffsetY:-534 * scale, radius: 28 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-490 * scale, centerOffsetY:-234 * scale, radius: 34 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-234 * scale, centerOffsetY:-654 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-654 * scale, centerOffsetY:234 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-234 * scale, centerOffsetY:654 * scale, radius: 30 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            
+             { centerOffsetX:-198 * scale, centerOffsetY:-432 * scale, radius: 28 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-109 * scale, centerOffsetY:-234 * scale, radius: 34 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-156 * scale, centerOffsetY:-534 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-198 * scale, centerOffsetY:143 * scale, radius: 40 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+            { centerOffsetX:-167 * scale, centerOffsetY:543 * scale, radius: 30 * scale, speed: getRandomFloat(minSpeed, maxSpeed), t:Math.random() * 200, arcMultiplierX:getRandomFloat(minMultiplierArcX, maxMultiplierArcX), arcMultiplierY:getRandomFloat(minMultiplierArcY, maxMultiplierArcY) },
+        ],
+        texture:generateGradientTexture([{color:'#a600a0', stop:0.1}, {color:'#c8246c', stop:.20}, {color:'#4120fa', stop:.4}], false, false)
+    };
 
     createdMetaballs.push(new Metaballs(gl, metaballsGroup6));
     createdMetaballs.push(new Metaballs(gl, metaballsGroup7));
@@ -754,10 +771,11 @@ var metaballsGroup10 = {
     createdMetaballs.push(new Metaballs(gl, metaballsGroup1));
     createdMetaballs.push(new Metaballs(gl, metaballsGroup3));
     createdMetaballs.push(new Metaballs(gl, metaballsGroup4));
-    createdMetaballs.push(new Metaballs(gl, metaballsGroup8)); 	       
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup8)); 	     
     createdMetaballs.push(new Metaballs(gl, metaballsGroup10));
     createdMetaballs.push(new Metaballs(gl, metaballsGroup5));
     createdMetaballs.push(new Metaballs(gl, metaballsGroup9));
+    createdMetaballs.push(new Metaballs(gl, metaballsGroup11));
     
     for (var i = 0; i < createdMetaballs.length; i++) {
         setTimeout(createdMetaballs[i].fadeIn, i * 200);
