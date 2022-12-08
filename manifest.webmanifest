@@ -1,0 +1,32 @@
+{
+    "theme_color": "#222222",
+    "color": "white",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "https://spitriziv.github.io/Viatic/www/sites/index.html",
+    "name": "Viatic - The Beginning",
+    "short_name": "Viatic",
+    "description": "The official web app for Viatic, still being developed.",
+    "icons": [
+        {
+            "src": "https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
