@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
 <title>Viatic - Welcome</title>
-	
-	<meta http-equiv="refresh" content="0.001;url=christmasindex.html" />
+		<meta http-equiv="refresh" content="0.001;url=christmasindex.html" />
+
   <meta name="description" img src="image.png" content="The Viatic Website"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="chromelogo.png">
@@ -15,6 +15,38 @@
 	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
 	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
   <head>
+  <script>
+  let deferredPrompt;
+const addBtn = document.querySelector(".add-button");
+addBtn.style.display = "none";
+</script>
+<script>
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = "block";
+
+  addBtn.addEventListener("click", (e) => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = "none";
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+  </script>
   <body onload="typeWriter()"></body>
     <!-- ccs -->
     <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
@@ -203,6 +235,11 @@ h1 > .magic > .magic-text {
   font-family: "Rubik", sans-serif;
   transition: color 600ms;
 }
+.add-button {
+  position: absolute;
+  top: -100px;
+  left: 0px;
+}
       </style>
       <script>
       let index = 0,
@@ -324,6 +361,7 @@ for(const star of document.getElementsByClassName("magic-star")) {
             <canvas id="splash"></canvas>
       <span style="position:relative;left:30px;top:-3px;"  id="type" class="title">Dashboard</span> 
     </div>
+    <button class="add-button">Add to home screen</button>
     <br><br>
     <h1 style="text-align: center;" class="w3-animate-top" class="title"><img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwordlogo.png?raw=true" alt="" style="width:434.5px;height:219px;"></h1>
         <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
