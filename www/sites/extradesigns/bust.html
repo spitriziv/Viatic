@@ -343,8 +343,16 @@ const ORANGE = { r: 0x57, g: 0x5a, b: 0xff };
 const BLACK = { r: 0x22, g: 0x22, b: 0x22 };
 const RED = { r: 0xff, g: 0x73, b: 0x73 };
 const GLITCH = { r: 0x263, g: 0x22f4, b: 0x221 };
+const GLITCH2 = { r: 0xf7da48, g: 0xf7da48, b: 0xf7da48 };
+const GLITCH3 = { r: 0x255, g: 0x255, b: 0x255 };
+const GBLUE = { r: 0x150, g: 0x102, b: 0x255 };
+const GGREEN = { r: 0x87, g: 0x255, b: 0x249 };
+const GPINK = { r: 0x255, g: 0x87, b: 0x216 };
+const GORANGE = { r: 0x87, g: 0x90, b: 0x255 };
+const GBLACK = { r: 0x34, g: 0x34, b: 0x34 };
+const GRED = { r: 0x255, g: 0x73, b: 0x73 };
 const GLASS = { r: 0xc7, g: 0xef, b: 0xff };
-const allColors = [BLUE, GREEN, PINK, ORANGE, BLACK, RED, GLITCH, GLASS];
+const allColors = [BLUE, GREEN, PINK, ORANGE, BLACK, RED, GLITCH, GLITCH2, GLITCH3, GLASS, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED];
 
 // Gameplay
 const getSpawnDelay = () => {
@@ -1258,7 +1266,7 @@ const getTarget = (() => {
 			// Spawner is reset automatically when game resets.
 		} else if (!doubleStrong && state.game.score > doubleStrongEnableScore) {
 			doubleStrong = true;
-			strongSpawner.mutate({ maxSpawns: 2 });
+			strongSpawner.mutate({ maxSpawns: 10 });
 		}
 
 		// Target Parameters
@@ -1276,8 +1284,8 @@ const getTarget = (() => {
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
-			color = GLITCH;
-			health = 6;
+			color = GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED;
+			health = 4;
 		}
 
 		// Target Creation
