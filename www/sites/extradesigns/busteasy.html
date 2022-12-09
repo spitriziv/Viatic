@@ -1283,11 +1283,11 @@ const getTarget = (() => {
 		// Target Parameter Overrides
 		// --------------------------------
 		if (state.game.cubeCount >= slowmoThreshold && slowmoSpawner.shouldSpawn()) {
-			color = GLASS, GLITCH3;
+			color = pickOne([GLASS, GLITCH3]);
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
-			color = GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED;
+			color = pickOne([GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED]);
 			health = 3;
 		}
 
