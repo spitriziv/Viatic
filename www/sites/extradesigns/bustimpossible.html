@@ -366,7 +366,7 @@ const getSpawnDelay = () => {
 }
 const doubleStrongEnableScore = 2000;
 // Number of cubes that must be smashed before activating a feature.
-const slowmoThreshold = 100;
+const slowmoThreshold = 0;
 const strongThreshold = 0;
 const spinnerThreshold = 0;
 
@@ -1269,7 +1269,7 @@ const getTarget = (() => {
 			// Spawner is reset automatically when game resets.
 		} else if (!doubleStrong && state.game.score > doubleStrongEnableScore) {
 			doubleStrong = true;
-			strongSpawner.mutate({ maxSpawns: 10 });
+			strongSpawner.mutate({ maxSpawns: 40 });
 		}
 
 		// Target Parameters
@@ -1283,11 +1283,11 @@ const getTarget = (() => {
 		// Target Parameter Overrides
 		// --------------------------------
 		if (state.game.cubeCount >= slowmoThreshold && slowmoSpawner.shouldSpawn()) {
-			color = GLASS;
+			color = pickOne([GLASS, BLUE, GREEN, ORANGE, RED, PINK, BLACK, GHOST, GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED]);
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
-			color = GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED;
+			color = pickOne([GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED]);
 			health = 5;
 		}
 
@@ -2525,4 +2525,4 @@ if ('PointerEvent' in window) {
 
 setupCanvases();
 
-</script> 
+</script>
