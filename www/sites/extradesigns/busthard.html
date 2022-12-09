@@ -357,8 +357,8 @@ const allColors = [BLUE, GREEN, PINK, ORANGE, BLACK, RED, GLITCH, GLITCH2, GLITC
 
 // Gameplay
 const getSpawnDelay = () => {
-	const spawnDelayMax = 1400;
-	const spawnDelayMin = 550;
+	const spawnDelayMax = 1600;
+	const spawnDelayMin = 600;
 	const spawnDelay = spawnDelayMax - state.game.cubeCount * 3.1;
 	return Math.max(spawnDelay, spawnDelayMin);
 }
@@ -377,13 +377,13 @@ let pointerScene = { x: 0, y: 0 };
 // Minimum speed of pointer before "hits" are counted.
 const minPointerSpeed = 60;
 // The hit speed affects the direction the target post-hit. This number dampens that force.
-const hitDampening = 0.1;
+const hitDampening = 0.08;
 // Backboard receives shadows and is the farthest negative Z position of entities.
 const backboardZ = -400;
 const shadowColor = '#262e3620';
 // How much air drag is applied to standard objects
 const airDrag = 0.022;
-const gravity = 0.3;
+const gravity = 0.35;
 // Spark config
 const sparkColor = '#ff99f8';
 const sparkThickness = 2.2;
