@@ -1274,18 +1274,18 @@ const getTarget = (() => {
 		let color = pickOne([BLUE, GREEN, ORANGE, RED, PINK, BLACK]);
 		let wireframe = false;
 		let health = 1;
-		let maxHealth = 6;
+		let maxHealth = 3;
 		const spinner = state.game.cubeCount >= spinnerThreshold && isInGame() && spinnerSpawner.shouldSpawn();
 
 		// Target Parameter Overrides
 		// --------------------------------
 		if (state.game.cubeCount >= slowmoThreshold && slowmoSpawner.shouldSpawn()) {
-			color = GLASS;
+			color = GLASS, GLITCH3;
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
 			color = GLITCH, GLITCH2, GLITCH3, GBLUE, GGREEN, GPINK, GORANGE, GBLACK, GRED;
-			health = 4;
+			health = 3;
 		}
 
 		// Target Creation
@@ -1297,7 +1297,7 @@ const getTarget = (() => {
 		updateTargetHealth(target, 0);
 
 		const spinSpeeds = [
-			Math.random() * 0.1 - 0.05,
+			Math.random() * 0.2 - 0.1,
 			Math.random() * 0.1 - 0.05
 		];
 
