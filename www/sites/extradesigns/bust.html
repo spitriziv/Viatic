@@ -342,7 +342,7 @@ const PINK =   { r: 0xff, g: 0x57, b: 0xd8 };
 const ORANGE = { r: 0x57, g: 0x5a, b: 0xff };
 const BLACK = { r: 0x22, g: 0x22, b: 0x22 };
 const RED = { r: 0xff, g: 0x73, b: 0x73 };
-const GLITCH = { r: 0xbbff, g: 0xffa6, b: 0xa6d8 };
+const GLITCH = { r: 0x263, g: 0x22f4, b: 0x221 };
 const GLASS = { r: 0xc7, g: 0xef, b: 0xff };
 const allColors = [BLUE, GREEN, PINK, ORANGE, BLACK, RED, GLITCH, GLASS];
 
@@ -1263,7 +1263,7 @@ const getTarget = (() => {
 
 		// Target Parameters
 		// --------------------------------
-		let color = pickOne([BLUE, GREEN, ORANGE, RED]);
+		let color = pickOne([BLUE, GREEN, ORANGE, RED, PINK, BLACK]);
 		let wireframe = false;
 		let health = 1;
 		let maxHealth = 6;
@@ -1276,10 +1276,6 @@ const getTarget = (() => {
 			wireframe = true;
 		}
 		else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
-			color = PINK, BLACK;
-			health = 3;
-		}
-    else if (state.game.cubeCount >= strongThreshold && strongSpawner.shouldSpawn()) {
 			color = GLITCH;
 			health = 6;
 		}
