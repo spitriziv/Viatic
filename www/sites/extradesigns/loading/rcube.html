@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Welcome</title>
+
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<link rel="manifest" href="https://spitriziv.github.io/Viatic/manifest.webmanifest">
+	<meta name="Viatic" content="Viatic">
+	<link rel="icon" sizes="16x16 32x32 48x48" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true">
+	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
+	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<style>
+	/***********************/
+/***********************/
+/***********************/
+ *, *::after, *::before {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+	 transform-style: preserve-3d;
+	 user-select: none;
+	 -webkit-tap-highlight-color: transparent;
+	 appearance: none;
+}
+/***********************/
+/***********************/
+ body {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100vh;
+	 width: 100%;
+	 overflow: hidden;
+	 cursor: grab;
+	 background-color: #061819;
+	 background-image: radial-gradient(circle, #061819, #000405);
+}
+ .face {
+	 position: absolute;
+}
+ .flex {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+}
+/***********************/
+/***********************/
+ .main {
+	 position: absolute;
+	 width: 61.2vmin;
+	 height: 61.2vmin;
+	 transform: perspective(680vmin) rotateX(66deg) rotateZ(35deg) translateZ(-23.8vmin);
+}
+ .shadows {
+	 width: 100%;
+	 height: 100%;
+}
+ .shadow {
+	 position: absolute;
+	 box-shadow: 0 0 3.4vmin rgba(3, 12, 12, 0.75);
+	 filter: blur(0.595vmin);
+}
+ .shadow1 {
+	 top: -2%;
+	 left: -2%;
+	 width: 104%;
+	 height: 104%;
+	 background-color: #000;
+}
+ .shadow2 {
+	 top: -2%;
+	 right: 98%;
+	 width: 75%;
+	 height: 101%;
+	 transform-origin: top right;
+	 transform: skewY(-33deg);
+	 background-color: #010404;
+	 box-shadow: 0 0 8.5vmin rgba(3, 12, 12, 0.95);
+	 filter: blur(0.85vmin);
+}
+ .shadow3 {
+	 top: 100%;
+	 left: 0;
+	 width: 100%;
+	 height: 5.1vmin;
+	 transform-origin: top right;
+	 transform: skewX(45deg);
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.05), rgba(240, 247, 245, 0.025));
+}
+ .shadow4 {
+	 top: 0;
+	 left: 100%;
+	 width: 4.675vmin;
+	 height: 100%;
+	 transform-origin: top left;
+	 transform: skewY(45deg);
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.035), rgba(240, 247, 245, 0.025));
+}
+ .light {
+	 position: absolute;
+}
+ .light1 {
+	 top: 37.4vmin;
+	 left: 100%;
+	 width: 10.2vmin;
+	 height: 18.7vmin;
+	 transform-origin: top right;
+	 transform: skewY(47deg);
+	 background-image: linear-gradient(to right, rgba(251, 250, 254, 0.1), transparent);
+	 filter: blur(0.85vmin);
+	 animation: toggle 1000ms linear infinite;
+}
+ .light3 {
+	 top: 60%;
+	 left: 60%;
+	 width: 34vmin;
+	 height: 34vmin;
+	 transform-origin: top left;
+	 transform: skewY(40deg);
+	 border-radius: 50%;
+	 background-image: radial-gradient(circle, rgba(190, 242, 249, 0.1), transparent);
+	 filter: blur(3.4vmin);
+}
+ .floor {
+	 width: 61.2vmin;
+	 height: 61.2vmin;
+	 position: absolute;
+	 top: 0;
+}
+ .floor__front {
+	 width: 61.2vmin;
+	 height: 2.125vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(59.075vmin);
+}
+ .floor__back {
+	 width: 61.2vmin;
+	 height: 2.125vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-61.2vmin) translateY(-2.125vmin);
+}
+ .floor__right {
+	 width: 61.2vmin;
+	 height: 2.125vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(61.2vmin) translateX(-61.2vmin) translateY(-2.125vmin);
+}
+ .floor__left {
+	 width: 61.2vmin;
+	 height: 2.125vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-2.125vmin);
+}
+ .floor__top {
+	 width: 61.2vmin;
+	 height: 61.2vmin;
+	 transform-origin: top left;
+	 transform: translateZ(2.125vmin);
+}
+ .floor__bottom {
+	 width: 61.2vmin;
+	 height: 61.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-61.2vmin);
+}
+ .floor__front {
+	 background-color: #9e99c1;
+	 background-image: linear-gradient(rgba(190, 242, 249, 0.5), rgba(190, 242, 249, 0.5));
+	 border-bottom: 0.425vmin solid #8fe9f5;
+	 border-left: 0.425vmin solid #8fe9f5;
+}
+ .floor__back {
+	 background-color: #000;
+	 border-bottom: 0.425vmin solid #8fe9f5;
+}
+ .floor__left {
+	 background-color: #131613;
+	 background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0 100%);
+	 border-bottom: 0.425vmin solid #8fe9f5;
+}
+ .floor__right {
+	 background-color: #383358;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.2), rgba(97, 223, 240, 0.2)), linear-gradient(to right, rgba(224, 243, 246, 0.7), rgba(145, 212, 223, 0.95));
+	 border-bottom: 0.425vmin solid #8fe9f5;
+	 border-right: 0.425vmin solid #8fe9f5;
+}
+ .floor__top {
+	 background-color: #cbe1e4;
+	 overflow: hidden;
+}
+ .floor__top::after {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: linear-gradient(rgba(255, 255, 255, 0.175) 0.255vmin, transparent 0.255vmin), linear-gradient(to right, rgba(255, 255, 255, 0.175) 0.255vmin, transparent 0.255vmin);
+	 background-size: 5.1vmin 5.1vmin;
+	 z-index: 5;
+}
+ .floor__top .shadows {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background-image: linear-gradient(to bottom, rgba(97, 223, 240, 0.75), transparent 6.5%), linear-gradient(to right, rgba(97, 223, 240, 0.75), transparent 6.5%), radial-gradient(circle, transparent, rgba(167, 237, 247, 0.1)), linear-gradient(to right, rgba(120, 228, 243, 0.3), transparent 30%), linear-gradient(to bottom, rgba(120, 228, 243, 0.3), transparent 30%), linear-gradient(to right, rgba(39, 59, 64, 0.65), transparent 30%), linear-gradient(to right, rgba(0, 1, 1, 0.25), rgba(20, 30, 32, 0.35), transparent 20%), linear-gradient(to bottom, rgba(39, 59, 64, 0.85), transparent 30%), linear-gradient(to bottom, rgba(0, 1, 1, 0.25), rgba(20, 30, 32, 0.35), transparent 15%);
+	 background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+	 background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+	 background-repeat: no-repeat;
+}
+ .floor__top .light-1 {
+	 position: absolute;
+	 top: 8.5vmin;
+	 left: 17vmin;
+	 width: 27.2vmin;
+	 height: 25.5vmin;
+	 transform-origin: top left;
+	 transform: skewX(42deg);
+	 background-image: linear-gradient(to bottom, rgba(251, 250, 254, 0.5), rgba(251, 250, 254, 0.3), transparent);
+	 filter: blur(0.85vmin);
+	 animation: toggle 1000ms linear infinite;
+}
+ .floor__top .light-2, .floor__top .light-3, .floor__top .light-4 {
+	 position: absolute;
+	 left: 1.7vmin;
+	 width: 11.9vmin;
+	 height: 8.5vmin;
+	 transform-origin: top left;
+	 transform: skewY(42deg);
+	 background-image: linear-gradient(to right, rgba(168, 107, 182, 0.3), rgba(251, 250, 254, 0.3), transparent);
+	 filter: blur(0.85vmin);
+}
+ .floor__top .light-2 {
+	 bottom: 3.4vmin;
+}
+ .floor__top .light-3 {
+	 bottom: 14.45vmin;
+}
+ .floor__top .light-4 {
+	 bottom: 24.65vmin;
+}
+ .floor__top .shadow-1 {
+	 position: absolute;
+	 top: 44.2vmin;
+	 left: 12.325vmin;
+	 width: 33.575vmin;
+	 height: 17vmin;
+	 transform-origin: top left;
+	 transform: skewX(42deg);
+	 background-image: linear-gradient(to bottom, rgba(3, 25, 28, 0.75), transparent);
+	 filter: blur(0.85vmin);
+}
+ .floor__top .shadow-2 {
+	 position: absolute;
+	 top: 34vmin;
+	 left: 36.55vmin;
+	 width: 14.025vmin;
+	 height: 34vmin;
+	 transform-origin: top left;
+	 transform: skewX(42deg);
+	 background-image: linear-gradient(to bottom, rgba(3, 25, 28, 0.7), transparent);
+	 filter: blur(0.85vmin);
+}
+ .floor__top .neon-line {
+	 left: 34vmin;
+	 bottom: -3.4vmin;
+	 opacity: 0.7;
+	 filter: blur(1.445vmin);
+}
+ .floor__top .neon-line .neon {
+	 background-color: #bef2f9;
+	 box-shadow: 0 0 6.8vmin 0.2125vmin rgba(192, 242, 249, 0.5);
+}
+ .floor__bottom {
+	 background-color: #030c0c;
+}
+ .wall-a {
+	 width: 1.7vmin;
+	 height: 61.2vmin;
+	 position: absolute;
+	 top: 0;
+	 transform: translateZ(2.04vmin);
+}
+ .wall-a__front {
+	 width: 1.7vmin;
+	 height: 44.2vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(17vmin);
+}
+ .wall-a__back {
+	 width: 1.7vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-1.7vmin) translateY(-44.2vmin);
+}
+ .wall-a__right {
+	 width: 61.2vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(1.7vmin) translateX(-61.2vmin) translateY(-44.2vmin);
+}
+ .wall-a__left {
+	 width: 61.2vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-44.2vmin);
+}
+ .wall-a__top {
+	 width: 1.7vmin;
+	 height: 61.2vmin;
+	 transform-origin: top left;
+	 transform: translateZ(44.2vmin);
+}
+ .wall-a__bottom {
+	 width: 1.7vmin;
+	 height: 61.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-1.7vmin);
+}
+ .wall-a__front {
+	 background-color: #9e99c1;
+	 background-image: linear-gradient(to bottom, transparent, rgba(190, 242, 249, 0.85));
+	 border-left: 0.425vmin solid #8fe9f5;
+}
+ .wall-a__back {
+	 background-color: #090b09;
+	 background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 30%);
+}
+ .wall-a__left {
+	 background-color: #131613;
+	 background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 30%);
+}
+ .wall-a__right {
+	 background-color: #101310;
+	 border-bottom: 0.425vmin solid #8fe9f5;
+	 background-image: linear-gradient(to bottom, rgba(185, 241, 249, 0.05), transparent 15%), linear-gradient(to left, rgba(167, 237, 247, 0.075), transparent 7%), linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 20%), linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(9, 11, 9, 0.5) 20%), linear-gradient(to left, rgba(0, 0, 0, 0.85), transparent 20%), linear-gradient(to top, rgba(167, 237, 247, 0.5), transparent 50%);
+	 background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+	 background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+	 background-repeat: no-repeat;
+}
+ .wall-a__right .light-1, .wall-a__right .light-2, .wall-a__right .light-3 {
+	 position: absolute;
+	 bottom: 8.5vmin;
+	 width: 6.8vmin;
+	 height: 10.2vmin;
+	 background-image: radial-gradient(circle at 50% 0%, rgba(168, 107, 182, 0.75), rgba(168, 107, 182, 0.35) 30%, transparent);
+	 border-bottom-left-radius: 6.8vmin;
+	 border-bottom-right-radius: 6.8vmin;
+	 filter: blur(0.85vmin);
+}
+ .wall-a__right .light-1 {
+	 left: 5.1vmin;
+}
+ .wall-a__right .light-2 {
+	 left: 15.3vmin;
+}
+ .wall-a__right .light-3 {
+	 left: 25.5vmin;
+}
+ .wall-a__right .light-4 {
+	 position: absolute;
+	 bottom: 3.4vmin;
+	 left: 6.8vmin;
+	 width: 45.9vmin;
+	 height: 0.425vmin;
+	 transform: skewX(-20deg);
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.15), rgba(190, 242, 249, 0.35), rgba(190, 242, 249, 0.15));
+	 filter: blur(0.85vmin);
+}
+ .wall-a__right .light-5, .wall-a__right .light-6, .wall-a__right .light-7 {
+	 position: absolute;
+	 bottom: 17vmin;
+	 width: 6.8vmin;
+	 height: 9.35vmin;
+	 background-image: radial-gradient(circle at 50% 0%, rgba(190, 242, 249, 0.1), rgba(190, 242, 249, 0.2) 30%, transparent);
+	 border-top-left-radius: 8.5vmin;
+	 border-top-right-radius: 8.5vmin;
+	 filter: blur(0.85vmin);
+}
+ .wall-a__right .light-5 {
+	 left: 5.1vmin;
+}
+ .wall-a__right .light-6 {
+	 left: 15.3vmin;
+}
+ .wall-a__right .light-7 {
+	 left: 25.5vmin;
+}
+ .wall-a__top {
+	 background-color: #fbfafe;
+	 background-image: linear-gradient(to bottom, rgba(184, 228, 235, 0.95), rgba(204, 235, 240, 0.85), rgba(224, 243, 246, 0.6));
+	 border-left: 0.425vmin solid #8fe9f5;
+	 border-top: 0.425vmin solid #8fe9f5;
+}
+ .wall-b {
+	 width: 59.67vmin;
+	 height: 1.7vmin;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 transform: translateZ(2.04vmin);
+}
+ .wall-b__front {
+	 width: 59.67vmin;
+	 height: 44.2vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-42.5vmin);
+}
+ .wall-b__back {
+	 width: 59.67vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-59.67vmin) translateY(-44.2vmin);
+}
+ .wall-b__right {
+	 width: 1.7vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(59.67vmin) translateX(-1.7vmin) translateY(-44.2vmin);
+}
+ .wall-b__left {
+	 width: 1.7vmin;
+	 height: 44.2vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-44.2vmin);
+}
+ .wall-b__top {
+	 width: 59.67vmin;
+	 height: 1.7vmin;
+	 transform-origin: top left;
+	 transform: translateZ(44.2vmin);
+}
+ .wall-b__bottom {
+	 width: 59.67vmin;
+	 height: 1.7vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-59.67vmin);
+}
+ .wall-b__front {
+	 background-color: #1c211c;
+	 border-bottom: 0.425vmin solid #8fe9f5;
+	 background-image: linear-gradient(to bottom, rgba(185, 241, 249, 0.075), transparent 15%), linear-gradient(to bottom, rgba(143, 233, 245, 0.75), rgba(5, 5, 5, 0.25), transparent), linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 20%), linear-gradient(to top, rgba(143, 233, 245, 0.25), rgba(9, 11, 9, 0.5) 20%), linear-gradient(to right, rgba(0, 0, 0, 0.75), transparent 20%), linear-gradient(to top, rgba(167, 237, 247, 0.35), transparent 50%);
+	 background-size: 100% 100%, 23.8vmin 11.9vmin, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+	 background-position: 0 0, 17.85vmin 85%, 0 0, 0 0, 0 0, 0 0;
+	 background-repeat: no-repeat;
+}
+ .wall-b__front .light-1 {
+	 position: absolute;
+	 bottom: 3.4vmin;
+	 left: 6.8vmin;
+	 width: 45.9vmin;
+	 height: 0.425vmin;
+	 transform: skewX(-20deg);
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.1), rgba(190, 242, 249, 0.2), rgba(190, 242, 249, 0.1));
+	 filter: blur(0.85vmin);
+}
+ .wall-b__front .light-2, .wall-b__front .light-3 {
+	 position: absolute;
+	 bottom: 23.8vmin;
+	 width: 5.95vmin;
+	 height: 8.5vmin;
+	 background-image: radial-gradient(circle at 50% 0%, rgba(190, 242, 249, 0.1), rgba(190, 242, 249, 0.1) 30%, transparent);
+	 border-bottom-left-radius: 8.5vmin;
+	 border-bottom-right-radius: 8.5vmin;
+	 filter: blur(1.105vmin);
+}
+ .wall-b__front .light-2 {
+	 left: 4.675vmin;
+}
+ .wall-b__front .light-3 {
+	 left: 49.3vmin;
+}
+ .wall-b__back {
+	 background-color: #090b09;
+	 background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 30%);
+}
+ .wall-b__right {
+	 background-color: #383358;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.2), rgba(97, 223, 240, 0.2)), linear-gradient(to top, rgba(145, 212, 223, 0.95), rgba(204, 235, 240, 0.85), rgba(255, 255, 255, 0.6));
+	 border-right: 0.425vmin solid #8fe9f5;
+}
+ .wall-b__top {
+	 background-color: #fbfafe;
+	 background-image: linear-gradient(to right, rgba(184, 228, 235, 0.95), rgba(204, 235, 240, 0.85), rgba(224, 243, 246, 0.6));
+	 border-top: 0.425vmin solid #8fe9f5;
+}
+ .speaker-a, .speaker-b {
+	 width: 5.1vmin;
+	 height: 2.55vmin;
+	 position: absolute;
+	 top: 1.53vmin;
+	 transform: translateZ(34vmin) rotateX(-7deg);
+}
+ .speaker-a__front, .speaker-b__front {
+	 width: 5.1vmin;
+	 height: 6.8vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-4.25vmin);
+}
+ .speaker-a__back, .speaker-b__back {
+	 width: 5.1vmin;
+	 height: 6.8vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-5.1vmin) translateY(-6.8vmin);
+}
+ .speaker-a__right, .speaker-b__right {
+	 width: 2.55vmin;
+	 height: 6.8vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(5.1vmin) translateX(-2.55vmin) translateY(-6.8vmin);
+}
+ .speaker-a__left, .speaker-b__left {
+	 width: 2.55vmin;
+	 height: 6.8vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-6.8vmin);
+}
+ .speaker-a__top, .speaker-b__top {
+	 width: 5.1vmin;
+	 height: 2.55vmin;
+	 transform-origin: top left;
+	 transform: translateZ(6.8vmin);
+}
+ .speaker-a__bottom, .speaker-b__bottom {
+	 width: 5.1vmin;
+	 height: 2.55vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-5.1vmin);
+}
+ .speaker-a__front, .speaker-b__front {
+	 background-color: #090b09;
+	 border: 0.255vmin solid #8fe9f5;
+}
+ .speaker-a__back, .speaker-b__back {
+	 background-color: #a1bec5;
+	 background-image: linear-gradient(to bottom, rgba(143, 233, 245, 0.92), rgba(190, 242, 249, 0.65));
+}
+ .speaker-a__back::after, .speaker-b__back::after {
+	 content: "";
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background-color: rgba(168, 107, 182, 0.95);
+	 filter: blur(0.595vmin);
+	 transform: translateZ(0.2125vmin) rotateX(-7deg);
+}
+ .speaker-a__left, .speaker-b__left {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.75), rgba(190, 242, 249, 0.25));
+	 border-left: 0.425vmin solid #8fe9f5;
+}
+ .speaker-a__right, .speaker-b__right {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.75), rgba(190, 242, 249, 0.25));
+	 border-right: 0.425vmin solid #8fe9f5;
+}
+ .speaker-a__top, .speaker-b__top {
+	 background-color: #cbe1e4;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.92), rgba(190, 242, 249, 0.5));
+	 border-top: 0.425vmin solid #8fe9f5;
+}
+ .speaker-a__bottom, .speaker-b__bottom {
+	 background-color: #a1bec5;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.92), rgba(190, 242, 249, 0.5));
+	 border-top: 0.425vmin solid #8fe9f5;
+}
+ .speaker-a {
+	 left: 6.8vmin;
+}
+ .speaker-b {
+	 right: 5.1vmin;
+}
+ .pic-a, .pic-b, .pic-c {
+	 width: 0.595vmin;
+	 height: 6.8vmin;
+	 position: absolute;
+	 left: 1.7vmin;
+	 transform: translateZ(16.15vmin);
+}
+ .pic-a__front, .pic-b__front, .pic-c__front {
+	 width: 0.595vmin;
+	 height: 9.35vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-2.55vmin);
+}
+ .pic-a__back, .pic-b__back, .pic-c__back {
+	 width: 0.595vmin;
+	 height: 9.35vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-0.595vmin) translateY(-9.35vmin);
+}
+ .pic-a__right, .pic-b__right, .pic-c__right {
+	 width: 6.8vmin;
+	 height: 9.35vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.595vmin) translateX(-6.8vmin) translateY(-9.35vmin);
+}
+ .pic-a__left, .pic-b__left, .pic-c__left {
+	 width: 6.8vmin;
+	 height: 9.35vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-9.35vmin);
+}
+ .pic-a__top, .pic-b__top, .pic-c__top {
+	 width: 0.595vmin;
+	 height: 6.8vmin;
+	 transform-origin: top left;
+	 transform: translateZ(9.35vmin);
+}
+ .pic-a__bottom, .pic-b__bottom, .pic-c__bottom {
+	 width: 0.595vmin;
+	 height: 6.8vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-0.595vmin);
+}
+ .pic-a__front, .pic-b__front, .pic-c__front {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(143, 233, 245, 0.85), rgba(129, 70, 142, 0.9));
+}
+ .pic-a__back, .pic-b__back, .pic-c__back {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(143, 233, 245, 0.85), rgba(129, 70, 142, 0.9));
+}
+ .pic-a__right, .pic-b__right, .pic-c__right {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.75), rgba(168, 107, 182, 0.85));
+	 padding: 0.34vmin;
+}
+ .pic-a__right::after, .pic-b__right::after, .pic-c__right::after {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: linear-gradient(to bottom, rgba(162, 236, 246, 0.1), rgba(156, 87, 172, 0.1));
+}
+ .pic-a__right img, .pic-b__right img, .pic-c__right img {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+}
+ .pic-a__top, .pic-b__top, .pic-c__top {
+	 background-color: #cbe1e4;
+	 background-image: linear-gradient(to right, rgba(120, 228, 243, 0.85), rgba(120, 228, 243, 0.85));
+}
+ .pic-a__bottom, .pic-b__bottom, .pic-c__bottom {
+	 background-color: #cbe1e4;
+}
+ .pic-a {
+	 bottom: 5.1vmin;
+}
+ .pic-b {
+	 bottom: 15.3vmin;
+}
+ .pic-c {
+	 bottom: 25.5vmin;
+}
+ .sofa {
+	 position: absolute;
+	 bottom: 3.4vmin;
+	 left: 25.075vmin;
+	 width: 12.75vmin;
+	 height: 37.4vmin;
+	 transform: translateZ(2.125vmin) rotateZ(-90deg);
+}
+ .sofa-a, .sofa-b {
+	 width: 11.9vmin;
+	 height: 3.4vmin;
+	 position: absolute;
+}
+ .sofa-a__front, .sofa-b__front {
+	 width: 11.9vmin;
+	 height: 8.5vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-5.1vmin);
+}
+ .sofa-a__back, .sofa-b__back {
+	 width: 11.9vmin;
+	 height: 8.5vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-11.9vmin) translateY(-8.5vmin);
+}
+ .sofa-a__right, .sofa-b__right {
+	 width: 3.4vmin;
+	 height: 8.5vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(11.9vmin) translateX(-3.4vmin) translateY(-8.5vmin);
+}
+ .sofa-a__left, .sofa-b__left {
+	 width: 3.4vmin;
+	 height: 8.5vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-8.5vmin);
+}
+ .sofa-a__top, .sofa-b__top {
+	 width: 11.9vmin;
+	 height: 3.4vmin;
+	 transform-origin: top left;
+	 transform: translateZ(8.5vmin);
+}
+ .sofa-a__bottom, .sofa-b__bottom {
+	 width: 11.9vmin;
+	 height: 3.4vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-11.9vmin);
+}
+ .sofa-a__front, .sofa-b__front {
+	 background-color: #0b0f11;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.1), rgba(190, 242, 249, 0.025) 60%);
+}
+ .sofa-a__back, .sofa-b__back {
+	 background-color: #161c20;
+}
+ .sofa-a__left, .sofa-b__left {
+	 background-color: #0b0f11;
+	 background-image: linear-gradient(to bottom, transparent, rgba(190, 242, 249, 0.1));
+	 border-bottom: 0.425vmin solid #8fe9f5;
+}
+ .sofa-a__right, .sofa-b__right {
+	 background-color: #222c32;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.15), rgba(190, 242, 249, 0.05) 60%);
+}
+ .sofa-a__top, .sofa-b__top {
+	 background-color: #11171a;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.35), rgba(190, 242, 249, 0.15), rgba(190, 242, 249, 0.025) 60%);
+	 border-right: 0.187vmin solid #61dff0;
+}
+ .sofa-a__bottom, .sofa-b__bottom {
+	 background-color: #1c2429;
+}
+ .sofa-a {
+	 bottom: 0;
+}
+ .sofa-b {
+	 top: 0;
+}
+ .sofa-c {
+	 width: 12.75vmin;
+	 height: 30.6vmin;
+	 position: absolute;
+	 bottom: 3.4vmin;
+}
+ .sofa-c__front {
+	 width: 12.75vmin;
+	 height: 4.25vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(26.35vmin);
+}
+ .sofa-c__back {
+	 width: 12.75vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-12.75vmin) translateY(-4.25vmin);
+}
+ .sofa-c__right {
+	 width: 30.6vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(12.75vmin) translateX(-30.6vmin) translateY(-4.25vmin);
+}
+ .sofa-c__left {
+	 width: 30.6vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-4.25vmin);
+}
+ .sofa-c__top {
+	 width: 12.75vmin;
+	 height: 30.6vmin;
+	 transform-origin: top left;
+	 transform: translateZ(4.25vmin);
+}
+ .sofa-c__bottom {
+	 width: 12.75vmin;
+	 height: 30.6vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-12.75vmin);
+}
+ .sofa-c__front {
+	 background-color: #161c20;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.1), transparent);
+}
+ .sofa-c__back {
+	 background-color: #161c20;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.1), transparent);
+}
+ .sofa-c__left {
+	 background-color: #0b0f11;
+	 background-image: linear-gradient(to bottom, transparent, rgba(190, 242, 249, 0.1));
+	 border-bottom: 0.425vmin solid #8fe9f5;
+}
+ .sofa-c__right {
+	 background-color: #222c32;
+}
+ .sofa-c__top {
+	 background-color: #1c2429;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.3), transparent);
+}
+ .sofa-c__bottom {
+	 background-color: #1c2429;
+}
+ .sofa-d, .sofa-e {
+	 width: 11.9vmin;
+	 height: 15.13vmin;
+	 position: absolute;
+	 right: -0.17vmin;
+	 transform: translateZ(4.25vmin);
+}
+ .sofa-d__front, .sofa-e__front {
+	 width: 11.9vmin;
+	 height: 1.7vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(13.43vmin);
+}
+ .sofa-d__back, .sofa-e__back {
+	 width: 11.9vmin;
+	 height: 1.7vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-11.9vmin) translateY(-1.7vmin);
+}
+ .sofa-d__right, .sofa-e__right {
+	 width: 15.13vmin;
+	 height: 1.7vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(11.9vmin) translateX(-15.13vmin) translateY(-1.7vmin);
+}
+ .sofa-d__left, .sofa-e__left {
+	 width: 15.13vmin;
+	 height: 1.7vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-1.7vmin);
+}
+ .sofa-d__top, .sofa-e__top {
+	 width: 11.9vmin;
+	 height: 15.13vmin;
+	 transform-origin: top left;
+	 transform: translateZ(1.7vmin);
+}
+ .sofa-d__bottom, .sofa-e__bottom {
+	 width: 11.9vmin;
+	 height: 15.13vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-11.9vmin);
+}
+ .sofa-d__front, .sofa-e__front {
+	 background-color: #161c20;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.2), transparent);
+}
+ .sofa-d__back, .sofa-e__back {
+	 background-color: #161c20;
+}
+ .sofa-d__left, .sofa-e__left {
+	 background-color: #161c20;
+	 background-image: linear-gradient(to bottom, transparent, rgba(190, 242, 249, 0.2));
+}
+ .sofa-d__right, .sofa-e__right {
+	 background-color: #222c32;
+}
+ .sofa-d__top, .sofa-e__top {
+	 background-color: #1c2429;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.45), rgba(190, 242, 249, 0.25), rgba(190, 242, 249, 0.05) 60%);
+	 border-right: 0.187vmin solid #61dff0;
+}
+ .sofa-d__bottom, .sofa-e__bottom {
+	 background-color: #1c2429;
+}
+ .sofa-d {
+	 bottom: 3.4vmin;
+}
+ .sofa-e {
+	 top: 3.4vmin;
+}
+ .sofa-f {
+	 width: 2.55vmin;
+	 height: 30.6vmin;
+	 position: absolute;
+	 left: 0;
+	 bottom: 3.4vmin;
+	 transform: translateZ(4.25vmin) rotateY(-12deg);
+}
+ .sofa-f__front {
+	 width: 2.55vmin;
+	 height: 7.65vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(22.95vmin);
+}
+ .sofa-f__back {
+	 width: 2.55vmin;
+	 height: 7.65vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-2.55vmin) translateY(-7.65vmin);
+}
+ .sofa-f__right {
+	 width: 30.6vmin;
+	 height: 7.65vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(2.55vmin) translateX(-30.6vmin) translateY(-7.65vmin);
+}
+ .sofa-f__left {
+	 width: 30.6vmin;
+	 height: 7.65vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-7.65vmin);
+}
+ .sofa-f__top {
+	 width: 2.55vmin;
+	 height: 30.6vmin;
+	 transform-origin: top left;
+	 transform: translateZ(7.65vmin);
+}
+ .sofa-f__bottom {
+	 width: 2.55vmin;
+	 height: 30.6vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-2.55vmin);
+}
+ .sofa-f__front {
+	 background-color: #11171a;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.1), transparent);
+}
+ .sofa-f__back {
+	 background-color: #11171a;
+	 background-image: linear-gradient(to right, rgba(190, 242, 249, 0.1), transparent);
+}
+ .sofa-f__left {
+	 background-color: #0b0f11;
+}
+ .sofa-f__right {
+	 background-color: #222c32;
+}
+ .sofa-f__top {
+	 background-color: #1c2429;
+	 background-image: linear-gradient(to left, rgba(190, 242, 249, 0.3), transparent);
+	 border-right: 0.187vmin solid #a7edf7;
+}
+ .sofa-f__bottom {
+	 background-color: #1c2429;
+}
+ .forniture-1 {
+	 position: absolute;
+	 top: 1.7vmin;
+	 width: 23.8vmin;
+	 height: 4.25vmin;
+	 left: 19.55vmin;
+	 transform: translateZ(14.45vmin);
+}
+ .forniture-1a, .forniture-1b {
+	 width: 0.595vmin;
+	 height: 4.25vmin;
+	 position: absolute;
+}
+ .forniture-1a__front, .forniture-1b__front {
+	 width: 0.595vmin;
+	 height: 5.1vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-0.85vmin);
+}
+ .forniture-1a__back, .forniture-1b__back {
+	 width: 0.595vmin;
+	 height: 5.1vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-0.595vmin) translateY(-5.1vmin);
+}
+ .forniture-1a__right, .forniture-1b__right {
+	 width: 4.25vmin;
+	 height: 5.1vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.595vmin) translateX(-4.25vmin) translateY(-5.1vmin);
+}
+ .forniture-1a__left, .forniture-1b__left {
+	 width: 4.25vmin;
+	 height: 5.1vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-5.1vmin);
+}
+ .forniture-1a__top, .forniture-1b__top {
+	 width: 0.595vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: translateZ(5.1vmin);
+}
+ .forniture-1a__bottom, .forniture-1b__bottom {
+	 width: 0.595vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-0.595vmin);
+}
+ .forniture-1a__front, .forniture-1b__front {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1a__back, .forniture-1b__back {
+	 background-color: #a1bec5;
+}
+ .forniture-1a__left, .forniture-1b__left {
+	 background-color: #a1bec5;
+	 background-image: linear-gradient(to right, rgba(120, 228, 243, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1a__right, .forniture-1b__right {
+	 background-color: #a1bec5;
+	 background-image: linear-gradient(to left, rgba(120, 228, 243, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1a__top, .forniture-1b__top {
+	 background-color: #cbe1e4;
+	 background-image: linear-gradient(to bottom, rgba(120, 228, 243, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1a__bottom, .forniture-1b__bottom {
+	 background-color: #a1bec5;
+}
+ .forniture-1a {
+	 left: 0;
+}
+ .forniture-1b {
+	 right: 0;
+}
+ .forniture-1c, .forniture-1d {
+	 width: 22.525vmin;
+	 height: 4.25vmin;
+	 position: absolute;
+	 left: 0.595vmin;
+}
+ .forniture-1c__front, .forniture-1d__front {
+	 width: 22.525vmin;
+	 height: 0.595vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(3.655vmin);
+}
+ .forniture-1c__back, .forniture-1d__back {
+	 width: 22.525vmin;
+	 height: 0.595vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-22.525vmin) translateY(-0.595vmin);
+}
+ .forniture-1c__right, .forniture-1d__right {
+	 width: 4.25vmin;
+	 height: 0.595vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(22.525vmin) translateX(-4.25vmin) translateY(-0.595vmin);
+}
+ .forniture-1c__left, .forniture-1d__left {
+	 width: 4.25vmin;
+	 height: 0.595vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.595vmin);
+}
+ .forniture-1c__top, .forniture-1d__top {
+	 width: 22.525vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: translateZ(0.595vmin);
+}
+ .forniture-1c__bottom, .forniture-1d__bottom {
+	 width: 22.525vmin;
+	 height: 4.25vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-22.525vmin);
+}
+ .forniture-1c__front, .forniture-1d__front {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1c__back, .forniture-1d__back {
+	 background-color: #f0f7f5;
+}
+ .forniture-1c__left, .forniture-1d__left {
+	 background-color: #f0f7f5;
+}
+ .forniture-1c__right, .forniture-1d__right {
+	 background-color: #f0f7f5;
+	 background-image: linear-gradient(to bottom, rgba(190, 242, 249, 0.92), rgba(190, 242, 249, 0.5));
+}
+ .forniture-1c__top, .forniture-1d__top {
+	 background-color: #81a8b2;
+	 background-image: linear-gradient(to bottom, rgba(120, 228, 243, 0.85), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1c__bottom, .forniture-1d__bottom {
+	 background-color: #81a8b2;
+	 background-image: linear-gradient(to bottom, rgba(120, 228, 243, 0.85), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1d {
+	 transform: translateZ(4.505vmin);
+}
+ .forniture-1d__top {
+	 background-color: #cbe1e4;
+	 background-image: linear-gradient(to bottom, rgba(120, 228, 243, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .forniture-1d__bottom {
+	 background-color: #a1bec5;
+	 background-image: linear-gradient(to bottom, rgba(120, 228, 243, 0.75), rgba(190, 242, 249, 0.25));
+}
+ .screen {
+	 width: 27.2vmin;
+	 height: 0.425vmin;
+	 position: absolute;
+	 left: 17.85vmin;
+	 top: 1.7vmin;
+	 transform: translateZ(25.5vmin) rotateX(-8deg);
+}
+ .screen__front {
+	 width: 27.2vmin;
+	 height: 15.3vmin;
+	 transform-origin: bottom left;
+	 transform: rotateX(-90deg) translateZ(-14.875vmin);
+}
+ .screen__back {
+	 width: 27.2vmin;
+	 height: 15.3vmin;
+	 transform-origin: top left;
+	 transform: rotateX(-90deg) rotateY(180deg) translateX(-27.2vmin) translateY(-15.3vmin);
+}
+ .screen__right {
+	 width: 0.425vmin;
+	 height: 15.3vmin;
+	 transform-origin: top left;
+	 transform: rotateY(90deg) rotateZ(-90deg) translateZ(27.2vmin) translateX(-0.425vmin) translateY(-15.3vmin);
+}
+ .screen__left {
+	 width: 0.425vmin;
+	 height: 15.3vmin;
+	 transform-origin: top left;
+	 transform: rotateY(-90deg) rotateZ(90deg) translateY(-15.3vmin);
+}
+ .screen__top {
+	 width: 27.2vmin;
+	 height: 0.425vmin;
+	 transform-origin: top left;
+	 transform: translateZ(15.3vmin);
+}
+ .screen__bottom {
+	 width: 27.2vmin;
+	 height: 0.425vmin;
+	 transform-origin: top left;
+	 transform: rotateY(180deg) translateX(-27.2vmin);
+}
+ .screen__front {
+	 background-color: #090b09;
+	 border: 0.425vmin solid #1c211c;
+	 box-shadow: 0 0 3.4vmin rgba(190, 242, 249, 0.35);
+	 overflow: hidden;
+}
+ .screen__front::after {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: linear-gradient(to bottom, rgba(143, 233, 245, 0.25), rgba(144, 79, 159, 0.25));
+}
+ .screen__front img, .screen__front video {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+}
+ .screen__back {
+	 background-color: #090b09;
+}
+ .screen__back::after {
+	 content: "";
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 box-shadow: 0 0 1.275vmin 0.2125vmin rgba(158, 90, 174, 0.85);
+	 filter: blur(0.595vmin);
+	 transform: translateZ(0.68vmin) rotateX(-8deg);
+}
+ .screen__left {
+	 background-color: #090b09;
+}
+ .screen__right {
+	 background-color: #090b09;
+}
+ .screen__top {
+	 background-color: #090b09;
+}
+ .screen__bottom {
+	 background-color: #090b09;
+}
+ .neon-line {
+	 display: grid;
+	 grid-template-columns: 1fr 1fr;
+	 justify-items: center;
+	 align-items: center;
+	 position: absolute;
+}
+ .neon-line:nth-of-type(1) {
+	 top: 10.2vmin;
+	 left: 1.9125vmin;
+	 width: 7.65vmin;
+	 height: 25.5vmin;
+	 transform-origin: top left;
+	 transform: translateZ(13.6vmin) rotateZ(90deg) rotateX(90deg);
+}
+ .neon-line:nth-of-type(2) {
+	 top: 31.45vmin;
+	 left: 1.9125vmin;
+	 width: 7.65vmin;
+	 height: 25.5vmin;
+	 transform-origin: top left;
+	 transform: translateZ(39.95vmin) rotateY(90deg);
+}
+ .neon-line:nth-of-type(3) {
+	 top: 2.125vmin;
+	 left: 6.8vmin;
+	 width: 7.65vmin;
+	 height: 25.5vmin;
+	 transform-origin: top left;
+	 transform: translateZ(7.65vmin) rotateX(90deg);
+}
+ .neon-line:nth-of-type(4) {
+	 top: 2.125vmin;
+	 right: 5.1vmin;
+	 width: 7.65vmin;
+	 height: 25.5vmin;
+	 transform-origin: top left;
+	 transform: translateZ(7.65vmin) rotateX(90deg);
+}
+ .neon-line .neon-group {
+	 display: grid;
+	 gap: 2.55vmin;
+}
+ .neon-line .neon-group:nth-of-type(1) {
+	 margin-top: -6.46vmin;
+}
+ .neon-line .neon {
+	 width: 3.825vmin;
+	 height: 3.825vmin;
+	 transform: rotateZ(45deg);
+	 border-radius: 0.425vmin;
+	 background-color: #bef2f9;
+	 box-shadow: 0 0 5.1vmin 0.17vmin rgba(190, 242, 249, 0.3);
+	 border: 0.34vmin solid #86e7f4;
+}
+ .is-element-hidden {
+	 display: none;
+}
+ .is-main-active {
+	 transform: perspective(255vmin) rotateX(88deg) translateY(51vmin) rotateZ(0deg) translateZ(-18.7vmin) !important;
+	 transition: transform 1000ms linear;
+}
+ @keyframes toggle {
+	 0%, 10%, 25%, 50%, 80%, 100% {
+		 opacity: 1;
+	}
+	 15%, 40%, 60% {
+		 opacity: 0.7;
+	}
+}
+ 
+	</style>
+<audio id="a">
+  <source src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/bioshock.mp3" type="audio/mpeg"/>
+</audio>
+<div class="modal" id="modal"></div>
+<div class="main" id="h">
+  <div class="shadows face">
+    <div class="shadow shadow1"></div>
+    <div class="shadow shadow2"></div>
+    <div class="shadow shadow3"></div>
+    <div class="shadow shadow4"></div>
+    <div class="light light1"></div>
+    <div class="light light2"></div>
+    <div class="light light3"></div>
+  </div>
+  <div class="floor">
+    <div class="floor__front face"> </div>
+    <div class="floor__back face"> </div>
+    <div class="floor__right face"> </div>
+    <div class="floor__left face"> </div>
+    <div class="floor__top face"> 
+      <div class="shadows"></div>
+      <div class="light-1"> </div>
+      <div class="light-2"> </div>
+      <div class="light-3"> </div>
+      <div class="light-4"> </div>
+      <div class="shadow-1"> </div>
+      <div class="shadow-2"> </div>
+      <div class="neon-line">
+        <div class="neon-group">
+          <div class="neon"></div>
+          <div class="neon"></div>
+          <div class="neon"></div>
+          <div class="neon"></div>
+        </div>
+        <div class="neon-group">
+          <div class="neon"></div>
+          <div class="neon"></div>
+          <div class="neon"></div>
+          <div class="neon"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="floor__bottom face"> </div>
+  </div>
+  <div class="wall-a">
+    <div class="wall-a__front face"> </div>
+    <div class="wall-a__back face"> </div>
+    <div class="wall-a__right face"> 
+      <div class="light light-1"></div>
+      <div class="light light-2"></div>
+      <div class="light light-3"></div>
+      <div class="light light-4"></div>
+    </div>
+    <div class="wall-a__left face"> </div>
+    <div class="wall-a__top face"> </div>
+  </div>
+  <div class="wall-b">
+    <div class="wall-b__front face">
+      <div class="light light-1"> </div>
+    </div>
+    <div class="wall-b__back face"> </div>
+    <div class="wall-b__right face"> </div>
+    <div class="wall-b__top face"> </div>
+  </div>
+  <div class="speaker-a">
+    <div class="speaker-a__front face"> </div>
+    <div class="speaker-a__back face"> </div>
+    <div class="speaker-a__right face"> </div>
+    <div class="speaker-a__left face"> </div>
+    <div class="speaker-a__top face"> </div>
+    <div class="speaker-a__bottom face"> </div>
+  </div>
+  <div class="speaker-b">
+    <div class="speaker-b__front face"> </div>
+    <div class="speaker-b__back face"> </div>
+    <div class="speaker-b__right face"> </div>
+    <div class="speaker-b__left face"> </div>
+    <div class="speaker-b__top face"> </div>
+    <div class="speaker-b__bottom face"> </div>
+  </div>
+  <div class="pic-a" id="bioshock">
+    <div class="pic-a__front face"> </div>
+    <div class="pic-a__back face"> </div>
+    <div class="pic-a__right face"> <img src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/b1.jpg"/></div>
+    <div class="pic-a__top face"> </div>
+    <div class="pic-a__bottom face"> </div>
+  </div>
+  <div class="pic-b">
+    <div class="pic-b__front face"> </div>
+    <div class="pic-b__back face"> </div>
+    <div class="pic-b__right face"> <img src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/b2.jpeg"/></div>
+    <div class="pic-b__top face"> </div>
+    <div class="pic-b__bottom face"> </div>
+  </div>
+  <div class="pic-c">
+    <div class="pic-c__front face"> </div>
+    <div class="pic-c__back face"> </div>
+    <div class="pic-c__right face"> <img src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/b3.jpg"/></div>
+    <div class="pic-c__top face"> </div>
+    <div class="pic-c__bottom face"> </div>
+  </div>
+  <div class="sofa">
+    <div class="sofa-a">
+      <div class="sofa-a__front face"> </div>
+      <div class="sofa-a__back face"> </div>
+      <div class="sofa-a__right face"> </div>
+      <div class="sofa-a__left face"> </div>
+      <div class="sofa-a__top face"> </div>
+    </div>
+    <div class="sofa-b">
+      <div class="sofa-b__front face"> </div>
+      <div class="sofa-b__back face"> </div>
+      <div class="sofa-b__right face"> </div>
+      <div class="sofa-b__left face"> </div>
+      <div class="sofa-b__top face"> </div>
+    </div>
+    <div class="sofa-c">
+      <div class="sofa-c__front face"> </div>
+      <div class="sofa-c__back face"> </div>
+      <div class="sofa-c__right face"> </div>
+      <div class="sofa-c__left face"> </div>
+      <div class="sofa-c__top face"> </div>
+    </div>
+    <div class="sofa-d">
+      <div class="sofa-d__front face"> </div>
+      <div class="sofa-d__back face"> </div>
+      <div class="sofa-d__right face"> </div>
+      <div class="sofa-d__left face"> </div>
+      <div class="sofa-d__top face"> </div>
+    </div>
+    <div class="sofa-e">
+      <div class="sofa-e__front face"> </div>
+      <div class="sofa-e__back face"> </div>
+      <div class="sofa-e__right face"> </div>
+      <div class="sofa-e__left face"> </div>
+      <div class="sofa-e__top face"> </div>
+    </div>
+    <div class="sofa-f">
+      <div class="sofa-f__front face"> </div>
+      <div class="sofa-f__back face"> </div>
+      <div class="sofa-f__right face"> </div>
+      <div class="sofa-f__left face"> </div>
+      <div class="sofa-f__top face"> </div>
+      <div class="sofa-f__bottom face"> </div>
+    </div>
+  </div>
+  <div class="forniture">
+    <div class="forniture-1"> 
+      <div class="forniture-1a">
+        <div class="forniture-1a__front face"> </div>
+        <div class="forniture-1a__back face"> </div>
+        <div class="forniture-1a__right face"> </div>
+        <div class="forniture-1a__left face"> </div>
+        <div class="forniture-1a__top face"> </div>
+        <div class="forniture-1a__bottom face"> </div>
+      </div>
+      <div class="forniture-1b">
+        <div class="forniture-1b__front face"> </div>
+        <div class="forniture-1b__back face"> </div>
+        <div class="forniture-1b__right face"> </div>
+        <div class="forniture-1b__left face"> </div>
+        <div class="forniture-1b__top face"> </div>
+        <div class="forniture-1b__bottom face"> </div>
+      </div>
+      <div class="forniture-1c">
+        <div class="forniture-1c__front face"> </div>
+        <div class="forniture-1c__back face"> </div>
+        <div class="forniture-1c__right face"> </div>
+        <div class="forniture-1c__left face"> </div>
+        <div class="forniture-1c__top face"> </div>
+        <div class="forniture-1c__bottom face"> </div>
+      </div>
+      <div class="forniture-1d">
+        <div class="forniture-1d__front face"> </div>
+        <div class="forniture-1d__back face"> </div>
+        <div class="forniture-1d__right face"> </div>
+        <div class="forniture-1d__left face"> </div>
+        <div class="forniture-1d__top face"> </div>
+        <div class="forniture-1d__bottom face"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="screen" id="screen">
+    <div class="screen__front face"> <img id="img" src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/gif.gif"/>
+      <video class="is-element-hidden" id="video" autoplay="autoplay" mute="mute">
+        <source src="https://rawcdn.githack.com/ricardoolivaalonso/Codepen/eb126050c438282cfc1034dec5fce8327cb09844/room_03/assets/bioshock.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="screen__back face"> </div>
+    <div class="screen__right face"> </div>
+    <div class="screen__left face"> </div>
+    <div class="screen__top face"> </div>
+    <div class="screen__bottom face"> </div>
+  </div>
+  <div class="neon-lines">
+    <div class="neon-line">
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+    </div>
+    <div class="neon-line">
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+    </div>
+    <div class="neon-line">
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+    </div>
+    <div class="neon-line">
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+      <div class="neon-group">
+        <div class="neon"></div>
+        <div class="neon"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+	const b = document.body;
+const h = document.querySelector("#h");
+const a = document.querySelector("#a");
+const unit = 1.7;
+
+const bioshock = document.querySelector("#bioshock");
+const img = document.querySelector("#img");
+const video = document.querySelector("#video");
+const tv = document.querySelector("#screen");
+
+const playFunc = () => {
+	b.removeEventListener("pointermove", base);
+	bioshock.removeEventListener("click", playFunc);
+
+	img.classList.add("is-element-hidden");
+	video.classList.remove("is-element-hidden");
+	h.classList.add("is-main-active");
+
+	video.load();
+	a.currentTime = 0;
+	a.play();
+};
+const stopFunc = () => {
+	b.addEventListener("pointermove", base);
+	bioshock.addEventListener("click", playFunc);
+
+	img.classList.remove("is-element-hidden");
+	video.classList.add("is-element-hidden");
+	h.classList.remove("is-main-active");
+
+	a.pause();
+	a.currentTime = 0;
+};
+
+const base = (e) => {
+	var x = e.pageX / window.innerWidth - 0.5;
+	var y = e.pageY / window.innerHeight - 0.5;
+	h.style.transform = `
+        perspective(${400 * unit}vmin)
+        rotateX(${y * 4 + 66}deg)
+        rotateZ(${-x * 12 + 35}deg)
+        translateZ(${-14 * unit}vmin)
+    `;
+};
+
+b.addEventListener("pointermove", base);
+bioshock.addEventListener("click", playFunc);
+tv.addEventListener("click", stopFunc);
+
+</script>
+<script>
+	/*
+		Designed by: Jarlan Perez
+		Original image: https://www.artstation.com/artwork/VdBllN
+
+*/
+
+
+const h = document.querySelector("#h");
+const b = document.body;
+
+let base = (e) => {
+    var x = e.pageX / window.innerWidth - 0.5;
+    var y = e.pageY / window.innerHeight - 0.5;
+    h.style.transform = `
+        perspective(90vw)
+        rotateX(${ y * 4  + 75}deg)
+        rotateZ(${ -x * 12  + 45}deg)
+        translateZ(-9vw)
+    `;
+}
+
+b.addEventListener("pointermove", base);
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+  body {
+	 font-family: 'Open Sans';
+}
+ img {
+	 max-width: 100%;
+	 height: auto;
+}
+ .title, .loading-title {
+	 text-align: center;
+	 text-transform: uppercase;
+	 font-size: 5em;
+	 letter-spacing: 0.085em;
+	 margin: 4.5rem 0 1rem;
+}
+ .subtitle {
+	 font-size: 2em;
+	 margin-top: 1.7rem;
+}
+ .title, .loading-title, .subtitle {
+	 font-family: 'Fjalla One';
+}
+ .tagline {
+	 text-align: center;
+	 text-transform: uppercase;
+	 display: block;
+	 letter-spacing: 0.3em;
+	 margin: 10px 0 40px;
+	 color: #aaa;
+}
+ .profile-img {
+	 float: left;
+	 width: 350px;
+	 margin-right: 1.5em;
+	 display: block;
+}
+ .main-nav {
+	 text-align: center;
+}
+ .main-nav ul {
+	 padding: 0;
+}
+ .main-nav li {
+	 display: inline-block;
+	 text-decoration: none;
+	 margin: 0 20px;
+	 text-transform: uppercase;
+}
+ .main-nav li a {
+	 text-decoration: none;
+	 color: #000;
+}
+ .main-nav li a:hover, .main-nav li a.active {
+	 color: #aaa;
+}
+ .page {
+	 max-width: 980px;
+	 padding: 0 20px;
+	 margin: 75px auto 0;
+}
+ .page a {
+	 color: #000;
+}
+ .loading {
+	 position: fixed;
+	 height: 100%;
+	 width: 100%;
+	 top: 10px;
+	 left: 0;
+	 background: #000;
+	 transition: 0.75s;
+}
+ .loading-title {
+	 color: #fff;
+	 margin: 0;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .loading-progress {
+	 height: 11px;
+	 background: #000;
+	 top: -11px;
+	 bottom: 0;
+	 width: 100%;
+	 position: absolute;
+	 transition: 0.35s;
+}
+ .about-me {
+	 margin: 20px 0 0;
+}
+ @media (max-width: 900px) {
+	 .profile-img {
+		 float: none;
+		 margin: 0 auto;
+		 width: 600px;
+	}
+	 .about-me {
+		 max-width: 600px;
+		 margin: 0 auto;
+	}
+}
+ @media (max-width: 780px) {
+	 html {
+		 font-size: 0.85em;
+	}
+	 .main-nav li {
+		 margin: 0 5px;
+	}
+	 .page {
+		 margin-top: 20px;
+	}
+	 .profile-img {
+		 margin-top: 25px;
+	}
+}
+ 
+</style>
+<head>
+<!-- Loading -->
+  <div class="loading">
+    <div class="loading-title"><style>
+  
+.jt {
+  position: relative;
+  font-size: 18vmin;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-display: swap;
+
+}
+
+.jt__row {
+  display: block;
+}
+.jt__row:nth-child(1) {
+  clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+}
+.jt__row:nth-child(2) {
+  clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+}
+.jt__row:nth-child(3) {
+  clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+}
+.jt__row:nth-child(4) {
+  clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+}
+
+.jt__row.jt__row--sibling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  witdh:800px;
+}
+
+.jt__text {
+  display: block;
+  transform-origin: bottom left;
+  animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+}
+.jt__row:nth-child(1) .jt__text {
+  transform: translateY(-0.1em);
+}
+.jt__row:nth-child(2) .jt__text {
+  transform: translateY(-0.3em) scaleY(1.1);
+}
+.jt__row:nth-child(3) .jt__text {
+  transform: translateY(-0.5em) scaleY(1.2) ;
+}
+.jt__row:nth-child(4) .jt__text {
+  transform: translateY(-0.7em) scaleY(1.3) ;
+}
+.jt__row:nth-child(5) .jt__text {
+  transform: translateY(-0.9em) scaleY(1.4) ;
+}
+.jt__row:nth-child(6) .jt__text {
+  transform: translateY(-1.1em) scaleY(1.5) ;
+}
+
+@keyframes moveIn {
+  50%, 100% { 
+    transform: translateY(0em)
+  }
+  0%   { 
+  opacity: 0; 
+  filter: blur(5px);
+  
+  }
+  100% { 
+  opacity: 1; 
+  filter: blur(0px);
+  }
+}
+
+
+
+.debug .jt__row:nth-child(even) {
+  color: black;
+  background: white;
+}
+.debug .jt__row:nth-child(odd) {
+  color: white;
+  background: black;
+}
+
+* { box-sizing: border-box }
+
+html, body {
+  margin: 0;
+  background: black;
+  color: white;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>
+<h6 class="jt --debug">
+  <span class="jt__row">
+    <span class="jt__text">...</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">...</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">---</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">...</span>
+  </span>
+</h6></div>
+    <div class="loading-progress"></div>
+  </div>
+</body>
+<script>
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// super simple router - go to page specified in hash, otherwise go to "default"
+function router(route) {
+  const pageName = route ? route : $(".default.page").attr("data-page-name");
+  const $page = $(`[data-page-name="${pageName}"]`);
+  $(".page").css("display", "none");
+  $("[data-page]").removeClass("active");
+  $(`[data-page="${pageName}"]`).addClass("active");
+  $page.css("display", "block");
+}
+router();
+
+// fake loader
+let progress = 0;
+const fakeLoaderInterval = window.setInterval(function () {
+  const $lp = $(".loading-progress");
+  progress = progress + getRandomArbitrary(10, 25);
+  $lp.css("transform", `translateX(${progress}%)`);
+
+  if (progress >= 75) {
+    window.clearInterval(fakeLoaderInterval);
+    $lp.css("transform", "translateX(100%)");
+    setTimeout(
+      () => $(".loading").css("transform", "translateY(calc(100% + 10px))"),
+      400
+    );
+  }
+}, getRandomArbitrary(100, 500));
+
+// navigation
+$(".main-nav li a").on("click", (e) => {
+  const $this = $(e.currentTarget);
+  const route = $this.attr("data-page");
+
+  $(".main-nav li a").removeClass("active");
+  $this.addClass("active");
+  router(route);
+});
+
+</script>
+<meta http-equiv="refresh" content="15;URL=https://spitriziv.github.io/Viatic/www/sites/extradesigns/rcube.html">
