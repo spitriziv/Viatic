@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Game Loading</title>
+
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<link rel="manifest" href="https://spitriziv.github.io/Viatic/manifest.webmanifest">
+	<meta name="Viatic" content="Viatic">
+	<link rel="icon" sizes="16x16 32x32 48x48" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true">
+	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
+	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<p>loading style goes here</p>
+<script>
+	/*
+		If there is a tv like structure put the live view counter there.
+		https://www.hitwebcounter.com/
+*/
+
+
+const h = document.querySelector("#h");
+const b = document.body;
+
+let base = (e) => {
+    var x = e.pageX / window.innerWidth - 0.5;
+    var y = e.pageY / window.innerHeight - 0.5;
+    h.style.transform = `
+        perspective(90vw)
+        rotateX(${ y * 4  + 75}deg)
+        rotateZ(${ -x * 12  + 45}deg)
+        translateZ(-9vw)
+    `;
+}
+
+b.addEventListener("pointermove", base);
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+  body {
+	 font-family: 'Open Sans';
+}
+ img {
+	 max-width: 100%;
+	 height: auto;
+}
+ .title, .loading-title {
+	 text-align: center;
+	 text-transform: uppercase;
+	 font-size: 5em;
+	 letter-spacing: 0.085em;
+	 margin: 4.5rem 0 1rem;
+}
+ .subtitle {
+	 font-size: 2em;
+	 margin-top: 1.7rem;
+}
+ .title, .loading-title, .subtitle {
+	 font-family: 'Fjalla One';
+}
+ .tagline {
+	 text-align: center;
+	 text-transform: uppercase;
+	 display: block;
+	 letter-spacing: 0.3em;
+	 margin: 10px 0 40px;
+	 color: #aaa;
+}
+ .profile-img {
+	 float: left;
+	 width: 350px;
+	 margin-right: 1.5em;
+	 display: block;
+}
+ .main-nav {
+	 text-align: center;
+}
+ .main-nav ul {
+	 padding: 0;
+}
+ .main-nav li {
+	 display: inline-block;
+	 text-decoration: none;
+	 margin: 0 20px;
+	 text-transform: uppercase;
+}
+ .main-nav li a {
+	 text-decoration: none;
+	 color: #000;
+}
+ .main-nav li a:hover, .main-nav li a.active {
+	 color: #aaa;
+}
+ .page {
+	 max-width: 980px;
+	 padding: 0 20px;
+	 margin: 75px auto 0;
+}
+ .page a {
+	 color: #000;
+}
+ .loading {
+	 position: fixed;
+	 height: 100%;
+	 width: 100%;
+	 top: 10px;
+	 left: 0;
+	 background: #000;
+	 transition: 0.75s;
+}
+ .loading-title {
+	 color: #fff;
+	 margin: 0;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .loading-progress {
+	 height: 11px;
+	 background: #000;
+	 top: -11px;
+	 bottom: 0;
+	 width: 100%;
+	 position: absolute;
+	 transition: 0.35s;
+}
+ .about-me {
+	 margin: 20px 0 0;
+}
+ @media (max-width: 900px) {
+	 .profile-img {
+		 float: none;
+		 margin: 0 auto;
+		 width: 600px;
+	}
+	 .about-me {
+		 max-width: 600px;
+		 margin: 0 auto;
+	}
+}
+ @media (max-width: 780px) {
+	 html {
+		 font-size: 0.85em;
+	}
+	 .main-nav li {
+		 margin: 0 5px;
+	}
+	 .page {
+		 margin-top: 20px;
+	}
+	 .profile-img {
+		 margin-top: 25px;
+	}
+}
+ 
+</style>
+<head>
+<!-- Loading -->
+  <div class="loading">
+    <div class="loading-title"><style>
+  
+.jt {
+  position: relative;
+  font-size: 18vmin;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-display: swap;
+
+}
+
+.jt__row {
+  display: block;
+}
+.jt__row:nth-child(1) {
+  clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+}
+.jt__row:nth-child(2) {
+  clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+}
+.jt__row:nth-child(3) {
+  clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+}
+.jt__row:nth-child(4) {
+  clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+}
+
+.jt__row.jt__row--sibling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  witdh:800px;
+}
+
+.jt__text {
+  display: block;
+  transform-origin: bottom left;
+  animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+}
+.jt__row:nth-child(1) .jt__text {
+  transform: translateY(-0.1em);
+}
+.jt__row:nth-child(2) .jt__text {
+  transform: translateY(-0.3em) scaleY(1.1);
+}
+.jt__row:nth-child(3) .jt__text {
+  transform: translateY(-0.5em) scaleY(1.2) ;
+}
+.jt__row:nth-child(4) .jt__text {
+  transform: translateY(-0.7em) scaleY(1.3) ;
+}
+.jt__row:nth-child(5) .jt__text {
+  transform: translateY(-0.9em) scaleY(1.4) ;
+}
+.jt__row:nth-child(6) .jt__text {
+  transform: translateY(-1.1em) scaleY(1.5) ;
+}
+
+@keyframes moveIn {
+  50%, 100% { 
+    transform: translateY(0em)
+  }
+  0%   { 
+  opacity: 0; 
+  filter: blur(5px);
+  
+  }
+  100% { 
+  opacity: 1; 
+  filter: blur(0px);
+  }
+}
+
+
+
+.debug .jt__row:nth-child(even) {
+  color: black;
+  background: white;
+}
+.debug .jt__row:nth-child(odd) {
+  color: white;
+  background: black;
+}
+
+* { box-sizing: border-box }
+
+html, body {
+  margin: 0;
+  background: black;
+  color: white;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>
+<h6 class="jt --debug">
+  <span class="jt__row">
+    <span class="jt__text">...</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">...</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">---</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">...</span>
+  </span>
+</h6></div>
+    <div class="loading-progress"></div>
+  </div>
+</body>
+<script>
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// super simple router - go to page specified in hash, otherwise go to "default"
+function router(route) {
+  const pageName = route ? route : $(".default.page").attr("data-page-name");
+  const $page = $(`[data-page-name="${pageName}"]`);
+  $(".page").css("display", "none");
+  $("[data-page]").removeClass("active");
+  $(`[data-page="${pageName}"]`).addClass("active");
+  $page.css("display", "block");
+}
+router();
+
+// fake loader
+let progress = 0;
+const fakeLoaderInterval = window.setInterval(function () {
+  const $lp = $(".loading-progress");
+  progress = progress + getRandomArbitrary(10, 25);
+  $lp.css("transform", `translateX(${progress}%)`);
+
+  if (progress >= 75) {
+    window.clearInterval(fakeLoaderInterval);
+    $lp.css("transform", "translateX(100%)");
+    setTimeout(
+      () => $(".loading").css("transform", "translateY(calc(100% + 10px))"),
+      400
+    );
+  }
+}, getRandomArbitrary(100, 500));
+
+// navigation
+$(".main-nav li a").on("click", (e) => {
+  const $this = $(e.currentTarget);
+  const route = $this.attr("data-page");
+
+  $(".main-nav li a").removeClass("active");
+  $this.addClass("active");
+  router(route);
+});
+
+</script>
+<meta http-equiv="refresh" content="5;URL=put next url here">
