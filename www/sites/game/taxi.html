@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+<title>Viatic - Game name</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<link rel="manifest" href="https://spitriziv.github.io/Viatic/manifest.webmanifest">
+	<meta name="Viatic" content="Viatic">
+	<link rel="icon" sizes="16x16 32x32 48x48" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true">
+	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
+	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+  <head>
+  <script>
+    
+  let deferredPrompt;
+const addBtn = document.querySelector(".add-button");
+addBtn.style.display = "none";
+</script>
+<script>
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = "block";
+
+  addBtn.addEventListener("click", (e) => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = "none";
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+  </script>
+  <body onload="typeWriter()"></body>
+    
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+      <script src="https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js"></script>
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/Metaballs.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src=""></script>
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </div>
+        </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+  <style>
+    body {
+  margin: 0;
+  background-color: #f7f9fb;
+}
+  </style>
+<script>
+  
+</script>
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details"> 
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/main.html">
+            <i class='bx bx-collection' ></i>
+          <span class="link_name">Viatic Main</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Viatic Main</a></li>
+          
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="utilities.html">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/utilities.html">Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/infomation.html">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/webdesigns.html">
+            <i class='fas fa-pen-alt' ></i>
+            <span class="link_name">Web Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/extradesigns.html">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Extra Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Settings</span>
+          
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Settings</a></li>
+          
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+      </div>
+      </div>
+      </div>
+<input type="checkbox" class="form-check-input" id="darkSwitch">
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+</body>
+</html>
+<style>
+  html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  font-family:arial;
+  
+}
+canvas {
+    flex-shrink: 0;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    object-fit: contain;
+}
+
+#info_link{
+  position:absolute;
+  right:10px;
+  bottom:10px;  
+}
+
+a{
+    text-decoration:none;
+  color:lightgray;
+}
+</style>
+<script>
+  
+Utl = {};
+Utl.timeStamp = function() {
+	//	return window.performance && window.performance.now ? window.performance.now() : new Date().getTime();
+	return window.performance.now();
+};
+Utl.between = function(valeur, min, max) {
+	return (valeur - min) * (valeur - max) < 0;
+};
+Utl.distance = function(p1, p2) {
+	return Math.hypot(p1.x - p2.x, p1.y - p2.y);
+};
+Utl.angleFrom = function(p1,p2){
+	return Math.atan2(p2.y - p1.y, p2.x - p1.x)
+};
+Utl.pointToRectangle = function(point, rectangle) {
+	return Utl.between(point.x, rectangle.pos.x, rectangle.pos.x + rectangle.size.x) && Utl.between(point.y, rectangle.pos.y, rectangle.pos.y + rectangle.size.y);
+};
+Utl.lerp = function(value1, value2, amount) {
+	return value1 + (value2 - value1) * amount;
+};
+Utl.map = function(a,b,c,d,e){
+	return(a-b)/(c-b)*(e-d)+d;
+};
+Utl.array2D = function(tableau, largeur){
+	var result = [];
+	for (var i = 0; i < tableau.length; i += largeur) result.push(tableau.slice(i, i + largeur));
+		return result;
+};
+Utl.random = function(min, max) {
+	return min + Math.random() * (max - min);
+};
+Utl.percent = function(percent,of_number){
+	return (percent*of_number)/100;
+};
+Utl.linearTween = function(currentTime, start, degreeOfChange, duration) {
+	return degreeOfChange * currentTime / duration + start;
+};
+Utl.easeInOutQuad = function (t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return c/2*t*t + b;
+	t--;
+	return -c/2 * (t*(t-2) - 1) + b;
+};
+
+class Vector{
+	constructor(x,y){
+		this.x = x;
+		this.y = y;
+	}
+	add(vector){
+		this.x += vector.x;
+		this.y += vector.y;
+	}
+	sub(vector){
+		this.x -= vector.x;
+		this.y -= vector.y;
+	}
+	mult(vector){
+		this.x *= vector.x;
+		this.y *= vector.y;	
+	}
+	multBy(value){
+		this.x *= value;
+		this.y *= value;	
+	}
+	copy(vector){
+		this.x = vector.x;
+		this.y = vector.y;
+	}
+	setAngle(angle){
+		let length = this.getLength();
+		this.x = Math.cos(angle) * length;
+		this.y = Math.sin(angle) * length;
+	}
+	setLength(length){
+		let angle = this.getAngle();
+		this.x = Math.cos(angle) * length;
+		this.y = Math.sin(angle) * length;
+	}
+	getAngle(){
+		return Math.atan2(this.y,this.x)
+	}
+	getLength(){
+		return Math.sqrt(this.x * this.x + this.y * this.y);
+	}
+}
+
+class Tile{
+	constructor(x,y,tile_size,tile_info){
+		this.pos = {
+			x:x,
+			y:y
+		}
+		this.scaled_pos = {
+			x:x*tile_size,
+			y:y*tile_size
+		}
+		this.tile_info = tile_info;
+	}
+}
+
+class Camera {
+	constructor(world, target) {
+		this.world = world;
+		this.ctx = world.ctx;
+		// viewport size
+		this.W = this.world.W;
+		this.H = this.world.H;
+		this.halfW = (this.W/2) + this.world.tile_size;
+		this.halfH = (this.H/2) + this.world.tile_size;
+		this.empty = {
+			pos: {
+				x: this.W / 2,
+				y: this.H / 2
+			}
+		}
+		this.target = target || this.empty;
+		this.pos = {
+			x: (this.W / 2) - this.target.pos.x,
+			y: (this.H / 2) - this.target.pos.y
+		}
+		this.constraint = {
+			x:false,
+			y:false,
+		}
+		this.offset = {
+			x:0,
+			y:-100,
+		}
+		this.ts = this.world.tile_size;
+		this.get = {
+			top:()=>{
+				return -this.pos.y;
+			},
+			bottom:()=>{
+				return -this.pos.y + this.H;
+			},
+		}
+	}
+	visible(x,y){
+		if(Utl.between(x,-this.pos.x-this.ts,-this.pos.x+this.W) &&
+			Utl.between(y,-this.pos.y-this.ts,-this.pos.y+this.H)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	setConstraint(x,y){
+		this.constraint.x = x;
+		this.constraint.y = y;
+	}
+	setTarget(target) {
+		this.target = target;
+		this.setPos();
+	}
+	setOffset(x,y){
+		this.offset.x = x;
+		this.offset.y = y;
+	}
+	resetTarget() {
+		this.pos.x = 0;
+		this.pos.y = 0;
+		this.target = this.empty;
+	}
+	setPos(){
+		if(!this.constraint.x){this.pos.x = (this.W / 2) - this.target.pos.x - this.offset.x;}
+		if(!this.constraint.y){this.pos.y = (this.H / 2) - this.target.pos.y - this.offset.y;}
+	}
+	update() {
+		this.setPos();
+		// map limit
+		let camera_bottom = this.get.bottom();
+		if(camera_bottom > this.world.terrain.reelLimit.y){
+			this.pos.y -= this.world.terrain.reelLimit.y - camera_bottom;
+		}
+	}
+}
+
+class Scene {
+	constructor(world, name) {
+		this.name = name;
+		this.world = world;
+		this.ctx = world.ctx;
+		this.loop = true;
+		this.init_once = false;
+	}
+	pointerMove(event) {
+
+	}
+	pointerDown(event) {
+
+	}
+	pointerUp(event) {
+
+	}
+	keyEvents(event) {
+
+	}
+	init() {
+
+	}
+	update(delta) {
+
+	}
+	render() {
+
+	}
+};
+
+class Diorama {
+	constructor(parameters) {
+		// Game Info
+		this.game_info = {
+			name: parameters.game_name || "Untitled",
+			version: parameters.version || "0",
+			author: parameters.author || "Anonymous",
+		};
+		// Touch and keyboard data
+		this.event_needs = parameters.event_needs;
+		this.keys = [];
+		this.pointer = {
+			pos: {
+				x: 0,
+				y: 0
+			},
+			active: false,
+		};
+		// Scenes
+		this.scenes = {};
+		this.start_screen = parameters.start_screen;
+		this.current_scene = "";
+		// Maps
+		this.gravity = parameters.gravity || new Vector(0, 0);
+		this.tile_size = parameters.tile_size || 16;
+		this.maps = {};
+		// Image and audio are stocked here :)
+		this.ressources = {};
+		// Minimal system for font and Cursor
+		this.alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ?!:',.()<>[]";
+		this.font_name = parameters.font || "bitmap_font";
+		this.cursor = parameters.cursor || "cursor";
+		// FPS
+		this.FPS = {
+			now: 0,
+			delta: 0,
+			last: Utl.timeStamp(),
+			step: 1 / (parameters.frame_rate || 30),
+		};
+		this.requestChange = {
+			value: false,
+			action: ""
+		};
+		this.main_loop = undefined;
+		this.pause = false;
+		// Creates the canvas and load the ressources
+		this.canvasSetup(parameters);
+		// loading info
+		this.load_info = {
+			loaded: 0,
+			toLoad: 0,
+			complete: false,
+			game_ready: false,
+		};
+		this.dataProcessing(parameters);
+		// Camera
+		this.camera = new Camera(this);
+		// Quick functions 
+		this.audio_muted = false;
+		this.audio = {
+			setLoop:(name,value)=>{
+				this.ressources.audio[name].url.loop = value;
+			},
+			volume:(name,value)=>{
+				this.ressources.audio[name].url.volume = value;
+			},
+			play: (name) => {
+				this.ressources.audio[name].url.play();
+			},
+			pause: (name) => {
+				this.ressources.audio[name].url.pause();
+			},
+			stop: (name) => {
+				this.ressources.audio[name].url.pause();
+				this.ressources.audio[name].url.currentTime = 0;
+			},
+			getCurrentTime: (name) => {
+				return this.ressources.audio[name].url.currentTime;
+			}
+		};
+		this.image = {
+			draw: (name, x, y) => {
+				this.ctx.drawImage(this.ressources.images[name].img, x, y);
+			},
+		}
+	}
+
+	canvasSetup(parameters) {
+		this.canvas = document.createElement("canvas");
+		this.ctx = this.canvas.getContext('2d');
+		this.W = this.canvas.width = parameters.width || 128;
+		this.H = this.canvas.height = parameters.height || 128;
+		this.scale = parameters.scale || 1;
+		this.full = false;
+		this.ctx.imageSmoothingEnabled = false;
+		document.title = this.game_info.name;
+		document.body.appendChild(this.canvas);
+		this.setScale();
+	}
+	//  _      ____          _____  ______ _____  
+	// | |    / __ \   /\   |  __ \|  ____|  __ \ 
+	// | |   | |  | | /  \  | |  | | |__  | |__) |
+	// | |   | |  | |/ /\ \ | |  | |  __| |  _  / 
+	// | |___| |__| / ____ \| |__| | |____| | \ \ 
+	// |______\____/_/    \_\_____/|______|_|  \_\
+
+
+	dataProcessing(parameters) {
+		// check if there is image or audio to load
+		let image_length = 0,
+			audio_length = 0;
+		(parameters.images) ? image_length = parameters.images.length: 0;
+		(parameters.audio) ? audio_length = parameters.audio.length: 0;
+		this.load_info.toLoad = image_length + audio_length;
+		if (this.load_info.toLoad !== 0) {
+			this.load_info.complete = false;
+			// Processing Images
+			let IM = {};
+			for (let i = 0; i < image_length; i++) {
+				let subject = parameters.images[i];
+				let name = subject.name;
+				subject.img = this.loadImage(parameters.images[i].img);
+				IM[name] = subject;
+			}
+			this.ressources.images = IM;
+			// Processing Audio
+			let IS = {};
+			for (let i = 0; i < audio_length; i++) {
+				let subject = parameters.audio[i];
+				let name = subject.name;
+				subject.url = this.loadAudio(parameters.audio[i].url);
+				IS[name] = subject;
+			}
+			this.ressources.audio = IS;
+		} else {
+			this.load_info.complete = true;
+		}
+		// check if there is tiles to assign
+		if (parameters.tiles) {
+			let CM = {};
+			for (let i = 0; i < parameters.tiles.length; i++) {
+				let subject = parameters.tiles[i];
+				let name = subject.id;
+				CM[name] = subject;
+			}
+			this.tiles_data = CM;
+		}
+		// give names to maps
+		if (parameters.maps) {
+			this.mapsCount = parameters.maps.length;
+			let maps_result = {};
+			for (let i = 0; i < parameters.maps.length; i++) {
+				let subject = parameters.maps[i];
+				let name = subject.name;
+				maps_result[name] = subject;
+			}
+			this.maps = maps_result;
+		}
+
+	}
+
+	load() {
+		this.load_info.loaded += 1;
+		if (this.load_info.loaded === this.load_info.toLoad) {
+			// loading finished
+			this.load_info.complete = true;
+			this.launch();
+		} else {
+			// loading screen
+			this.clearCanvas();
+			this.ctx.fillStyle = "#888";
+			this.ctx.fillRect(18, Math.round(Utl.percent(90, this.H) - 8), this.W - 38, 8);
+			this.ctx.fillStyle = "#555";
+			this.ctx.fillRect(20, Math.round(Utl.percent(90, this.H) - 8) + 2, Math.round(((this.load_info.loaded * this.W) / this.load_info.toLoad)) - 10, 4);
+		}
+	}
+
+	loadImage(url) {
+		let img = new Image();
+		img.onload = () => {
+			this.load();
+		};
+		img.src = url;
+		return img;
+	}
+
+	loadAudio(url) {
+		let audio = new Audio(url);
+		audio.addEventListener('canplaythrough', this.load(), false);
+		return audio;
+	}
+
+	ready() {
+		this.load_info.game_ready = true;
+		this.launch();
+	}
+
+	launch() {
+		if (this.load_info.game_ready && this.load_info.complete) {
+			this.font = this.ressources.images[this.font_name];
+			this.eventSetup();
+			this.clearCanvas();
+			this.startScene(this.start_screen);
+		}
+	}
+
+	//  ________      ________ _   _ _______ _____ 
+	// |  ____\ \    / /  ____| \ | |__   __/ ____|
+	// | |__   \ \  / /| |__  |  \| |  | | | (___  
+	// |  __|   \ \/ / |  __| | . ` |  | |  \___ \ 
+	// | |____   \  /  | |____| |\  |  | |  ____) |
+	// |______|   \/   |______|_| \_|  |_| |_____/ 
+
+	eventSetup() {
+		if (this.event_needs.keyboard) {
+			document.addEventListener("keydown", event => this.keyDown(event), false);
+			document.addEventListener("keyup", event => this.keyUp(event), false);
+		}
+		if (this.event_needs.touch) {
+			document.addEventListener("pointerdown", event => this.pointerDown(event), false);
+			document.addEventListener("pointerup", event => this.pointerUp(event), false);
+			document.addEventListener("pointermove", event => this.pointerMove(event), false);
+		}
+	}
+
+	keyDown(event) {
+		this.keys[event.keyCode] = true;
+		if (this.keys[70]) {
+			this.fullScreen();
+		}
+		this.current_scene.keyEvents(event);
+	}
+	keyUp(event) {
+		this.keys[event.keyCode] = false;
+	}
+	updatePointerPosition(event) {
+		this.pointer.pos.x = event.pageX - this.canvas.offsetLeft;
+		this.pointer.pos.y = event.pageY - this.canvas.offsetTop;
+	}
+	pointerMove(event) {
+		this.updatePointerPosition(event);
+		this.current_scene.pointerMove(event);
+	}
+	pointerDown(event) {
+		this.pointer.active = true;
+		this.updatePointerPosition(event);
+		// send information to current scene
+		this.current_scene.pointerDown(event);
+	}
+	pointerUp(event) {
+		this.pointer.active = false;
+		// send information to current scene
+		this.current_scene.pointerUp(event);
+	}
+
+	//  _______                  _          __                  _   _                 
+	// |__   __|                (_)        / _|                | | (_)                
+	//    | | ___ _ __ _ __ __ _ _ _ __   | |_ _   _ _ __   ___| |_ _  ___  _ __  ___ 
+	//    | |/ _ \ '__| '__/ _` | | '_ \  |  _| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+	//    | |  __/ |  | | | (_| | | | | | | | | |_| | | | | (__| |_| | (_) | | | \__ \
+	//    |_|\___|_|  |_|  \__,_|_|_| |_| |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+
+	changeTile(x, y, new_ID) {
+		this.terrain.data[y][x] = new_ID;
+	}
+
+	tileByID(tile_ID) {
+		let result = [];
+		for (let y = 0; y < this.terrain.limit.y; y++) {
+			for (let x = 0; x < this.terrain.limit.x; x++) {
+				if (this.terrain.data[y][x] === tile_ID) {
+					result.push(new Tile(x, y, this.tile_size, this.tiles_data[tile_ID]));
+				}
+			}
+		}
+		return result;
+	}
+	getTileData(x, y) {
+		if (x < 0 || y < 0) return false;
+		if (x > this.terrain.reelLimit.x || y > this.terrain.reelLimit.y - 1) return false;
+		let NewX = Math.floor(x / this.tile_size),
+			NewY = Math.floor(y / this.tile_size);
+		let tile_ID = this.terrain.data[NewY][NewX];
+		let tile_data = {
+			id: this.terrain.data[NewY][NewX],
+			pos: {
+				x: NewX * this.tile_size,
+				y: NewY * this.tile_size
+			}
+		}
+		if (this.tiles_data[tile_ID]) tile_data.data = this.tiles_data[tile_ID];
+
+		return tile_data;
+	}
+
+	getTileCollision(x, y) {
+		let tile = this.getTileData(x, y);
+		if (!tile.data) return false;
+		if (!tile.data.collision) return false;
+		return tile.data.collision;
+	}
+
+	getTileCollisionData(x, y) {
+		let tile = this.getTileData(x, y);
+		let collision = this.getTileCollision(x, y);
+		if (!collision) return false;
+		let neighbors = {
+			left: this.getTileCollision(tile.pos.x - this.tile_size, tile.pos.y),
+			right: this.getTileCollision(tile.pos.x + this.tile_size, tile.pos.y),
+			top: this.getTileCollision(tile.pos.x, tile.pos.y - this.tile_size),
+			bottom: this.getTileCollision(tile.pos.x, tile.pos.y + this.tile_size),
+		}
+		let collision_data = {
+			collision: true,
+			neighbors: neighbors,
+			pos: tile.pos,
+		}
+		return collision_data;
+	}
+	setTerrainLimit(){
+		this.terrain.limit = {
+			x: this.terrain.data[0].length,
+			y: this.terrain.data.length
+		};
+		this.terrain.reelLimit = {
+			x: this.terrain.data[0].length * this.tile_size,
+			y: this.terrain.data.length * this.tile_size
+		};
+	}
+	initMap(terrain_id) {
+		this.terrain = {};
+		this.terrain.tileset = this.ressources.images[this.maps[terrain_id].tileset].img;
+
+		this.terrain.tileset_data = {
+			width: (this.terrain.tileset.width / this.tile_size),
+			height: (this.terrain.tileset.height / this.tile_size) + 1,
+		}
+		this.arret = false;
+		this.terrain.data = this.maps[terrain_id].data.slice(0);
+		this.setTerrainLimit();
+		this.terrain.bitMask = [];
+	}
+	bitMasking() {
+		this.terrain.bitMask = [];
+		for (let y = 0; y < this.terrain.limit.y; y++) {
+			for (let x = 0; x < this.terrain.limit.x; x++) {
+				let id = this.terrain.data[y][x];
+				// haut gauche droit bas
+				let voisine = [0, 0, 0, 0];
+				if (y - 1 > -1) {
+					if (id === this.terrain.data[y - 1][x]) {
+						//haut
+						voisine[0] = 1;
+					}
+				}
+				if (id === this.terrain.data[y][x - 1]) {
+					// gauche
+					voisine[1] = 1;
+				}
+				if (id === this.terrain.data[y][x + 1]) {
+					// droite
+					voisine[2] = 1;
+				}
+				if (y + 1 < this.terrain.limit.y) {
+					if (id === this.terrain.data[y + 1][x]) {
+						//bas
+						voisine[3] = 1;
+					}
+				}
+				id = 1 * voisine[0] + 2 * voisine[1] + 4 * voisine[2] + 8 * voisine[3];
+				this.terrain.bitMask.push(id);
+			}
+		}
+		this.terrain.bitMask = Utl.array2D(this.terrain.bitMask, this.terrain.limit.x);
+	}
+	renderMap() {
+		for (let j = 0; j < this.terrain.limit.y; j++) {
+			for (let i = 0; i < this.terrain.limit.x; i++) {
+				let id = this.terrain.data[j][i];
+				let positionX = i * this.tile_size,
+					positionY = j * this.tile_size;
+
+				let sourceX = Math.floor(id % this.terrain.tileset_data.width) * this.tile_size,
+					sourceY = Math.floor(id / this.terrain.tileset_data.width) * this.tile_size;
+
+				if (this.camera.visible(positionX, positionY)) {
+					if (this.tiles_data[id] !== undefined) {
+						if (this.tiles_data[id].bitMask === "auto") {
+							sourceX = Math.floor(this.terrain.bitMask[j][i]) * this.tile_size;
+							sourceY = this.tiles_data[id].line * this.tile_size;
+						} else if (this.tiles_data[id].bitMask !== undefined) {
+							sourceX = Math.floor(this.tiles_data[id].bitMask % this.terrain.tileset_data.width) * this.tile_size;
+							sourceY = Math.floor(this.tiles_data[id].bitMask / this.terrain.tileset_data.width) * this.tile_size;
+						}
+						if (this.tiles_data[id].bitMask === false) continue;
+					}
+					this.ctx.drawImage(this.terrain.tileset, sourceX, sourceY, this.tile_size, this.tile_size, positionX, positionY, this.tile_size, this.tile_size);
+				}
+			}
+		}
+	}
+
+	//  ______                _   _                 
+	// |  ____|              | | (_)                
+	// | |__ _   _ _ __   ___| |_ _  ___  _ __  ___ 
+	// |  __| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+	// | |  | |_| | | | | (__| |_| | (_) | | | \__ \
+	// |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+
+	mute() {
+		if (this.audio_muted) {
+			this.audio_muted = false;
+		} else {
+			this.audio_muted = true;
+		}
+		for (const [k, v] of Object.entries(this.ressources.audio)) {
+			v.url.muted = this.audio_muted;
+		}
+	}
+	setScale() {
+		this.canvas.style.width = this.W * this.scale + "px";
+		this.canvas.style.height = this.H * this.scale + "px";
+	}
+	fullScreen() {
+		if (!this.full) {
+			this.full = true;
+			this.canvas.style.width = "100%";
+			this.canvas.style.height = "100%";
+		} else {
+			this.full = false;
+			this.setScale();
+		}
+	}
+
+	write(text, x, y, align, color) {
+		let multiply = color || 0;
+		let offset_text = 0;
+		if (typeof(align) === "string") {
+			switch (align) {
+				case "center":
+					offset_text = (text.length * this.font.size.x) / 2;
+					break;
+				case "right":
+					offset_text = (text.length * this.font.size.y);
+					break;
+				default:
+					offset_text = 0
+			}
+			this.writeLine(text, x, y, offset_text, multiply);
+		} else {
+			// wrap text width
+			let y_offset = 0,
+				line_height = this.font.size.y + 5;
+
+			let words = text.split(' '),
+				line = "";
+			for (let i = 0; i < words.length; i++) {
+				line += words[i] + " ";
+				// check for next word length
+				let nextword_width = 0;
+				(words[i + 1]) ? nextword_width = words[i + 1].length * this.font.size.x: 0;
+				let line_width = line.length * this.font.size.x;
+				if (line_width + nextword_width > align) {
+					// write this line
+					this.writeLine(line, x, y + y_offset, 0, multiply);
+					// offset for next line
+					y_offset += line_height;
+					line = "";
+				} else {
+					// write last line
+					this.writeLine(line, x, y + y_offset, 0, multiply);
+				}
+			}
+		}
+	}
+
+	writeLine(text, x, y, offset, color) {
+		// write line
+		for (let i = 0; i < text.length; i++) {
+			let index = this.alphabet.indexOf(text.charAt(i)),
+				clipX = this.font.size.x * index,
+				posX = (x - offset) + (i * this.font.size.x);
+			this.ctx.drawImage(this.font.img, clipX, (color * this.font.size.y), this.font.size.x, this.font.size.y, posX, y, this.font.size.x, this.font.size.y);
+		}
+	}
+
+	drawBox(x, y, l, h, color) {
+		this.ctx.fillStyle = color || "white";
+		this.ctx.fillRect(x + 1, y + 1, l - 2, h - 2);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 32, 16, 16, 16, x, y, 16, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 32 + 8, 16, 16, 16, x + l - 16, y, 16, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 32, 16 + 8, 16, 16, x, y + h - 16, 16, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 32 + 8, 16 + 8, 16, 16, x + l - 16, y + h - 16, 16, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 40, 16, 8, 16, x + 16, y, l - 32, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 40, 24, 8, 16, x + 16, y + h - 16, l - 32, 16);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 32, 24, 16, 8, x, y + 16, 16, h - 32);
+		this.ctx.drawImage(this.ressources.images[this.cursor].img, 48, 24, 16, 8, x + l - 8, y + 16, 16, h - 32);
+	}
+
+	clearCanvas() {
+		this.ctx.fillStyle = "#000";
+		this.ctx.fillRect(0, 0, this.W, this.H);
+	}
+
+	//   _____                        _                       
+	//  / ____|                      | |                      
+	// | |  __  __ _ _ __ ___   ___  | |     ___   ___  _ __  
+	// | | |_ |/ _` | '_ ` _ \ / _ \ | |    / _ \ / _ \| '_ \ 
+	// | |__| | (_| | | | | | |  __/ | |___| (_) | (_) | |_) |
+	//  \_____|\__,_|_| |_| |_|\___| |______\___/ \___/| .__/ 
+	//                                                 | |    
+	//                                                 |_|    
+
+	addScene(scene) {
+		this.scenes[scene.name] = scene;
+	}
+	startScene(scene_name) {
+		if(this.scenes[scene_name] === undefined){
+			console.log("Sorry, This scene doesn't exist")
+			return false;
+		}
+		// request the change of scene if this.main_loop is active
+		if (this.main_loop !== undefined) {
+			this.requestChange.value = true;
+			this.requestChange.action = scene_name;
+			return false;
+		}
+		this.requestChange.value = false;
+		this.requestChange.action = "";
+		this.FPS.last = Utl.timeStamp();
+
+		this.current_scene = this.scenes[scene_name];
+		this.initScene();
+		// does this scenes needs a gameloop ?
+		if (this.current_scene.loop === true) {
+			this.gameLoop();
+		} else {
+			this.mainRender();
+		}
+
+	}
+	initScene() {
+		this.camera.resetTarget();
+		if (!this.current_scene.init_once) {
+			this.current_scene.init();
+		}
+	}
+	mainRender() {
+		this.clearCanvas();
+		this.ctx.save();
+		this.ctx.translate(this.camera.pos.x, this.camera.pos.y);
+		this.current_scene.render();
+		this.ctx.restore();
+	}
+	mainUpdate(delta) {
+		this.current_scene.update(delta);
+
+	}
+	loopCheck() {
+		if (this.requestChange.value === false) {
+			this.main_loop = requestAnimationFrame(() => this.gameLoop());
+		} else {
+			cancelAnimationFrame(this.main_loop);
+			this.main_loop = undefined;
+			this.startScene(this.requestChange.action);
+		}
+	}
+	gameLoop() {
+		/*
+		this.FPS.now = Utl.timeStamp();
+		this.FPS.delta += Math.min(1, (this.FPS.now - this.FPS.last) / 1000)
+		while (this.FPS.delta > this.FPS.step) {
+			this.mainUpdate(this.FPS.step);
+			this.mainRender();
+			this.FPS.delta -= this.FPS.step;
+		}
+		this.FPS.last = this.FPS.now;
+		this.loopCheck();
+		*/
+		this.mainUpdate(this.FPS.step);
+		this.mainRender();
+		this.loopCheck();
+	}
+};
+
+// Entity
+class Entity {
+	constructor(scene, x, y) {
+		this.scene = scene;
+		this.world = this.scene.world;
+		this.ctx = this.world.ctx;
+		this.size = this.world.tile_size;
+		this.half = this.size * 0.5;
+		this.pos = new Vector(x, y);
+		this.vel = new Vector(0, 0);
+		this.friction = new Vector(0.94, 0.94);
+		this.bounce = 0.2;
+		this.gravity = this.world.gravity;
+		this.collision = {
+			left: false,
+			top: false,
+			right: false,
+			bottom: false,
+		}
+	}
+	update(delta) {
+		this.vel.x += this.world.gravity.x * delta;
+		this.vel.y += this.world.gravity.y * delta;
+		this.vel.x *= this.friction.x;
+		this.vel.y *= this.friction.y;
+		this.pos.x += this.vel.x * delta;
+		this.pos.y += this.vel.y * delta;
+	}
+	render() {
+		this.world.ctx.fillRect(this.pos.x, this.pos.y, this.size, this.size);
+	}
+	mapCollision() {
+
+		let tX = this.pos.x + this.vel.x;
+		let tY = this.pos.y + this.vel.y;
+
+		let top_left = this.world.getTileCollisionData(tX, tY);
+		let top_right = this.world.getTileCollisionData(tX + this.size, tY);
+		let bottom_left = this.world.getTileCollisionData(tX, tY + this.size);
+		let bottom_right = this.world.getTileCollisionData(tX + this.size, tY + this.size);
+		this.collision.left = false;
+		this.collision.top = false;
+		this.collision.right = false;
+		this.collision.bottom = false;
+		if (top_left) {
+			this.AABB(top_left)
+		}
+		if (top_right) {
+			this.AABB(top_right)
+		}
+		if (bottom_left) {
+			this.AABB(bottom_left)
+		}
+		if (bottom_right) {
+			this.AABB(bottom_right)
+		}
+	}
+	AABB(tile) {
+		// Distance from the center of a box
+		let distX = Math.abs(this.pos.x - tile.pos.x);
+		let distY = Math.abs(this.pos.y - tile.pos.y);
+		// Gap between each boxes
+		let gapX = distX - this.half - (this.world.tile_size / 2);
+		let gapY = distY - this.half - (this.world.tile_size / 2);
+		//collision on the X or Y axis
+		let offset = this.world.tile_size;
+		if (gapX < 0 || gapY < 0) {
+			// prevent equality if square
+			if (gapX === gapY) {
+				gapY = -1;
+			}
+
+			if (gapX < 0 && gapX > gapY) {
+				if (this.pos.x > tile.pos.x) {
+					if (tile.neighbors.right) return false;
+					this.vel.x *= -this.bounce;
+					this.pos.x -= gapX;
+					this.collision.left = true;
+
+				} else {
+					if (tile.neighbors.left) return false;
+					this.vel.x *= -this.bounce;
+					this.pos.x += gapX;
+					this.collision.right = true;
+				}
+			}
+
+			if (gapY < 0 && gapY > gapX) {
+				if (this.pos.y > tile.pos.y) {
+					if (tile.neighbors.bottom) return false;
+					this.vel.y *= -this.bounce;
+					this.pos.y -= gapY;
+					this.collision.top = true;
+				} else {
+					if (tile.neighbors.top) return false;
+					this.vel.y *= -this.bounce;
+					this.pos.y += gapY;
+					this.collision.bottom = true;
+				}
+			}
+		}
+	}
+
+}
+
+
+class Taxi extends Entity {
+	constructor(scene, x, y, sprite) {
+		super(scene, x, y);
+		this.angle = 0;
+		this.turnSpeed = 0;
+		this.thrust = 0;
+		this.topSpeed = 0.15;
+		this.friction = 0.92;
+		this.addhesion = 0.6;
+		this.direction = 1;
+		// 3D
+		this.sprite = this.world.ressources.images[sprite];
+		this.frameCourante = 0;
+		this.nombreFrame = 0;
+		this.sep = this.sprite.img.width / this.sprite.size.x;
+		this.halfx = this.sprite.size.x / 2;
+		this.halfy = this.sprite.size.y / 2;
+	}
+	draw() {
+		for (let i = 0; i < this.sep; i++) {
+			this.ctx.save();
+			this.ctx.translate(this.pos.x + this.halfx, (this.pos.y - i) + this.halfy);
+			this.ctx.rotate(this.angle);
+			this.ctx.drawImage(this.sprite.img, i * this.sprite.size.x, 0, this.sprite.size.x, this.sprite.size.y, -this.halfx, -this.halfy, this.sprite.size.x, this.sprite.size.y);
+			this.ctx.restore();
+		}
+	}
+
+	render() {
+		this.draw();
+	}
+	control() {
+		if (this.world.keys[38]) {
+			this.thrust = this.topSpeed;
+			this.direction = 1;
+		} else if (this.world.keys[40]) {
+			this.thrust = -this.topSpeed * 0.5;
+			this.direction = -1;
+		} else {
+			this.thrust = 0;
+		}
+
+		if (this.world.keys[37]) {
+			if (this.turnSpeed > -0.1) {
+				this.turnSpeed -= 0.01;
+			}
+		} else if (this.world.keys[39]) {
+			if (this.turnSpeed < 0.1) {
+				this.turnSpeed += 0.01;
+			}
+		}
+
+	}
+	checkTile() {
+		let tile = this.world.getTileData(
+			this.pos.x + this.size / 2, this.pos.y + this.size / 2);
+		if (!tile.data) return false;
+		if (tile.data.addhesion !== undefined) {
+			this.addhesion = tile.data.addhesion;
+		}
+		if (tile.data.friction !== undefined) {
+			this.friction = tile.data.friction;
+		}
+		// actions
+		if (tile.data.action !== undefined) {
+			switch (tile.data.action) {
+				case "drown":
+					this.world.cause_of_death = "Drowned in the water";
+					this.scene.handleDeath();
+					break;
+			}
+		}
+	}
+	update() {
+		this.checkTile();
+
+		this.vel.x += Math.cos(this.angle) * this.thrust;
+		this.vel.y += Math.sin(this.angle) * this.thrust;
+
+		let speed = this.vel.getLength();
+
+		let turnPercent = Utl.map(speed, 0, 2, 0, 1);
+		if (speed > 2) {
+			turnPercent = 1
+		}
+		this.turnSpeed *= this.friction;
+
+
+		this.angle += this.turnSpeed * turnPercent;
+
+		speed *= this.direction;
+
+		let assisted_directionX = Math.cos(this.angle) * speed,
+			assisted_directionY = Math.sin(this.angle) * speed;
+
+		this.vel.x = Utl.lerp(this.vel.x, assisted_directionX, this.addhesion);
+		this.vel.y = Utl.lerp(this.vel.y, assisted_directionY, this.addhesion);
+
+		this.vel.x *= this.friction;
+		this.vel.y *= this.friction;
+
+		this.pos.x += this.vel.x;
+		this.pos.y += this.vel.y;
+
+		// bound
+
+		if (this.pos.x < 0) {
+			this.pos.x = 0;
+			this.vel.x = 0;
+		}
+
+		if (this.pos.x > this.world.W - this.size) {
+			this.pos.x = this.world.W - this.size;
+			this.vel.x = 0;
+		}
+
+		if (this.pos.y > this.world.terrain.reelLimit.y) {
+			this.pos.y = this.world.terrain.reelLimit.y;
+			this.vel.y = 0;
+		}
+
+
+	}
+
+}
+
+class Sprite {
+	constructor(world, sprite) {
+		this.world = world;
+		this.ctx = this.world.ctx;
+
+		this.sprite = this.world.ressources.images[sprite];
+		this.size = this.world.tile_size;
+		this.width = this.sprite.size.x;
+		this.height = this.sprite.size.y;
+		this.frame = 0;
+		this.maxFrame = (this.sprite.img.width / this.width);
+		this.animation_speed = 0.3;
+	}
+	setSpeed(speed) {
+		this.animation_speed = speed;
+	}
+	updateFrames() {
+		this.frame += this.animation_speed;
+		if (this.frame >= this.maxFrame) {
+			this.frame = 0;
+		}
+	}
+	render(x, y) {
+		this.updateFrames();
+		this.ctx.drawImage(this.sprite.img, Math.floor(this.frame) * this.width, 0, this.width, this.height, x, y, this.width, this.height);
+	}
+}
+
+class Lava {
+	constructor(scene, sprite) {
+		this.world = scene.world;
+		this.W = this.world.W;
+		this.scene = scene;
+		this.ctx = this.world.ctx;
+		this.size = this.world.tile_size;
+		this.sprite = new Sprite(this.world, sprite);
+		this.number_sprite = Math.floor(this.W / this.size);
+		this.sprite.setSpeed(0.06);
+	}
+	render(x, y) {
+		for (let i = 0; i < this.number_sprite; i++) {
+			this.sprite.render(x + (i * this.size), y);
+
+		}
+	}
+}
+
+
+class Meteor {
+	constructor(scene, target) {
+		this.world = scene.world;
+		this.scene = scene;
+		this.entity_array = this.scene.entity_array;
+		this.ctx = this.world.ctx;
+		this.target = target;
+		this.pos = new Vector(
+			Utl.random(0, this.world.W),
+			Utl.random(target.pos.y - this.world.H, target.pos.y + this.world.H / 2)
+		);
+		this.m_pos = new Vector(
+			this.pos.x, -this.world.H
+		);
+		this.start_time = new Date();
+		this.duration = Utl.random(500, 1000);
+		this.start_value = 0;
+		this.value = this.start_value;
+		this.goal = 1;
+
+		this.explose = false;
+		// impact sprite
+		this.impact_sprite = new Sprite(this.world, "impact_sprite");
+		this.explosion = new Sprite(this.world, "explosion");
+		this.explosion.setSpeed(0.4);
+		// meteor sprite
+		this.meteor_sprite = new Sprite(this.world, "meteor_sprite");
+
+	}
+	update() {
+		let time = new Date() - this.start_time;
+		if (time < this.duration) {
+			this.value = Utl.linearTween(time, this.start_value, this.goal - this.start_value, this.duration);
+		} else if (!this.explose) {
+			this.explose = true;
+			if (Utl.distance(this.target.pos, this.pos) < 16) {
+				this.world.cause_of_death = "Crushed by a meteor ";
+				this.scene.handleDeath();
+			}
+		}
+	}
+	render() {
+		if (this.explose) {
+			if (Math.floor(this.explosion.frame) + 2 > this.explosion.maxFrame) {
+				this.complete();
+			} else {
+				this.explosion.render(this.pos.x - 8, this.pos.y - 8);
+			}
+		} else {
+			this.ctx.fillStyle = "red";
+			// zone
+			this.ctx.globalAlpha = Utl.map(this.value, 0, 1, 0, 4);
+			this.impact_sprite.render(this.pos.x, this.pos.y);
+			// Meteor
+			let M_x = Utl.lerp(this.m_pos.x, this.pos.x, this.value),
+				M_y = Utl.lerp(this.pos.y + this.m_pos.y, this.pos.y, this.value);
+			this.ctx.globalAlpha = this.value;
+			this.meteor_sprite.render(M_x-4, M_y-8);
+			this.ctx.globalAlpha = 1;
+		}
+		
+	}
+	complete() {
+		if (this.entity_array !== undefined) {
+			this.entity_array.splice(this.entity_array.indexOf(this), 1);
+		}
+	}
+}
+
+
+class Transition {
+	constructor(scene, callback, duration, mode) {
+		this.scene = scene;
+		this.world = this.scene.world;
+		this.sfx_array = this.scene.sfx_array;
+		this.ctx = this.world.ctx;
+		this.callback = callback;
+		this.mode = mode;
+		this.duration = duration;
+		this.speed = 6;
+		if (this.mode === "in") {
+			this.start_value = (this.world.H / 2) + 20;
+			this.goal = 0;
+			this.step = -this.speed;
+		} else {
+			this.start_value = 0;
+			this.goal = (this.world.H / 2) + 20;
+			this.step = this.speed;
+		}
+		this.start_time = new Date();
+		this.value = this.start_value;
+
+	}
+	update() {
+		let time = new Date() - this.start_time;
+		if (time < this.duration) {
+			this.value = Utl.easeInOutQuad(time, this.start_value, this.goal - this.start_value, this.duration);
+		} else {
+			this.complete();
+		}
+	}
+	render() {
+		this.ctx.fillStyle = "black";
+		this.ctx.fillRect(0, -this.world.camera.pos.y, this.world.W, this.value);
+		this.ctx.fillRect(0, this.world.H - this.world.camera.pos.y, this.world.W, -this.value);
+	}
+	complete() {
+		if (this.sfx_array !== undefined) {
+			this.sfx_array.splice(this.sfx_array.indexOf(this), 1);
+		}
+		this.callback();
+	}
+}
+
+class Effect {
+	constructor(scene, x, y, sprite) {
+		this.scene = scene;
+		this.world = this.scene.world;
+		this.entity_array = this.scene.entity_array;
+		this.sprite = new Sprite(this.world, sprite);
+		this.pos = new Vector(x, y);
+	}
+	update() {
+
+	}
+	render() {
+		if (Math.floor(this.sprite.frame) + 2 > this.sprite.maxFrame) {
+			this.delete();
+		} else {
+			this.sprite.render(this.pos.x - 8, this.pos.y - 16);
+		}
+	}
+	delete() {
+		if (this.entity_array !== undefined) {
+			this.entity_array.splice(this.entity_array.indexOf(this), 1);
+		}
+	}
+}
+
+// Basic Init file
+let parameters = {
+    game_name: "Taxi Apocalypse",
+    version: 0.1,
+    width: 144,
+    height: 176,
+    start_screen: "menu",
+    scale: 2,
+    frame_rate: 60,
+    // Default 16
+    tile_size: 16,
+    gravity: {
+        x: 0,
+        y: 0
+    },
+    // Custom font and selector
+    font: "bitmap_font",
+    cursor: "cursor",
+    // do i need touch and keys events ?
+    event_needs: {
+        touch: false,
+        keyboard: true
+    },
+    images: [
+        // Important files for the text-display and box system.
+        {
+            img: "https://image.ibb.co/nx0QyG/bitmap_font.png",
+            name: "bitmap_font",
+            size: {
+                x: 6,
+                y: 9
+            }
+        },
+        {
+            img: "https://image.ibb.co/iNQQyG/cursor.png",
+            name: "cursor"
+        },
+        // Custom files
+        {
+            img: "https://image.ibb.co/iTu7Cb/title.png",
+            name: "title"
+        },
+        {
+            img: "https://image.ibb.co/mm19Qw/tileset_taxi.png",
+            name: "tileset_taxi"
+        },
+        {
+            img: "https://image.ibb.co/eBtpQw/taxi_sprite.png",
+            name: "taxi_sprite",
+            size: {
+                x: 19,
+                y: 12
+            }
+        },
+        {
+            img: "https://image.ibb.co/bNuw5w/taxi_sprite_broken.png",
+            name: "taxi_sprite_broken",
+            size: {
+                x: 19,
+                y: 12
+            }
+        },
+        {
+            img: "https://image.ibb.co/fRVsdG/lava_sprite.png",
+            name: "lava_sprite",
+            size: {
+                x: 16,
+                y: 16
+            }
+        },
+        {
+            img: "https://image.ibb.co/gSSG5w/impact.png",
+            name: "impact_sprite",
+            size: {
+                x: 16,
+                y: 16
+            }
+        },
+        {
+            img: "https://image.ibb.co/g3mnCb/explosion.png",
+            name: "explosion",
+            size: {
+                x: 32,
+                y: 32
+            }
+        },
+        {
+            img: "https://image.ibb.co/hR3R8G/meteor_sprite.png",
+            name: "meteor_sprite",
+            size: {
+                x: 25,
+                y: 25
+            }
+        },
+    ],
+    audio: [{
+            url: "https://vocaroo.com/media_command.php?media=s1J5GMshjgOj&command=download_mp3",
+            name: "selection"
+        },
+        {
+            url: "https://vocaroo.com/media_command.php?media=s0myGN0GVRDM&command=download_mp3",
+            name: "theme"
+        },
+        {
+            url: "https://vocaroo.com/media_command.php?media=s0CgTmndvdI4&command=download_mp3",
+            name: "death"
+        },
+    ],
+
+    tiles: [{
+            name: "wall",
+            id: 0,
+            collision: true,
+            bitMask: "auto",
+            line: 4
+        },
+        {
+            name: "water",
+            id: 1,
+            action: "drown",
+            bitMask: "auto",
+            line: 3
+        },
+        {
+            name: "grass",
+            addhesion: 0.1,
+            friction: 0.92,
+            id: 2
+        },
+        {
+            name: "ice",
+            addhesion: 0,
+            friction: 0.96,
+            id: 3,
+            bitMask: "auto",
+            line: 1
+        },
+        {
+            name: "sand",
+            addhesion: 1,
+            friction: 0.85,
+            id: 4,
+            bitMask: "auto",
+            line: 2
+        },
+    ],
+    maps: [
+
+        {
+            name: "map_0",
+            tileset: "tileset_taxi",
+            data: [
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+            ]
+        },
+        {
+            name: "map_1",
+            tileset: "tileset_taxi",
+            data: [
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [1, 1, 1, 1, 1, 3, 3, 3, 3],
+                [1, 1, 1, 1, 1, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 1, 1, 1, 1, 1],
+                [3, 3, 3, 3, 1, 1, 1, 1, 1],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3]
+            ],
+        },
+        {
+            name: "map_2",
+            tileset: "tileset_taxi",
+            data: [
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [1, 1, 1, 2, 2, 2, 1, 1, 1],
+                [1, 1, 1, 2, 2, 2, 1, 1, 1],
+                [3, 3, 3, 2, 2, 2, 4, 4, 4],
+                [3, 3, 3, 2, 2, 2, 4, 4, 4],
+                [3, 3, 3, 1, 1, 1, 4, 4, 4],
+                [3, 3, 1, 1, 1, 1, 1, 4, 4],
+                [3, 3, 1, 1, 1, 1, 1, 4, 4],
+                [3, 3, 1, 1, 1, 1, 1, 4, 4],
+                [3, 3, 3, 1, 1, 1, 4, 4, 4],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2]
+            ],
+        },
+        {
+            name: "map_3",
+            tileset: "tileset_taxi",
+            data: [
+                [0, 0, 0, 2, 2, 2, 0, 0, 0],
+                [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                [3, 3, 0, 2, 2, 2, 0, 3, 3],
+                [3, 3, 0, 2, 2, 2, 0, 3, 3],
+                [3, 3, 0, 2, 2, 2, 0, 3, 3],
+                [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                [0, 0, 0, 2, 2, 2, 0, 0, 0],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 0, 0, 0, 0, 0, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2]
+            ],
+        },
+        {
+            name: "map_4",
+            tileset: "tileset_taxi",
+            data: [
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [4, 4, 4, 4, 4, 4, 4, 4, 4],
+                [4, 4, 4, 0, 0, 0, 4, 4, 4],
+                [4, 4, 4, 2, 2, 2, 4, 4, 4],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [0, 0, 0, 2, 2, 2, 0, 0, 0],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 0, 0, 0, 0, 0, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2]
+            ],
+        },
+        {
+            name: "map_5",
+            tileset: "tileset_taxi",
+            data: [
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [1, 3, 3, 3, 3, 3, 3, 3, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 1, 3, 3, 3, 3, 3, 1, 1],
+                [1, 3, 3, 3, 3, 3, 3, 3, 1],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3]
+            ],
+        },
+        {
+            name: "map_6",
+            tileset: "tileset_taxi",
+            data: [
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2],
+                [2, 2, 2, 2, 2, 2, 2, 2, 2]
+            ],
+        },
+        {
+            name: "map_7",
+            tileset: "tileset_taxi",
+            data: [
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [0, 0, 3, 3, 3, 3, 3, 0, 0],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3],
+                [3, 3, 3, 3, 3, 3, 3, 3, 3]
+            ],
+        },
+
+    ],
+
+};
+
+// throw everything in a new Diorama
+
+let game = new Diorama(parameters);
+
+
+let best_score = 0;
+
+if (localStorage.taxi_apocalypse) {
+      best_score = JSON.parse(localStorage.taxi_apocalypse);
+    } else {
+      // s'il n'y a rien on genere une mémoire
+      localStorage.setItem("taxi_apocalypse", JSON.stringify(0));
+    }
+
+
+game.best_score = best_score;
+
+let menu = new Scene(game, "menu");
+
+menu.keyEvents = function(event) {
+	if (this.world.keys[38] && this.selection > 0) {
+		this.world.audio.play("selection");
+		this.selection -= 1;
+		this.world.mainRender();
+	} else if (this.world.keys[40] && this.selection < this.max) {
+		this.world.audio.play("selection");
+		this.selection += 1;
+		this.world.mainRender();
+	}
+	if (this.world.keys[88]) {
+		this.world.startScene(this.buttons[this.selection].link);
+	}
+}
+menu.init = function() {
+	this.init_once = true;
+	this.loop = false;
+	this.pos = {
+		x: this.world.W / 2,
+		y: 80
+	};
+	this.selection = 0;
+	this.buttons = [{
+		name: "Start",
+		link: "inGame"
+	}, {
+		name: "About",
+		link: "about"
+	}, {
+		name: "How to play ?",
+		link: "rules"
+	}, ];
+
+	let valeur = [];
+	for (var i = 0; i < this.buttons.length; i++) {
+		valeur.push(this.buttons[i].name.length);
+	}
+	this.texteMax = Math.max(...valeur) * 6 + 20;
+	this.max = this.buttons.length - 1;
+}
+menu.render = function() {
+	this.world.image.draw("title", 0, 5);
+	// score 
+	this.world.write("Best Score : " + this.world.best_score + " M", this.world.W / 2, 50, "center", 0);
+
+	this.world.drawBox(this.pos.x - this.texteMax / 2, this.pos.y - 15, this.texteMax, 22 * this.buttons.length, "#50576b");
+	this.ctx.fillStyle = "#101e29";
+	this.ctx.fillRect((this.pos.x - this.texteMax / 2) + 2, (this.pos.y + (13 * this.selection)) - 2, this.texteMax - 4, 13)
+	for (var i = 0; i < this.buttons.length; i++) {
+		let color = 2;
+		if (this.selection === i) {
+			color = 1;
+		}
+		this.world.write(this.buttons[i].name, this.pos.x, this.pos.y + 13 * i, "center", color);
+	}
+	this.world.write("Arrow keys to select", this.world.W / 2, this.world.H - 30, "center", 1);
+	this.world.write("[x] to confirm", this.world.W / 2, this.world.H - 15, "center", 1);
+}
+game.addScene(menu);
+
+// in-game.js
+let inGame = new Scene(game, "inGame");
+
+inGame.keyEvents = function(event) {
+	if (game.keys[69]) {
+		game.startScene("menu");
+	}
+};
+
+inGame.init = function() {
+	this.W = this.world.W;
+	this.H = this.world.H;
+	this.camera = this.world.camera;
+	this.world.initMap("map_0");
+	this.world.bitMasking();
+	this.player = new Taxi(this,
+		(this.W / 2) - 8,
+		this.world.terrain.reelLimit.y - 40, "taxi_sprite");
+	this.player.angle = -Math.PI / 2;
+	this.camera.setConstraint(true, false);
+	this.camera.setOffset(0, -20);
+	this.camera.setTarget(this.player);
+	// lava
+	this.dist_bottom = 0;
+	this.lava_height = 100;
+	this.lava = new Lava(this, "lava_sprite");
+	// global Variables
+	this.world.cause_of_death = "";
+	this.world.score = 0;
+	// Effects Missile / explosions array
+	this.entity_array = [];
+	this.number_meteor = 0;
+	// logic
+	this.isDead = false;
+	// Transition array
+	this.sfx_array = [];
+	let transitionIn_callBack = () => {};
+	this.sfx_array.push(new Transition(this, transitionIn_callBack, 500, 'in'));
+	this.world.audio.setLoop("theme", true);
+	this.world.audio.volume("death", 0.1);
+	this.world.audio.volume("theme", 0.1);
+	this.world.audio.play("theme");
+
+};
+
+inGame.update = function(delta) {
+
+	//check camera position to delete map section
+	if (this.camera.get.bottom() + this.world.tile_size < this.world.terrain.reelLimit.y) {
+		this.updateScore();
+		this.cutMap();
+	}
+	if (this.camera.get.top() - this.world.tile_size < 0) {
+		this.addMap();
+	}
+	if (this.sfx_array.length > 0) {
+		for (var i = this.sfx_array.length - 1; i >= 0; i--) {
+			this.sfx_array[i].update();
+		}
+	}
+	//
+	this.camera.update(delta);
+	this.meteorLogic();
+	if (!this.isDead) {
+		this.player.control();
+	}
+	this.player.update();
+
+	this.player.mapCollision();
+	// entity update
+	for (var i = this.entity_array.length - 1; i >= 0; i--) {
+		this.entity_array[i].update();
+	}
+	this.dist_bottom = Math.round((this.player.pos.y - this.camera.get.bottom()));
+	// lava logic 
+	if (Math.round(this.player.vel.y) < 0 && this.dist_bottom < -50) {
+		this.lava_height -= this.player.vel.y;
+	}
+	if (this.lava_height > 100) {
+		this.lava_height = 100;
+	} else if (this.world.score > 10) {
+		this.lava_height -= 1;
+	}
+	if (this.lava_height < this.dist_bottom) {
+		this.world.cause_of_death = "burned by the lava :(";
+		this.handleDeath();
+	}
+
+};
+
+inGame.render = function() {
+	this.world.renderMap();
+	this.player.render();
+	// render lava
+	let y = 0;
+	if (this.lava_height < 0) {
+		y = this.lava_height;
+	}
+	this.ctx.fillStyle = "#db362c";
+	this.ctx.fillRect(0, this.camera.get.bottom(), this.W, Math.round(y));
+	this.lava.render(0, (this.camera.get.bottom() + y) - 16);
+	// Entity Render
+	for (var i = this.entity_array.length - 1; i >= 0; i--) {
+		this.entity_array[i].render();
+	}
+	this.world.write(this.world.score + " m", this.W / 2, -this.camera.pos.y + 10, "center");
+
+	if (this.sfx_array.length > 0) {
+		for (var i = this.sfx_array.length - 1; i >= 0; i--) {
+			this.sfx_array[i].render();
+		}
+	}
+};
+
+inGame.meteorLogic = function() {
+	if (this.entity_array.length < this.number_meteor) {
+		this.entity_array.push(new Meteor(this, this.player));
+	}
+};
+
+inGame.updateScore = function() {
+	this.world.score += 1;
+	if (this.world.score < 100) {
+		this.number_meteor = Math.ceil(this.world.score * 0.1);
+	}
+};
+
+inGame.cutMap = function() {
+	this.world.terrain.data.splice(this.world.terrain.data.length - 1, 1);
+	this.world.setTerrainLimit();
+};
+
+inGame.addMap = function() {
+	let randomMapName = "map_" + Math.floor(Utl.random(0, this.world.mapsCount)),
+		data_array = this.world.maps[randomMapName].data,
+		added_height = data_array.length;
+
+	this.world.terrain.data = data_array.concat(this.world.terrain.data);
+	this.world.setTerrainLimit();
+	// offset camera and player position
+	this.camera.pos.y += (added_height * this.world.tile_size);
+	this.player.pos.y += (added_height * this.world.tile_size);
+	for (var i = 0; i < this.entity_array.length; i++) {
+		this.entity_array[i].pos.y += (added_height * this.world.tile_size);
+	}
+	this.world.bitMasking();
+};
+
+inGame.handleDeath = function() {
+	if (this.isDead) return false;
+	this.world.audio.stop("theme");
+	this.world.audio.play("death");
+	this.isDead = true;
+	this.player.thrust = 0;
+	this.player.vel.x = 0;
+	this.player.vel.y = 0;
+	this.player.sprite = this.world.ressources.images["taxi_sprite_broken"];
+	this.entity_array.push(new Effect(this, this.player.pos.x, this.player.pos.y, "explosion"))
+	let transitionOut_callBack = () => {
+		this.world.startScene("death");
+	};
+	this.sfx_array.push(new Transition(this, transitionOut_callBack, 1000, 'out'));
+}
+
+game.addScene(inGame);
+
+
+
+// About
+let about = new Scene(game, "about");
+
+about.keyEvents = function(event) {
+    if (this.world.keys[69]) {
+        this.world.startScene("menu");
+    }
+}
+
+about.init = function() {
+	this.init_once = true;
+	this.loop = false;
+}
+
+about.render = function() {
+    this.world.clearCanvas();
+    this.world.write("About", game.W/2, 20,"center");
+    let about_text = "Made with Html5 canvas, by Gtibo on Codepen. Thank you for playing :)"
+    this.world.write(about_text, 10, 40,this.world.W-20,1);
+    this.world.write("Credits", game.W/2, 100,"center");
+
+    this.world.write("Sound: noiseforfun.com", game.W/2, 120,"center",1);
+    this.world.write("Theme: Trevor Lentz", game.W/2, 135,"center",1);
+
+    this.world.write("[e] to return to menu", this.world.W/2, this.world.H-20, "center",1);
+}
+
+game.addScene(about);
+
+// Rules
+let rules = new Scene(game, "rules");
+
+rules.keyEvents = function(event) {
+    if (this.world.keys[69]) {
+        this.world.startScene("menu");
+    }
+}
+
+rules.init = function() {
+	this.init_once = true;
+    this.loop = false;
+}
+
+rules.render = function() {
+    this.world.clearCanvas();
+    this.world.write("Rules", this.world.W/2, 20,"center");
+    let text = "Conduct the taxi with the arrow keys, avoid the obstacles and try not being submerged by the lava.";
+    this.world.write(text,10,40,this.world.W - 20,1);
+
+    this.world.write("[e] to return to menu", this.world.W/2, this.world.H-20, "center",1);
+}
+game.addScene(rules);
+
+
+// Death
+let death = new Scene(game, "death");
+
+death.keyEvents = function(event) {
+    if (this.world.keys[69]) {
+        this.world.startScene("menu");
+    }
+}
+
+death.init = function() {
+	this.init_once = true;
+    this.loop = false;
+    if(this.world.score > this.world.best_score){
+        this.world.best_score = this.world.score;
+        localStorage.setItem("taxi_apocalypse", JSON.stringify(this.world.score));
+    }
+}
+
+death.render = function() {
+    this.world.clearCanvas();
+    this.world.write("Game over", this.world.W/2, 20,"center");
+    let text = "You're dead, " + this.world.cause_of_death;
+    this.world.write(text,10,40,this.world.W - 20,1);
+
+
+    this.world.write("You've traveled", this.world.W/2, 100,"center");
+    this.world.write(this.world.score + " meters", this.world.W/2, 120,"center",1);
+
+    this.world.write("[e] to return to menu", this.world.W/2, this.world.H-20, "center",1);
+}
+game.addScene(death);
+
+game.ready();
+game.fullScreen();
+</script>
