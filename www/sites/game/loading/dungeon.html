@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+<title>Viatic - The Dungeon</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<link rel="manifest" href="https://spitriziv.github.io/Viatic/manifest.webmanifest">
+	<meta name="Viatic" content="Viatic">
+	<link rel="icon" sizes="16x16 32x32 48x48" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true">
+	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
+	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+  <head>
+  <script>
+    
+  let deferredPrompt;
+const addBtn = document.querySelector(".add-button");
+addBtn.style.display = "none";
+</script>
+<script>
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = "block";
+
+  addBtn.addEventListener("click", (e) => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = "none";
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+  </script>
+  <body onload="typeWriter()"></body>
+    
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+      <script src="https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js"></script>
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/Metaballs.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src=""></script>
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </div>
+        </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+<script>
+  
+</script>
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details"> 
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/main.html">
+            <i class='bx bx-collection' ></i>
+          <span class="link_name">Viatic Main</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Viatic Main</a></li>
+          
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="utilities.html">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/utilities.html">Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/infomation.html">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/webdesigns.html">
+            <i class='fas fa-pen-alt' ></i>
+            <span class="link_name">Web Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/extradesigns.html">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Extra Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Settings</span>
+          
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Settings</a></li>
+          
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+      </div>
+      </div>
+<input type="checkbox" class="form-check-input" id="darkSwitch">
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+
+<style>
+    .button.disabled {
+  opacity: 0.; 
+  cursor: not-allowed;
+}
+  body {
+   background-image:
+    linear-gradient(to left, rgba(245, 246, 252, 0.1), rgba(0, 0, 0)),
+    url('https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/dungeon.png?raw=true');
+    width: 80%;
+    height: 400px;
+    background-size: cover;
+    color: white;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    left: 100px;
+}
+
+h1 {
+  font-family: 'Helvetica', sans-serif;
+  margin: 20px 0 0;
+  margin-left: 20px;
+  font-size: 5.5em;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+h2 {
+  font-family: 'Verdana', Sans-serif;
+  font-size: 1.5em;
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+.about_me {
+    font-size: 1.1em;
+ margin-left: 20px;
+    margin-top: 40px;
+    margin-right: 650px;
+          display: flex;
+        list-style-type:none;
+        width:60%;
+        padding: 0;
+        overflow: hidden;
+}
+
+     button {
+        display: inline-block;
+        background-color: #222222;
+        border-radius: 1px;
+        border: 4px single #5c89b550;
+        color: #eeeeee;
+        font-size: 20px;
+        text-align: center;
+        padding: 0px;
+        width: 300px;
+        height: 50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-left: 20px;
+        margin-top: 30px;
+           margin-right: 700px;
+      }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: (0,0,0,0.4);
+  margin: 15% auto;
+  padding: 20px;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  width: 80%; 
+    animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+  .about_me {
+    font-size: 1em;
+ margin-left: 20px;
+    margin-top: 40px;
+    margin-right: 0px;
+            width:100%;
+        padding: 0;
+        overflow: hidden;
+}
+  
+       button {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.0);
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        font-size: 15px;
+        text-align: center;
+        padding: 0px;
+        width: 300px;
+        height: 50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-left: 20px;
+        margin-top: 30px;
+        background-position: center;
+      }
+}  
+
+</style>
+<div class="me">
+<h1>The Dungeon</h1>
+  <h2>by: Tibo</h2>
+  </div>
+
+<div class="about_me">
+  <p>version: 1.0.0<br/>developers: Tibo<br/>
+	      <br/>
+
+    A puzzel game where you have to go through obstacles to get to the end of that level to continue.</p>
+      </div>
+  
+<div class="buttons">
+<form>
+ <script>
+function changeText(button, text, textToChangeBackTo) {
+  buttonId = document.getElementById(button);
+  buttonId.textContent = text;
+  setTimeout(function() { back(buttonId, textToChangeBackTo); }, 5000);
+  function back(button, textToChangeBackTo){ button.textContent = textToChangeBackTo; }
+}
+</script>
+<button type="submit" onClick="changeText('Play', 'Starting...', 'Running...');window.open('https://spitriziv.github.io/Viatic/www/sites/game/dungeon.html')" id="Play">Play</button>
+
+    </form></a>
+  
+ <button class="button disabled" style="background-color:#2f663c;" >Update</button>
+
+<script>
+  
+var modal = document.getElementById("popup");
+
+
+var btn = document.getElementById("contact");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<style>
+
+.container{
+  width: 1300px;
+  position: relative;left:40px;top;0px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  
+}
+
+.container .card{
+  position:relative;
+}
+
+.container .card .face{
+  width:300px;
+  height: 200px;
+  transition:.4s;
+  
+}
+
+.container .card .face.face1{
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px whitesmoke,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+   
+}
+
+
+.container .card .face.face1 .content{
+  opacity: .2;
+  transition:  0.5s;
+  text-align: center;
+}
+
+.container .card:hover .face.face1 .content{
+  opacity: 1;
+ 
+}
+
+.container .card .face.face1 .content i{
+  font-size: 3em;
+  color: white;
+  display: inline-block;
+   
+}
+
+.container .card .face.face1 .content h3{
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  
+
+}
+
+.container .card .face.face1 .content a{
+   transition: .5s;
+}
+
+.container .card .face.face2{
+   position: relative;
+   background: whitesmoke;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+  transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+
+
+}
+
+.container .card .face.face2 .content p, a{
+  font-size: 10pt;
+  margin: 0 ;
+  padding: 0;
+  color:#333;
+}
+
+.container .card .face.face2 .content a{
+  text-decoration:none;
+  color: black;
+  box-sizing: border-box;
+  outline : 1px dashed #333;
+  padding: 10px;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+
+.container .card .face.face2 .content a:hover{
+  background: #333 ;
+  color: whitesmoke; 
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+ </style>
+
+    </div>
+  <style>.abs,
+h2:after,
+.cards .card figcaption,
+.cards .card:after,
+.news .card figcaption,
+.news .card:after,
+.news .article figcaption {
+  position: absolute;
+}
+.rel,
+h2,
+h2 strong,
+.cards .card,
+.news .card,
+.news .article {
+  position: relative;
+}
+.fix {
+  position: fixed;
+}
+.dfix {
+  display: inline;
+}
+.dib {
+  display: inline-block;
+}
+.db {
+  display: block;
+}
+.dn {
+  display: none;
+}
+.df,
+.cards,
+.news {
+  display: flex;
+}
+.dif {
+  display: inline-flex;
+}
+.dg {
+  display: grid;
+}
+.dig {
+  display: inline-grid;
+}
+.vm,
+h2,
+h2 strong,
+h2 span {
+  vertical-align: middle;
+}
+body {
+  font-family: 'Alegreya Sans';
+}
+.wrapper {
+  padding: 15px;
+}
+h2 {
+  padding: 10px;
+  padding-left: 25px;
+  color: #ccc;
+  margin: 0;
+}
+h2 strong {
+  z-index: 2;
+  padding: 4px 8px;
+}
+h2 span {
+  font-size: 0.7em;
+  color: #aaa;
+  margin-left: 10px;
+}
+h2:after {
+  content: '';
+  z-index: 1;
+  bottom: 0%;
+  margin-bottom: -2px;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background: #373d47;
+}
+.cards,
+.news {
+  flex-flow: row wrap;
+}
+.cards .card,
+.news .card {
+  margin: 20px;
+  width: 180px;
+  height: 270px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: 0.3s;
+}
+.cards .card img,
+.news .card img {
+  width: 100%;
+  min-height: 100%;
+}
+.cards .card figcaption,
+.news .card figcaption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  background: none;
+  color: #fff;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.cards .card:after,
+.news .card:after {
+  content: '';
+  z-index: 10;
+  width: 200%;
+  height: 100%;
+  top: -90%;
+  left: -20px;
+  opacity: 0.1;
+  transform: rotate(45deg);
+  background: linear-gradient(to top, transparent, #fff 15%, rgba(255,255,255,0.5));
+  transition: 0.3s;
+}
+.cards .card:hover,
+.news .card:hover,
+.cards .card:focus,
+.news .card:focus,
+.cards .card:active,
+.news .card:active {
+  box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
+  transform: translateY(-3px) scale(1.05) rotateX(15deg);
+}
+.cards .card:hover figcaption,
+.news .card:hover figcaption,
+.cards .card:focus figcaption,
+.news .card:focus figcaption,
+.cards .card:active figcaption,
+.news .card:active figcaption {
+  transform: none;
+}
+.cards .card:hover:after,
+.news .card:hover:after,
+.cards .card:focus:after,
+.news .card:focus:after,
+.cards .card:active:after,
+.news .card:active:after {
+  transform: rotate(25deg);
+  top: -40%;
+  opacity: 0.15;
+}
+.news .article {
+  overflow: hidden;
+  width: 350px;
+  height: 235px;
+  margin: 20px;
+}
+.news .article img {
+  width: 100%;
+  min-height: 100%;
+  transition: 0.2s;
+}
+.news .article figcaption {
+  font-size: 14px;
+  text-shadow: 0 1px 0 rgba(51,51,51,0.3);
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  background: rgba(6,18,53,0.6);
+  opacity: 0;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+.news .article figcaption h3 {
+  color: #909090;
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.news .article:hover img,
+.news .article:focus img,
+.news .article:active img {
+  filter: blur(3px);
+  transform: scale(0.97);
+}
+.news .article:hover figcaption,
+.news .article:focus figcaption,
+.news .article:active figcaption {
+  opacity: 1;
+  transform: none;
+}
+</style>
+  	<h2><strong>Games similar to this<span>( 3 )</span></strong></h2>
+
+	<div class="cards">
+
+		<a href="https://spitriziv.github.io/Viatic/www/sites/game/loading/copycat.html"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/marbilec.png?raw=true" />
+
+			<figcaption>Marbilec</figcaption>
+
+      </figure></a>
+    
+   
+		<a href="https://spitriziv.github.io/Viatic/www/sites/game/loading/dungeon.html"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/copycat.png?raw=true" />
+
+			<figcaption>Copy Cat</figcaption>
+
+		</figure></a>
+    
+    <a href="https://spitriziv.github.io/Viatic/www/sites/game/loading/sird.html"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/sird.png?raw=true" />
+
+			<figcaption>Sird</figcaption>
+
+		</figure></a>
+	</div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
