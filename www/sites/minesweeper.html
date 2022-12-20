@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+<title>Viatic - Minesweeper</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+<link rel="manifest" href="https://spitriziv.github.io/Viatic/manifest.webmanifest">
+	<meta name="Viatic" content="Viatic">
+	<link rel="icon" sizes="16x16 32x32 48x48" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true">
+	<link rel="icon" sizes="512x512" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=trueg">
+	<link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+  <head>
+  <script>
+    
+  let deferredPrompt;
+const addBtn = document.querySelector(".add-button");
+addBtn.style.display = "none";
+</script>
+<script>
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = "block";
+
+  addBtn.addEventListener("click", (e) => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = "none";
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+  </script>
+  <body onload="typeWriter()"></body>
+    
+    <!-- ccs -->
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+      <script src="https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js"></script>
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/Metaballs.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src=""></script>
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </div>
+        </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+  <style>
+    body {
+  margin: 0;
+  background-color: #f7f9fb;
+}
+  </style>
+<script>
+  
+</script>
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details"> 
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/main.html">
+            <i class='bx bx-collection' ></i>
+          <span class="link_name">Viatic Main</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Viatic Main</a></li>
+          
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="utilities.html">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/utilities.html">Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/infomation.html">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/webdesigns.html">
+            <i class='fas fa-pen-alt' ></i>
+            <span class="link_name">Web Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/extradesigns.html">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Extra Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Settings</span>
+          
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Settings</a></li>
+          
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+      </div>
+      </div>
+      </div>
+<input type="checkbox" class="form-check-input" id="darkSwitch">
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+</body>
+</html>
+<style>
+  body {
+	 display: flex;
+	 justify-content: center;
+}
+ .container {
+	 margin: 20px auto;
+	 padding: 20px 30px;
+	 border-image-slice: 1;
+}
+ .row {
+	 display: flex;
+	 padding: 10px;
+}
+ #field {
+	 display: flex;
+	 border: 1px solid #aaa;
+}
+ #settings {
+	 margin-left: 40px;
+	 padding: 0 30px;
+}
+ .cell {
+	 user-select: none;
+	 width: 32px;
+	 height: 32px;
+	 font-size: 24px;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.05);
+	 transition: background-color .07s;
+}
+ .cell-opened {
+	 cursor: default;
+	 background-color: #404040;
+}
+ .cell-closed {
+	 cursor: pointer;
+	 background-color: #505050;
+}
+ .cell-closed:hover {
+	 background-color: #606060;
+}
+ .cell-flagged {
+	 background-color: #ff5c5c;
+}
+ .cell-flagged:hover {
+	 background-color: #ff8787;
+}
+ .cell-mine {
+	 background-image: url('https://profesional.tarkett.es/media/img/M/TH_3917011_3707003_3708011_3912011_3914011_800_800.jpg');
+	 animation: scaleDown .15s forwards ease-in;
+}
+ .cell-1 {
+	 color: #33f;
+}
+ .cell-2 {
+	 color: #080;
+}
+ .cell-3 {
+	 color: #c00;
+}
+ .cell-4 {
+	 color: #00c;
+}
+ .cell-5 {
+	 color: #800;
+}
+ .cell-6 {
+	 color: #66adff;
+}
+ .cell-7 {
+	 color: #ff9c66;
+}
+ .cell-8 {
+	 color: #ff7066;
+}
+ @keyframes scaleDown {
+	 from {
+		 transform: scale(2,2);
+		 opacity: 0;
+	}
+	 to {
+		 transform: scale(1,1);
+		 opacity: 1;
+	}
+}
+ #newGameButton {
+   color: gray;
+	 margin-top: 15px;
+	 padding: 5px 20px;
+	 background-color: #505050;
+	 border-radius: 15px;
+	 font-family: sans-serif;
+}
+ .stats {
+	 display: flex;
+	 padding: 15px 20px;
+	 background-color: #505050;
+	 border-radius: 15px;
+	 font-family: sans-serif;
+}
+ .stats>div:not(:first-child) {
+	 margin-left: 15px;
+}
+  
+  .sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #a8a8a8;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.sidebar.close{
+  width: 78px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 30px;
+  color: #2e2e2e;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+.sidebar .logo-details .logo_name{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover{
+  background: #7a7a7a;
+}
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #7a7a7a;
+  display: none;
+  transition: all 0.5s ease;
+
+}
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar .profile-details{
+  position: fixed;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #828282;
+  padding: 12px 0;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details{
+  background: none;
+}
+.sidebar.close .profile-details{
+  width: 78px;
+}
+.sidebar .profile-details .profile-content{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile-details img{
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #828282;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details img{
+  padding: 10px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job{
+  display: none;
+}
+.sidebar .profile-details .job{
+  font-size: 12px;
+}
+.home-section{
+  position: relative;
+  background: #e8f7ff;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-section .home-content{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+  transition: all 0.5s ease;
+}
+.home-section .home-content .bx-menu{
+  margin: 0 15px;
+  cursor: pointer;
+}
+.home-section .home-content .title{
+  font-size: 26px;
+  color: #2e2e2e;
+  font-weight: 600;
+}
+.home-section .home-content .text{
+  color: #2e2e2e;
+}
+@media (max-width: 400px) {
+  .sidebar.close .nav-links li .sub-menu{
+    display: none;
+  }
+  .sidebar{
+    width: 78px;
+  }
+  .sidebar.close{
+    width: 0;
+  }
+  .home-section{
+    left: 78px;
+    color: #2e2e2e;
+    width: calc(100% - 78px);
+    z-index: 100;
+  }
+  .sidebar.close ~ .home-section{
+    width: 100%;
+    left: 0;
+  }
+}
+
+::-moz-selection {
+      color: black;
+      background: #80E6FF;
+      opacity: 0.5;
+    }
+
+    ::selection {
+      color: black;
+      background: #80E6FF;
+      opacity: 0.5;
+}
+    .blink {
+      animation: blinker 0.6s linear infinite;
+}
+      @keyframes blinker {
+        50% {
+      opacity: 0;
+}  
+</style>
+<div class="container">
+  
+
+  <div class="row">
+
+    <div id="field"></div>
+
+    <div id="settings">
+      
+      <h3>Settings</h3>
+
+      <div>
+        <div>
+          <span>Rows: </span>
+          <span id="rows-value">rows</span>
+        </div>
+        <input type="range" id="rows-range" min="5" max="30" step="1">
+      </div>
+
+      <div>
+        <div>
+          <span>Columns: </span>
+          <span id="cols-value">cols</span>
+        </div>
+        <input type="range" id="cols-range" min="5" max="30" step="1">
+      </div>
+
+      <div>
+        <div>
+          <span>Mines: </span>
+          <span id="mines-value">mines</span>
+        </div>
+        <input type="range" id="mines-range" min="5" max="100" step="1">
+      </div>
+
+      <button id="newGameButton">Start</button>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="stats">
+      <div>Mines: <span id="mines-left">10</span></div>
+      <div>Time: <span id="time-passed">0</span></div>
+    </div>
+    
+  </div>
+</div>
+<script>
+  // matrix of cell state
+// -1: has mine
+// 0 to 8 - number of mines around the cell
+var mines;
+
+var cells; // DOM
+var gameEnded = true, firstClick;
+var rows, cols, mineCount;
+var timePassed = 0, timerId = -1;
+var minesLeft;
+
+var rowsRange = document.getElementById('rows-range');
+var rowsValue = document.getElementById('rows-value');
+var colsRange = document.getElementById('cols-range');
+var colsValue = document.getElementById('cols-value');
+var minesRange = document.getElementById('mines-range');
+var minesValue = document.getElementById('mines-value');
+var minesLeftValue = document.getElementById('mines-left');
+var timePassedValue = document.getElementById('time-passed');
+
+setFieldParams(9, 9, 10);
+newGame(rows, cols, mineCount);
+
+// preload bomb image
+var my_image = new Image();
+my_image.src = 'https://upload.wikimedia.org/wikipedia/commons/5/52/Explosion-153710_icon.svg';
+
+function newGame() {
+  getFieldParams();
+  if (rows*cols-(mineCount+9) < 0) {
+    alert ('Not enough space for '+mineCount+' mines on the field.');
+    gameEnded = true;
+    return;
+  }
+  
+  setTimePassed(0);
+  setMinesLeft(mineCount);
+  gameEnded = false;
+  firstClick = true;
+  drawGrid(rows, cols);
+}
+
+function generate(startX, startY, rows, cols, mineCount) {
+
+  mines = [];
+  for (var i = 0; i < rows; i++) {
+    mines[i] = [];
+    for (var j = 0; j < cols; j++) {
+      mines[i][j] = 0;
+    }
+  }
+
+  // A bit improved version of http://mind2soft.com/?f=minesweeper
+
+  var mine_x, mine_y;
+  var m, n;
+
+  for (var k = 0; k < mineCount; k++) {
+    while (true) {
+      mine_x = Math.floor(Math.random() * rows);
+      mine_y = Math.floor(Math.random() * cols);
+      if (!(between(mine_x, startX-1, startX+1) && between(mine_y, startY-1, startY+1)) &&
+        mines[mine_x][mine_y] != -1) {
+        break;
+      }
+    }
+
+    for (n = mine_x - 1; n <= mine_x + 1; n++) {
+      for (m = mine_y - 1; m <= mine_y + 1; m++) {
+        if (mine_x == n && mine_y == m) {
+          mines[n][m] = -1;
+        } else
+        if (between(n, 0, rows-1) && between(m, 0, cols-1) && !hasMine(n, m))
+          mines[n][m]++;
+      }
+    }
+  }
+}
+
+function drawGrid(rows, cols) {
+
+  cells = [];
+  for (var i = 0; i < rows; i++) cells[i] = [];
+
+  var container = document.getElementById('field');
+  container.innerText = "";
+
+  for (var i = 0; i < cols; i++) {
+    var col = document.createElement('div');
+    col.classList.add('column');
+
+    for (var j = 0; j < rows; j++) {
+      var cell = document.createElement('div');
+      cell.classList.add('cell');
+      cell.classList.add('cell-closed');
+      cell.setAttribute('coords', coordsToStr(j, i));
+      cell.oncontextmenu = function(e) {
+        return false;
+      };
+      cell.onmousedown = function(e) {
+        if (e.button === 1) return false;
+      }
+      cell.onmouseup = onCellClick;
+      cell.ondblclick = onCellDoubleClick;
+      cells[j][i] = cell;
+      col.appendChild(cell);
+    }
+
+    container.appendChild(col);
+  }
+}
+
+function onFirstClick(x,y) {
+  firstClick = false;
+  generate(x, y, rows, cols, mineCount);
+  startTimer();
+}
+
+function onCellClick(e, isDouble) {
+  if (gameEnded) return;
+
+  var coords = parseCoords(e.target.getAttribute('coords'));
+  
+  if (firstClick) {
+    if (e.button === 0)
+      onFirstClick(coords.x, coords.y);
+    else
+      return;
+  }
+
+  if (e.button === 0) {
+    if (isDouble)
+      tryOpenNearest(coords.x, coords.y);
+    else
+      tryOpenCell(coords.x, coords.y);
+  }
+  else if (e.button == 1)
+    tryOpenNearest(coords.x, coords.y);
+  else if (e.button == 2)
+    toggleFlag(coords.x, coords.y);
+}
+
+function onCellDoubleClick(e) {
+  onCellClick(e, true);
+}
+
+// open cell and check for result
+function tryOpenCell(x, y) {
+  if (isOpened(x, y) || isFlagged(x, y)) return;
+
+  openCell(x, y);
+
+  if (hasMine(x, y)) {
+    endGame(false, x, y);
+  } else {
+    if (mines[x][y] == 0) {
+      tryOpenNearest(x, y);
+    }
+    checkVictory(x, y);
+  }
+}
+
+// add classes and text to DOM
+function openCell(x, y) {
+  var target = cells[x][y];
+
+  target.classList.remove('cell-closed');
+  target.classList.add('cell-opened');
+
+  if (hasMine(x, y)) {
+    target.classList.add('cell-mine');
+  } else {
+    target.classList.add('cell-' + mines[x][y]);
+    if (mines[x][y] > 0) {
+      target.innerText = mines[x][y];
+    }
+  }
+}
+
+function tryOpenNearest(x, y) {
+  var flags = 0;
+  for (var i = x - 1; i < x + 2; i++) {
+    for (var j = y - 1; j < y + 2; j++) {
+      if (between(i, 0, rows-1) && between(j, 0, cols-1) && isFlagged(i, j))
+        flags++;
+    }
+  }
+
+  if (!isOpened(x, y) || flags != mines[x][y]) return;
+
+  for (var i = x - 1; i < x + 2; i++) {
+    for (var j = y - 1; j < y + 2; j++) {
+      if (between(i, 0, rows-1) && between(j, 0, cols-1))
+        tryOpenCell(i, j);
+    }
+  }
+}
+
+function toggleFlag(x, y) {
+  if (isOpened(x, y)) return;
+
+  if (isFlagged(x, y)) {
+    cells[x][y].classList.remove('cell-flagged');
+    setMinesLeft(minesLeft+1);
+  } else {
+    cells[x][y].classList.add('cell-flagged');
+    setMinesLeft(minesLeft-1);
+  }
+}
+
+function hasMine(x, y) {
+  return mines[x][y] == -1;
+}
+
+function isOpened(x, y) {
+  return cells[x][y].classList.contains('cell-opened');
+}
+
+function isFlagged(x, y) {
+  return cells[x][y].classList.contains('cell-flagged');
+}
+
+function checkVictory(x, y) {
+  for (var i = 0; i < rows; i++)
+    for (var j = 0; j < cols; j++) {
+      if (isOpened(i, j) && hasMine(i, j)) return false; // mine opened
+      if (!isOpened(i, j) && !hasMine(i, j)) return false; // not mine closed
+    }
+
+  endGame(true, x, y);
+  return true;
+}
+
+function endGame(result, x, y) {
+  stopTimer();
+  gameEnded = true;
+  if (result === true) {
+    alert('You win!');
+  } else {
+    //alert('You lost.');
+    revealBoard(x, y);
+  }
+}
+
+function revealBoard(x, y, direction) {
+  for (var i=0; i<rows; i++)
+    for (var j=0; j<cols; j++)
+      openCell(i, j);
+}
+
+function coordsToStr(x, y) {
+  return x + ';' + y;
+}
+
+function parseCoords(str) {
+  if (typeof(str) != 'string' || str.indexOf(';') == -1) return;
+  return {
+    x: parseInt(str.split(';')[0]),
+    y: parseInt(str.split(';')[1])
+  };
+}
+
+document.getElementById('newGameButton').onclick = function() {
+  newGame();
+};
+
+rowsRange.oninput = function() {
+  rowsValue.innerText = rowsRange.value;
+}
+colsRange.oninput = function() {
+  colsValue.innerText = colsRange.value;
+}
+minesRange.oninput = function() {
+  minesValue.innerText = minesRange.value;
+}
+
+function getFieldParams() {
+  rows = parseInt(rowsRange.value);
+  rowsValue.innerText = rows;
+  cols = parseInt(colsRange.value);
+  colsValue.innerText = cols;
+  mineCount = parseInt(minesRange.value);
+  minesValue.innerText = mineCount;
+}
+function setFieldParams(r,c,m) {
+  rows = r;
+  rowsRange.value = r;
+  rowsValue.innerText = r;
+  cols = c;
+  colsRange.value = c;
+  colsValue.innerText = c;
+  mineCount = m;
+  minesRange.value = m;
+  minesValue.innerText = m;
+}
+
+function startTimer() {
+  timerId = setInterval(incrementTime, 1000);
+}
+
+function stopTimer() {
+  timePassed = 0;
+  clearInterval(timerId);
+}
+
+function incrementTime() {
+  setTimePassed(++timePassed);
+}
+
+function setTimePassed(time) {
+  timePassedValue.innerHTML = time;
+}
+
+function setMinesLeft(mines) {
+  minesLeft = mines;
+  minesLeftValue.innerHTML = mines;
+}
+
+function between(x, a, b) {
+  return x >= a && x <= b;
+}
+</script>
