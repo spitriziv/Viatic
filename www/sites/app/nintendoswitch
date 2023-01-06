@@ -436,16 +436,16 @@ navigator.getBattery().then(battery => {
 	</header>
 	<main>
 		<div class="games">
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" onclick="playopen.play()" href="#" class="item"><img src=""/></a>
 		</div>
 		
 		<script>
@@ -463,6 +463,8 @@ navigator.getBattery().then(battery => {
 			
 			
 						var user = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/User.mp3?raw=true");
+			
+									var playopen = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Popup + Run Title.mp3?raw=true");
 </script>
 		
 		<audio id="hover" src="https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Select.mp3?raw=true"></audio>
