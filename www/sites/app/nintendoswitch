@@ -1,0 +1,534 @@
+<style>
+	/*=========== global =============*/
+:focus {
+	outline: 0;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.v-center {
+	align-items: center;
+}
+
+body {
+	--bg: #EBEBEB;
+	background: var(--bg);
+}
+	
+
+.wrapper {
+	--static: #2D2D2D;
+	--solid: #FFF;
+	--shadow: 0 0 5px rgba(0, 0, 0, .05);
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
+	height: 100vh;
+	width: 100%;
+}
+
+html {
+	font-family: 'Oxygen';
+	color: var(--static);
+	user-select: none;
+}
+
+span {
+	display: inline-block;
+	line-height: 1;
+}
+
+a {
+	position: relative;
+	--focus-light: #3FE9D3;
+	--focus-dark: #04B9C3;
+}
+
+a:after {
+	display: none;
+	content: attr(data-attr);
+	position: absolute;
+	bottom: -80px;
+	left: 50%;
+	transform: translate(-50%, -42.5px);
+	font-size: 26px;
+	font-weight: 300;
+	white-space: pre;
+	color: var(--focus-dark);
+}
+
+a:hover:after,
+a:focus:after {
+	display: inline-block;
+}
+
+a:hover,
+a:focus {
+	animation: focus 1s infinite;
+}
+
+@keyframes focus {
+	0% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-light);
+	}
+	50% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-dark);
+	}
+	100% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-light);
+	}
+}
+
+
+/*=========== header =============*/
+
+header {
+	margin-bottom: auto;
+	padding: 0 25px;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+header > * {
+	margin: 0 10px;
+}
+
+header > *:first-child,
+.games .item:first-child {
+	margin-left: 0;
+}
+
+header > *:last-child,
+.games .item:last-child {
+	margin-right: 0;
+}
+
+a.profile {
+	margin-right: auto;
+	--d: 60px;
+	width: var(--d);
+	height: var(--d);
+	border: 3px solid var(--solid);
+	background: var(--bg);
+	box-shadow: var(--shadow);
+	border-radius: 100%;
+}
+
+a.profile:after {
+	font-size: .75em;
+}
+
+.battery span i {
+	font-style: initial;
+	font-size: .6em;
+}
+
+
+/*=========== main =============*/
+
+main {
+	position: relative;
+	margin: 0 -20px;
+}
+
+.games {
+	position: relative;
+	margin-bottom: 50px;
+	padding: 10px 95px;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.games::-webkit-scrollbar {
+	height: 0px;
+}
+
+.games .item {
+	display: inline-block;
+	margin: 0 7px;
+	--d: 255px;
+	height: var(--d);
+	width: var(--d);
+	flex-shrink: 0;
+	background: var(--bg);
+	border: 3px solid var(--solid);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+.games .item img {
+	width: 100%;
+}
+
+main nav {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+main nav a {
+	display: inline-flex;
+	justify-content: center;
+	margin: 0 10px;
+	--d: 85px;
+	height: var(--d);
+	width: var(--d);
+	background: var(--solid);
+	box-shadow: var(--shadow);
+	border-radius: 100%;
+}
+
+
+/*=========== footer =============*/
+
+footer {
+	position: relative;
+	margin-top: auto;
+	padding: 20px 25px 0;
+	font-size: 24px;
+	border-top: 2px solid var(--static);
+}
+
+.mode {
+	margin-right: auto;
+}
+
+.accept .btn {
+	--d: 25px;
+	margin-right: 12px;
+	display: inline-block;
+	width: var(--d);
+	height: var(--d);
+	background: var(--static);
+	border-radius: 100%;
+	font-size: .75em;
+	text-align: center;
+	color: var(--bg);
+}
+
+</style>
+<div class="wrapper flex flex-col">
+	<header class="flex v-center">
+		<a onmouseover="document.getElementById('tick').play()"  onclick="user.play()" data-attr="User's Page" href="#" class="profile"><img style="height:55px;" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" /></a>
+		<div class="time">
+			<script> 
+function updateTime(){
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }
+    var t_str = hours + ":" + minutes + " ";
+    if(hours >11){
+        t_str += "<span style='font-size:15px;''>PM</span>";
+    } else {
+        t_str += "<span style='font-size:15px;''>AM</span>";
+    }
+    document.getElementById('time_span').innerHTML = t_str;
+}
+setInterval(updateTime, 1000);
+</script>
+
+<body onclick="mouseclick()" onload="startup()"></body>
+        </div>
+      <div id="time-options">
+        <body onload="updateTime()">
+<span id="time_span"></span>
+		</div>
+		<div class="wifi">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>    
+    var hint = document.getElementById("hint");
+    
+    // Defining function to update connection status
+    function updateConnectionStatus() {  
+        var status = document.getElementById("status");
+        if(navigator.onLine) {
+            status.innerHTML = "<i style='font-size:24px;color:black;' class='fas'>&#xf1eb;</i>";
+            status.classList.add("online");
+            status.classList.remove("offline");                        
+        } else {
+            status.innerHTML = "<i style='font-size:24px;color:lightgray;' class='fas'>&#xf1eb;</i>";
+            status.classList.add("offline");
+            status.classList.remove("online");            
+        }
+    }
+
+    // Attaching event handler for the load event
+    window.addEventListener("load", updateConnectionStatus);
+    
+    // Attaching event handler for the online event
+    window.addEventListener("online", function(e) {
+        updateConnectionStatus();
+        hint.innerHTML = "";
+    });
+    
+    // Attaching event handler for the offline event
+    window.addEventListener("offline", function(e) {        
+        updateConnectionStatus();
+        hint.innerHTML = "";
+    });
+    </script>
+    <div id="status"></div>                                               		</div>
+			<span><p style="position: relative;left:10px;" id="battery-level"></p>
+<script>
+(function () {
+      let batteryLevel = document.getElementById("battery-level");
+
+    let success = function (battery) {
+        if (battery) {
+            function setStatus () {
+                batteryLevel.innerHTML = Math.round(battery.level * 100) + "﹪";
+            }
+
+            // Set initial status
+            setStatus();
+
+            // Set events
+            battery.addEventListener("levelchange", setStatus, false);
+        }
+    };
+
+    let noGood = function (error) {
+        batterySupported.innerHTML = error.message;
+    };
+
+    navigator.getBattery() //returns a promise
+        .then(success)
+        .catch(noGood);
+})();
+</script></span>
+		  		<div class="battery">
+<style>
+.battery {
+  position: relative;
+  width: 45px;
+  color: rgb(0, 255, 109);
+  border: 4px solid #2d2d2d;
+  height: 26px;
+  border-radius: 1px;
+}
+.battery:after {
+  content: attr(data-battery-life);
+  color: #2d2d2d;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  margin-bottom: -30px;
+  font-size: 0px;
+}
+
+.base {
+  height: 110%;
+  left: -1px;
+  top: -1px;
+  background: #2d2d2d;
+  position: absolute;
+  z-index: -1;
+  padding: 0.5px 0;
+}
+
+.before {
+  position: absolute;
+  height: 110%;
+  left: -1px;
+  top: -1px;
+  padding: 0.5px 0;
+  background: currentColor;
+  opacity: 0.46;
+  z-index: -3;
+  animation-direction: alternate-reverse;
+}
+
+.after {
+  position: absolute;
+  margin-right: -8px;
+  top: 4px;
+  right: 0;
+  width: 5px;
+  height: 10px;
+  background: #2d2d2d;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;
+}
+.charging {
+  animation: full 3500ms linear infinite;
+}
+.low-battery {
+  color: red;
+}
+
+@keyframes full {
+  0% {
+    width: 0%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 105%;
+  }
+}
+</style>
+  <div class="base"></div>
+  <div class="before"></div>
+  <div class="after"></div>
+<script>
+  var $ = element => query => element.querySelector(query) || element;
+var $battery = $(document.querySelector(".battery"));
+
+function updateBatteryStatus(battery) {
+  $battery(".base").style.width = `${Number.parseInt(battery.level * 100)}%`;
+  $battery().dataset.batteryLife = `${Number.parseInt(battery.level * 100)}%`;
+
+  if (battery.level < 0.25) {
+    $battery().classList.add("low-battery");
+  }
+  if (battery.charging) {
+    $battery(".before").classList.add("charging");
+  } else {
+    $battery(".before").classList.remove("charging");
+  }
+}
+
+navigator.getBattery().then(battery => {
+  updateBatteryStatus(battery);
+
+  battery.onlevelchange = function() {
+    updateBatteryStatus(battery);
+    if (battery.level > 0.20) {
+      $battery().classList.remove("low-battery");
+    }
+  };
+  battery.onchargingchange = function() {
+    updateBatteryStatus(battery);
+  };
+});
+
+  </script>
+
+		</div>
+	</header>
+	<main>
+		<div class="games">
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+			<a onmouseover="document.getElementById('hover').play()" href="#" class="item"><img src=""/></a>
+		</div>
+		
+		<script>
+       var news = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/News.mp3?raw=true"); 
+			
+	    var shop = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Eshop.mp3?raw=true"); 
+			
+		var album = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Album.mp3?raw=true"); 
+			
+	 	var viatic = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Dodo.mp3?raw=true"); 
+			
+		var settings = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Settings.mp3?raw=true");
+			
+			var power = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/This One.mp3?raw=true");
+			
+			
+						var user = new Audio("https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/User.mp3?raw=true");
+</script>
+		
+		<audio id="hover" src="https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Select.mp3?raw=true"></audio>
+		
+				<audio id="tick" src="https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/Tick.mp3?raw=true"></audio>
+		
+		<audio id="power" src="https://github.com/spitriziv/Viatic/blob/main/www/sounds/nswitch/This One.mp3?raw=true"></audio>
+		
+		<nav>
+			<a onmouseover="document.getElementById('tick').play()"  onclick="news.play()" data-attr="News" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-news.png?raw=true" /></a>
+			<a onmouseover="document.getElementById('tick').play()" onclick="shop.play()" data-attr="Nintendo eShop" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-shop.png?raw=true" /></a>
+			<a onmouseover="document.getElementById('tick').play()" onclick="album.play()" data-attr="Album" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-album.png?raw=true" /></a>
+			<a onmouseover="document.getElementById('tick').play()" onclick="viatic.play()" data-attr="Viatic" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-viatic.png?raw=true" /></a>
+			<a onmouseover="document.getElementById('tick').play()" onclick="settings.play()" data-attr="System Settings" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-settings.png?raw=true" /></a>
+			<a onmouseover="document.getElementById('power').play()" onclick="return closeWindow();" data-attr="Sleep Mode" href="#"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/nswitch/icon-power.png?raw=true" /></a> 
+		</nav>
+	</main>
+		<script type="text/javascript">
+        function closeWindow() {
+  
+            // Open the new window 
+            // with the URL replacing the
+            // current page using the
+            // _self value
+            let new_window =
+                open(location, '_self');
+  
+            // Close this window
+            new_window.close();
+  
+            return false;
+        }
+    </script>
+	<footer class="flex">
+		<div class="mode">
+			<img src="https://seeklogo.com/images/N/nintendo-switch-logo-38D4F5C7E7-seeklogo.com.png" style="width:40px"/>
+		</div>
+				<div class="accept flex v-center">
+			<div class="btn" style="font-size:21px;" >+</div>
+			<span>Optionsㅤ</span>	
+		</div>
+
+		<div class="accept flex v-center">
+			<div class="btn" style="font-size:18px;" >A</div>
+			<span>OK</span>
+		</div>
+	</footer>
+</div>
+<script>
+	function checkTime(i) {
+	if (i < 10) {
+		i = "0" + i;
+	}
+	return i;
+}
+
+function startTime() {
+	var today = new Date();
+	var h = today.getHours();
+	var m = today.getMinutes();
+
+	m = checkTime(m);
+	document.getElementById('time').innerHTML = h + ":" + m;
+	t = setTimeout(function() {
+		startTime()
+	}, 500);
+}
+startTime();
+</script>
