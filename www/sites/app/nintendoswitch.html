@@ -319,7 +319,7 @@
 			<br>
 
 <h4><b>Software</h4></b>
-<div class="container">
+<div>
  <script>
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
   document.write("Interface: Mobile");
@@ -426,7 +426,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 <html>
 <h4><b>Hardware</b></h4>
 <body>
-<div class="container">
+<div>
   <canvas id="glcanvas" width="0" height="0"></canvas>
   <script>
     var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {};
@@ -466,7 +466,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         
         <body>
         
-          <div class="container">
+          <div>
         
               <p id="battery-supported"></p>
               
@@ -698,26 +698,25 @@ function typeWriter() {
       }
    </script>
 </div></div></div>
-
 <div onmouseover="hidee()" id="estore" class="w3-animate-opacity"><div class="wrapper flex flex-col">
+			<a onmouseover="document.getElementById('tick').play()"  onclick="user.play();btnu()" data-attr="" href="#" class="storeprofile"><img style="height:55px;z-index:100" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" /></a>
 	<storemain>
 		<div class="storetext">
-			<h2 style="top:-50px;position: relative;font-weight: bold">store</h2>
+			<h2 style="top:-50px;position: relative;">Nintendo Switch Online</h2>
 			<p style="top:-50px;position: relative;">wow</p>
 			<p>Version: 1.0.0 DEV</p>
 			</div>
 </storemain>
 		<div class="storegames">
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Profile</h4><img src=""/></a>
-			<br><br>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Friends List</h4><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Trending</h4><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Online Play Invites</h4><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Friend Suggestions</h4><img src=""/></a>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Add Friend</h4><img src=""/></a>
-			<hr>
-			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ User Settings</h4><img src=""/></a>
-			<hr><hr><hr><hr>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ<i style='font-size:24px' class='fas'>&#xf002;</i> Search</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Recent Releases</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Discorver</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Current Offers</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Charts</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤ Coming Soon</h4><img src=""/></a><br>
+			<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤNintendo Switch Online</h4><img src=""/></a><br>
+						<a onmouseover="document.getElementById('hover').play()" onclick="tick.play()" href="#" class="item"><h4>ㅤRedeem Code</h4><img src=""/></a>
+			<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
 		</div><br><br><br>
 	</storemain>
 	<storefooter class="flex">
@@ -1123,11 +1122,29 @@ storemain {
 	position: relative;
 	background: #EAEAEA;
 	margin: -30px 0px;
+	top: -105px;
 }
+	
+a.storeprofile {
+	margin-left: auto;
+	--d: 60px;
+	width: var(--d);
+	height: var(--d);
+	border: 3px solid var(--solid);
+	background: var(--bg);
+	box-shadow: var(--shadow);
+	border-radius: 100%;
+	z-index: 10;
+}
+
+a.storeprofile:after {
+	font-size: .75em;
+}
+	
 .storetext {
     position: relative;
 	margin-top: 120px;
-	margin-left: 280px;
+	margin-left: 330px;
     margin-right: auto;
 	padding: 10px 10px;
 	white-space: wrap;
@@ -1137,7 +1154,7 @@ storemain {
 	position: relative;
     overflow-y: scroll;
 	overflow-x: hidden;
-	margin-top: -250px;
+	margin-top: -320px;
 	margin-left: -300px;
     margin-right: 100000px;
 	padding: 10px 290px;
