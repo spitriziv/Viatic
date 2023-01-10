@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Web Store</title>	
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16"> 
+  <head>
+  <body onload="typeWriter()"></body>
+    <body onload="typeWriter2()"></body>
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-183/Metaballs.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src=""></script>
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details"> 
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/main.html">
+            <i class='bx bx-collection' ></i>
+          <span class="link_name">Viatic Main</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Viatic Main</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="utilities.html">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/utilities.html">Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="infomation.html">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="webdesigns.html">
+            <i class='fas fa-pen-alt' ></i>
+            <span class="link_name">Web Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class="iocn-link">
+          <a href="extradesigns.html">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Extra Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Settings</span>
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Settings</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer                 <input type="checkbox" class="form-check-input" id="darkSwitch">
+</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&subset=latin");
+ body {
+	 min-height: 1vh;
+	 display: grid;
+	 grid: "main" 10vh / auto;
+	 place-items: center;
+}
+ h1 {
+	 grid-area: main;
+	 font: 10vmin/0.8 "Libre Franklin";
+	 font-weight: 700;
+	 letter-spacing: -0.05em;
+	 color: #fff 4;
+	 text-shadow: 0 0 5px #fff;
+	 mix-blend-mode: overlay;
+}
+ svg {
+	 grid-area: main;
+	 height: 20000%;
+	 width: 100%;
+}
+ 
+</style>
+<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#ff66de" />
+      <stop offset="100%" stop-color="#ff00" />
+    </radialGradient>
+    <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#6670ff" />
+      <stop offset="100%" stop-color="#0ff0" />
+    </radialGradient>
+    <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#ff7dba" />
+      <stop offset="100%" stop-color="#f0f0" />
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+    <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite" />
+  </rect>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+    <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite" />
+  </rect>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+    <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite" />
+  </rect>
+</svg>
+<style>
+
+.container{
+  width: 1300px;
+  position: relative;left:40px;top;0px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  
+}
+
+.container .card{
+  position:relative;
+}
+
+.container .card .face{
+  width:300px;
+  height: 200px;
+  transition:.4s;
+  
+}
+
+.container .card .face.face1{
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px whitesmoke,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+   
+}
+
+
+.container .card .face.face1 .content{
+  opacity: .2;
+  transition:  0.5s;
+  text-align: center;
+}
+
+.container .card:hover .face.face1 .content{
+  opacity: 1;
+ 
+}
+
+.container .card .face.face1 .content i{
+  font-size: 3em;
+  color: white;
+  display: inline-block;
+   
+}
+
+.container .card .face.face1 .content h3{
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  
+
+}
+
+.container .card .face.face1 .content a{
+   transition: .5s;
+}
+
+.container .card .face.face2{
+   position: relative;
+   background: whitesmoke;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+  transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+
+
+}
+
+.container .card .face.face2 .content p, a{
+  font-size: 10pt;
+  margin: 0 ;
+  padding: 0;
+  color:#333;
+}
+
+.container .card .face.face2 .content a{
+  text-decoration:none;
+  color: black;
+  box-sizing: border-box;
+  outline : 1px dashed #333;
+  padding: 10px;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+
+.container .card .face.face2 .content a:hover{
+  background: #333 ;
+  color: whitesmoke; 
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+ </style>
+
+    </div>
+<script>
+var i = 0;
+var txt = 'Viatic Web Store';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+      <script type="x-shader/x-vertex" id="vertexMetaballs">
+	attribute vec2 position;
+  void main() {
+  	gl_Position = vec4(position, 0.0, 1.0);
+	}
+</script>
+       </div>
+  <style>.abs,
+h2:after,
+.cards .card figcaption,
+.cards .card:after,
+.news .card figcaption,
+.news .card:after,
+.news .article figcaption {
+  position: absolute;
+}
+.rel,
+h2,
+h2 strong,
+.cards .card,
+.news .card,
+.news .article {
+  position: relative;
+}
+.fix {
+  position: fixed;
+}
+.dfix {
+  display: inline;
+}
+.dib {
+  display: inline-block;
+}
+.db {
+  display: block;
+}
+.dn {
+  display: none;
+}
+.df,
+.cards,
+.news {
+  display: flex;
+}
+.dif {
+  display: inline-flex;
+}
+.dg {
+  display: grid;
+}
+.dig {
+  display: inline-grid;
+}
+.vm,
+h2,
+h2 strong,
+h2 span {
+  vertical-align: middle;
+}
+body {
+  font-family: 'Alegreya Sans';
+}
+.wrapper {
+  padding: 15px;
+}
+h2 {
+  padding: 10px;
+  padding-left: 25px;
+  color: #ccc;
+  margin: 0;
+}
+h2 strong {
+  z-index: 2;
+  padding: 4px 8px;
+}
+h2 span {
+  font-size: 0.7em;
+  color: #aaa;
+  margin-left: 10px;
+}
+h2:after {
+  content: '';
+  z-index: 1;
+  bottom: 0%;
+  margin-bottom: -2px;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background: #373d47;
+}
+.cards,
+.news {
+  flex-flow: row wrap;
+}
+.cards .card,
+.news .card {
+  margin: 20px;
+  width: 180px;
+  height: 270px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: 0.3s;
+}
+.cards .card img,
+.news .card img {
+  width: 100%;
+  min-height: 100%;
+}
+.cards .card figcaption,
+.news .card figcaption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  background: none;
+  color: #fff;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.cards .card:after,
+.news .card:after {
+  content: '';
+  z-index: 10;
+  width: 200%;
+  height: 100%;
+  top: -90%;
+  left: -20px;
+  opacity: 0.1;
+  transform: rotate(45deg);
+  background: linear-gradient(to top, transparent, #fff 15%, rgba(255,255,255,0.5));
+  transition: 0.3s;
+}
+.cards .card:hover,
+.news .card:hover,
+.cards .card:focus,
+.news .card:focus,
+.cards .card:active,
+.news .card:active {
+  box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
+  transform: translateY(-3px) scale(1.05) rotateX(15deg);
+}
+.cards .card:hover figcaption,
+.news .card:hover figcaption,
+.cards .card:focus figcaption,
+.news .card:focus figcaption,
+.cards .card:active figcaption,
+.news .card:active figcaption {
+  transform: none;
+}
+.cards .card:hover:after,
+.news .card:hover:after,
+.cards .card:focus:after,
+.news .card:focus:after,
+.cards .card:active:after,
+.news .card:active:after {
+  transform: rotate(25deg);
+  top: -40%;
+  opacity: 0.15;
+}
+.news .article {
+  overflow: hidden;
+  width: 350px;
+  height: 235px;
+  margin: 20px;
+}
+.news .article img {
+  width: 100%;
+  min-height: 100%;
+  transition: 0.2s;
+}
+.news .article figcaption {
+  font-size: 14px;
+  text-shadow: 0 1px 0 rgba(51,51,51,0.3);
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  background: rgba(6,18,53,0.6);
+  opacity: 0;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+.news .article figcaption h3 {
+  color: #3792e3;
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.news .article:hover img,
+.news .article:focus img,
+.news .article:active img {
+  filter: blur(3px);
+  transform: scale(0.97);
+}
+.news .article:hover figcaption,
+.news .article:focus figcaption,
+.news .article:active figcaption {
+  opacity: 1;
+  transform: none;
+}
+</style>
+<div class="wrapper">
+
+  <h2><strong><a href="webstore.html"><i style='font-size:24px; color:gray;' class='fas'>&#xf104;</i></a>
+  Gameboy Library</strong></h2>
+
+	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html##advancewars"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Advance Wars</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#advancewars2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Advance Wars 2</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#aladdin"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Aladdin</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#alienhominid"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Alien Hominid</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#bomberman_max2blue"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Bomberman Max 2 - Blue Advance</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#bomberman_tournament"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Bomberman Tournament</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+
+  		<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#bubblebobble"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Bubble Bobble: Old and New</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#croket1"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Croket! - Yume no Banker Survival!</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#croket2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Croket! 2 - Yami no Bank to Banqueen</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#croket3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Croket! 3 - Granu Oukoku no Nazo</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#croket4"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Croket! 4 - Bank no Mori no Mamorigami</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#digimon_racing"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Digimon Racing
+</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#dbz_supersonic"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Dragon Ball Z - Supersonic Warriors
+</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#drilldozer"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Drill Dozer</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#earthwormjim"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Earthworm Jim</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#earthwormjim2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Earthworm Jim 2</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#ff1and2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Final Fantasy IA & IIA</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#ff4S"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Final Fantasy IVA (SRM)</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#ff6"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Final Fantasy VIA</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#final_fantasy_tactics"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Final Fantasy Tactics Advance</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#fire_emblem"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Fire Emblem</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#frogger1"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Frogger Advance - The Great Quest</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#frogger2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Frogger's Adventures - Temple of the Frog</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#frogger3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Frogger's Adventures 2 - The Lost Wand</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#fzero_gp"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>F-Zero - GP Legend
+</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#fzero_max"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>F-Zero - Maximum Velocity</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gamewatch4"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Game & Watch Gallery 4</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#goldensun"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Golden Sun</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gunstar_super_heroes"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Gunstar Super Heroes</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#hamtaro_heartbreak"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Hamtaro - Ham-Ham Heartbreak</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#kirbymirror"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Kirby & The Amazing Mirror</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#kirbynightmare"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Kirby: Nightmare in Dreamland</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#superstar"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Mario & Luigi: Superstar Saga</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#mariokart"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Mario Kart: Super Circuit</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#marioparty"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Mario Party Advance</figcaption>
+
+			   </figure></a>
+
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#mariopinball"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Mario Pinball Land</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megamanbass"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman & Bass</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle1"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 1
+</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 2</figcaption>
+
+			   </figure></a>
+      
+          <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle3_blue"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 3 Blue</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle4_blue"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 4 Blue Moon</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle4_red"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 4 Red Sun</figcaption>
+
+			   </figure></a>
+    
+	</div>
+  	<div class="cards">
+      
+      
+<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle5"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 5 Team Protoman</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_battle6"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Battle Network 6 Cybeast Falzar
+</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_zero1"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Zero</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_zero2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Zero 2</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_zero3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Zero 3</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#megaman_zero4"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Megaman Zero 4</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#metalslug"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Metal Slug Advance</figcaption>
+
+			   </figure></a>
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#metroid_fusion"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Metriod Fusion</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#momotarou_dentetsu"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Momotarou Dentetsu G Gold Deck wo Tsukure!</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#monopoly"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Monopoly</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#monster_force"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Monster Force</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#mortal_kombat"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Mortal Kombat Advance</figcaption>
+
+			   </figure></a>
+
+
+    
+	</div>
+  	<div class="cards">
+      
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pacman_world"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pacman World</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pacman_world2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pacman World 2</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pokemonemerald"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Emerald</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pokemongreen"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Leaf Green</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pokemonred"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Fire Red</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#mysteryred"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Mystery Dungeon Red</figcaption>
+
+			   </figure></a>
+
+
+    
+	</div>
+  	<div class="cards">
+
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pokemonruby"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Ruby</figcaption>
+
+			   </figure></a>
+      
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#pokemonsapphire"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Sapphire</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gba_video_pokemon_1"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Video Show Pak 1</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gba_video_pokemon_2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Video Show Pak 2</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gba_video_pokemon_3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Video Show Pak 3</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#gba_video_pokemon_4sonic_advance"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Pokemon Video Show Pak 4</figcaption>
+
+			   </figure></a>
+
+
+    
+	</div>
+  	<div class="cards">
+      
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sonic_advance2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Sonic Advance</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sonic_advance3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Sonic Advance 2</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sonicbattle"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Sonic Advance 3</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sonicpinball"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Sonic Battle</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#spyro_adventure"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Sonic Pinball</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#spyro_ice"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Spyro Adventure</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+      
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#spyro_flame"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Spyro: Season of Ice</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermarioadvance"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Spyro 2: Season of Flame</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermarioadvance"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Mario Advance</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermarioadvance2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Mario Advance 2</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermarioadvance3"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Mario Advance 3</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermarioadvance4"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Mario Advance 4</figcaption>
+
+			   </figure></a>
+
+
+    
+	</div>
+  	<div class="cards">
+      
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#supermonkeyballjr"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Monkey Ball Jr</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#super_street_fighter_2_turbo_revival"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Street Fighter II: Turbo Revival</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#super_street_fighter_3_alpha"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Super Street Fighter III: Alpha</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#tales_of_phantasia"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Tales of Phantasia</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#tak2_staff_of_dreams"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Tak 2: The Staff of Dreams</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#tmnt"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Teenage Mutant Ninja Turtles</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+      
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#tetris_worlds"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Tetris Worlds</figcaption>
+
+			   </figure></a>
+
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sims_bustin_out"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>The Sims: Bustin ' Out</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#sims2"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>The Sims 2</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#simpsons"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>The Simpsons: Road Rage</figcaption>
+
+			   </figure></a>
+    
+    <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#turok_evolution"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Turok Evolution</figcaption>
+
+			   </figure></a>
+
+		<a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#warioland4"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Wario Land 4</figcaption>
+
+			   </figure></a>
+
+    
+	</div>
+  	<div class="cards">
+
+      <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#wario_ware"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>Wario Land Inc</figcaption>
+
+			   </figure></a>
+      
+		   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#zelda_past"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>The Legend of Zelda: A Link to the Past</figcaption>
+
+			   </figure></a>
+    
+    
+   <a href="https://spiritxiv.github.io/GBA-Emulator-Via-d/launcher.html#zelda_minish"><figure class="card">
+
+			<img src="https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/comingsoon1.png?raw=true" />
+
+			<figcaption>The Legend of Zelda: The Minish Cap</figcaption>
+
+			   </figure></a>
+	</div>
+	</div>
+
+</div> 
