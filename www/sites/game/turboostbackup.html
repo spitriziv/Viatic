@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Turboost</title>
+  <meta name="description" img src="image.png" content="The Viatic Website"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="chromelogo.png">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+  <head>
+  <body onload="typeWriter()"></body>
+    <!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Javascript-->
+          <script src="https://kit.fontawesome.com/38a479c8d7.js" crossorigin="anonymous"></script>
+<script src="https://spitriziv.github.io/Viatic/www/js/filter.js"></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   
+  <section  style="overflow:hidden:" class="home-section">    
+</head>
+<body class="" style="overflow:hidden:">
+  <div id="result-iframe-wrap" role="main">
+
+    <iframe id="result" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden:" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  
+  <title>CodePen - TurboBoost Racing game (Online Multiplayer)</title>
+  
+  
+  
+  
+<style>
+#version{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 1vmin;
+}
+html{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+input{
+	border-radius: 0 !important;
+}
+.data{
+	display: none;
+}
+#fore{
+	transition: transform .5s ease-in-out;
+	text-align: center;
+}
+.title{
+	font-family: Monoton;
+}
+#title{
+	padding-top: 20px;
+	color: white;
+	font-size: 10vmin;
+	text-shadow: 0 0 1vmin black;
+	text-align: center;
+	transform: translate3d(0, -100vh, 0);
+	transition: transform .5s ease-out;
+/* 	animation: slidetop 0.5s ease-out forwards; */
+}
+/* @keyframes slidetop{
+	0%{transform: translate3d(0, -100vh, 0)}
+}
+@keyframes leavetop{
+	100%{transform: translate3d(0, -100vh, 0)}
+}
+@keyframes slideleft{
+	0%{transform: translate3d(-100vw, 0, 0)}
+	50%{transform: translate3d(-100vw, 0, 0)}
+}
+@keyframes slideright{
+	0%{transform: translate3d(100vw, 0, 0)}
+	50%{transform: translate3d(100vw, 0, 0)}
+} */
+.menuitem{
+	color: white;
+	font-size: 7vmin;
+	text-align: center;
+	text-shadow: 0 0 1vmin black;
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out;
+/* 	animation: slideleft 1s -0.5s ease-out forwards; */
+}
+#name{
+	background-color: rgba(0, 0, 0, 0.5);
+	outline: none;
+	border: 1vmin solid white;
+	font-size: 10vmin;
+	text-align: center;
+	color: white;
+	padding: 1vmin;
+	width: 60vw;
+}
+#colorpicker{
+	margin: 0;
+	padding: 0;
+	width: 80vw;
+	height: 5vmin;
+	background: linear-gradient(90deg,
+		hsl(0, 100%, 50%),
+		hsl(60, 100%, 50%),
+		hsl(120, 100%, 50%),
+		hsl(180, 100%, 50%),
+		hsl(240, 100%, 50%),
+		hsl(300, 100%, 50%),
+		hsl(360, 100%, 50%)
+	);
+	border-radius: 3.5vmin;
+	border: 1vmin solid white;
+	display: inline-block;
+	cursor: pointer;
+}
+#slider{
+	margin: 0;
+	padding: 0;
+	width: 7vmin;
+	height: 7vmin;
+	border: 1vmin solid white;
+	border-radius: 4.5vmin;
+	transform: translate(-4.5vmin, -2vmin);
+	cursor: pointer;
+	box-shadow: 0 0 1vmin black;
+	transition: transform .2s;
+}
+#slider:hover{
+	transform: translate(-4.5vmin, -2vmin) scale(1.2);
+}
+#settings{
+	height: 20vmin;
+	width: 20vmin;
+	background-color: #6eb0ea;
+	position: absolute;
+	bottom: 2vmin;
+	right: 2vmin;
+	opacity: 1;
+	border-radius: 10vmin;
+	cursor: pointer;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	transition: transform .2s, box-shadow .2s, background .2s;
+	transform: translate3d(50vw, 0, 0);
+	z-index: 100;
+}
+#settings::after{
+	content: &quot;&quot;;
+	background-image: url(&quot;https://jchabin.github.io/cars/gear.png&quot;);
+	background-size: cover;
+	height: 10vmin;
+	width: 10vmin;
+	position: absolute;
+	bottom: 5vmin;
+	left: 5vmin;
+	filter: invert(1);
+	transition: transform .2s;
+}
+#settings:hover{
+	transform: scale(0.9) rotate(45deg) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+#toolbar{
+	width: 22vmin;
+	height: 85vmin;
+	border-radius: 11vmin;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	right: 1vmin;
+	bottom: 1vmin;
+	transform: scaleY(0);
+	transition: transform .5s;
+	transform-origin: 50% 87.5%;
+}
+#toolbar.sel{
+	transform: scaleY(1);
+}
+.tools{
+	height: 20vmin;
+	width: 20vmin;
+	background-color: #db6262;
+	border-radius: 10vmin;
+	cursor: pointer;
+	transition: transform .2s, box-shadow .2s, background .2s;
+	margin: 1vmin;
+	box-shadow: 0 1vmin 2vmin rgba(0, 0, 0, 0.5);
+}
+.tools:hover{
+	transform: scale(0.9) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+.tools::after{
+	content: &quot;&quot;;
+	display: inline-block;
+	background-image: url(&quot;https://jchabin.github.io/cars/newTrack.png&quot;);
+	filter: invert(1);
+	background-size: cover;
+	margin-top: 5vmin;
+	height: 10vmin;
+	width: 10vmin;
+	transition: transform .2s;
+}
+.tools:sel{
+	background-color: #62db68;
+}
+#edit{
+	background-color: #55db8f;
+}
+#cardboard::after{
+	background-image: url(&quot;https://jchabin.github.io/cars/cardboard.png&quot;);
+	filter: brightness(5);
+}
+#cardboard.sel{
+	background-color: #62db68;
+}
+#cardboard.disabled{
+	background-color: #a3a3a3 !important;
+	cursor: default !important;
+}
+#cardboard.disabled:hover{
+	background-color: #a3a3a3 !important;
+	transform: none !important;
+}
+#cardboard{
+	background-color: #db6262;
+}
+#help{
+	background-color: #9a55db;
+	font-family: Arial;
+	color: white;
+	font-size: 15vmin;
+	text-align: center;
+	line-height: 20vmin;
+}
+#help::after{
+	display: none;
+}
+#start{
+/* 	animation: slideleft 1s -0.25s forwards; */
+	font-size: 10vmin;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	border: 1vmin solid white;
+	padding: 2vmin;
+	cursor: pointer;
+	transition: transform .2s, box-shadow .2s;
+	text-shadow: none;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+}
+#start:hover{
+	transform: scale(0.9);
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+.button{
+	border: 1vmin solid white;
+	padding: 2vmin;
+	font-size: 10vmin !important;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 80vmin;
+	left: calc(50vw - 43vmin);
+	text-shadow: none;
+	line-height: 10vmin;
+	cursor: pointer;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	transition: transform .2s, box-shadow .2s;
+}
+.button:hover{
+	transform: scale(0.9) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+#host{
+	top: calc(30vh - 8vmin);
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out, box-shadow .2s;
+/* 	-webkit-transform-style: preserve-3d; */
+/* 	animation: slideleft 1s -0.5s ease-out forwards; */
+}
+#join{
+	top: calc(70vh - 8vmin);
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out, box-shadow .2s;
+/* 	-webkit-transform-style: preserve-3d; */
+/* 	animation: slideleft 1s ease-out forwards; */
+}
+.info{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+	font-size: 5vmin;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	border-bottom: 1vmin solid white;
+	z-index: 100000;
+}
+.info.title{
+	padding-top: 20px;
+}
+#code{
+	text-align: center;
+	font-size: 20vmin;
+	text-shadow: 0 0 2vmin white;
+}
+#incode{
+	text-align: center;
+	font-size: 20vmin;
+	text-shadow: 0 0 2vmin white;
+	outline: none;
+	border: none;
+	width: 80vw;
+	color: white;
+	background: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;
+}
+#startgame{
+	position: absolute;
+	bottom: 5vmin;
+	right: 5vmin;
+	color: white;
+	border: 1vmin solid white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	font-size: 10vmin;
+	padding: 2vmin;
+	transition: box-shadow .2s, transform .2s;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	z-index: 100000;
+}
+#startgame:hover{
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+	transform: scale(0.9);
+}
+.label{
+	font-family: &quot;Press Start 2P&quot;;
+	color: white;
+	text-shadow: 0 0 1vmin black;
+	display: inline-block;
+	padding: 2vmin;
+	position: absolute;
+	font-size: 3vmin;
+	transform: translateX(-50%) translateY(-100%);
+	text-align: center;
+	line-height: 4vmin;
+	z-index: 0;
+}
+#countdown{
+	font-size: 50vmin;
+	height: 70vmin;
+	width: 100vw;
+	position: absolute;
+	top: calc(50vh - 35vmin);
+	color: white;
+	text-shadow: 0 0 2vmin white;
+	z-index: 100000;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center; 
+	line-height: 23vmin;
+}
+#lap{
+	font-size: 10vmin;
+	position: absolute;
+	color: white;
+	text-shadow: 0 0 2vmin white;
+	z-index: 100000;
+	top: 3vmin;
+	left: 3vmin;
+}
+#divider{
+	height: 100vh;
+	width: 4px;
+	position: absolute;
+	top: 0;
+	left: calc(50vw - 2px);
+	background-color: white;
+}
+.amzad{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 15vmax;
+	width: 30vmax;
+	transform: translate3d(-50vw, 0, 0);
+	transition: transform .2s;
+	
+	z-index: 0;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate=&quot;no&quot; >
+  <script data-ad-client=&quot;ca-pub-8222390470642566&quot; async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;></script>
+
+<link href=&quot;https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P&quot; rel=&quot;stylesheet&quot;>
+<!-- <div id=&quot;trackcode&quot; class=&quot;data&quot;>
+	1,-5/1,2 1,2/0,4 0,4/-1,5 -1,5/-3,6 -3,6/-7,6 -7,6/-9,5 -9,5/-10,4 -10,4/-11,2 -11,2/-11,-4 -11,-4/-10,-5 -10,-5/-8,-5 -8,-5/-7,-4 -7,-4/-7,-1 -7,-4/-6,-5 -6,-5/-4,-5 -4,-5/-3,-4 -3,-6/-3,-1 -3,-6/-2,-8 -2,-8/-1,-9 -1,-9/1,-10 1,-10/5,-10 5,-10/7,-9 7,-9/8,-8 8,-8/9,-6 9,-6/9,-1 9,-1/8,1 8,1/6,2 6,2/4,2 4,2/2,1 2,1/1,-1 -1,-5/0,-7 0,-7/2,-8 2,-8/4,-8 4,-8/6,-7 6,-7/7,-5 7,-5/7,-1 7,-1/6,0 6,0/4,0 4,0/3,-1 3,-1/3,-4 -1,-5/-1,1 -1,1/-2,3 -2,3/-4,4 -4,4/-6,4 -6,4/-8,3 -8,3/-9,1 -9,1/-9,-3 -9,0/-8,1 -8,1/-6,1 -6,1/-5,0 -5,0/-5,-3 -5,0/-4,1 -4,1/-2,1 -2,1/-1,0 1,-5/2,-6 2,-6/4,-6 4,-6/5,-5 5,-5/5,-2
+</div> -->
+<div id=&quot;trackcode&quot; class=&quot;data&quot;>
+1,5/0,7 0,7/-1,8 -1,8/-3,9 -3,9/-7,9 -7,9/-9,8 -9,8/-10,7 -10,7/-11,5 -6,7/-4,7 -4,7/-2,6 -2,6/-1,4 -6,7/-8,6 -8,6/-9,4 -1,4/-1,0 1,0/1,5 -11,5/-11,0 -11,0/-10,-1 -10,-1/-8,-1 -8,-1/-7,0 -7,0/-7,2 -9,3/-8,4 -8,4/-6,4 -6,4/-5,3 -5,3/-5,1 -9,1/-9,4 -5,3/-4,4 -4,4/-2,4 -2,4/-1,3 -7,0/-6,-1 -6,-1/-4,-1 -4,-1/-3,0 -3,0/-3,2 -1,0/-1,-2 -1,-2/0,-4 0,-4/2,-5 2,-5/4,-5 4,-5/6,-4 6,-4/7,-2 -3,0/-3,-3 -3,-3/-2,-5 -2,-5/-1,-6 -1,-6/1,-7 1,-7/5,-7 5,-7/7,-6 7,-6/8,-5 8,-5/9,-3 9,-3/9,2 9,2/8,4 8,4/6,5 6,5/4,5 4,5/2,4 2,4/1,2 7,-2/7,2 7,2/6,3 6,3/4,3 4,3/3,2 4,-3/2,-3 2,-3/1,-2 1,-2/1,0 4,-3/5,-2 5,-2/5,1 3,2/3,-1 |-1,3/1,3 6,-4/7,-6 |-7,5 -5,6 -4,5 2,6 1,8 3,9 4,6 3,7 -3,10 -4,12 -10,11 -12,8 -14,8 -12,6 -7,10 -12,2 -15,3 -13,-1 -10,-4 -8,-2 -6,-4 -4,-3 -11,-2 -8,-3 -4,-5 -3,-6 -5,-2 0,-8 -2,-8 -4,-8 -5,-6 -3,-10 2,-9 4,-8 5,-10 6,-8 10,-7 8,-7 9,-11 9,-5 15,-4 11,-2 11,-1 10,3 16,2 12,1 8,6 7,9 6,6 -8,-7 -13,-7 -13,-4 -15,-4 -17,0 |1,3,6/22 0,3,8/55 -2,3,9/77 -8,3,9/115 -10,3,8/148 -11,3,6/166 -8,3,4/-86 -7,3,4/-83 -6,3,4/-90 -10,3,-1/-83 -9,3,-1/-88 -8,3,-1/-90 -6,3,-1/-89 -5,3,-1/-89 -4,3,-1/-89 -4,3,4/-90 -3,3,4/-90 -2,3,4/265 -3,3,-4/194 -2,3,-6/218 0,3,-7/262 6,3,-7/-69 8,3,-6/-42 9,3,-4/-16 9,3,4/40 8,3,5/70 2,3,5/135 3,3,6/122| 
+</div>
+<div id=&quot;fore&quot;>
+	<div id=&quot;version&quot;>v1.1.3</div>
+	<div class=&quot;title&quot; id=&quot;title&quot;>Turboboost racing game</div>
+	<div class=&quot;menuitem title&quot;>Pick a name:<br/><input id=&quot;name&quot; class=&quot;title&quot; ontouchstart=&quot;this.focus()&quot; placeholder=&quot;Name&quot;></input></div>
+	<script>
+		var color, updateColor, menu2, host, joinGame, codeCheck;
+	</script>
+	<div class=&quot;amzad&quot; id=&quot;amzn-assoc-ad-36be7933-d9ec-4909-a713-60b9ce598691&quot;></div><script async src=&quot;&quot;></script>
+	<div class=&quot;menuitem title&quot;>Choose a color:<br/><div id=&quot;colorpicker&quot; ontouchstart=&quot;event.touches[0].buttons = 1; this.onmousemove(event.touches[0])&quot; ontouchmove=&quot;event.touches[0].buttons = 1; this.onmousemove(event.touches[0])&quot; onmousedown=&quot;this.onmousemove(event)&quot; onmousemove=&quot;if(event.buttons == 1){ var x = event.clientX - this.getBoundingClientRect().left; x = Math.min(this.clientWidth, Math.max(0, x)); color = Math.floor(x / this.clientWidth * 360); updateColor(); }&quot;><div id=&quot;slider&quot;></div></div></div>
+	<div class=&quot;menuitem title&quot;><div id=&quot;start&quot; onclick=&quot;menu2()&quot;>Start!</div></div>
+	<div id=&quot;settings&quot; ontouchstart=&quot;this.onclick()&quot; onclick=&quot;this.parentNode.children[7].className = this.parentNode.children[7].className == 'sel' ? '' : 'sel';&quot;></div>
+	<div id=&quot;toolbar&quot;>
+		<div class=&quot;tools&quot; id=&quot;edit&quot; ontouchstart=&quot;this.onclick()&quot; onclick=&quot;window.open('editor')&quot;></div>
+		<div class=&quot;tools&quot; 
+				 id=&quot;cardboard&quot; ontouchstart=&quot;this.onclick()&quot; onclick=&quot;this.className = this.className == 'tools disabled' ? this.className : this.className == 'tools sel' ? 'tools' : 'tools sel';&quot;></div>
+		<div class=&quot;tools&quot; id=&quot;help&quot; ontouchstart=&quot;this.onclick()&quot; onclick=&quot;window.open('help')&quot;>?</div>
+	</div>
+</div>
+    <script src=&quot;https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js&quot;></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js'></script>
+<script src='https://www.gstatic.com/firebasejs/4.6.2/firebase.js'></script>
+<script src='https://jchabin.github.io/VR-ThreeJS-Test/ThreeJS/DeviceOrientationControls.js'></script>
+<script src='https://jchabin.github.io/VR-ThreeJS-Test/ThreeJS/StereoEffect.js'></script>
+      <script id=&quot;rendered-js&quot; >
+// For making your own tracks, go here: https://codepen.io/FRADAR/pen/KKavZdL
+// Instructions of making the tracks are in the link above itself.
+// For help on how to play the game, go to https://codepen.io/FRADAR/pen/yLMObNK
+// Hope you like this game! It took a lot of time to make, and it is still not that good. I will update this game whenever I can! v1.1.3
+// (c) Copyright FRADAR on Codepen.io
+var SPEED = 0.004;
+var CAMERA_LAG = 0.9;
+var COLLISION = 1.1;
+var BOUNCE = 0.7;
+var mapscale = 5;
+var shiny = false;
+var VR = false;
+var BOUNCE_CORRECT = 0.01;
+var WALL_SIZE = 1.2;
+function MODS() {
+
+}
+setTimeout(function () {
+  document.getElementById(&quot;title&quot;).style.transform = &quot;none&quot;;
+}, 500);
+setTimeout(function () {
+  document.getElementsByClassName(&quot;menuitem&quot;)[0].style.transform = &quot;none&quot;;
+}, 1000);
+setTimeout(function () {
+  document.getElementsByClassName(&quot;menuitem&quot;)[1].style.transform = &quot;none&quot;;
+}, 1200);
+setTimeout(function () {
+  document.getElementsByClassName(&quot;menuitem&quot;)[2].style.transform = &quot;none&quot;;
+}, 1400);
+setTimeout(function () {
+  document.getElementById(&quot;settings&quot;).style.transform = &quot;none&quot;;
+}, 1600);
+setTimeout(function () {
+  document.getElementsByClassName(&quot;amzad&quot;)[0].style.transform = &quot;none&quot;;
+}, 1800);
+var connected = false;
+var config = {
+  apiKey: &quot;AIzaSyDiJsMLlix5o9XqPW1EpeBvuA15XNjlR8M&quot;,
+  authDomain: &quot;drawing-game-62d1f.firebaseapp.com&quot;,
+  databaseURL: &quot;https://drawing-game-62d1f.firebaseio.com&quot;,
+  projectId: &quot;drawing-game-62d1f&quot;,
+  storageBucket: &quot;car-game-a86b9.appspot.com&quot;,
+  messagingSenderId: &quot;722396856191&quot; };
+
+firebase.initializeApp(config);
+var database = firebase.database();
+database.ref(&quot;/testServer&quot;).once(&quot;value&quot;, function (e) {
+  if (connected) {
+    database = firebase.apps[0].database();
+    console.log(&quot;Just kidding, the original one was working!&quot;);
+  }
+  connected = true;
+});
+setTimeout(function () {
+  if (!connected) {
+    connected = true;
+    console.log(&quot;Regular database not working, using backup database...&quot;);
+    config = {
+      apiKey: &quot;AIzaSyCsqpn0aTDqU8ffGVE284fmSEOTK2tOgq8&quot;,
+      authDomain: &quot;car-game-backup.firebaseapp.com&quot;,
+      databaseURL: &quot;https://car-game-backup.firebaseio.com&quot;,
+      projectId: &quot;car-game-backup&quot;,
+      storageBucket: &quot;car-game-backup.appspot.com&quot;,
+      messagingSenderId: &quot;1015722732476&quot; };
+
+    firebase.initializeApp(config, &quot;backup&quot;);
+    database = firebase.apps[1].database();
+  }
+}, 2000);
+
+function forceScroll() {
+  requestAnimationFrame(forceScroll);
+  window.scrollTo(0, 0);
+}
+forceScroll();
+
+//var database = firebase.database();
+
+var camera,renderer,scene,renderer2,scene2,labels = [];
+scene = new THREE.Scene();
+renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+var mobile = navigator.userAgent.match(&quot;Mobile&quot;) != null || navigator.userAgent.match(&quot;Linux;&quot;) != null;
+if (mobile)
+window.onclick = function () {
+  function reactOrientation(e) {
+    var angle = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).angle == 0 ? e.gamma : screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).angle < 0 ? -e.beta : e.beta;
+    // document.body.innerHTML = angle;
+    me.data.steer = Math.max(Math.min(-angle / 180 * Math.PI, Math.PI / 6), -Math.PI / 6);
+  }
+
+  //Device/phone motion code is stolen/borrowed from: https://dev.to/li/how-to-requestpermission-for-devicemotion-and-deviceorientation-events-in-ios-13-46g2
+
+  //Hope it works!
+
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission(&quot;The game needs to access the phone tilt so you can steer your car.&quot;).then(permissionState => {
+      if (permissionState === 'granted')
+      window.addEventListener('deviceorientation', reactOrientation);else
+
+      alert(&quot;Permission denied&quot;);
+    }).catch(alert);
+  } else {
+    window.addEventListener('deviceorientation', reactOrientation);
+  }
+  window.onclick = null;
+  document.getElementById(&quot;start&quot;).ontouchstart = function () {this.onclick();};
+};
+if (!mobile) {
+  renderer.shadowMap.enabled = false;
+  renderer.shadowMap.autoUpdate = false;
+  renderer.shadowMap.needsUpdate = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  document.getElementById(&quot;cardboard&quot;).className += &quot; disabled&quot;;
+  console.log(mobile);
+}
+var element = renderer.domElement;
+var shinymat;
+
+window.ontouchstart = function (e) {
+  if (window.onclick == null)
+  e.preventDefault();
+};
+window.ontouchmove = function (e) {
+  if (window.onclick == null)
+  e.preventDefault();
+};
+window.ontouchend = function (e) {
+  if (window.onclick == null)
+  e.preventDefault();
+};
+// window.onclick = function(e){
+// 	toggleFullScreen();
+// }
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if (!doc.fullscreenElement &amp;&amp; !doc.mozFullScreenElement &amp;&amp; !doc.webkitFullscreenElement &amp;&amp; !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  } else
+  {
+    cancelFullScreen.call(doc);
+  }
+  window.scrollTo(0, 1);
+}
+
+var name,code,players = {},me = {},gameStarted = false,gameSortaStarted = false,left = false,right = false,lap;
+var carPos = [
+{ x: 0, y: 0 },
+{ x: 2, y: 0 },
+{ x: -2, y: 0 },
+{ x: 0, y: -3 },
+{ x: -2, y: -3 },
+{ x: 2, y: -3 },
+{ x: 0, y: -6 },
+{ x: 2, y: -6 },
+{ x: -2, y: -6 },
+{ x: 0, y: -9 },
+{ x: 2, y: -9 },
+{ x: -2, y: -9 },
+{ x: 0, y: -12 },
+{ x: -2, y: -12 },
+{ x: 2, y: -12 },
+{ x: 0, y: -15 },
+{ x: 2, y: -15 },
+{ x: -2, y: -15 }];
+
+color = Math.floor(Math.random() * 360);
+var f = document.getElementById(&quot;fore&quot;);
+var s = document.getElementById(&quot;slider&quot;);
+updateColor = function () {
+  s.style.marginLeft = color / 360 * 80 + &quot;vw&quot;;
+  s.style.backgroundColor = &quot;hsl(&quot; + color + &quot;, 100%, 50%)&quot;;
+  document.body.style.backgroundColor = &quot;hsl(&quot; + color + &quot;, 50%, 50%)&quot;;
+};
+updateColor();
+
+menu2 = function () {
+  if (document.getElementById(&quot;name&quot;).value == &quot;&quot;)
+  name = &quot;No Name&quot;;else
+
+  name = document.getElementById(&quot;name&quot;).value;
+  VR = document.getElementById(&quot;cardboard&quot;).className == &quot;tools sel&quot;;
+  f.style.transform = &quot;translate3d(0, -100vh, 0)&quot;;
+  setTimeout(function () {
+    f.innerHTML = &quot;<div class='menuitem title button' id='host' ontouchstart='this.click()' onclick='host()'>Host a game</div><div class='menuitem title button' ontouchstart='this.click()' id='join' onclick='joinGame()'>Join a game</div>&quot;;
+    f.style.transform = &quot;none&quot;;
+    setTimeout(function () {
+      document.getElementById(&quot;host&quot;).style.transform = &quot;none&quot;;
+      setTimeout(function () {
+        document.getElementById(&quot;host&quot;).style.transition = &quot;transform .2s, box-shadow .2s&quot;;
+      }, 500);
+    }, 500);
+    setTimeout(function () {
+      document.getElementById(&quot;join&quot;).style.transform = &quot;none&quot;;
+      setTimeout(function () {
+        document.getElementById(&quot;join&quot;).style.transition = &quot;transform .2s, box-shadow .2s&quot;;
+      }, 500);
+    }, 1000);
+  }, 500);
+};
+
+host = function () {
+  document.getElementById(&quot;host&quot;).onclick = null;
+  f.style.transform = &quot;translate3d(0, -100vh, 0)&quot;;
+  setTimeout(function () {
+    f.innerHTML = &quot;<div class='info title'>Use this code to join the game!<div id='code'>Loading...</div></div><div id='startgame' class='title' onclick='startGame()' ontouchstart='this.click()'>Start!</div>&quot;;
+    if (VR)
+    f.innerHTML += &quot;<div id='divider'></div>&quot;;
+    f.appendChild(element);
+    f.style.transform = &quot;none&quot;;
+    getCode();
+  }, 1000);
+
+  function getCode() {
+    code = &quot;&quot;;
+    var letters = &quot;ABCDEFGHIJKLMMNOPQRSTUVWXYZ&quot;;
+    for (var i = 0; i < 4; i++)
+    code += letters[Math.floor(Math.random() * letters.length)];
+    database.ref(code).once(&quot;value&quot;, function (codeCheck) {
+      console.log(codeCheck.val());
+      if (codeCheck.val() == null || codeCheck.val().status == -1) {
+        console.log(code);
+        document.getElementById(&quot;code&quot;).innerHTML = code;
+
+        database.ref(code).set({
+          status: 0,
+          players: {},
+          map: document.getElementById(&quot;trackcode&quot;).innerHTML });
+
+
+        database.ref(code + &quot;/players&quot;).on(&quot;child_added&quot;, function (p) {
+          console.log(p);
+          players[p.ge.path.n[2]] = {
+            data: p.val(),
+            model: new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 2)) };
+
+          var pl = players[p.ge.path.n[2]];
+          pl.model.position.set(pl.data.x, 0.6, pl.data.y);
+          pl.model.material = shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;hsl(&quot; + pl.data.color + &quot;, 100%, 50%)&quot;) });
+          var wheel = new THREE.Mesh(
+          new THREE.CylinderBufferGeometry(0.5, 0.5, 0.2, 10),
+          shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#222&quot;) }));
+
+          var w1 = wheel.clone();
+          w1.position.set(0.6, -0.1, 0.7);
+          w1.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w1);
+          var w2 = wheel.clone();
+          w2.position.set(-0.6, -0.1, 0.7);
+          w2.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w2);
+          var w3 = wheel.clone();
+          w3.position.set(0.6, -0.1, -0.7);
+          w3.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w3);
+          var w4 = wheel.clone();
+          w4.position.set(-0.6, -0.1, -0.7);
+          w4.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w4);
+          var label = document.createElement(&quot;DIV&quot;);
+          label.className = &quot;label&quot;;
+          label.innerHTML = pl.data.name + &quot;<br/>|&quot;;
+          pl.label = label;
+          label.position = pl.model.position;
+          console.log(label);
+          f.appendChild(label);
+          labels.push(label);
+          pl.model.receiveShadow = true;
+          scene.add(pl.model);
+
+          if (p.ge.path.n[2] == me.ref.path.n[2]) {
+            me.label = pl.label;
+            me.model = pl.model;
+            me.label.innerHTML = &quot;&quot;;
+          }
+        });
+
+        database.ref(code + &quot;/players&quot;).on(&quot;child_changed&quot;, function (p) {
+          // console.log(p);
+          players[p.ge.path.n[2]].data = p.val();
+        });
+
+        me.ref = database.ref(code + &quot;/players&quot;).push();
+        me.data = {
+          x: 0,
+          y: 0,
+          xv: 0,
+          yv: 0,
+          dir: 0,
+          steer: 0,
+          color: color,
+          name: name,
+          checkpoint: 1,
+          lap: 0,
+          collision: {} };
+
+        me.ref.set(me.data);
+
+        database.ref(code + &quot;/status&quot;).on(&quot;value&quot;, function (v) {
+          v = v.val();
+          if (v == 1) {
+            document.getElementsByClassName(&quot;info&quot;)[0].outerHTML = &quot;&quot;;
+            document.getElementById(&quot;startgame&quot;).outerHTML = &quot;&quot;;
+
+            gameStarted = true;
+            gameSortaStarted = true;
+
+            var countDown = document.createElement(&quot;DIV&quot;);
+            countDown.innerHTML = &quot;3&quot;;
+            countDown.className = &quot;title&quot;;
+            countDown.id = &quot;countdown&quot;;
+            f.appendChild(countDown);
+
+            lap = document.createElement(&quot;DIV&quot;);
+            lap.innerHTML = &quot;1/3&quot;;
+            lap.className = &quot;title&quot;;
+            lap.id = &quot;lap&quot;;
+            f.appendChild(lap);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;2&quot;;
+            }, 1000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;1&quot;;
+            }, 2000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;GO!&quot;;
+              gameSortaStarted = false;
+            }, 3000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;&quot;;
+            }, 4000);
+          }
+        });
+      } else
+      getCode();
+    });
+  }
+
+  join();
+};
+
+joinGame = function () {
+  document.getElementById(&quot;join&quot;).onclick = null;
+  f.style.transform = &quot;translate3d(0, -100vh, 0)&quot;;
+  setTimeout(function () {
+    f.innerHTML = &quot;<div class='info title'>Enter a code to join a game!<input id='incode' class='title' onkeyup='codeCheck(event)' ontouchstart='this.focus()'></input></div>&quot;;
+    if (VR)
+    f.innerHTML += &quot;<div id='divider'></div>&quot;;
+    f.appendChild(element);
+    f.style.transform = &quot;none&quot;;
+  }, 1000);
+  join();
+};
+
+var map, trees, signs, startc;
+
+function deleteMap() {
+  while (map.children.length > 0)
+  map.remove(map.children[0]);
+  scene.remove(map);
+  while (trees.children.length > 0)
+  trees.remove(trees.children[0]);
+  scene.remove(trees);
+  while (signs.children.length > 0)
+  signs.remove(signs.children[0]);
+  scene.remove(signs);
+  while (startc.children.length > 0)
+  startc.remove(startc.children[0]);
+  scene.remove(startc);
+}
+
+function loadMap() {
+  var racedata = document.getElementById(&quot;trackcode&quot;).innerHTML.trim().split(&quot;|&quot;)[0].trim().split(&quot; &quot;);
+  var material = new THREE.MeshLambertMaterial({ color: new THREE.Color(0xf48342) });
+  //var mapscale = 7;
+  map = new THREE.Object3D();
+  for (var i = 0; i < racedata.length; i++) {
+    if (racedata[i] == &quot;&quot;)
+    continue;
+    var point1 = new THREE.Vector2(parseInt(racedata[i].split(&quot;/&quot;)[0].split(&quot;,&quot;)[0]), parseInt(racedata[i].split(&quot;/&quot;)[0].split(&quot;,&quot;)[1]));
+    var point2 = new THREE.Vector2(parseInt(racedata[i].split(&quot;/&quot;)[1].split(&quot;,&quot;)[0]), parseInt(racedata[i].split(&quot;/&quot;)[1].split(&quot;,&quot;)[1]));
+    var wall = new THREE.Mesh(
+    new THREE.BoxBufferGeometry(point1.distanceTo(point2) * mapscale + 0.3, 1.5, 0.3),
+    material);
+
+    var angle = Math.atan2(point1.y - point2.y, point1.x - point2.x);
+    wall.position.set(-(point1.x + point2.x) / 2 * mapscale, 0.75, (point1.y + point2.y) / 2 * mapscale);
+    wall.rotation.set(0, angle, 0, &quot;YXZ&quot;);
+    var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), angle));
+    wall.plane = plane;
+    wall.width = point1.distanceTo(point2) * mapscale;
+    wall.p1 = point1.multiply(new THREE.Vector2(-mapscale, mapscale));
+    wall.p2 = point2.multiply(new THREE.Vector2(-mapscale, mapscale));
+    wall.castShadow = true;
+    wall.receiveShadow = true;
+    map.add(wall);
+  }
+  scene.add(map);
+
+  trees = new THREE.Object3D();
+  var tree = new THREE.Mesh(
+  new THREE.CylinderBufferGeometry(0, 4, 15),
+  new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#1bad2c&quot;) }));
+
+  var treedata = document.getElementById(&quot;trackcode&quot;).innerHTML.trim().split(&quot;|&quot;)[2].trim().split(&quot; &quot;);
+  for (var i = 0; i < treedata.length; i++) {
+    if (treedata[i] == &quot;&quot;)
+    continue;
+    var t = tree.clone();
+    t.position.set(-parseInt(treedata[i].split(&quot;,&quot;)[0]) * mapscale, 0, parseInt(treedata[i].split(&quot;,&quot;)[1]) * mapscale);
+    var s = Math.random() + 1;
+    t.scale.set(s, s, s);
+    t.castShadow = true;
+    t.receiveShadow = true;
+    trees.add(t);
+  }
+  scene.add(trees);
+
+  signs = new THREE.Object3D();
+  var sign = new THREE.Mesh(
+  new THREE.ConeBufferGeometry(0.7, 2, 5),
+  new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#f00&quot;) }));
+
+  var signdata = document.getElementById(&quot;trackcode&quot;).innerHTML.trim().split(&quot;|&quot;)[3].trim().split(&quot; &quot;);
+  for (var i = 0; i < signdata.length; i++) {
+    if (signdata[i] == &quot;&quot;)
+    continue;
+    var s = sign.clone();
+    var da = signdata[i].split(&quot;/&quot;);
+    s.position.set(-parseFloat(da[0].split(&quot;,&quot;)[0]) * mapscale, parseFloat(da[0].split(&quot;,&quot;)[1]) + 1, parseFloat(da[0].split(&quot;,&quot;)[2]) * mapscale);
+    s.rotation.set(Math.PI / 2, parseInt(da[1]) / 180 * Math.PI, 0, &quot;YXZ&quot;);
+    s.castShadow = true;
+    s.receiveShadow = true;
+    signs.add(s);
+  }
+  scene.add(signs);
+
+  var startdata = document.getElementById(&quot;trackcode&quot;).innerHTML.trim().split(&quot;|&quot;)[1].trim().split(&quot; &quot;);
+  startc = new THREE.Object3D();
+  for (var i = 0; i < startdata.length; i++) {
+    if (startdata[i] == &quot;&quot;)
+    continue;
+    var point1 = new THREE.Vector2(parseInt(startdata[i].split(&quot;/&quot;)[0].split(&quot;,&quot;)[0]), parseInt(startdata[i].split(&quot;/&quot;)[0].split(&quot;,&quot;)[1]));
+    var point2 = new THREE.Vector2(parseInt(startdata[i].split(&quot;/&quot;)[1].split(&quot;,&quot;)[0]), parseInt(startdata[i].split(&quot;/&quot;)[1].split(&quot;,&quot;)[1]));
+    var wall = new THREE.Mesh(
+    new THREE.BoxBufferGeometry(point1.distanceTo(point2) * mapscale, 0.1, 1),
+    new THREE.MeshLambertMaterial({ color: new THREE.Color(i == 0 ? &quot;#2580db&quot; : &quot;#db2525&quot;) }));
+
+    var angle = Math.atan2(point1.y - point2.y, point1.x - point2.x);
+    wall.position.set(-(point1.x + point2.x) / 2 * mapscale, 0, (point1.y + point2.y) / 2 * mapscale);
+    wall.rotation.set(0, angle, 0, &quot;YXZ&quot;);
+    var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), angle));
+    wall.plane = plane;
+    wall.width = point1.distanceTo(point2) * mapscale;
+    wall.castShadow = true;
+    wall.receiveShadow = true;
+    startc.add(wall);
+  }
+  scene.add(startc);
+  return document.getElementById(&quot;trackcode&quot;).innerHTML.trim().split(&quot;|&quot;)[4];
+}
+
+function join() {
+  var cubeCamera = new THREE.CubeCamera(1, 100, 128);
+  scene.add(cubeCamera);
+
+  shinymat = new THREE.MeshBasicMaterial({ envMap: cubeCamera.renderTarget });
+
+  eval(loadMap());
+
+  scene.background = new THREE.Color(0x7fb0ff);
+
+  camera = new THREE.PerspectiveCamera(
+  90,
+  window.innerWidth / window.innerHeight,
+  0.01,
+  1000);
+
+
+  camera.position.set(0, 3, 10);
+  scene.add(camera);
+
+  var player = new THREE.Object3D();
+  player.position.set(0, 0, 0);
+
+  camera.lookAt(player.position);
+
+  scene.add(player);
+  var stripes = new THREE.TextureLoader().load(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQYV2NgYGD4z/D/////AA/6BPwHejn9AAAAAElFTkSuQmCC&quot;);
+  stripes.magFilter = THREE.NearestFilter;
+  stripes.wrapS = THREE.RepeatWrapping;
+  stripes.wrapT = THREE.RepeatWrapping;
+  stripes.repeat.set(100, 100);
+  var ground = new THREE.Mesh(
+  new THREE.PlaneBufferGeometry(1000, 1000),
+  new THREE.MeshLambertMaterial({ color: new THREE.Color(0x57c115), emissive: new THREE.Color(0x0f0f0f), emissiveMap: stripes }));
+
+  ground.rotation.set(-Math.PI / 2, 0, 0);
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  for (var i = 0; i < 100; i++) {
+    var cube = new THREE.Mesh(
+    new THREE.BoxBufferGeometry(100, 100, 100),
+    new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#888&quot;), side: THREE.DoubleSide }));
+
+    var dist = Math.random() * 250 + 250;
+    var dir = Math.random() * Math.PI * 2;
+    cube.position.set(dist * Math.sin(dir), 0, dist * Math.cos(dir));
+    cube.rotation.set(Math.random() * Math.PI * 2, Math.random() * Math.PI * 2, Math.random() * Math.PI * 2);
+    scene.add(cube);
+  }
+
+  var light = new THREE.DirectionalLight(0xffffff, 0.7);
+  light.position.set(3000, 2000, -2000);
+  // light.castShadow = !mobile;
+  light.shadow.mapSize.width = 2048;
+  light.shadow.mapSize.height = 2048;
+  light.shadow.camera.near = 3000;
+  light.shadow.camera.far = 5000;
+  light.shadow.camera.top = 100;
+  light.shadow.camera.bottom = -100;
+  light.shadow.camera.left = -100;
+  light.shadow.camera.right = 120;
+  light.shadow.bias = 0.00002;
+  scene.add(light);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+
+  //scene.add(new THREE.AmbientLight(0x404040));
+
+  var x = 0;
+  var ray = new THREE.Raycaster();
+  function toXYCoords(pos) {
+    pos = pos.clone();
+    pos.y += 0.5;
+    var vector = pos.project(camera);
+    vector.x = (vector.x + 1) / 2 * window.innerWidth;
+    vector.y = -(vector.y - 1) / 2 * window.innerHeight;
+    return vector;
+  }
+  var windowsize = { x: window.innerWidth, y: window.innerHeight };
+
+  var ray = new THREE.Raycaster();
+  ray.near = 0;
+  ray.far = 1;
+
+  var ren = renderer;
+  var controls;
+  if (VR) {
+    var effect = new THREE.StereoEffect(renderer);
+    effect.setSize(window.innerWidth, window.innerHeight);
+    effect.setEyeSeparation(0.7);
+    ren = effect;
+    controls = new THREE.DeviceOrientationControls(camera);
+  }
+
+  var lastTime = performance.now();
+  function render(timestamp) {
+    requestAnimationFrame(render);
+    var timepassed = timestamp - lastTime;
+    lastTime = timestamp;
+    var warp = timepassed / 16;
+
+    if (gameStarted) {
+      if (!mobile) {
+        if (left)
+        me.data.steer = Math.PI / 6;
+        if (right)
+        me.data.steer = -Math.PI / 6;
+        if (!(left ^ right))
+        me.data.steer = 0;
+      }
+      if (VR)
+      me.data.steer = camera.rotation.z;
+      me.data.steer = Math.max(-Math.PI / 6, Math.min(Math.PI / 6, me.data.steer));
+
+      players[me.ref.path.n[2]].data = me.data;
+
+      if (!gameSortaStarted) {
+        for (var p in players) {
+          var play = players[p];
+
+          play.data.dir += play.data.steer / 10 * warp;
+
+          play.data.xv += Math.sin(play.data.dir) * SPEED * warp;
+          play.data.yv += Math.cos(play.data.dir) * SPEED * warp;
+
+          play.data.xv *= Math.pow(0.99, warp);
+          play.data.yv *= Math.pow(0.99, warp);
+
+          play.data.x += play.data.xv * warp;
+          play.data.y += play.data.yv * warp;
+
+          play.model.position.x = play.data.x + play.data.xv;
+          play.model.position.z = play.data.y + play.data.yv;
+          play.model.rotation.y = play.data.dir;
+
+          play.model.children[0].rotation.z = Math.PI / 2 - play.data.steer;
+          play.model.children[1].rotation.z = Math.PI / 2 - play.data.steer;
+
+          // function checkCubes(angle){
+          // 	ray.set(play.model.position, angle);
+          // 	var inter = ray.intersectObjects(blocks);
+          // 	if(inter.length > 0 &amp;&amp; inter[0].distance < 0.5){
+          // 		// console.log(inter[0]);
+          // 		var vel = new THREE.Vector3(play.data.xv, 0, play.data.yv);
+          // 		vel.reflect(inter[0].face.normal);
+          // 		play.data.xv = vel.x * 0.3;
+          // 		play.data.yv = vel.z * 0.3;
+          // 		play.data.x += play.data.xv;
+          // 		play.data.y += play.data.yv;
+          // 	}
+          // }
+          // checkCubes(new THREE.Vector3(0, 0, 1));
+          // checkCubes(new THREE.Vector3(0, 0, -1));
+          // checkCubes(new THREE.Vector3(1, 0, 0));
+          // checkCubes(new THREE.Vector3(-1, 0, 0));
+
+          for (var w in map.children) {
+            var wall = map.children[w];
+            var posi = new THREE.Vector2(play.data.x, play.data.y);
+            if (Math.abs(wall.plane.distanceToPoint(play.model.position.clone().sub(wall.position))) < WALL_SIZE) {
+              if (wall.position.clone().distanceTo(play.model.position) < wall.width / 2) {
+                var vel = new THREE.Vector3(play.data.xv, 0, play.data.yv);
+                vel.reflect(wall.plane.normal);
+                play.data.xv = vel.x + BOUNCE_CORRECT * wall.plane.normal.x * Math.sign(wall.plane.normal.dot(play.model.position.clone().sub(wall.position)));
+                play.data.yv = vel.z + BOUNCE_CORRECT * wall.plane.normal.z * Math.sign(wall.plane.normal.dot(play.model.position.clone().sub(wall.position)));
+                //var dir = Math.normalize();
+                while (Math.abs(wall.plane.distanceToPoint(new THREE.Vector3(play.data.x, 0, play.data.y).sub(wall.position))) < WALL_SIZE) {
+                  play.data.x += play.data.xv;
+                  play.data.y += play.data.yv;
+                }
+                play.data.xv *= BOUNCE;
+                play.data.yv *= BOUNCE;
+              }
+            }
+            if (posi.distanceTo(wall.p1) < WALL_SIZE + 0.1) {
+              // console.log(&quot;o1&quot;);
+              var norm = posi.clone().sub(wall.p1);
+              norm = new THREE.Vector3(norm.x, 0, norm.y);
+              norm.normalize();
+              var vel = new THREE.Vector3(play.data.xv, 0, play.data.yv);
+              vel.reflect(norm);
+              play.data.xv = vel.x + norm.x * BOUNCE_CORRECT * 1;
+              play.data.yv = vel.z + norm.z * BOUNCE_CORRECT * 1;
+              while (new THREE.Vector2(play.data.x, play.data.y).distanceTo(wall.p1) < WALL_SIZE + 0.1) {
+                play.data.x += play.data.xv;
+                play.data.y += play.data.yv;
+              }
+              play.data.xv *= BOUNCE;
+              play.data.yv *= BOUNCE;
+            }
+            if (posi.distanceTo(wall.p2) < WALL_SIZE + 0.1) {
+              // console.log(&quot;o2&quot;);
+              var norm = posi.clone().sub(wall.p2);
+              norm = new THREE.Vector3(norm.x, 0, norm.y);
+              norm.normalize();
+              var vel = new THREE.Vector3(play.data.xv, 0, play.data.yv);
+              vel.reflect(norm);
+              play.data.xv = vel.x + norm.x * BOUNCE_CORRECT * 1;
+              play.data.yv = vel.z + norm.z * BOUNCE_CORRECT * 1;
+              while (new THREE.Vector2(play.data.x, play.data.y).distanceTo(wall.p2) < WALL_SIZE + 0.1) {
+                play.data.x += play.data.xv;
+                play.data.y += play.data.yv;
+              }
+              play.data.xv *= BOUNCE;
+              play.data.yv *= BOUNCE;
+            }
+          }
+
+          for (var i in startc.children) {
+            var cp = startc.children[i];
+            if (Math.abs(cp.plane.distanceToPoint(play.model.position.clone().sub(cp.position))) < 1) {
+              if (cp.position.clone().distanceTo(play.model.position) < cp.width / 2 + 1) {
+                // console.log(i);
+                if (i == 0) {
+                  if (play.data.checkpoint == 1) {
+                    play.data.checkpoint = 0;
+                    play.data.lap++;
+                  }
+                } else
+                play.data.checkpoint = 1;
+              }
+            }
+          }
+
+          if (play.data.lap > 3) {
+            document.getElementById(&quot;countdown&quot;).style.fontSize = &quot;25vmin&quot;;
+            document.getElementById(&quot;countdown&quot;).innerHTML = play.data.name + &quot; Won!&quot;;
+          }
+
+          for (var pl in players) {
+            if (play != players[pl] &amp;&amp; play.model.position.distanceTo(players[pl].model.position) < 2) {
+              var ply = players[pl];
+              var temp = new THREE.Vector2(play.data.xv, play.data.yv);
+              var temp2 = new THREE.Vector2(ply.data.xv, ply.data.yv);
+              ply.data.xv -= temp.x;
+              ply.data.yv -= temp.y;
+              play.data.xv -= temp2.x;
+              play.data.yv -= temp2.y;
+              var norm = new THREE.Vector2(play.data.x, play.data.y).sub(new THREE.Vector2(ply.data.x, ply.data.y));
+              norm = new THREE.Vector3(norm.x, 0, norm.y);
+              norm.normalize();
+              var vel = new THREE.Vector3(play.data.xv, 0, play.data.yv);
+              var vel2 = new THREE.Vector3(ply.data.xv, 0, ply.data.yv);
+              vel.reflect(norm);
+              vel2.reflect(norm);
+              ply.data.xv += COLLISION * vel2.x;
+              ply.data.yv += COLLISION * vel2.z;
+              play.data.xv += COLLISION * vel.x;
+              play.data.yv += COLLISION * vel.z;
+              ply.data.xv += temp.x;
+              ply.data.yv += temp.y;
+              play.data.xv += temp2.x;
+              play.data.yv += temp2.y;
+              while (new THREE.Vector2(play.data.x, play.data.y).distanceTo(new THREE.Vector2(ply.data.x, ply.data.y)) < 2) {
+                play.data.x += play.data.xv;
+                play.data.y += play.data.yv;
+              }
+            }
+          }
+
+          if (play.model.position.distanceTo(new THREE.Vector3()) > 200) {
+            play.data.x = 0;
+            play.data.y = 0;
+          }
+        }
+      }
+
+      var target = new THREE.Vector3(
+      me.model.position.x + Math.sin(-me.model.rotation.y) * 5,
+      3,
+      me.model.position.z + -Math.cos(-me.model.rotation.y) * 5);
+
+      camera.position.set(
+      camera.position.x * Math.pow(CAMERA_LAG, warp) + target.x * (1 - Math.pow(CAMERA_LAG, warp)),
+      3,
+      camera.position.z * Math.pow(CAMERA_LAG, warp) + target.z * (1 - Math.pow(CAMERA_LAG, warp)));
+
+      camera.lookAt(me.model.position);
+
+      me.ref.set(me.data);
+
+      lap.innerHTML = me.data.lap <= 3 ? me.data.lap + &quot;/3&quot; : &quot;&quot;;
+    } else {
+      camera.position.set(50 * Math.sin(x), 20, 50 * Math.cos(x));
+      camera.lookAt(player.position);
+    }
+
+    x += 0.01;
+
+    camera.updateMatrix();
+    camera.updateMatrixWorld();
+    camera.updateProjectionMatrix();
+    var frustum = new THREE.Frustum();
+    frustum.setFromMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));
+    for (var i = 0; i < labels.length; i++) {
+      var label = labels[i];
+      if (frustum.containsPoint(label.position) &amp;&amp; !VR) {
+        var vec = toXYCoords(label.position);
+        label.style.left = vec.x + &quot;px&quot;;
+        label.style.top = vec.y + &quot;px&quot;;
+        label.style.zIndex = 99999 - Math.floor(camera.position.distanceTo(label.position) * 10);
+        label.style.display = &quot;inline-block&quot;;
+      } else
+      label.style.display = &quot;none&quot;;
+    }
+
+    if (windowsize.x != window.innerWidth || windowsize.y != window.innerHeight) {
+      windowsize = { x: window.innerWidth, y: window.innerHeight };
+      onWindowResize();
+    }
+
+    if (shiny) {
+      me.model.material = shinymat;
+      me.model.visible = false;
+      cubeCamera.updateCubeMap(renderer, scene);
+      cubeCamera.position.copy(me.model.position);
+      me.model.visible = true;
+    }
+    if (VR) {
+      var a = camera.rotation.y;
+      controls.update();
+      camera.rotation.y += a - Math.PI / 2;
+    }
+    ren.render(scene, camera);
+    MODS();
+  }
+
+  render(performance.now());
+
+  window.addEventListener(&quot;resize&quot;, onWindowResize, false);
+  window.addEventListener(&quot;orientationchange&quot;, onWindowResize, false);
+
+  function onWindowResize() {
+    function orientCamera() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    orientCamera();
+    setTimeout(orientCamera, 0);
+  }
+}
+codeCheck = function () {
+  var incode = document.getElementById(&quot;incode&quot;);
+  if (incode.value.length == 4) {
+    incode.onkeyup = null;
+    code = incode.value.toUpperCase();
+    database.ref(code).once(&quot;value&quot;, function (cc) {
+      if (typeof cc.val() != &quot;undefined&quot; &amp;&amp; cc.val() != null &amp;&amp; cc.val().status === 0) {
+        document.getElementsByClassName(&quot;info&quot;)[0].innerHTML = &quot;<div class='info title'>Waiting for the game to start...<div id='code'>&quot; + code + &quot;</div></div>&quot;;
+        var playerCount = 0;
+        for (var p in cc.val().players) {
+          playerCount++;
+          console.log(p);
+          players[p] = {
+            data: cc.val().players[p],
+            model: new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 2)) };
+
+          var pl = players[p];
+          pl.model.position.set(pl.data.x, 0.6, pl.data.y);
+          pl.model.material = shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;hsl(&quot; + pl.data.color + &quot;, 100%, 50%)&quot;) });
+          var wheel = new THREE.Mesh(
+          new THREE.CylinderBufferGeometry(0.5, 0.5, 0.2, 10),
+          shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#222&quot;) }));
+
+          var w1 = wheel.clone();
+          w1.position.set(0.6, -0.1, 0.7);
+          w1.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w1);
+          var w2 = wheel.clone();
+          w2.position.set(-0.6, -0.1, 0.7);
+          w2.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w2);
+          var w3 = wheel.clone();
+          w3.position.set(0.6, -0.1, -0.7);
+          w3.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w3);
+          var w4 = wheel.clone();
+          w4.position.set(-0.6, -0.1, -0.7);
+          w4.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+          pl.model.add(w4);
+          var label = document.createElement(&quot;DIV&quot;);
+          label.className = &quot;label&quot;;
+          label.innerHTML = pl.data.name.substring(0, 50) + &quot;<br/>|&quot;;
+          pl.label = label;
+          label.position = pl.model.position;
+          console.log(label);
+          f.appendChild(label);
+          labels.push(label);
+          pl.model.receiveShadow = true;
+          scene.add(pl.model);
+        }
+        database.ref(code + &quot;/players&quot;).on(&quot;child_added&quot;, function (p) {
+          if (typeof players[p.ge.path.n[2]] == &quot;undefined&quot;) {
+            console.log(p);
+            players[p.ge.path.n[2]] = {
+              data: p.val(),
+              model: new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 2)) };
+
+            var pl = players[p.ge.path.n[2]];
+            pl.model.position.set(pl.data.x, 0.6, pl.data.y);
+            pl.model.material = shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;hsl(&quot; + pl.data.color + &quot;, 100%, 50%)&quot;) });
+            var wheel = new THREE.Mesh(
+            new THREE.CylinderBufferGeometry(0.5, 0.5, 0.2, 10),
+            shiny ? shinymat : new THREE.MeshLambertMaterial({ color: new THREE.Color(&quot;#222&quot;) }));
+
+            var w1 = wheel.clone();
+            w1.position.set(0.6, -0.1, 0.7);
+            w1.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+            pl.model.add(w1);
+            var w2 = wheel.clone();
+            w2.position.set(-0.6, -0.1, 0.7);
+            w2.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+            pl.model.add(w2);
+            var w3 = wheel.clone();
+            w3.position.set(0.6, -0.1, -0.7);
+            w3.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+            pl.model.add(w3);
+            var w4 = wheel.clone();
+            w4.position.set(-0.6, -0.1, -0.7);
+            w4.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+            pl.model.add(w4);
+            var label = document.createElement(&quot;DIV&quot;);
+            label.className = &quot;label&quot;;
+            label.innerHTML = pl.data.name.substring(0, 50) + &quot;<br/>|&quot;;
+            pl.label = label;
+            label.position = pl.model.position;
+            console.log(label);
+            f.appendChild(label);
+            labels.push(label);
+            pl.model.receiveShadow = true;
+            scene.add(pl.model);
+
+            if (p.ge.path.n[2] == me.ref.path.n[2]) {
+              me.label = pl.label;
+              me.model = pl.model;
+              me.label.innerHTML = &quot;&quot;;
+            }
+          }
+        });
+
+        database.ref(code + &quot;/players&quot;).on(&quot;child_changed&quot;, function (p) {
+          // console.log(p);
+          players[p.ge.path.n[2]].data = p.val();
+        });
+        console.log(&quot;playerCount: &quot; + playerCount);
+        me.ref = database.ref(code + &quot;/players&quot;).push();
+        me.data = {
+          x: carPos[playerCount].x,
+          y: carPos[playerCount].y,
+          xv: 0,
+          yv: 0,
+          dir: 0,
+          steer: 0,
+          color: color,
+          name: name,
+          checkpoint: 1,
+          lap: 0,
+          collision: {} };
+
+        me.ref.set(me.data);
+
+        database.ref(code + &quot;/status&quot;).on(&quot;value&quot;, function (v) {
+          v = v.val();
+          if (v == 1) {
+            document.getElementsByClassName(&quot;info&quot;)[0].outerHTML = &quot;&quot;;
+
+            gameStarted = true;
+            gameSortaStarted = true;
+
+            var countDown = document.createElement(&quot;DIV&quot;);
+            countDown.innerHTML = &quot;3&quot;;
+            countDown.className = &quot;title&quot;;
+            countDown.id = &quot;countdown&quot;;
+            f.appendChild(countDown);
+
+            lap = document.createElement(&quot;DIV&quot;);
+            lap.innerHTML = &quot;1/3&quot;;
+            lap.className = &quot;title&quot;;
+            lap.id = &quot;lap&quot;;
+            f.appendChild(lap);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;2&quot;;
+            }, 1000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;1&quot;;
+            }, 2000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;GO!&quot;;
+              gameSortaStarted = false;
+            }, 3000);
+
+            setTimeout(function () {
+              countDown.innerHTML = &quot;&quot;;
+            }, 4000);
+          }
+        });
+        database.ref(code + &quot;/map&quot;).once(&quot;value&quot;, function (e) {
+          document.getElementById(&quot;trackcode&quot;).innerHTML = e.val();
+          deleteMap();
+          eval(loadMap());
+        });
+      } else
+      incode.onkeyup = codeCheck;
+    });
+  } else {
+    incode.onkeyup = codeCheck;
+    if (incode.value.length > 4)
+    incode.value = incode.value.substring(0, 4);
+  }
+};
+
+function startGame() {
+  database.ref(code + &quot;/status&quot;).set(1);
+}
+
+window.onkeydown = function (e) {
+  if (e.keyCode == 37)
+  left = true;
+  if (e.keyCode == 39)
+  right = true;
+};
+
+window.onkeyup = function (e) {
+  if (e.keyCode == 37)
+  left = false;
+  if (e.keyCode == 39)
+  right = false;
+};
+
+if (mobile) {
+  window.ondeviceorientation = function (e) {
+    var angle = orientation == 0 ? e.gamma : orientation < 0 ? -e.beta : e.beta;
+    // document.body.innerHTML = angle;
+    me.data.steer = Math.max(Math.min(-angle / 180 * Math.PI, Math.PI / 6), -Math.PI / 6);
+  };
+}
+
+document.body.onkeydown = function (e) {
+  if (e.keyCode == 73 &amp;&amp; (e.ctrlKey || e.metaKey))
+  document.getElementById(&quot;trackcode&quot;).innerHTML = prompt(&quot;Please type in the track data to make your map.&quot;);
+};
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
+" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="accelerometer; camera; encrypted-media; display-capture; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write; web-share" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+    </iframe>
+
+  </div>
+
+</body>
+
+</html>
+    
+     
+                </div>
+  </section>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+ <input type="checkbox" class="form-check-input" id="darkSwitch">
+      <script>
+
+var darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener("change", function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem("darkSwitch") !== null &&
+    localStorage.getItem("darkSwitch") === "dark";
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute("data-theme", "dark")
+    : document.body.removeAttribute("data-theme");
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute("data-theme", "dark");
+    localStorage.setItem("darkSwitch", "dark");
+  } else {
+    document.body.removeAttribute("data-theme");
+    localStorage.removeItem("darkSwitch");
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
+</script>
+<script>
+var i = 0;
+var txt = 'Canvas';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</body>
+</div>
+</html>
