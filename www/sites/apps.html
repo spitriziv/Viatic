@@ -137,7 +137,7 @@
 }
  svg {
 	 grid-area: main;
-	 height: 5000%;
+	 height: 9000%;
 	 width: 100%;
 }
  
@@ -295,12 +295,18 @@
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
 }
 
+  .center {
+   position: relative;
+   left: 0;
+   right:0;
+   text-align: center;
+  }
  </style>
 
     </div>
 <script>
 var i = 0;
-var txt = 'Viatic Web Store';
+var txt = 'Apps';
 var speed = 50;
 
 function typeWriter() {
@@ -378,7 +384,7 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 	}
 </script>
        </div>
-  <style>.abs,
+   <style>.abs,
 h2:after,
 .cards .card figcaption,
 .cards .card:after,
@@ -579,10 +585,253 @@ h2:after {
   opacity: 1;
   transform: none;
 }
-</style>
-<div class="wrapper">
+     
+     
+     section {
+	margin-bottom: 50px;
+}
 
-  <h2><strong><a href="webstore.html"><i style='font-size:24px; color:gray;' class='fas'>&#xf104;</i></a>
+.title {
+	font-family: "Motiva Sans", sans-serif;
+	text-transform: uppercase;
+	color: #c5cbd8;
+	font-weight: normal;
+}
+
+.container {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	width: 1220px;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-container {
+	perspective: 600px;
+}
+
+.card {
+	position: relative;
+	width: 215px;
+	height: 335px;
+	box-shadow: 0px 8px 27px -5px rgba(0, 0, 0, 0.82);
+	cursor: pointer;
+	transition: transform 0.5s;
+	transform-origin: center top;
+	overflow: hidden;
+}
+
+.card img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+	border: none;
+}
+
+.bg {
+	position: absolute;
+	background: linear-gradient(
+		to bottom,
+		rgba(219, 219, 219, 0.068) 0%,
+		rgba(236, 236, 236, 0.089) 50%,
+		rgba(226, 226, 226, 0.123) 94%,
+		rgba(254, 254, 254, 0.027) 100%
+	);
+	width: 500px;
+	height: 400px;
+	transform: rotateZ(30deg);
+	left: -20px;
+	top: -350px;
+	transition: transform 0.5s ease-out;
+}
+
+.card:hover {
+	transform-origin: center top;
+	transform: rotateX(5deg) scale(102%);
+	transition: transform 0.3s;
+}
+
+.card:hover .bg {
+	transform: rotateZ(30deg) translateY(30%);
+	transition: transform 0.3s ease-out;
+}
+
+.store-items {
+	display: flex;
+	justify-content: space-between;
+}
+
+.item {
+	position: relative;
+	width: 373px;
+	height: 446px;
+	box-shadow: 0px 8px 27px -5px rgba(0, 0, 0, 0.82);
+	cursor: pointer;
+	transition: all 0.5s ease-out;
+	overflow: hidden;
+}
+
+.item img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+.hitman {
+	object-position: 0 100%;
+}
+
+.item-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	transition: all 0.5s ease-out;
+}
+
+.item-content img {
+	position: absolute;
+	max-width: 300px;
+	max-height: 150px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.5s ease-out;
+	object-fit: contain;
+}
+
+.discount-info {
+	position: absolute;
+	right: 0;
+	bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #40404099;
+    color: white;
+	width: 120px;
+	height: 26px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	transition: all 0.5s ease-out;
+}
+
+.item-content:hover {
+	background: rgba(0, 0, 0, 0.5);
+	transition: all 0.5s ease-out;
+}
+
+.item:hover .item-content .logo {
+	top: 20%;
+	transition: all 0.5s ease-out;
+}
+
+.item:hover .item-content .discount-info {
+	bottom: 30%;
+	opacity: 0;
+	transition: all 0.5s ease-out;
+}
+
+.games {
+	position: absolute;
+	top: 100%;
+	display: flex;
+	justify-content: space-around;
+	width: inherit;
+	transition: all 0.5s ease-out;
+}
+
+.item:hover .games {
+	transform: translateY(-250px);
+	transition: all 0.5s ease-out;
+}
+
+.game {
+	display: grid;
+	grid-template-columns: 1fr 0.1fr 2.2fr;
+	grid-template-rows: 1.4fr 0.6fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		"Picture Picture Picture"
+		"Discount Discount Price";
+
+	width: 158px;
+	height: 87px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-pic {
+	grid-area: Picture;
+	width: inherit;
+	background: no-repeat;
+	background-size: cover;
+	background-position: 70%;
+}
+
+.game-discount {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-area: Discount;
+	background-color: #055885;
+	color: #fff;
+	font-weight: 700;
+}
+
+.game-price {
+	display: flex;
+	justify-content: space-around;
+	grid-area: Price;
+	background-color: #000;
+	font-size: 14px;
+}
+
+.game-price span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.old-price {
+	color: rgb(132, 142, 148);
+	text-decoration: line-through;
+}
+
+.games-grid-container {
+	display: grid; 
+  grid-template-columns: 1fr 0.5fr 1.5fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 30px 0px; 
+  grid-template-areas: 
+    "Item-1 Item-1 Item-1"
+    "Item-2 Item-2 Item-3"; 
+  justify-items: center; 
+}
+
+.games-grid-item-1 {
+	grid-area: Item-1;
+}
+
+.games-grid-item-2 {
+	grid-area: Item-2;
+}
+
+.games-grid-item-3 {
+	grid-area: Item-3;
+}
+
+
+</style>
+  <div class="wrapper">
+     <h1><br/ ><p class="center" id="type"></p></h1>
+<br>
+<h2><strong>
   All Apps</strong></h2>
 
 	<div class="cards">
