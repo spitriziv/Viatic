@@ -1,0 +1,130 @@
+<script>
+//ACHIVEMENTS
+//to add another one add another diget to id="acceptCookies"
+//and make sure to add tha  event to the javascript so it disapears
+//
+//
+</script>
+<div id="achvementbanner" style="">
+		<div class="container">
+		    <body onload="launch_toast()" id="acceptCookies">
+			<div class="left">
+				<div id="toast"><div id="img"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" style="width:50px"></div><div id="desc">Achivement Unlocked:<p style="position: relative;top:-13px;">Name here</p></a></div></div></body>
+			</div>
+			</div>
+		</div>
+	</div>
+    <style>
+ #toast {
+    visibility: hidden;
+    max-width: 75px;
+    height: 75px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 500px;
+
+    position: fixed;
+    z-index: 100000000000000;
+    left: 0;right:0;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+#toast #img{
+
+	width: 75px;
+	height: 75px;
+    
+    float: left;
+    
+    padding-top: 10px;
+    padding-bottom: 16px;
+    
+    box-sizing: border-box;
+    border-radius: 50px;
+    
+    background-color: #111;
+}
+#toast #desc{
+    
+   
+    padding: 16px;
+    
+    overflow: hidden;
+	white-space: nowrap;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;color: #00000001;}
+    to {bottom: 30px; opacity: 1;color: #00000001;}
+}
+
+@-webkit-keyframes expand {
+    from {min-width: 50px;color: #00000001;} 
+    to {min-width: 350px;color: #00000001;}
+}
+
+@keyframes expand {
+    from {min-width: 50px;color: #00000001;}
+    to {min-width: 350px;color: #ffffff;}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px;color: #ffffff;} 
+    to {min-width: 350px;color: #ffffff;}
+}
+
+@keyframes stay {
+    from {min-width: 350px;color: #ffffff;}
+    to {min-width: 350px;color: #ffffff;}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;color: #ffffff;} 
+    to {min-width: 50px;color: #00000001;}
+}
+
+@keyframes shrink {
+    from {min-width: 350px;color: #00000001;} 
+    to {min-width: 50px;color: #00000001;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;color: #00000001;} 
+    to {bottom: 60px; opacity: 0;color: #00000001;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;color: #00000001;}
+    to {bottom: 60px; opacity: 0;color: #00000001;}
+}
+      </style>
+    <script>
+addEventListener('load', function () {if (localStorage.acceptCookies) document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
+
+
+function launch_toast() {
+var delayInMilliseconds = 5000; //5 second
+
+setTimeout(function() {
+  document.querySelector('#acceptCookies').addEventListener('pointermove', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
+    document.querySelector('#acceptCookies').addEventListener('keypress', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
+
+  }, delayInMilliseconds);
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
+</script>
