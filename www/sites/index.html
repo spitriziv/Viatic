@@ -368,6 +368,126 @@ for(const star of document.getElementsByClassName("magic-star")) {
             <br>
 <br>
 </div>
+         <br><br><br>
+  <style>
+  body {
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.quotes {
+  width: 80vw;
+  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.quotes .box {
+  position: relative;
+  width: 25vw;
+  height: 70vh;
+  min-height: 320px;
+  background: #f2f2f2;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 2;
+  left: 50px;
+  box-sizing: border-box;
+  padding: 30px;
+  box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.quotes .box::before {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  pointer-events: none;
+}
+
+.quotes .box::after {
+  content: '\201D';
+  position: absolute;
+  bottom: -10%;
+  right: 5%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  filter: invert(1);
+  pointer-events: none;
+}
+
+.quotes .box p {
+  margin: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.quotes .box h2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 10%;
+  right: 10%;
+  font-size: 1.5rem;
+}
+
+.quotes .box:hover {
+  color: #222222;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.quotes .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  pointer-events: none;
+  width: 100%;
+  height: 10000%;
+  overflow: hidden;
+}
+
+</style>
+  <div class="quotes">
+    <div class="card">
+      <div class="box box1">
+        <img src="https://github.com/spitriziv/Viatic/blob/main/www/image/chromecslogo.png?raw=true" alt="" class="w3-animate-bottom" style="width:40px;height:40px;left:-20px">
+    <i style='font-size:45px;text-align: center;position:relative;top:15px;left:-20px' class='fas'>&#xf105;</i>
+        <img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:40px;height:40px;left:-20px">
+        <p></p>
+        <p>Chrome C/S has been undergoing some changes, just slight changes, that involving changing the name, logo, web ui, and more.
+         Note that the website is still being developed and this is the only page currently, but the website will be done with the old stuff, and the new stuff with start to come in. </p>
+      </div>
+      <div class="bg"></div>
+    </div>
+    <div class="card">
+      <div class="box box2">
+        <p>Viatic Web Store</p><p>Viatic now has its own online base web store which so far you don't need done anything to play all the cool stuff we have made for you you can continue to the web store by clicking the link below there you will find a lot of cool things to play with and use for whatever you want to. You can find this in the Viatic Main tab.</p>
+      </div>
+      <div class="bg"></div>
+    </div>
+    <div class="card">
+      <div class="box box3">
+        <p>coming soo</p>
+      </div>
+      <div class="bg"></div>
+    </div>
+  </div>
 <h1 style="text-align: center;">
   <span class="magic">
     <span class="magic-star">
@@ -385,36 +505,19 @@ for(const star of document.getElementsByClassName("magic-star")) {
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
       </svg>
     </span>
-    <span class="magic-text">New!</span>
   </span>
-</h1>
-  <h3 style="text-align: center;position:relative;top:20px;color:gray" class="w3-animate-bottom" class="text">Viatic Web Store</h3>
-        <p style="text-align: center;position:relative;top:10px;color:gray" class="w3-animate-bottom" class="text">Viatic now has its own online base web store which so far you don't need done anything to play all the cool stuff we have made for you you can continue to the web store by clicking the link below there you will find a lot of cool things to play with and use for whatever you want to.</p>
-    <a href="webstore.html"><h5 style="text-align: center;position:relative;top:20px;color:gray" class="w3-animate-bottom" class="text">Continue</h5>
-
-         
-         <p style="text-align: center;">---------------------------------------------------------</p>
-         
-             <h1 style="text-align: center;">Old</h1>
-             <br>
   
-  <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
-        <a href="98.html"><img onclick="mouseclick()" class="w3-animate-bottom" src="https://64.media.tumblr.com/0657a780adef65c4833f1f1bf7be6984/0ebe58e4ae82c162-d7/s540x810/fda5f625bb6a3b1c3f4f481612fd04586becca41.png" alt="" style="width:280px;height:280px;"></a></h3>
-        <p style="text-align: center;position:relative;top:-50px;" class="w3-animate-bottom" class="text">Fell old with the Windows 98. The Iconic Windows Computer (The 98), has been pretty much created in this website,</p>
-  
-         <h3 style="text-align: center;" class="w3-animate-bottom" class="text">
-    <img src="https://github.com/spitriziv/Viatic/blob/main/www/image/chromecslogo.png?raw=true" alt="" class="w3-animate-bottom" style="width:90px;height:90px;">
-    <i style='font-size:50px;text-align: center;position:relative;top:15px;' class='fas'>&#xf105;</i>
-        <img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:90px;height:90px;"></h3>
-        <p style="text-align: center;" class="w3-animate-bottom" class="text">Chrome C/S has been undergoing some changes, just slight changes, that involving changing the name, logo, web ui, and more.</p>
-         <p style="text-align: center;" class="w3-animate-bottom" class="text">Note that the website is still being developed and this is the only page currently, but the website will be done with the old stuff, and the new stuff with start to come in.</p>
-         <br><br><br>
+ <br>
+  <br
+</section>
+                     <br>
          
            <style>
 
 .container{
   width: 1300px;
-  position: relative;left:40px;top;0px;
+  
+  position: relative;left:0px;top;0px;
   display: flex;
   justify-content: space-between;
   flex-wrap:wrap;
@@ -423,6 +526,8 @@ for(const star of document.getElementsByClassName("magic-star")) {
 
 .container .card{
   position:relative;
+  left: 0px;
+  right: 0px;
 }
 
 .container .card .face{
@@ -434,6 +539,8 @@ for(const star of document.getElementsByClassName("magic-star")) {
 
 .container .card .face.face1{
   position: relative;
+  left: 0px;
+  right: 0px;
   background: #333;
   display: flex;
   justify-content: center;
@@ -724,33 +831,6 @@ for(const star of document.getElementsByClassName("magic-star")) {
 </a>         </div>
        </div>
     </div>
-    <svg class="editorial"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 24 150 28 "
-     preserveAspectRatio="none">
- <defs>
- <path id="gentle-wave"
- d="M-160 44c30 0 
-    58-18 88-18s
-    58 18 88 18 
-    58-18 88-18 
-    58 18 88 18
-    v44h-352z" />
-  </defs>
-  <g class="parallax1">
-   <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1"/>
-  </g>
-    <g class="parallax2">
-   <use xlink:href="#gentle-wave" x="50" y="0" fill="#ea82ff"/>
-    </g>
-      <g class="parallax3">
-   <use xlink:href="#gentle-wave" x="50" y="9" fill="#5ed9f7"/>
-   </g>
-    <g class="parallax4">
-   <use xlink:href="#gentle-wave" x="50" y="6" fill="#5b31f5"/>  
-  </g>
-</svg>
 
   </div>
          <br><br><br><br><br><br><br>
