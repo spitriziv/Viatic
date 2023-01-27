@@ -7,7 +7,7 @@
 </script>
 <div id="achvementbanner" style="">
 		<div class="container">
-		    <body onload="launch_toast()" id="acceptCookies">
+		    <body onload="launch_toast();playnote()"  id="acceptCookies">
 			<div class="left">
 				<div id="toast"><div id="img"><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" style="width:50px"></div><div id="desc">Achivement Unlocked:<p style="position: relative;top:-13px;">Name here</p></a></div></div></body>
 			</div>
@@ -21,7 +21,7 @@
     height: 75px;
     /*margin-left: -125px;*/
     margin: auto;
-    background-color: #333;
+    background-color: #888;
     color: #fff;
     text-align: center;
     border-radius: 500px;
@@ -46,7 +46,7 @@
     box-sizing: border-box;
     border-radius: 50px;
     
-    background-color: #111;
+    background-color: #777;
 }
 #toast #desc{
     
@@ -110,6 +110,104 @@
     from {bottom: 30px; opacity: 1;color: #00000001;}
     to {bottom: 60px; opacity: 0;color: #00000001;}
 }
+
+[data-theme="dark"] #toast {
+    visibility: hidden;
+    max-width: 75px;
+    height: 75px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #222222;
+    color: #fff;
+    text-align: center;
+    border-radius: 500px;
+
+    position: fixed;
+    z-index: 100000000000000;
+    left: 0;right:0;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+[data-theme="dark"] #toast #img{
+
+	width: 75px;
+	height: 75px;
+    
+    float: left;
+    
+    padding-top: 10px;
+    padding-bottom: 16px;
+    
+    box-sizing: border-box;
+    border-radius: 50px;
+    
+    background-color: #111;
+}
+
+[data-theme="dark"] #toast #desc{
+    
+   
+    padding: 16px;
+    
+    overflow: hidden;
+	white-space: nowrap;
+}
+
+[data-theme="dark"] #toast.show {
+    visibility: visible;
+    -webkit-animation: darkfadein 0.5s, darkexpand 0.5s 0.5s,darkstay 3s 1s, darkshrink 0.5s 2s, darkfadeout 0.5s 2.5s;
+    animation: darkfadein 0.5s, darkexpand 0.5s 0.5s,darkstay 3s 1s, darkshrink 0.5s 4s, darkfadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes darkfadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes darkfadein {
+    from {bottom: 0; opacity: 0;color: #00000001;}
+    to {bottom: 30px; opacity: 1;color: #00000001;}
+}
+
+@-webkit-keyframes darkexpand {
+    from {min-width: 50px;color: #00000001;} 
+    to {min-width: 350px;color: #00000001;}
+}
+
+@keyframes darkexpand {
+    from {min-width: 50px;color: #00000001;}
+    to {min-width: 350px;color: #ffffff;}
+}
+@-webkit-keyframes darkstay {
+    from {min-width: 350px;color: #ffffff;} 
+    to {min-width: 350px;color: #ffffff;}
+}
+
+@keyframes darkstay {
+    from {min-width: 350px;color: #ffffff;}
+    to {min-width: 350px;color: #ffffff;}
+}
+@-webkit-keyframes darkshrink {
+    from {min-width: 350px;color: #ffffff;} 
+    to {min-width: 50px;color: #00000001;}
+}
+
+@keyframes darkshrink {
+    from {min-width: 350px;color: #00000001;} 
+    to {min-width: 50px;color: #00000001;}
+}
+
+@-webkit-keyframes darkfadeout {
+    from {bottom: 30px; opacity: 1;color: #00000001;} 
+    to {bottom: 60px; opacity: 0;color: #00000001;}
+}
+
+@keyframes darkfadeout {
+    from {bottom: 30px; opacity: 1;color: #00000001;}
+    to {bottom: 60px; opacity: 0;color: #00000001;}
+}
       </style>
     <script>
 addEventListener('load', function () {if (localStorage.acceptCookies) document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
@@ -117,18 +215,22 @@ addEventListener('load', function () {if (localStorage.acceptCookies) document.q
 
 function launch_toast() {
 var delayInMilliseconds = 5000; //5 second
-var audio = new Audio('https://github.com/spitriziv/Viatic/blob/main/www/sounds/achivesound.mp3?raw=true');
-audio.play();
-  
-setTimeout(function() {
-  document.querySelector('#acceptCookies').addEventListener('pointermove', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
-    document.querySelector('#acceptCookies').addEventListener('keypress', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
+var delayInMillisecond = 50; //no second
 
-  }, delayInMilliseconds);
+
+setTimeout(function() {
+  document.querySelector('#acceptCookies').addEventListener('pointermove', function () {localStorage.acceptCookies = true;  document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
+    document.querySelector('#acceptCookies').addEventListener('keypress', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})  }, delayInMilliseconds);
+  
     var x = document.getElementById("toast")
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
+
+ function playnote() {
+ var audio = new Audio('https://github.com/spitriziv/Viatic/blob/main/www/sounds/achivesound.mp3?raw=true');  
+ audio.play()
+ }
 </script>
 
 web code here
