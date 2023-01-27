@@ -117,7 +117,9 @@ addEventListener('load', function () {if (localStorage.acceptCookies) document.q
 
 function launch_toast() {
 var delayInMilliseconds = 5000; //5 second
-
+var audio = new Audio('https://github.com/spitriziv/Viatic/blob/main/www/sounds/achivesound.mp3?raw=true');
+audio.play();
+  
 setTimeout(function() {
   document.querySelector('#acceptCookies').addEventListener('pointermove', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
     document.querySelector('#acceptCookies').addEventListener('keypress', function () {localStorage.acceptCookies = true; document.querySelector('body').removeChild(document.querySelector('#achvementbanner'));})
@@ -128,3 +130,5 @@ setTimeout(function() {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 </script>
+
+web code here
