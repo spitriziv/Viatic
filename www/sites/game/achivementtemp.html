@@ -16,6 +16,7 @@
 	</div>
     <style>
  #toast {
+ 	font-family: monospace;
     visibility: hidden;
     max-width: 75px;
     height: 75px;
@@ -37,6 +38,7 @@
 
 	width: 75px;
 	height: 75px;
+    font-family: monospace;
     
     float: left;
     
@@ -50,7 +52,7 @@
 }
 #toast #desc{
     
-   
+    font-family: monospace;
     padding: 16px;
     
     overflow: hidden;
@@ -58,6 +60,7 @@
 }
 
 #toast.show {
+ 	font-family: monospace;
     visibility: visible;
     -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
@@ -112,6 +115,7 @@
 }
 
 [data-theme="dark"] #toast {
+ 	font-family: monospace;
     visibility: hidden;
     max-width: 75px;
     height: 75px;
@@ -133,6 +137,7 @@
 [data-theme="dark"] #toast #img{
 
 	width: 75px;
+    font-family: monospace;
 	height: 75px;
     
     float: left;
@@ -150,13 +155,14 @@
     
    
     padding: 16px;
-    
+     font-family: monospace;
     overflow: hidden;
 	white-space: nowrap;
 }
 
 [data-theme="dark"] #toast.show {
     visibility: visible;
+    font-family: monospace;
     -webkit-animation: darkfadein 0.5s, darkexpand 0.5s 0.5s,darkstay 3s 1s, darkshrink 0.5s 2s, darkfadeout 0.5s 2.5s;
     animation: darkfadein 0.5s, darkexpand 0.5s 0.5s,darkstay 3s 1s, darkshrink 0.5s 4s, darkfadeout 0.5s 4.5s;
 }
@@ -232,5 +238,3 @@ setTimeout(function() {
  audio.play()
  }
 </script>
-
-web code here
