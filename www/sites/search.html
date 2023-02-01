@@ -1,3 +1,8 @@
+  <iframe id="contentFrame" frameborder="0" allowfullscreen=""></iframe>
+  <div id="dialogWrap">
+    <div id="dialogWrapCell">
+      <div id="mainDialog">
+        <div id="dialogText"></div>
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +49,8 @@ body{
  letter-spacing: 0.02em;
   font-weight: 400;
  -webkit-font-smoothing: antialiased; 
+    display:flex; flex-direction:column; justify-content:center;
+  min-height:100vh;
 }
 
 .blurred-box{
@@ -220,14 +227,38 @@ input.user-password{
 </head>
 
 <body>
-  <iframe id="contentFrame" frameborder="0" allowfullscreen=""></iframe>
+  <div id="passArea">    
 <div class="blurred-box">
-  <!--  you dont need the user-login-box html  -->
-  <!--  for demo purposes only and its shit  -->
   <div class="user-login-box">
     <span class="user-icon"></span>
     <div class="user-name">Viatic</div>
-    <input id="pass" style=" text-align: center;width:250px;height:40px;background-color:#ffffff10;color:white;border-radius:0px;border-color:#ffffff00" type="password" name="pass" autofocus="" /><button id="submitPass" type="button" style="width:250px;height:50px;background-color:#ffffff00;color:white;border-radius:0px;border-color:#ffffff00" class="center">Enter</button>
+    <input id="pass" style=" text-align: center;width:250px;height:40px;background-color:#ffffff10;color:white;border-radius:0px;border-color:#ffffff00" type="password" name="pass" autofocus="" />
+     <span id="messageWrapper">
+              <span id="invalidPass" class="error"><i style='font-size:14px' class='fas'>&#xf071;</i>   Sorry, please try again.</span>
+              <span id="trycatcherror" class="error"><i style='font-size:14px' class='fas'>&#xf071;</i>   Sorry, something went wrong.</span>
+              <span id="success" class="notifyText">Proceeding...</span>
+              &nbsp;
+            </span>
+    
+    <button class="btn btn-default" id="submitPass" type="button" style="width:250px;height:50px;background-color:#ffffff00;color:white;border-radius:0px;border-color:#ffffff00" class="center">Enter</button>
+<div style="clear: both;"></div>
+          </div>
+        </div>
+        <div id="securecontext" class="error">
+        
+          <p>
+            Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+          </p>
+        </div>
+        <div id="nocrypto" class="error">
+          <p>
+            Your web browser appears to be outdated. Please visit this page using a modern browser.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
   </div>
   <div id="attribution">
