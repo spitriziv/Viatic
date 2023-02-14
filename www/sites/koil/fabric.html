@@ -203,6 +203,48 @@
  
 </style>
 
+<style>
+#images {
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  
+  margin: 20px auto;
+}
+#images img {
+  width: 400px;
+  height: 250px;
+  
+  position: absolute;
+  top: 0;
+  left: -400px;
+  z-index: 1;
+  opacity: 0;
+}
+#images img:target {
+  left: 0;
+  z-index: 9;
+  opacity: 1;
+}
+#images img:first-child {
+  left: 0;
+  opacity: 1;
+}
+#slider a {
+  text-align: center;
+  text-decoration: none;
+  background: #E3F1FA;
+  border: 1px solid #C6E4F2;
+  padding: 4px 6px;
+  color: #222;
+}
+#slider a:hover {
+  background: #C6E4F2;
+}
+</style>
+
+
 <div class="container">
   <h2><img src="https://fabrickoil.github.io/Fabrickoil-Website/fabric.png" alt="" style="width:40px;height:40px;"> Fabrickoil</h2>
   <p>The first branch of Koil that connects fabric to the API, allowing you to run fabric on forge. The game will also run the game better than most mods out there.</p>
@@ -227,7 +269,19 @@
            <h6><b><norm>Needed:</norm><b></h6>
                             <h6><img src="https://avatars.githubusercontent.com/u/21025855?s=280&v=4" alt="" style="width:16px;"> Fabric (1.19.2)</h6>             
               <h6><img src="https://avatars.githubusercontent.com/u/21025855?s=280&v=4" alt="" style="width:16px;"> Fabric API (1.19.2)</h6>
-             
+
+                     <h6><b><norm>Images:</norm><b></h6>
+<div id="images">
+  <img id="image1" src="https://github.com/spitriziv/Viatic/blob/main/www/sites/koil/file/tdbtd/image/images.jpeg?raw=true" />
+  <img id="image2" src="https://github.com/spitriziv/Viatic/blob/main/www/sites/koil/file/tdbtd/image/images (1).jpeg?raw=true" />
+  <img id="image3" src="https://github.com/spitriziv/Viatic/blob/main/www/sites/koil/file/tdbtd/image/images (2).jpeg?raw=true" />
+</div>
+<div id="slider">
+  <a href="#image1">1</a>
+  <a href="#image2">2</a>
+  <a href="#image3">3</a>
+</div>
+
         <h6><b><norm>Download:</norm><b></h6>
         <a class='btn' style='font-size:14px' href="filedownloadlink" download> Direct Download  <i class='fas fa-download'></i></a></script></li>ㅤ
         <a class='btn' style='font-size:14px' href="https://curseforge.com/"> Curseforge <i class='fas fa-download'></i></a></script></li>ㅤ
