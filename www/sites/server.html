@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
 <title>Viatic - Server</title>
+    <input type="checkbox" class="form-check-input" id="darkSwitch">
+
   <meta name="description" img src="image.png" content="The Viatic Website"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="chromelogo.png">
@@ -113,12 +115,14 @@
   </li>
 </ul>
   </div>
-  <section  class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span style="position:relative;left:0px;top:-3px;"  id="type" class="title"></span>
-    </div>
-<h3 style="position:relative;left:67px;top:-3px;" class="w3-animate-bottom" class="text">This feature is still in development</h3>
+   <body class="example">
+  <section class="home-section">
+<div class="stream"></div>
+<div class="line editline">
+   <p class="time"></p>
+   <p class="name">&gt;</p>
+   <p contenteditable="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="information edit"></p>
+</div>
     </div>
                 </div>
   </section>
@@ -137,7 +141,6 @@
     sidebar.classList.toggle("close");
   });
   </script>
- <input type="checkbox" class="form-check-input" id="darkSwitch">
       <script>
 
 var darkSwitch = document.getElementById("darkSwitch");
@@ -214,3 +217,563 @@ function typeWriter() {
 </body>
 </div>
 </html>
+<style>
+.example {
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   body {
+	 background-color: #3a3a3a;
+	 color: #efefae;
+	 margin: 0;
+}
+ body a {
+	 color: inherit;
+}
+ body a:hover {
+	 color: #ffffae;
+	 background-color: #005f5f;
+}
+ body .stream {
+	 margin-top: 8px;
+}
+ body .line {
+	 margin: 0;
+	 padding: 0;
+	 display: flex;
+	 flex-direction: row;
+	 margin: 0 4px;
+	 padding-top: 2px;
+	 width: calc(100% - 12px);
+}
+ body .line p {
+	 display: inline-block;
+	 margin: 0;
+	 padding: 0;
+}
+ body .line .name {
+	 max-width: 80px;
+	 min-width: 80px;
+	 text-align: right;
+	 padding-right: 6px;
+}
+ body .editline {
+	 background-color: #262626;
+	 padding: 2px 4px 0px 4px;
+	 width: calc(100%);
+	 margin: 0;
+	 margin-bottom: 8px;
+}
+ body .editline .edit {
+	 min-width: calc(100% - 200px);
+	 outline: none;
+}
+ body .editline .time {
+	 user-select: none;
+	 cursor: default;
+}
+ .whitet {
+	 color: #ffffae;
+}
+ .redt {
+	 color: #d75f5f;
+}
+ .oranget {
+	 color: #dd6f48;
+}
+ .purplet {
+	 color: #875f87;
+}
+ .important {
+	 color: #e3a786;
+}
+ .bluet {
+	 color: #5f8787;
+}
+ .greent {
+	 color: #afaf00;
+}
+ .selft {
+	 color: #83a598;
+}
+ ::selection {
+	 color: #ffffae;
+	 background: #005f5f;
+}
+ ::-webkit-scrollbar {
+	 background-color: #3a3a3a;
+	 width: 10px;
+	 height: 10px;
+}
+ ::-webkit-scrollbar-thumb {
+	 background-color: #bcbcbc;
+}
+ ::-webkit-scrollbar-corner {
+	 background-color: #3a3a3a;
+}
+ ::-webkit-resizer {
+	 background-color: #3a3a3a;
+}
+ .phjspenheader:hover {
+	 background-color: #d44c2a;
+}
+ 
+</style>
+
+
+<script>
+   // JavaScript Document
+$(document).ready(function(e) {
+   /* Todo:
+ • Merge this with Node.js, almost done
+ • Webpages in a database/more editable version
+ • Add cookies to track previous commands? (You can press up and down to browse previous commands this session)
+*/
+   var faviconnumber = 1;
+	function favicon() {
+		favicon = favicon == 1 ? 2 : 1;
+		$('.favicon').attr('href','favicon' + favicon + ".png");
+	}
+   console.clear();
+   var commandlist = [ /*Can be populated with various methods*/
+      ["/help", "Show commands"],
+      ["/list", "List all pages on the website"],
+      ["/nav &lt;location&gt;", "Navigate to location"],
+      ["/clear", "Clear the console"],
+      ["/login &lt;username&gt; &lt;password&gt;", "Login to your account - This is not set up and when implemeneted it'll be '/login username' then request password without printing into the cmd prompt"],
+      ["/upload", "Upload file, must be logged in."]
+   ];
+   var previouscommands = [];
+   var currentcommand = 0;
+   var pages = [ /*Can be populated with various methods*/
+      ["index", "Welcome to Koya.io", "Simply, this is just a sandbox in which to add to; no real point - a couple of features that I plan to add though:", "URL shortner and open tracker, just enter a URL into the command line and press enter and you will get 2 links - 1 which looks like [http://koya.io/XXXXXX](http://koya.io/XXXXXX) and another [http://koya.io/u/XXXXXX](http://koya.io/u/XXXXXX) : they will both forward but the second will show a preview of the full url so they know where you are going.", "You can also save small messages with `/msg <string <160 chars>` and you will get a url like [http://koya.io/XXXXXX](http://koya.io/XXXXXX)","Pressing Ctrl+v will paste the short text or image and you will get a link.", "There will be accounts but likely given out rather than being able to register them whenever, this is a personal site so idk."],
+      ["about", "About Koya.io", "Personal power website for Finn 'Koya' Shackleton.", "Will include some features which too are mainly for personal use: Link shortner, image host, pastebin and any sandbox testing", "The colours have been taken from [https://github.com/Poorchop/darktooth-theme-ports/tree/8c852e8edde8df57d831dc8631493b0565fadbbc/hexchat-darktooth](Poorchop's Darktooth HexChat theme)", "In the process of turning the website into a server sided thing, currently what you can read is in the [http://koya.io/scripts.js](JavaScript file)!"],
+	  ["connect", "Connect with Koya",
+	  "[mailto:_@koya.io](Email _@koya.io)",
+	  "[skype:finn.shackleton](Skype)",
+	  "[^http://steamcommunity.com/id/bananabutterscotchmaplepancakes](Steam) < Always available",
+	  "[^https://codepen.io/OfficialAntarctica](Codepen)",
+	  "[^http://everybodyedits.com/profiles/bbmp](Everybody Edits)"]
+   ];
+   var pageindex = ["index", "about", "connect"];
+   var currentpage = "landing";
+   var url = "http://koya.io/"
+      /*
+         Custom Text Syntax
+         Links:      
+            [URLPATH](NAME) - regular
+            [^URLPATH](NAME) - open in new tab
+            
+         Styles:
+            *TEXT* - bold text
+            E! - Text is an error/notification
+            A! - spaces are converted to non-breaking spaces (it's for ascii art - after all, this is a text based website)
+      */
+
+   function init() {
+      setInterval(time);
+      console.clear();
+      console.log(new Date().getTime());
+      log("Server", "A!| >> Starting Server View (SSV) | Version: 5.2.7");
+      log("Viatic", "A!| >> Starting...");
+      log("Koil", "A!| >> Starting...");
+      log("Client", "A!| >> Starting...");
+      log("Website", "A!| >> Starting...");
+      log("Server", "A!| >>")
+      log("Viatic", "A!| >> ID:   | Version:  | Usage:    | Status:  | Logged:  | Software:     | Hardware:");
+      log("Viatic", "A!| >> 0001  | 01.53.43  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0002  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0003  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0004  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0005  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0006  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0007  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0008  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0009  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0010  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0011  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0012  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0013  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0014  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0015  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0016  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0017  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0018  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0019  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0020  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0021  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0022  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0023  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0024  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0025  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0026  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0027  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0028  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0029  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0030  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0031  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0032  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0033  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0034  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0035  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0036  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0037  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0038  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0039  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0040  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0041  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0042  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0043  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0044  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0045  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0046  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0047  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0048  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0049  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0050  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0051  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0052  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0053  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0054  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0055  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0056  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0057  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0058  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0059  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0060  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0061  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0062  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0063  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0064  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0065  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0066  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0067  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0068  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0069  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> 0070  | 00.00.00  | 00.000 %  | Enabled  | Yes      | V-Systematic  | V-Argonaut");
+      log("Viatic", "A!| >> .....");
+      log("", "=============================================================================================");
+      log("Server", "A!| >> Connecting to Koil Servers...");
+      log("Koil", "A!| >> Received Request to connect to Koil Servers");
+      log("Koil", "A!| >> Connecting Koils...");
+      log("Koil", "A!- Koil API   | >> Connecting...");
+      log("Koil", "A!- Koil API   | >> Connected.");
+      log("Koil", "A!- Fabrickoil | >> Connecting...");
+      log("Koil", "A!- Fabrickoil | >> Connected.");
+      log("Koil", "A!- Forgekoil  | >> Connecting...");
+      log("Koil", "A!- Forgekoil  | >> Connected.");
+      log("Koil", "A!- Quiltkoil  | >> Connecting...");
+      log("Koil", "A!- Quiltkoil  | >> Connected.");
+      log("Viatic", "A!| >> Started...");
+      log("Client", "A!| >> Additional Information Yet To Come");
+      log("Client", "A!| >> This is the official server for the Viatic Website,");
+      log("Client", "A!| >> Koil will also connect to the server soon,");
+      log("Client", "A!| >> This server will show everything to do with the projects of SpiritXIV, and more. Personal info will not be shown in this server tho. For safety reasons. ");
+      log("Client", "A!| >> For help with commands '/help'");
+      log("", "=============================================================================================");
+	  setInterval(favicon,500);
+   }
+
+   function urlvars() {
+	   var pagelocs = window.location.pathname.replace("/","").split("/");
+	   var pageloc = pagelocs[0];
+	   console.log(pageloc);
+	   //alert();
+		if(pageloc != "") {
+            if ($.inArray(pageloc, pageindex) >= 0) {
+               currentpage = pageloc;
+            }
+		}
+      	log("Website", "You are currently on page: *" + currentpage + "*");
+		if(pageloc != "") {
+            if ($.inArray(pageloc, pageindex) >= 0) {
+               currentpage = pageloc;
+               loadpage($.inArray(pageloc, pageindex));
+            } else {
+               //Un-note next line to show 404 errors with wrong urls
+               //log("Client", "404 - The page '" + pageloc + "' does not exist. To "); 
+            }
+		} 
+		if(pageloc == "") {
+      		log("Client", "What would you like to access?");	
+		}
+   }
+   function getParam(name){
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var regexS = "[\\?&]"+name+"=([^&#]*)";
+		var regex = new RegExp( regexS );
+		var results = regex.exec (window.location.href);
+		if (results == null) {
+			return "";
+		}
+		else  {
+			return results[1];
+		}
+	}
+
+   function log(name, information) {
+      var d = new Date();
+      var hours = ((d.getHours() < 10) ? "0" : "") + d.getHours();
+      var minutes = ((d.getMinutes() < 10) ? "0" : "") + d.getMinutes();
+      var seconds = ((d.getSeconds() < 10) ? "0" : "") + d.getSeconds();
+      var colour = "whitet";
+      var textcolour = "";
+      var postcolour = "";
+
+      switch (name[0]) {
+         case "!":
+            postcolour = " important";
+            name = name.substr(1);
+            break;
+      }
+      switch (name) {
+         case "Viatic":
+            colour = "purplet";
+            break;
+         case "Koil":
+            colour = "oranget";
+            break;
+         case "Website":
+            colour = "redt";
+            break;
+         case "Server":
+            colour = "bluet";
+            break;
+         case "Client":
+            colour = "bluet";
+            break;
+         case "User":
+            colour = "greent";
+            postcolour = " selft";
+            break;
+      }
+      if (information[0] == "A" && information[1] == "!") {
+         information = information.substr(2);
+         information = information.replace(/ /g, '\u00A0');
+      }
+      if (information[0] == "E" && information[1] == "!") {
+         information = information.substr(2);
+         postcolour = " important";
+      }
+
+      while (information.indexOf("](") >= 0) { //URL parser
+
+         var NAMEregExp = /\(([^)]+)\)/;
+         var uname = NAMEregExp.exec(information)[1];
+
+         var URLregExp = /\[([^)]+)\]/;
+         var url = URLregExp.exec(information)[1];
+         var newpage = false;
+         if (url[0] == "^") {
+            newpage = true;
+            url = url.substr(1);
+         }
+         var start = information.indexOf("[");
+         var end = information.indexOf(")");
+         if (newpage) {
+            information = information.replace(information.substring(start, end + 1), "").splice(start, 0, '<a href="' + url + '" target="_blank">' + uname + '</a>');
+         } else {
+            information = information.replace(information.substring(start, end + 1), "").splice(start, 0, '<a href="' + url + '">' + uname + '</a>');
+         }
+         //information = '<a href="' + url + '">' + uname + '</a>'; //working
+
+      }
+      var tobold = true;
+      var boldnumber = 0;
+      for (var i = 0; i < information.length; i++) {
+         if (information[i] == "*" && information[i - 1] != "*" && information[i + 1] != "*") {
+            boldnumber++;
+         }
+      }
+      while (information.indexOf("*") >= 0) { //Bold parser
+         var pos = information.indexOf("*");
+         information = information.replace("*", "");
+         if (tobold) {
+            information = information.splice(pos, 0, '<b>');
+         } else {
+            information = information.splice(pos, 0, '</b>');
+         }
+         tobold = !tobold;
+         if (tobold && boldnumber <= 1) {
+            break;
+         }
+         //information = '<a href="' + url + '">' + uname + '</a>'; //working
+      }
+      var tounderline = true;
+      var underlinenumber = 0;
+      for (var i = 0; i < information.length; i++) {
+         if (information[i] == "*" && information[i - 1] != "*" && information[i + 1] != "*") {
+            underlinenumber++;
+         }
+      }
+      while (information.indexOf("**") >= 0) { //Bold parser
+         var pos = information.indexOf("**");
+         information = information.replace("**", "");
+         if (tounderline) {
+            information = information.splice(pos, 0, '<u>');
+         } else {
+            information = information.splice(pos, 0, '</u>');
+         }
+         tounderline = !tounderline;
+         if (tounderline && underlinenumber <= 1) {
+            break;
+         }
+         //information = '<a href="' + url + '">' + uname + '</a>'; //working
+      } /**/
+      $(".stream").append('<div class="line">' +
+         '<p class="time">[' + hours + ":" + minutes + ":" + seconds + ']</p>' +
+         '<p class="name ' + colour + '">' + name + '</p>' +
+         '<p class="information' + postcolour + '">' + information + '</p>' +
+         '</div>');
+      $(document).scrollTop($(document).height() - $(window).height());
+   }
+	var timestring = "";
+   function time() {
+      var d = new Date();
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      var seconds = d.getSeconds();
+      if (hours < 10) {
+         hours = "0" + hours;
+      }
+      if (minutes < 10) {
+         minutes = "0" + minutes;
+      }
+      if (seconds < 10) {
+         seconds = "0" + seconds;
+      }
+	  var temptimestring = "[" + hours + ":" + minutes + ":" + seconds + "]";
+	  if (temptimestring != timestring) {
+		  timestring = temptimestring;
+      	$(".editline .time").text(timestring);
+	  }
+   }
+
+   var ctrldown = false;
+   $(".editline .edit").keydown(function(e) {
+      var text = $(".editline .edit").text();
+      console.log(e.which);
+      if (e.which == 13 && text !== "" && !ctrldown) {
+         var commands = text.split(' ');
+         var output = "";
+         if (commands[0] == "help") {
+            text = "/" + text;
+         }
+         $(".editline .edit").text("");
+         log("User", text);
+
+         previouscommands[currentcommand] = text;
+         currentcommand = previouscommands.length;
+         $(".editline .edit").keydown(35);
+         cmd(commands[0], text, commands);
+         /*Add mod commands*/
+         //modcmd(commands[0], text, commands);
+         /*Add mod commands*/
+
+      }
+      if (e.which == 38) { //up
+         if (currentcommand > 0) {
+            currentcommand--;
+            $(".editline .edit").text(previouscommands[currentcommand]);
+         }
+      }
+      if (e.which == 40) { //down
+
+         if (currentcommand < previouscommands.length) {
+            currentcommand++;
+            $(".editline .edit").text(previouscommands[currentcommand]);
+         }
+      }
+   });
+
+   function cmd(command, words, word) {
+      switch (word[0]) {
+         case "/help":
+         case "help":
+            for (var i = 0; i < commandlist.length; i++) {
+               output = commandlist[i][0] + " : " + commandlist[i][1];
+               //console.log(command[i][0]);
+               log("Client", output);
+            }
+            break;
+		 case "/gl":
+			//window.location.href = "http://koya.io" + (currentpage == "landing" ? "" : "/" + currentpage);
+			window.history.pushState(currentpage, 'InpagePage', (currentpage == "landing" ? "/" : "/" + currentpage));
+			break;
+         case "/clear":
+            $(".stream").text("");
+            break;
+         case "/nav":
+            if ($.inArray(word[1], pageindex) >= 0) {
+               currentpage = word[1];
+               log("Website", "You are now in " + currentpage);
+               loadpage($.inArray(word[1], pageindex));
+            } else {
+               log("Client", "'" + word[1] + "' does not exist.");
+            }
+            break;
+         case "/list":
+            $.each(pageindex, function(id, content) {
+               log("Client", "> " + content);
+            });
+            break;
+         case "/login":
+            if (word.length >= 3) {
+               log("Client", "Attempting to login to " + word[1] + " with " + Array(word[2].length + 1).join("â€¢"));
+               loginreturn = false;
+               //log("Client", "ER1");
+               setTimeout(loginemptyreturn, 20000);
+            } else {
+               log("Client", "Not enough arguments to log in, you need a USERNAME and a PASSWORD.");
+            }
+            break;
+         default:
+            output = "Unrecognised command '" + word[0] + "'.";
+            log("Client", output);
+      }
+   }
+
+   function loadpage(i) {
+      $.each(pages[i], function(id, content) {
+         if (content != pageindex[i]) {
+            log("Website", content);
+         }
+      });
+   }
+   var loginreturn = false;
+
+   function loginemptyreturn() {
+      //log("Client", "ER2");
+      if (!loginreturn) {
+         log("Client", "E![LOGIN] No Return Recieved");
+      }
+   }
+   String.prototype.splice = function(idx, rem, str) {
+      return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+   };
+   init();
+});
+</script>
