@@ -27,8 +27,77 @@
       <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
       <span class="logo_name">Viatic</span>
     </div>
-    <ul class="nav-links">
+ <ul class="nav-links">
+            <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Dashboard</a></li>
+        </ul>
+      </li>
       <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/main.html">
+            <i class='bx bx-collection' ></i>
+          <span class="link_name">Viatic Main</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/index.html">Viatic Main</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='fas fa-tools' ></i>
+            <span class="link_name">Utilities</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/utilities.html">Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="infomation.html">
+            <i class='far fa-chart-bar' ></i>
+            <span class="link_name">Infomation</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="webdesigns.html">
+            <i class='fas fa-pen-alt' ></i>
+            <span class="link_name">Web Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class="iocn-link">
+          <a href="extradesigns.html">
+            <i class='fas fa-ring' ></i>
+            <span class="link_name">Extra Designs</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/setting.html">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Settings</span>
+        </a>
+        <ul class="sub-menu blank">
+
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/setting.html">Settings</a></li>
+        </ul>
+      </li>      <li>
     <div class="profile-details">
       <div class="profile-content">
         <!--<img src="image/profile.jpg" alt="profileImg">-->
