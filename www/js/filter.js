@@ -2,7 +2,7 @@ function display_access_denied_error() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/filter/banned.html" id="iframe" style="min-height: 200px; max-height: 10000px; min-width: 200px; max-width: 10000px;" frameborder="0"></iframe>'
+        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/filter/banned.html" id="iframe" width="100%" height="720px" style="min-height: 200px; max-height: 10000px; min-width: 200px; max-width: 10000px;" frameborder="0"></iframe>'
         + '</div>'
         + '</div>'
 }
@@ -80,7 +80,7 @@ function display_access_denied_error_ip_ban() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/filter/banned.html" id="iframe" style="min-height: 200px; max-height: 10000px; min-width: 200px; max-width: 10000px;" frameborder="0"></iframe>'
+        + '<iframe src="https://spitriziv.github.io/Viatic/www/sites/filter/banned.html" id="iframe" width="100%" height="720px" style="min-height: 200px; max-height: 10000px; min-width: 200px; max-width: 10000px;" frameborder="0"></iframe>'
         + '</div>'
         + '</div>'
 }
@@ -89,8 +89,6 @@ function block_blacklist_ip_ban() {
     // Blacklist ip_ban
     const blacklist_ip_ban = [
         "10.26.15.238", //
-                "207.190.88.66", //
-
     ]
 
     // Detecting the users ip_ban
