@@ -113,6 +113,193 @@
   </li>
 </ul>
   </div>
+  
+  <script>
+  window.onload = function(){
+document.querySelector('.cont_principal').className= "cont_principal cont_error_active";  
+  
+}
+</script>
+<div class="cont_principal">
+<div class="cont_error">
+  </div>
+<div class="cont_aura_1"></div>
+<div class="cont_aura_2"></div>
+</div>
+<style>
+html{
+overflow:hidden;
+}
+
+.cont_principal {
+position: absolute;  
+  width: 100%;
+  height: 100%;
+overflow: hidden;
+}
+.cont_error {
+position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 50%;
+  margin-top:-150px;
+}
+
+.cont_error > h1  {
+ font-family: 'Lato', sans-serif;  
+font-weight: 400;
+  font-size:150px;
+color:#fff;
+position: relative;
+left:-100%;
+transition: all 0.5s;
+}
+
+
+.cont_error > p  {
+ font-family: 'Lato', sans-serif;  
+font-weight: 300;
+  font-size:24px;
+  letter-spacing: 5px;
+color:#9294AE;
+position: relative;
+left:100%;
+transition: all 0.5s;
+    transition-delay: 0.5s;
+-webkit-transition: all 0.5s;
+ -webkit-transition-delay: 0.5s;
+}
+
+.cont_aura_1 {
+  position:absolute;
+  width:300px;
+  height: 120%;
+top:25px;
+right: -340px;
+  background-color: #8A65DF;
+box-shadow: 0px 0px  60px  20px  rgba(137,100,222,0.5);
+-webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.cont_aura_2 {
+  position:absolute;
+  width:100%;
+  height: 300px;
+right:-10%;
+bottom:-301px;
+ background-color: #8B65E4;
+box-shadow: 0px 0px 60px 10px rgba(131, 95, 214, 0.5),0px 0px  20px  0px  rgba(0,0,0,0.1);
+  z-index:5;
+transition: all 0.5s;
+-webkit-transition: all 0.5s;
+}
+
+.cont_error_active > .cont_error > h1 {
+  left:0%;
+}
+.cont_error_active > .cont_error > p {
+  left:0%;
+}
+
+.cont_error_active > .cont_aura_2 {
+    animation-name: animation_error_2;
+    animation-duration: 4s;
+  animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+transform: rotate(-20deg);    
+}
+.cont_error_active > .cont_aura_1 {
+ transform: rotate(20deg);
+  right:-170px;
+    animation-name: animation_error_1;
+    animation-duration: 4s;
+  animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+}
+@-o-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+
+}
+@-moz-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+
+}
+@keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+}
+
+
+
+
+@-webkit-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg); 
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+@-o-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg); 
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+}
+@-moz-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg); 
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+@keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg); 
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+
+</style>
+  
+  
+  
   <section  style="overflow:hidden:" class="home-section">    
 </head>
 <body class="" style="overflow:hidden:">
@@ -120,27 +307,8 @@
 
     <iframe id="result" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden:" srcdoc="
 <!DOCTYPE html>
-<html lang=&quot;en&quot; >
 
-<head>
-
-  <meta charset=&quot;UTF-8&quot;>
-  
-  <link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
-
-  <meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
-
-  <link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
-
-  <link rel=&quot;mask-icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg&quot; color=&quot;#111&quot; />
-
-
-  
-  <title>CodePen - Error Pages</title>
-  
-  
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  
+<head>    
 <style>
 html, body {
   height: 100%;
@@ -196,15 +364,9 @@ html, body {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+
 }
 
-#particles-js {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 
 @keyframes animateTextBackground {
   0% {
