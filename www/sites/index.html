@@ -451,6 +451,8 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 .header {
 	 position: relative;
 	 overflow: hidden;
+     	 text-align: center;
+
 }
 
  .arrow {
@@ -562,7 +564,7 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 	 height: 200vw;
 	 border-radius: 50%;
 	 background-color: rgba(255, 0, 0, .1);
-	 background-image: linear-gradient(45deg, rgba(255, 179, 103, .75) 55%, rgba(185, 93, 215, .75), rgba(0, 215, 185, .75) 72%);
+	 background-image: linear-gradient(45deg, rgba(59, 196, 237, .75) 55%, rgba(156, 122, 255, .75), rgba(250, 115, 180, .75) 72%);
 	 transform: translate(100%, 500px);
 	 animation: fade-content 1.2s 0.7s cubic-bezier(0.2, 1, 0.2, 1) forwards;
 	 mix-blend-mode: darken;
@@ -572,7 +574,7 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 	 left: calc(50% - 90vw);
 	 width: 250vw;
 	 height: 250vw;
-	 background-image: linear-gradient(45deg, rgba(255, 207, 159, .75) 62.5%, rgba(206, 151, 223, .75), rgba(141, 198, 216, .75) 70%);
+	 background-image: linear-gradient(45deg, rgba(192, 91, 212, .75) 62.5%, rgba(136, 64, 237, .75), rgba(235, 113, 196, .75) 70%);
 	 animation-delay: 0.5s;
 }
  .hill {
@@ -609,13 +611,6 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 	 margin: 0;
 	 padding: 0;
 }
- body {
-	 position: relative;
-	 margin: 0;
-	 padding-top: 1px;
-	 padding-bottom: 5rem;
-	 text-align: center;
-}
  .info {
 	 position: absolute;
 	 bottom: 0;
@@ -648,10 +643,12 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
     <h1 class="slogan" style="text-align: center;" class="w3-animate-top" class="title"><img class="w3-animate-bottom" src="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwordlogo.png?raw=true" alt="" style="width:434.5px;height:219px;"></h1>
   </h1>
   <div class="btns">
-    <button style="z-index:100;" href="indexold.html" class="btn btn--primary">Old Index</button>
-    <button style="z-index:100;" href="webstore.html" class="btn">Webstore</button>
+    <button style="z-index:100;" class="btn btn--primary">Version: BETA 1.3.7</button>
+    <button style="z-index:100;" class="btn">Stable</button>
   </div>
-  <div class="hill"></div>
+  <div class="hill">
+</div>
+
 </header>
       <script>
 
@@ -718,29 +715,33 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 function typeWriter() { document.querySelector('.cont_principal').className= "cont_principal cont_error_active";  
 }
 </script>
-<p>test</p>
 <div class="cont_principal">
 <div class="cont_error">
+  </div>
+  <div style="position: relative; left: 100px;">
+    <p>everything is being imported right now. sit tight</p>
+
   </div>
 <div class="cont_aura_1"></div>
 <div class="cont_aura_2"></div>
 </div>
 <style>
 html{
-overflow-x:hidden;
 }
 
 .cont_principal {
 position: absolute;  
 top: 540px;
 width: 100%;
-height: 100%;
+height: 200%;
 overflow: hidden;
 background: #fff;
+color: black;
 }
 
 [data-theme="dark"] .cont_principal {
 background: #404040;
+color: white;
 }
 
 
