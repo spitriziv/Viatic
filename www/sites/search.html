@@ -1,18 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 <title>Viatic - Browser</title>
   <meta name="description" img src="image.png" content="The Viatic Website"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="chromelogo.png">
-  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">  
-<iframe id="contentFrame" frameborder="0" allowfullscreen=""></iframe>
-  <div id="dialogWrap">
-    <div id="dialogWrapCell">
-      <div id="mainDialog">
-        <div id="dialogText"></div>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
- <!-- ccs -->
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" type="imageX" sizes="16x16">
+  <head>
+  <body onload="typeWriter()"></body>
+    <!-- ccs -->
     <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
         <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,256 +21,117 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    </head>
-
-  <style>
-    /*  
-Thanks to: Usama Tahir
-https://medium.com/@AmJustSam
-*/
-
-*{
- margin: 0;
- padding: 0;
-}
-
-html{
-    width: 100vw;
-    height: 100vh;
-}
-
-/* CSS which you need for blurred box */
-body{
- background-repeat: no-repeat;
- background-attachment: fixed;
- background-size: cover;
- background-position: top;
- background-image:url(https://www.creativefabrica.com/wp-content/uploads/2020/06/12/Pink-Gray-Gradient-Background-Texture-Graphics-4342849-1.png);
- width: 100%;
- height: 100%;
- font-family: Arial, Helvetica;
- letter-spacing: 0.02em;
-  font-weight: 400;
- -webkit-font-smoothing: antialiased; 
-    display:flex; flex-direction:column; justify-content:center;
-  min-height:100vh;
-}
-
-.blurred-box{
-  position: relative;
-  width: 250px;
-  height: 350px;
-  top: calc(50% - 175px);
-  left: calc(50% - 125px);
-  background: inherit;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.blurred-box:after{
- content: '';
- width: 300px;
- height: 300px;
- background: inherit; 
- position: absolute;
- left: -25px;
- left position
- right: 0;
- top: -25px;  
- top position 
- bottom: 0;
- box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
- filter: blur(10px);
-}
-
-
-/* Form which you dont need */
-.user-login-box{
-  position: relative;
-  margin-top: 50px;
-  text-align: center;
-  z-index: 1;
-}
-.user-login-box > *{
-  display: inline-block;
-  width: 200px;
-}
-
-.user-icon{
-  width: 100px;
-  height: 100px;
-  position: relative;
-  border-radius: 50%;
-  background-size: contain;
-  background-image: url(https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true);
-}
-
-.user-name{
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: white;
-}
-
-input.user-password{
-  width: 120px;
-  height: 18px;
-  opacity: 0.4;
-  border-radius: 2px;
-  padding: 5px 15px;
-  border: 0;
-}
-
-
-    
-    
-    
-[data-theme="dark"] {
-  background-color: #111 !important;
-  color: #909090;
-}
-
-[data-theme="dark"] .bg-black {
-  background-color: #fff !important;
-}
-
-[data-theme="dark"] .bg-dark {
-  background-color: #eee !important;
-}
-
-[data-theme="dark"] .bg-light {
-  background-color: #222 !important;
-}
-
-[data-theme="dark"] .bg-white {
-  background-color: #000 !important;
-}
-[data-theme="dark"] .sidenav {
-  background-color: #101010 !important;
-}
-[data-theme="dark"] .dropdown-content {
-  background-color: #202020 !important;
-}
-[data-theme="dark"] .dropdown-content a:hover {
-  background-color: #696969 !important;
-}
-
-[data-theme="dark"] .dropdown-content a {
-  color: #909090 !important;
-}
- [data-theme="dark"] #dialogWrap {
-  background-color: #333333 !important;
-}
- [data-theme="dark"]  #mainDialog {
-      border: solid #101010 1px  !important;
-      box-shadow: 4px 4px 6px 4px #101010  !important;
-      background-color: #101010  !important;
-}
- [data-theme="dark"] #passArea {
-      padding: 20px 30px;
-      background-color: #222222 !important;
-}
- [data-theme="dark"] #submitPass {
-      color: white;
-      background-color: #333333 !important;
-      border: solid black 1px;
-    }
-
-
-    .notifyText {
-      display: none;
-    }
-
-    #invalidPass {
-      color: red;
-    }
-
-    #success {
-      color: green;
-    }
-
-    #submitPass {
-      font-size: 20px;
-      border-radius: 5px;
-      background-color: #E7E7E7;
-      border: solid gray 1px;
-      float: right;
-      cursor: pointer;
-    }
-
-    #contentFrame {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    #attribution {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 0.8em;
-    }
-
-    #attribution,
-    #attribution a {
-      color: #999;
-    }
-
-    .error {
-      display: none;
-      color: red;
-    }
    
-  </style>
-</head>
-
-<body>
-  <div id="passArea">    
-<div class="blurred-box">
-  <div class="user-login-box">
-    <span class="user-icon"></span>
-    <div class="user-name">Viatic</div>
-    <input id="pass" style=" text-align: center;width:250px;height:40px;background-color:#ffffff10;color:white;border-radius:0px;border-color:#ffffff00" type="password" name="pass" autofocus="" />
-     <span id="messageWrapper">
-              <span id="invalidPass" class="error"><i style='font-size:14px' class='fas'>&#xf071;</i>   Sorry, please try again.</span>
-              <span id="trycatcherror" class="error"><i style='font-size:14px' class='fas'>&#xf071;</i>   Sorry, something went wrong.</span>
-              <span id="success" class="notifyText">Proceeding...</span>
-              &nbsp;
-            </span>
-    
-    <button class="btn btn-default" id="submitPass" type="button" style="width:250px;height:50px;background-color:#ffffff00;color:white;border-radius:0px;border-color:#ffffff00" class="center">Enter</button>
-<div style="clear: both;"></div>
-          </div>
-        </div>
-        <div id="securecontext" class="error">
-        
-          <p>
-            Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-          </p>
-        </div>
-        <div id="nocrypto" class="error">
-          <p>
-            Your web browser appears to be outdated. Please visit this page using a modern browser.
-          </p>
-        </div>
-      </div>
+<body class="w3-animate-left">
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i><img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+      <span class="logo_name">Viatic</span>
     </div>
+    <ul class="nav-links">
+            <li>
+        <a href="https://spitriziv.github.io/Viatic/www/sites/browser/servers.html">
+          <i class='fas'>&#xf550;</i>
+          <span class="link_name">Servers</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/browser/servers.html">Servers</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+           <a href="https://spitriziv.github.io/Viatic/www/sites/browser/serverone.html">
+            <i class='fas'>&#xf233;</i>
+          <span class="link_name">Server 1</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/browser/serverone.html">Server 1</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/browser/servertwo">
+            <i class='fas'>&#xf233;</i>
+            <span class="link_name">Server 2</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/browser/servertwo.html">Server 2</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/browser/serverthree.html">
+            <i class='fas'>&#xf233;</i>
+            <span class="link_name">Server 3</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/browser/serverthree">Server 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="https://spitriziv.github.io/Viatic/www/sites/browser/serverfour.html">
+            <i class='fas'>&#xf233;</i>
+            <span class="link_name">Server 4</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="https://spitriziv.github.io/Viatic/www/sites/browser/serverfour">Server 4</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">SpiritXIV</div>
+        <div class="job">Creator and Desginer</div>
+      </div>
+      <i><img class="w3-animate-left" src="https://github.com/spitriziv/Viatic/blob/main/www/image/profilenoback.png?raw=true" alt="" style="width:45px;height:45px;"></i>
+    </div>
+  </li>
+</ul>
   </div>
+  <section  style="overflow:hidden:" class="home-section">    
+</head>
+<body class="" style="overflow:hidden:">
+  <div id="result-iframe-wrap" role="main">
+
+    <!--- <iframe id="result" style="position:fixed; top:0; left:78px; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;" src="https://spitriziv.github.io/Viatic/www/sites/browser/veiwserver#.html">
+    </iframe> --->
+
+<span>Full Feature in dev.<br>
+Progress:<br>
+Server Count: <b style="color:red;">0</b><br>
+<b>NOTE:</b> Nothing Works
+</span>
   </div>
-  </div>
-  </div>
-  <div id="attribution">
-  </div>
+
+</body>
+
+</html>
+    
+     
+                </div>
+  </section>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+ <input type="checkbox" class="form-check-input" id="darkSwitch">
       <script>
-/*!
- * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
- * Copyright 2021 C.Oliff
- * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
- */
 
 var darkSwitch = document.getElementById("darkSwitch");
 window.addEventListener("load", function () {
@@ -333,145 +191,19 @@ function resetTheme() {
  */
 var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
 </script>
+<script>
+var i = 0;
+var txt = 'Canvas';
+var speed = 50;
 
-
-  <script>
-    (function() {
-      var pl = "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";
-      var submitPass = document.getElementById('submitPass');
-      var passEl = document.getElementById('pass');
-      var invalidPassEl = document.getElementById('invalidPass');
-      var trycatcherror = document.getElementById('trycatcherror');
-      var successEl = document.getElementById('success');
-      var contentFrame = document.getElementById('contentFrame');
-      // Sanity checks
-      if (pl === "") {
-        submitPass.disabled = true;
-        passEl.disabled = true;
-        alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-        return;
-      }
-      if (!isSecureContext) {
-        document.querySelector("#passArea").style.display = "none";
-        document.querySelector("#securecontext").style.display = "block";
-        return;
-      }
-      if (!crypto.subtle) {
-        document.querySelector("#passArea").style.display = "none";
-        document.querySelector("#nocrypto").style.display = "block";
-        return;
-      }
-
-      function str2ab(str) {
-        var ustr = atob(str);
-        var buf = new ArrayBuffer(ustr.length);
-        var bufView = new Uint8Array(buf);
-        for (var i = 0, strLen = ustr.length; i < strLen; i++) {
-          bufView[i] = ustr.charCodeAt(i);
-        }
-        return bufView;
-      }
-      async function deriveKey(salt, password) {
-        const encoder = new TextEncoder()
-        const baseKey = await crypto.subtle.importKey(
-          'raw',
-          encoder.encode(password),
-          'PBKDF2',
-          false,
-          ['deriveKey'],
-        )
-        return await crypto.subtle.deriveKey({
-            name: 'PBKDF2',
-            salt,
-            iterations: 100000,
-            hash: 'SHA-256'
-          },
-          baseKey, {
-            name: 'AES-GCM',
-            length: 256
-          },
-          true,
-          ['decrypt'],
-        )
-      }
-      async function doSubmit(evt) {
-        submitPass.disabled = true;
-        passEl.disabled = true;
-        let iv, ciphertext, key;
-        try {
-          var unencodedPl = str2ab(pl);
-          const salt = unencodedPl.slice(0, 32)
-          iv = unencodedPl.slice(32, 32 + 16)
-          ciphertext = unencodedPl.slice(32 + 16)
-          key = await deriveKey(salt, passEl.value);
-        } catch (e) {
-          trycatcherror.style.display = "inline";
-          console.error(e);
-          return;
-        }
-        try {
-          const decryptedArray = new Uint8Array(
-            await crypto.subtle.decrypt({
-              name: 'AES-GCM',
-              iv
-            }, key, ciphertext)
-          );
-          let decrypted = new TextDecoder().decode(decryptedArray);
-          if (decrypted === "") throw "No data returned";
-          const basestr = '<base href="." target="_top">';
-          const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-          // Set default iframe link targets to _top so all links break out of the iframe
-          if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-          else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-          else decrypted = basestr + decrypted;
-          // Fix fragment links
-          if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-          else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-          else decrypted = decrypted + anchorfixstr;
-          contentFrame.srcdoc = decrypted;
-          successEl.style.display = "inline";
-          setTimeout(function() {
-            dialogWrap.style.display = "none";
-          }, 1000);
-        } catch (e) {
-          invalidPassEl.style.display = "inline";
-          passEl.value = "";
-          submitPass.disabled = false;
-          passEl.disabled = false;
-          console.error(e);
-          return;
-        }
-      }
-      submitPass.onclick = doSubmit;
-      passEl.onkeypress = function(e) {
-        if (!e) e = window.event;
-        var keyCode = e.keyCode || e.which;
-        invalidPassEl.style.display = "none";
-        if (keyCode == '13') {
-          // Enter pressed
-          doSubmit();
-          return false;
-        }
-      }
-    })();
-  </script>
-
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("type").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
 </body>
-
-</html>
- 
 </div>
+</html>
