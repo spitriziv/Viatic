@@ -2,7 +2,7 @@ function display_access_denied_error() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe id="result" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;" src="https://spitriziv.github.io/Viatic/www/sites/filter/V-001.html"></iframe>'
+        + '<iframe id="result" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;" src="https://spitriziv.github.io/Viatic/www/sites/filter/V-104.html"></iframe>'
         + '</div>'
         + '</div>'
 }
@@ -10,16 +10,7 @@ function display_access_denied_error() {
 function block_blacklist_countries() {
     // Blacklist countries
     const blacklist_countries = [
-        "DE", // Germany
-        "US", // United States
-        "GB", // United Kingdom
-        "UA", // Ukraine
-        "AR", // Argentina
-        "FI", // Finland
-        "CA", // Canada
-        "JP", // Japan
-        "NO", // Norway
-        "RU" // Russia
+
     ]
 
     // Detecting the users country
