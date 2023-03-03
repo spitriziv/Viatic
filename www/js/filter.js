@@ -2,7 +2,7 @@ function display_access_denied_error() {
     document.body.innerHTML
         = '<div id="access-denied-error">'
         + '<div class="iframeWrapper noselect">'
-        + '<iframe id="result" style="position:fixed; top:0; left:78px; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;" src="https://spitriziv.github.io/Viatic/www/sites/filter/V-201.html"></iframe>'
+        + '<iframe id="result" style="position:fixed; top:0; left:78px; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;" src="https://spitriziv.github.io/Viatic/www/sites/filter/V-204.html"></iframe>'
         + '</div>'
         + '</div>'
 }
