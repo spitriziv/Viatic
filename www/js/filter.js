@@ -126,3 +126,17 @@ function allow_whitelist_ip_ban() {
 block_blacklist_ip_ban() // Block blacklist ip_ban
 
 // allow_whitelist_ip_ban() // Allow whitelist ip_ban
+
+
+
+
+
+
+
+//TIMED EVENTS//
+  var md = (new Date()).toISOString().substring(5, 10);
+[].slice.call(document.querySelectorAll("[data-visible-from],[data-visible-to]")).forEach(function(el) {
+  var from = el.dataset.visibleFrom || "01-01";
+  var to = el.dataset.visibleTo || "12-31";
+  el.style.display = (from <= md && md <= to ? "" : "none");
+});
