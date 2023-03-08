@@ -8212,3 +8212,107 @@ transform: rotate(-20deg);
 }(window, document));
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+ .loading {
+	 position: fixed;
+	 height: 100%;
+	 width: 100%;
+	 top: 0;
+	 left: 0;
+   right: 0;
+	 background: #606060;
+	 transition: 0.75s;
+	 z-index: 99999;
+}
+ .loading-title {
+	 color: #;
+	 margin: 0;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .loading-progress {
+	 height: 11px;
+	 background: #707070;
+	 top: -11px;
+	 bottom: 0;
+	 width: 100%;
+	 position: absolute;
+	 transition: 0.35s;
+	 z-index: 10000000000;
+}
+  
+  [data-theme="dark"] .loading {
+	 background: #202020;
+}
+ [data-theme="dark"] .loading-progress {
+	 background: #303003;
+}
+</style>
+<head>
+<!-- Loading -->
+  <div class="loading">
+    <div class="loading-title">
+      <style>
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<div class="container">
+        <img src="https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true"  style="height:200px;position: relative;top: -100px;left: -120px;right: 0;" />
+</div>
+    <div class="loading-progress"></div>
+  </div>
+</body>
+<script>
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// super simple router - go to page specified in hash, otherwise go to "default"
+function router(route) {
+  const pageName = route ? route : $(".default.page").attr("data-page-name");
+  const $page = $(`[data-page-name="${pageName}"]`);
+  $(".page").css("display", "none");
+  $("[data-page]").removeClass("active");
+  $(`[data-page="${pageName}"]`).addClass("active");
+  $page.css("display", "block");
+}
+router();
+
+// fake loader
+let progress = 390;
+const fakeLoaderInterval = window.setInterval(function () {
+  const $lp = $(".loading-progress");
+  progress = progress + getRandomArbitrary(10, 25);
+  $lp.css("transform", `translateX(${progress}%)`);
+
+  if (progress >= 75) {
+    window.clearInterval(fakeLoaderInterval);
+    $lp.css("transform", "translateX(100%)");
+    setTimeout(
+      () => $(".loading").css("transform", "translateY(calc(100% + 10px))"),
+      400
+    );
+  }
+}, getRandomArbitrary(300, 500));
+
+// navigation
+$(".main-nav li a").on("click", (e) => {
+  const $this = $(e.currentTarget);
+  const route = $this.attr("data-page");
+
+  $(".main-nav li a").removeClass("active");
+  $this.addClass("active");
+  router(route);
+});
+
+</script>
