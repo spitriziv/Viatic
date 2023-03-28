@@ -1,0 +1,4006 @@
+<!DOCTYPE html>
+<input style="display:none;" type="checkbox" class="form-check-input" id="darkSwitch">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Viatic - Web Store</title>
+ <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+  <meta name="description" img src="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true" content="The Viatic Web Store"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true">
+  <link rel="icon" href="https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true" type="imageX" sizes="16x16">
+<div id="result-iframe-wrap" role="main">
+<iframe id="result" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden:" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+  <meta charset=&quot;UTF-8&quot;>
+  
+
+    <link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+
+    <meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+    <link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+    <link rel=&quot;mask-icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg&quot; color=&quot;#111&quot; />  
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css&quot;>
+
+  
+  
+<style>
+:root {
+  --body-bg-color: #e5ecef;
+  --theme-bg-color: #fafafb;
+  --body-color: #2f2f33;
+  --active-color: #0162ff;
+  --active-light-color: #e1ebfb;
+  --header-bg-color: #fff;
+  --search-border-color: #efefef;
+  --border-color: #d8d8d8;
+  --alert-bg-color: #e8f2ff;
+  --subtitle-color: #83838e;
+  --inactive-color: #f0f0f0;
+  --placeholder-color: #9b9ba5;
+  --time-button: #fc5757;
+  --level-button: #5052d5;
+  --button-color: #fff;
+}
+::-moz-placeholder {
+  color: #9b9ba5;
+}
+:-ms-input-placeholder {
+  color: #9b9ba5;
+}
+::placeholder {
+  color: #9b9ba5;
+}
+img {
+  max-width: 100%;
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  background-color: #808080;
+  font-size: 15px;
+  color: #2f2f33;
+}
+[data-theme=&quot;dark&quot;] .wrapper {
+  background-color: #303030;
+  font-size: 15px;
+  color: #808080;
+}
+[data-theme=&quot;dark&quot;] .header {
+  display: flex;
+  color: #808080;
+  align-items: center;
+  transition: box-shadow 0.3s;
+  flex-shrink: 0;
+  padding: 0 40px;
+  white-space: nowrap;
+  background-color: #202020;
+  height: 60px;
+  width: 100%;
+  font-size: 14px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+[data-theme=&quot;dark&quot;] .header-menu a {
+  text-decoration: none;
+  color: #606060;
+  font-weight: 500;
+}
+[data-theme=&quot;dark&quot;] .header-menu a:hover {
+  color: var(--active-color);
+}
+[data-theme=&quot;dark&quot;] .header-menu a:not(:first-child) {
+  margin-left: 30px;
+}
+[data-theme=&quot;dark&quot;] .header-menu a.active {
+  color: var(--active-color);
+}
+.job {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 30px;
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+}
+.logo svg {
+  width: 24px;
+  margin-right: 12px;
+}
+.header {
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  align-items: center;
+  transition: box-shadow 0.3s;
+  flex-shrink: 0;
+  padding: 0 40px;
+  white-space: nowrap;
+  overflow-y: hidden;
+  background-color: #a8a8a8;
+  height: 60px;
+  width: 100%;
+  font-size: 14px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.header-menu a {
+  text-decoration: none;
+  color: #2f2f33;
+  font-weight: 500;
+}
+.header-menu a:hover {
+  color: var(--active-color);
+}
+.header-menu a:not(:first-child) {
+  margin-left: 30px;
+}
+.header-menu a.active {
+  color: var(--active-color);
+}
+.user-settings {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  right: 30px;
+  position: relative;
+}
+.user-settings svg {
+  width: 20px;
+  color: #94949f;
+}
+.user-menu {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 2px solid #d6d6db;
+}
+.user-menu:before {
+  position: absolute;
+  content: &quot;&quot;;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  right: 6px;
+  top: -1px;
+}
+[data-theme=&quot;dark&quot;] .user-menu {
+  border-right: 2px solid #404040;
+}
+.user-info-menu {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 2px solid #d6d6db;
+}
+.user-info-menu:before {
+  position: absolute;
+  content: &quot;&quot;;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  right: 6px;
+  top: -1px;
+}
+[data-theme=&quot;dark&quot;] .user-info-menu {
+  border-right: 2px solid #404040;
+}
+.user-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  scroll-behavior: smooth;
+  padding: 30px 40px;
+  overflow: auto;
+}
+.search-menu {
+  height: 56px;
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 20px;
+}
+.search-menu div:not(:last-of-type) {
+  border-right: 1px solid var(--search-border-color);
+}
+.search-menu-box {
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 20px;
+}
+.search-menu-box div:not(:last-of-type) {
+  border-right: 1px solid var(--search-border-color);
+}
+.search-bar {
+  height: 55px;
+  width: 100%;
+  position: relative;
+}
+.search-bar input {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: block;
+  background-color: transparent;
+  border: none;
+  background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%230162ff'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e&quot;);
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: 0 50%;
+  padding: 0 0px 0 20px;
+}
+[data-theme=&quot;dark&quot;] .search-bar {
+  color: white;
+}
+[data-theme=&quot;dark&quot;] .search-menu {
+  height: 56px;
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: #222222;
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 20px;
+}
+[data-theme=&quot;dark&quot;] .search-menu div:not(:last-of-type) {
+  border-right: 1px solid var(--search-border-color);
+}
+[data-theme=&quot;dark&quot;] .search-menu-box {
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: #222222;
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 20px;
+}
+[data-theme=&quot;dark&quot;] .search-menu-box div:not(:last-of-type) {
+  border-right: 1px solid var(--search-border-color);
+}
+[data-theme=&quot;dark&quot;] .search-bar {
+  color: white;
+}
+.search-location,
+.search-job,
+.search-salary {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 25px;
+  height: 100%;
+}
+.search-location input,
+.search-job input,
+.search-salary input {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+.search-location svg,
+.search-job svg,
+.search-salary svg {
+  margin-right: 8px;
+  width: 18px;
+  color: var(--active-color);
+  flex-shrink: 0;
+}
+.search-button {
+  background-color: var(--active-color);
+  height: 55px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 15px;
+  border-radius: 0 8px 8px 0;
+  color: var(--button-color);
+  cursor: pointer;
+  margin-left: auto;
+}
+[data-theme=&quot;dark&quot;] .search-button {
+  background-color: #505050;
+  height: 55px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 15px;
+  border-radius: 0 8px 8px 0;
+  color: var(--button-color);
+  cursor: pointer;
+  margin-left: auto;
+}
+.search-button-extra {
+  background-color: #505050;
+  height: 55px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 15px;
+  border-radius: 0 0 0 0;
+  color: var(--button-color);
+  cursor: pointer;
+  margin-left: auto;
+}
+.search.item {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-size: 13px;
+  color: white;
+  border: 1px solid var(--search-border-color);
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.search.item svg {
+  width: 12px;
+  margin-left: 5px;
+}
+.search.item:last-child {
+  left: 185px;
+}
+.main-container {
+  display: flex;
+  flex-grow: 1;
+  padding-top: 30px;
+  height: 100%;
+}
+.search-type {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+}
+.alert {
+  background-color: var(--alert-bg-color);
+  padding: 24px 18px;
+  border-radius: 8px;
+}
+.alert-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.alert-subtitle {
+  font-size: 13px;
+  color: var(--subtitle-color);
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+.alert input {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  border-radius: 6px;
+  background-color: var(--header-bg-color);
+  border: none;
+  font-size: 13px;
+}
+.search-buttons {
+  border: none;
+  color: var(--button-color);
+  background-color: var(--active-color);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 14px;
+}
+.job-wrapper {
+  padding-top: 20px;
+}
+.job-time {
+  padding-top: 20px;
+}
+.job-time-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+.type-container {
+  display: flex;
+  align-items: center;
+  color: var(--subtitle-color);
+  font-size: 13px;
+}
+.type-container label {
+  margin-left: 2px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.type-container + .type-container {
+  margin-top: 10px;
+}
+.job-number {
+  margin-left: auto;
+  background-color: var(--inactive-color);
+  color: var(--subtitle-color);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 4px;
+}
+[data-theme=&quot;dark&quot;] .job-number {
+  background-color: #404040;
+  color: var(--subtitle-color);
+}
+.job-style {
+  display: none;
+}
+.job-style + label:before {
+  content: &quot;&quot;;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--subtitle-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.job-style:checked + label:before {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
+  background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e&quot;);
+  background-position: 50%;
+  background-size: 14px;
+  background-repeat: no-repeat;
+}
+[data-theme=&quot;dark&quot;] .job-style:checked + label:before {
+  background-color: #404040;
+}
+.job-style:checked + label + span {
+  background-color: #606060;
+  color: #606060;
+}
+[data-theme=&quot;dark&quot;] .job-style:checked + label + span {
+  background-color: #606060;
+  color: var(--active-color);
+}
+.searched-jobs {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 40px;
+}
+@-webkit-keyframes slideY {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+@keyframes slideY {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+.searched-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-animation: slideY 0.6s both;
+          animation: slideY 0.6s both;
+}
+.searched-show {
+  font-size: 19px;
+  font-weight: 600;
+}
+.searched-sort {
+  font-size: 14px;
+  color: var(--subtitle-color);
+}
+.searched-sort .post-time {
+  font-weight: 600;
+  color: var(--subtitle-color);
+}
+.searched-sort .menu-icon {
+  font-size: 9px;
+  color: #9b9ba5;
+  margin-left: 6px;
+}
+.job-cards {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  -webkit-animation: slideY 0.6s both;
+          animation: slideY 0.6s both;
+}
+@media screen and (max-width: 1212px) {
+  .job-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 930px) {
+  .job-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.job-cards-slide {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(15, 15fr);
+  grid-column-gap: 20px;
+  -webkit-animation: slideY 0.6s both;
+          animation: slideY 0.6s both;
+}
+@media screen and (max-width: 1212px) {
+  .job-cards-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 930px) {
+  .job-cards-slide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.job-cards-small {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  -webkit-animation: slideY 0.6s both;
+          animation: slideY 0.6s both;
+}
+@media screen and (max-width: 1212px) {
+  .job-cards-small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 930px) {
+  .job-cards-small {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.job-cards-big {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 0fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  -webkit-animation: slideY 0.6s both;
+          animation: slideY 0.6s both;
+}
+@media screen and (min-width: 1212px) {
+  .job-cards-big {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 930px) {
+  .job-cards-big {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.job-card {
+  padding: 20px 16px;
+  background-color: var(--header-bg-color);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.job-card:hover {
+  transform: scale(1.02);
+  background-color: var(--header-bg-color);
+}
+.job-card svg {
+  width: 46px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.job-card-title {
+  font-weight: 600;
+  margin-top: 16px;
+  font-size: 20px;
+}
+.job-card-subtitle {
+  color: var(--subtitle-color);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.6em;
+}
+.job-card-header {
+  display: flex;
+  align-items: flex-start;
+}
+[data-theme=&quot;dark&quot;] .job-card {
+  background-color: #404040;
+}
+.job-card-big {
+  padding: 20px 16px;
+  background-color: var(--header-bg-color);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.job-card-big:hover {
+  transform: scale(1.02);
+  background-color: var(--header-bg-color);
+}
+.job-card-big svg {
+  width: 460px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.job-card-big-title {
+  font-weight: 600;
+  margin-top: 16px;
+  font-size: 20px;
+}
+.job-card-big-subtitle {
+  color: var(--subtitle-color);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.6em;
+}
+.job-card-big-header {
+  display: flex;
+  align-items: flex-start;
+}
+[data-theme=&quot;dark&quot;] .job-card-big {
+  background-color: #404040;
+}
+.overview-card:hover {
+  background: #2b2ecf;
+  transition: none;
+  transform: scale(1);
+}
+.overview-card:hover svg {
+  box-shadow: none;
+}
+.overview-card:hover .job-overview-buttons .search-buttons.time-button,
+.overview-card:hover .job-overview-buttons .search-buttons.level-button {
+  background-color: #575ad8;
+  color: #fff;
+}
+.overview-card:hover .job-card-title,
+.overview-card:hover .job-stat {
+  color: #fff;
+}
+.overview-card:hover .job-card-subtitle,
+.overview-card:hover .job-day {
+  color: #dedede;
+}
+.overview-card:hover .overview-wrapper .heart {
+  color: #fff;
+  border-color: #fff;
+}
+.overview-card:hover .overview-wrapper .heart:hover {
+  fill: red;
+  stroke: red;
+  transform: scale(1.1);
+}
+.detail-button {
+  background-color: var(--active-light-color);
+  color: var(--active-color);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.detail-button + .detail-button {
+  margin-left: 4px;
+}
+[data-theme=&quot;dark&quot;] .detail-button {
+  background-color: #303030;
+  color: white;
+}
+.job-card-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+.card-buttons,
+.card-buttons-msg {
+  padding: 10px;
+  width: 100%;
+  font-size: 12px;
+}
+.card-buttons-msg {
+  cursor: not-allowed;
+}
+[data-theme=&quot;dark&quot;] .card-buttons-msg {
+  background-color: #101010;
+  cursor: not-allowed;
+  color: white;
+}
+.card-buttons {
+  margin-right: 12px;
+}
+.card-buttons-msg {
+  background-color: var(--inactive-color);
+  color: var(--subtitle-color);
+}
+[data-theme=&quot;dark&quot;] .card-buttons {
+  background-color: #505050;
+  color: white;
+}
+.menu-dot {
+  background-color: #9b9ba5;
+  box-shadow: -6px 0 0 0 #9b9ba5, 6px 0 0 0 #9b9ba5;
+  width: 4px;
+  height: 4px;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 8px;
+}
+.header-shadow {
+  box-shadow: 0 4px 20px rgba(88, 99, 148, 0.17);
+  position: fixed;
+  z-index: 99;
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+.job-overview {
+  display: flex;
+  flex-grow: 1;
+  display: none;
+  -webkit-animation: slide 0.6s both;
+          animation: slide 0.6s both;
+}
+.job-overview-cards {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 100%;
+  flex-shrink: 0;
+}
+.job-overview-card + .job-overview-card {
+  margin-top: 20px;
+}
+.job-overview-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+.job-overview-buttons .search-buttons {
+  background-color: var(--inactive-color);
+  font-size: 11px;
+  padding: 6px 8px;
+  margin-top: 0;
+  font-weight: 500;
+}
+.job-overview-buttons .search-buttons.time-button {
+  color: var(--time-button);
+  margin-right: 8px;
+}
+.job-overview-buttons .search-buttons.level-button {
+  color: var(--level-button);
+}
+.job-overview-buttons .job-stat {
+  color: var(--active-color);
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: auto;
+}
+.job-overview-buttons .job-day {
+  color: var(--subtitle-color);
+  font-size: 12px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.job-overview .overview-wrapper {
+  display: flex;
+  align-items: center;
+}
+.job-overview .overview-wrapper svg:first-child {
+  width: 42px;
+  margin-right: 10px;
+}
+.job-overview .overview-wrapper .heart {
+  background: none;
+  box-shadow: none;
+  width: 24px;
+  padding: 4px;
+  color: var(--subtitle-color);
+  border: 1px solid var(--border-color);
+  margin-left: auto;
+  margin-bottom: auto;
+}
+.overview-detail .job-card-title,
+.overview-detail .job-card-subtitle {
+  margin-top: 4px;
+}
+.overview-detail .job-card-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+}
+.job-explain {
+  background-color: var(--header-bg-color);
+  margin-left: 40px;
+  border-radius: 0 0 8px 8px;
+}
+.job-bg {
+  border-radius: 8px 8px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 180px;
+  transition: 0.3s;
+  position: relative;
+}
+.job-logos {
+  margin-top: -30px;
+  position: relative;
+  margin-bottom: -36px;
+  padding: 0 20px;
+}
+.job-logos svg {
+  width: 66px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 4px solid var(--header-bg-color);
+}
+.job-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+.job-title-wrapper .job-card-title {
+  font-size: 20px;
+  margin-top: 0;
+  font-weight: 600;
+}
+.job-action {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.job-action svg {
+  width: 32px;
+  border: 1px solid var(--border-color);
+  color: var(--subtitle-color);
+  border-radius: 8px;
+  padding: 6px;
+}
+.job-action svg + svg {
+  margin-left: 12px;
+}
+.job-explain-content {
+  padding: 50px 25px 30px;
+}
+.job-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.job-subtitle-wrapper .posted {
+  margin-left: auto;
+}
+.job-subtitle-wrapper .company-name {
+  color: var(--active-color);
+  font-weight: 600;
+  font-size: 14px;
+}
+.job-subtitle-wrapper .comp-location,
+.job-subtitle-wrapper .posted {
+  color: var(--subtitle-color);
+  font-size: 12px;
+  font-weight: 500;
+}
+.job-subtitle-wrapper .comp-location {
+  position: relative;
+  margin-left: 10px;
+}
+.job-subtitle-wrapper .comp-location:before {
+  content: &quot;&quot;;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #9b9ba5;
+  top: 49%;
+  left: -8px;
+  position: absolute;
+}
+.job-subtitle-wrapper .app-number {
+  color: #2f2f33;
+  position: relative;
+  margin-left: 12px;
+}
+.job-subtitle-wrapper .app-number:before {
+  content: &quot;&quot;;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #9b9ba5;
+  top: 50%;
+  left: -7px;
+  position: absolute;
+}
+.explain-bar {
+  margin-top: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  height: 66px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+.explain-title {
+  color: var(--subtitle-color);
+  font-size: 12px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+.explain-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -2px;
+  white-space: nowrap;
+}
+.explain-contents {
+  height: 66px;
+}
+.explain-contents + .explain-contents {
+  border-left: 1px solid var(--border-color);
+  padding-left: 16px;
+}
+.overview-text {
+  margin-top: 30px;
+}
+.overview-text-header {
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.overview-text-subheader {
+  font-size: 13px;
+  line-height: 2em;
+}
+.overview-text-item {
+  font-size: 13px;
+  position: relative;
+  display: flex;
+}
+.overview-text-item + .overview-text-item {
+  margin-top: 20px;
+}
+.overview-text-item:before {
+  content: &quot;&quot;;
+  border: 2px solid #61bcff;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.detail-page .job-overview {
+  display: flex;
+}
+.detail-page .job-cards,
+.detail-page .searched-bar {
+  display: none;
+}
+@media screen and (max-width: 1300px) {
+  .detail-page .search-type {
+    display: none;
+  }
+  .detail-page .searched-jobs {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 990px) {
+  .explain-contents,
+  .explain-bar {
+    height: auto;
+  }
+  .explain-bar {
+    flex-wrap: wrap;
+    padding-bottom: 14px;
+  }
+  .explain-contents {
+    width: 50%;
+  }
+  .explain-contents + .explain-contents {
+    padding: 0;
+    border: 0;
+  }
+  .explain-contents:nth-child(2) ~ .explain-contents {
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+  }
+  .job-subtitle-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .job-subtitle-wrapper .posted {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+@media screen and (max-width: 930px) {
+  .search-job,
+  .search-salary {
+    display: none;
+  }
+  .search-bar {
+    width: auto;
+  }
+}
+@media screen and (max-width: 760px) {
+  .detail-page .job-overview-cards {
+    display: none;
+  }
+  .user-name {
+    display: none;
+  }
+  .user-profile {
+    margin-right: 0;
+  }
+  .job-explain {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 730px) {
+  .search-type {
+    display: none;
+  }
+  .searched-jobs {
+    padding-left: 0;
+  }
+  .search-menu div:not(:last-of-type) {
+    border: 0;
+  }
+  .job-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search-location {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  .job-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header-menu a:not(:first-child) {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 590px) {
+  .header-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .search.item {
+    display: none;
+  }
+  .search-bar {
+    flex-grow: 0;
+  }
+  .search-bar input {
+    padding: 0 0 0 30px;
+  }
+  .search-button {
+    margin-left: 16px;
+  }
+  .searched-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searched-sort {
+    margin-top: 5px;
+  }
+  .main-container {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .explain-contents {
+    width: 100%;
+    margin: 0;
+  }
+  .explain-contents:nth-child(2) ~ .explain-contents {
+    margin: 0;
+    border: 0;
+  }
+  .wrapper {
+    padding: 20px;
+  }
+  .header {
+    padding: 0 20px;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate=&quot;no&quot;>
+  <!DOCTYPE html>
+<input style=&quot;display:none;&quot; type=&quot;checkbox&quot; class=&quot;form-check-input&quot; id=&quot;darkSwitch&quot;>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+<title>Viatic - Web Store</title>
+ <script src=&quot;https://cdn.jsdelivr.net/npm/less&quot; ></script>
+  <meta name=&quot;description&quot; img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; content=&quot;The Viatic Web Store&quot;> 
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;shortcut icon&quot; href=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot;>
+  <link rel=&quot;icon&quot; href=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; type=&quot;imageX&quot; sizes=&quot;16x16&quot;>
+  <head>
+<body class=&quot;w3-animate-opacity&quot; onload=&quot;hidegames();hideapps();hidelibrary();hideuser();hideinput();&quot;> 
+ <!-- less -->
+ <link rel=&quot;stylesheet/less&quot; href=&quot;https://spitriziv.github.io/Viatic/www/less/webstore.less&quot;/>
+<!-- ccs -->
+    <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/website.css'>
+        <link rel='stylesheet' href='https://spitriziv.github.io/Viatic/www/css/themes.css'>
+      <link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/w3css/4/w3.css&quot;>
+      <!-- Javascript-->
+          <script src=&quot;https://kit.fontawesome.com/38a479c8d7.js&quot; crossorigin=&quot;anonymous&quot;></script>
+<script src=&quot;https://spitriziv.github.io/Viatic/www/js/filter.js&quot;></script>
+    <!--other -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;></script>
+  <script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js&quot;></script>
+<body class=&quot;w3-animate-left&quot;>
+  <div class=&quot;sidebar close&quot;>
+    <div class=&quot;logo-details&quot;>
+      <i><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true&quot; alt=&quot;&quot; style=&quot;width:45px;height:45px;&quot;></i>
+      <span class=&quot;logo_name&quot;>Viatic</span>
+    </div>
+    <ul class=&quot;nav-links&quot;>
+            <li>
+        <a href=&quot;https://spitriziv.github.io/Viatic/www/sites/index.html&quot;>
+          <i class='bx bx-grid-alt'></i>
+          <span class=&quot;link_name&quot;>Dashboard</span>
+        </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot; href=&quot;https://spitriziv.github.io/Viatic/www/sites/index.html&quot;>Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class=&quot;iocn-link&quot;>
+           <a href=&quot;https://spitriziv.github.io/Viatic/www/sites/main.html&quot;>
+            <i class='bx bx-collection' ></i>
+          <span class=&quot;link_name&quot;>Viatic Main</span>
+        </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot; href=&quot;https://spitriziv.github.io/Viatic/www/sites/index.html&quot;>Viatic Main</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class=&quot;iocn-link&quot;>
+          <a href=&quot;utilities.html&quot;>
+            <i class='fas fa-tools' ></i>
+            <span class=&quot;link_name&quot;>Utilities</span>
+        </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot; href=&quot;https://spitriziv.github.io/Viatic/www/sites/utilities.html&quot;>Utilities</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class=&quot;iocn-link&quot;>
+          <a href=&quot;infomation.html&quot;>
+            <i class='far fa-chart-bar' ></i>
+            <span class=&quot;link_name&quot;>Infomation</span>
+          </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot;>Infomation</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class=&quot;iocn-link&quot;>
+          <a href=&quot;webdesigns.html&quot;>
+            <i class='fas fa-pen-alt' ></i>
+            <span class=&quot;link_name&quot;>Web Designs</span>
+          </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot;>Web Designs</a></li>
+        </ul>
+      </li>
+            <li>
+        <div class=&quot;iocn-link&quot;>
+          <a href=&quot;extradesigns.html&quot;>
+            <i class='fas fa-ring' ></i>
+            <span class=&quot;link_name&quot;>Extra Designs</span>
+          </a>
+        <ul class=&quot;sub-menu blank&quot;>
+          <li><a class=&quot;link_name&quot;>Extra Designs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href=&quot;https://spitriziv.github.io/Viatic/www/sites/setting.html&quot;>
+          <i class='bx bx-cog' ></i>
+          <span class=&quot;link_name&quot;>Settings</span>
+        </a>
+        <ul class=&quot;sub-menu blank&quot;>
+
+          <li><a class=&quot;link_name&quot; href=&quot;https://spitriziv.github.io/Viatic/www/sites/setting.html&quot;>Settings</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class=&quot;profile-details&quot;>
+      <div class=&quot;profile-content&quot;>
+        <!--<img src=&quot;image/profile.jpg&quot; alt=&quot;profileImg&quot;>-->
+      </div>
+      <div class=&quot;name-job&quot;>
+      </div>
+     <script>
+
+var darkSwitch = document.getElementById(&quot;darkSwitch&quot;);
+window.addEventListener(&quot;load&quot;, function () {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener(&quot;change&quot;, function () {
+      resetTheme();
+    });
+  }
+});
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  var darkThemeSelected =
+    localStorage.getItem(&quot;darkSwitch&quot;) !== null &amp;&amp;
+    localStorage.getItem(&quot;darkSwitch&quot;) === &quot;dark&quot;;
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected
+    ? document.body.setAttribute(&quot;data-theme&quot;, &quot;dark&quot;)
+    : document.body.removeAttribute(&quot;data-theme&quot;);
+}
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute(&quot;data-theme&quot;, &quot;dark&quot;);
+    localStorage.setItem(&quot;darkSwitch&quot;, &quot;dark&quot;);
+  } else {
+    document.body.removeAttribute(&quot;data-theme&quot;);
+    localStorage.removeItem(&quot;darkSwitch&quot;);
+  }
+}
+</script>
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext &amp;&amp; document.documentMode &amp;&amp; document.write('<link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css&quot;><script src=&quot;https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js&quot;><\/script>');</script>
+<script>
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById(&quot;darkSwitch&quot;);window.addEventListener(&quot;load&quot;,(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener(&quot;change&quot;,(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem(&quot;darkSwitch&quot;)!==null&amp;&amp;localStorage.getItem(&quot;darkSwitch&quot;)===&quot;dark&quot;;darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute(&quot;data-theme&quot;,&quot;dark&quot;):document.body.removeAttribute(&quot;data-theme&quot;)}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute(&quot;data-theme&quot;,&quot;dark&quot;);localStorage.setItem(&quot;darkSwitch&quot;,&quot;dark&quot;)}else{document.body.removeAttribute(&quot;data-theme&quot;);localStorage.removeItem(&quot;darkSwitch&quot;)}}
+</script>
+    </div>
+
+  </li>
+</ul>
+  </div>
+</head>
+<div class=&quot;job&quot;>
+ <div class=&quot;header&quot;>
+  <div class=&quot;logo&quot;>
+   <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:30px;&quot;><span onclick=&quot;btnhome()&quot;>ㅤViatic Web Store</span></div>
+  <div class=&quot;header-menu&quot;>
+     <div class=&quot;HomeDiv&quot;>
+   <a onclick=&quot;btnhome()&quot;>Home</a>
+   <a onclick=&quot;btngames()&quot;>Games</a>
+   <a onclick=&quot;btnapps()&quot;>Apps</a>
+   <a onclick=&quot;btnlibrary()&quot;>Library</a>
+  </div>
+         <div class=&quot;nointer&quot; style=&quot;color:#f55847;&quot;>No Connection</div>
+  </div>
+  <div class=&quot;user-settings&quot;>
+   <div class=&quot;user-menu&quot;>
+Version: WebBXA_1.0.0
+       </div>
+   <div class=&quot;user-info-menu&quot;>
+    <span class=&quot;blink_me&quot;><script>    
+    var hint = document.getElementById(&quot;hint&quot;);
+    
+    // Defining function to update connection status
+    function updateConnectionStatus() {  
+        var status = document.getElementById(&quot;status&quot;);
+        if(navigator.onLine) {
+            status.innerHTML = &quot;<i style='font-size:14px;' class='fas'>&amp;#xf1ebㅤ&amp;#xf07bㅤ&amp;#xf15b</i>&quot;;
+            status.classList.add(&quot;online&quot;);
+            status.classList.remove(&quot;offline&quot;);  
+            $('.HomeDiv').fadeIn(300);
+            $('.nointer').fadeOut(300);
+
+        } else {
+            status.innerHTML = &quot;<i style='font-size:14px;color:#f55847;' class='fas'>&amp;#xf1ebㅤ&amp;#xf07bㅤ&amp;#xf15b</i>&quot;;
+            status.classList.add(&quot;offline&quot;);
+            status.classList.remove(&quot;online&quot;);   
+            $('.HomeDiv').fadeOut(300);
+            $('.nointer').fadeIn(300);
+        }
+    }
+    // Attaching event handler for the load event
+    window.addEventListener(&quot;load&quot;, updateConnectionStatus);
+    
+    // Attaching event handler for the online event
+    window.addEventListener(&quot;online&quot;, function(e) {
+        updateConnectionStatus();
+        hint.innerHTML = &quot;&quot;;
+    });
+    
+    // Attaching event handler for the offline event
+    window.addEventListener(&quot;offline&quot;, function(e) {        
+        updateConnectionStatus();
+        hint.innerHTML = &quot;&quot;;
+    });
+    </script>
+    <i id=&quot;status&quot;></i>  
+</span>
+   </div>
+   <img class=&quot;user-profile&quot; src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true&quot; alt=&quot;&quot;>
+   <div onclick=&quot;btnuser()&quot; class=&quot;user-name&quot;><a>Default Account</a><span style=&quot;font-size:10px;&quot;>#<span style=&quot;font-size:12;&quot; id=&quot;counternav&quot;></p></span></div>
+  </div>
+ </div>
+ <div id=&quot;home&quot;>
+ <div class=&quot;HomeDiv&quot;>
+ <div id=&quot;game-list&quot;>    
+ <div class=&quot;wrapper&quot;>
+  <br><br>
+  <div class=&quot;search-menu&quot;>
+   <div class=&quot;search-bar&quot;>
+    <input type=&quot;text&quot; class=&quot;form-control txtShowDiv txtHideDiv search search-bar&quot; Placeholder=&quot;Search&quot;/></div>
+   <button class=&quot;search-button&quot;>Search</button>
+  </div>
+<div class=&quot;sampleDiv&quot;>
+     <div id=&quot;game-list&quot;>
+  <div class=&quot;search-menu-box&quot;>
+     <div class=&quot;list&quot;>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 1</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 2</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 3</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 4</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 5</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 6</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 7</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 8</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 9</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 10</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 11</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 12</p>
+        </gameCount>
+    </div>
+      </div>
+   </div>
+  </div>
+    <div class=&quot;sampleDivhide&quot;>
+  <div class=&quot;main-container&quot;>
+   <div class=&quot;search-type&quot;>
+    <div class=&quot;job-time&quot;>
+     <div class=&quot;job-time-title&quot;>Popular</div>
+     <div class=&quot;job-wrapper&quot;>
+      <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/fonder.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤFonder</label>
+       <span class=&quot;job-number&quot;>#01</span>
+      </div>
+            <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/maze.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤMaze</label>
+       <span class=&quot;job-number&quot;>#02</span>
+      </div>
+            <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/minesweeper.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤJS Minesweeper</label>
+       <span class=&quot;job-number&quot;>#03</span>
+      </div>
+            <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/snake.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤJS Snake</label>
+       <span class=&quot;job-number&quot;>#04</span>
+      </div>
+            <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/solitaire.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤJS Solitaire</label>
+       <span class=&quot;job-number&quot;>#05</span>
+      </div>
+            <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/bust.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤBust</label>
+       <span class=&quot;job-number&quot;>#06</span>
+      </div>
+                  <div class=&quot;type-container&quot;>
+       <label for=&quot;job1&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/sites/game/image/chess.png?raw=true&quot; style=&quot;width:15px;&quot;>ㅤHTML Chess</label>
+       <span class=&quot;job-number&quot;>#07</span>
+      </div>
+      <br>
+     </div>
+     </div>
+    </div>
+    
+     
+   <div class=&quot;searched-jobs&quot;>
+    <div class=&quot;searched-bar&quot;>
+     <div class=&quot;searched-show&quot;><h4><b>Main News</b></h4></div>
+    </div>
+    <!--give new game this class element:  job-card gradient-border--->
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Viatic Webstore's New Look</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       Viatic's Webstore got a major overhaul, and it looks better then ever, but its still in development, so you  will see alot of items that are not yet completed yet. So for the mean time, please deal with it. It will get fixed, just wanted to get this out to the community. Also all covers for the apps/games will be recreated to fit the square circle icon.
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 1.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span>Viatic Web/App Designs</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>3/28</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons disabled&quot; style=&quot;cursor: not-allowed;&quot;>View More</button>
+      </div>
+     </div>
+   </div>
+     </div>
+     <div class=&quot;searched-show&quot;><h4><b>Trending</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+ <div class=&quot;searched-show&quot;><h4><b>Latest News</b></h4></div>
+    </div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+    </div>
+  <br>
+   <div class=&quot;searched-show&quot;><h4><b>Latest Games</b></h4></div>
+      <div class=&quot;slider&quot;>
+      <div class=&quot;items&quot; style=&quot;z-index:100;transform: translate3d(0px, 0px, 0px); transition: transform 400ms ease 0s&quot;>
+         <div class=&quot;job-cards-slide&quot;>
+         <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+          <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+        </div>
+                  <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+                 <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open 
+</button>
+      </div>
+     </div>
+       <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open 
+</button>
+      </div>
+     </div>
+        <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+           <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+        <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>View All</span></div>
+            <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+      <div class=&quot;job-card-subtitle&quot;>
+       View all of the ---
+      </div>
+             <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+                     <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <div class=&quot;job-detail-buttons&quot;>
+<br>      </div>
+       <button style=&quot;width:180px;&quot; onclick=&quot;btngames()&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+
+      </div>
+     </div>
+        </div>
+        </div>
+      <div class=&quot;buttons&quot;>
+        <div id=&quot;left&quot; style=&quot;border-radius: 8px 8px 8px 8px;&quot;><i style='font-size:14px' class='fas'>&amp;#xf053;</i></div>
+        <div id=&quot;right&quot; style=&quot;border-radius: 8px 8px 8px 8px;&quot;><i style='font-size:14px' class='fas'>&amp;#xf054;</i>
+</div>
+      </div>
+  </div>
+  
+  <br>
+   <div class=&quot;searched-show&quot;><h4><b>Latest Apps</b></h4></div>
+      <div class=&quot;slider2&quot;>
+      <div class=&quot;items2&quot; style=&quot;z-index:100;transform: translate3d(0px, 0px, 0px); transition: transform 400ms ease 0s&quot;>
+         <div class=&quot;job-cards-slide&quot;>
+         <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+          <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+        </div>
+                  <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+                 <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+       <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+        <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+           <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button style=&quot;width:300px;&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+        <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>View All</span></div>
+            <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+      <div class=&quot;job-card-subtitle&quot;>
+       View all of the ---
+      </div>
+             <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+                     <div class=&quot;job-card-subtitle&quot;>
+       ㅤ
+      </div>
+      <div class=&quot;job-detail-buttons&quot;> 
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <div class=&quot;job-detail-buttons&quot;>
+<br>      </div>
+       <button style=&quot;width:180px;&quot; onclick=&quot;btnapps()&quot; class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+
+      </div>
+     </div>
+        </div>
+        </div>
+      <div class=&quot;buttons2&quot;>
+        <div id=&quot;left2&quot;style=&quot;border-radius: 8px 8px 8px 8px;&quot;><i style='font-size:14px' class='fas'>&amp;#xf053;</i></div>
+        <div id=&quot;right2&quot;style=&quot;border-radius: 8px 8px 8px 8px;&quot;><i style='font-size:14px' class='fas'>&amp;#xf054;</i></div>
+      </div>
+  </div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>Top Librarys</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+    </div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>Recommended for Default Account</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+</div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>Newest Developers</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Dev Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>UnOfficial</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Dev Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>UnOfficial</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Dev Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>UnOfficial</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Dev Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+      <button class=&quot;search-buttons detail-button&quot;>UnOfficial</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Dev Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>UnOfficial</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+
+<style>
+gamename {
+	 list-style-type: none;
+}
+ gameCount p {
+	 line-height: 0.2;
+}
+ .platform {
+	 font-style: italic;
+}
+ .platform::after {
+	 content: ')';
+	 display: inline-block;
+}
+ .platform::before {
+	 content: '(';
+	 display: inline-block;
+}
+ .total {
+	 font-weight: bold;
+}
+ 
+ 
+ .sampleDiv{  
+     display:none;
+     margin-top:-5px;
+     z-index: 100;
+     position: relative;
+}
+*:focus{
+    outline:none !important;
+}
+ .search-menu div:not(:last-of-type) {
+	 border-right: 0px solid var(--search-border-color);
+}
+</style>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js&quot;></script>
+<script>
+var options = {
+  valueNames: [ 'name', 'platform' ]
+};
+var list = new List('game-list', options);
+
+var gameCountpop = $('p').length;
+$('.totalpop').html(gameCount); 
+ 
+var gameCountapp = $('p').length;
+$('.totalapp').html(gameCount);
+ 
+var gameCountgame = $('p').length;
+$('.totalgame').html(gameCount);
+  
+var gameCount = $('p').length;
+$('.total').html(gameCount); 
+</script>
+<script>
+ $(document).ready(function(){
+   $('.txtShowDiv').focus(function(){
+       $('.sampleDiv').fadeIn(300);
+   }).focusout(function(){
+       $('.sampleDiv').fadeOut(300);
+   });
+});
+</script>
+<script>
+  $(document).ready(function(){
+   $('.txtHideDiv').focus(function(){
+       $('.sampleDivhide').fadeOut(300);
+   }).focusout(function(){
+       $('.sampleDivhide').fadeIn(300);
+   });
+});
+</script>
+
+<style>
+ .blink_me {
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+ 
+ 
+ 
+ #box {
+}
+.gradient-border {
+  --borderWidth: 3px;
+ position: relative;
+  border-radius: var(--borderWidth);
+}
+ 
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+ }
+ .gradient-border:hover {
+          animation: animatedgradientgone 1s ease alternate infinite;
+          -webkit-animation: animatedgradientgone 1s ease alternate infinite;
+}
+
+
+@-webkit-keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+</style>
+<style>
+  .slider {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  margin: 0 -10px; }
+  .slider .items {
+    display: flex;
+    width: 100%; }
+    .slider .items .item {
+      padding: 0 10px;
+      flex-grow: 0;
+      flex-shrink: 0; }
+
+      .slider .items .item .child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #fafaff;
+        border: 1px solid #9494ff;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+ }
+      .slider .items .item .footer {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 50px; }
+  .slider .buttons #left, .slider .buttons #right {
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    background: #0162ff;
+    color: #fff;
+    padding: 10px; }
+  .slider .buttons #left {
+    left: 10px; }
+  .slider .buttons #right {
+    right: 10px; }
+ 
+ 
+ 
+ .slider2 {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  margin: 0 -10px; }
+  .slider2 .items2 {
+    display: flex;
+    width: 100%; }
+    .slider2 .items2 .item2 {
+      padding: 0 10px;
+      flex-grow: 0;
+      flex-shrink: 0; }
+
+      .slider2 .items2 .item2 .child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #fafaff;
+        border: 1px solid #9494ff;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+ }
+      .slider2 .items2 .item2 .footer2 {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 50px; }
+  .slider2 .buttons2 #left2, .slider2 .buttons2 #right2 {
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    background: #0162ff;
+    color: #fff;
+    padding: 10px; }
+  .slider2 .buttons2 #left2 {
+    left: 10px; }
+  .slider2 .buttons2 #right2 {
+    right: 10px; }
+</style>
+<script>
+$( document ).ready(function() {
+  
+  let slider = $('.slider .items');
+  let items = $('.slider .items .item .child')
+  const leftButton = $('#left')
+  const rightButton = $('#right')
+  
+  let scrollPos = 0
+  if (scrollPos >= 0) leftButton.hide()
+  
+  leftButton.click(function() {
+    scrollPos += slider.width();
+    if (scrollPos >= 0) {
+      leftButton.hide()
+      scrollPos = 0
+    }
+    rightButton.show()
+    slider.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+ 
+ rightButton.click(function() {
+    scrollPos += slider.width();
+    if (scrollPos >= 0) {
+      leftButton.hide()
+      scrollPos = 0
+    }
+    leftButton.show()
+    slider.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+
+  rightButton.click((e) => {
+    scrollPos -= slider.width();
+    if (scrollPos <= -(items.innerHeight() - 2) * 15) rightButton.hide()
+    leftButton.show()
+    slider.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+
+});
+                                         </script>
+
+<script>
+$( document ).ready(function() {
+  
+  let slider2 = $('.slider2 .items2');
+  let items2 = $('.slider2 .items2 .item2 .child')
+  const leftButton2 = $('#left2')
+  const rightButton2 = $('#right2')
+  
+  let scrollPos = 0
+  if (scrollPos >= 0) leftButton2.hide()
+  
+  leftButton2.click(function() {
+    scrollPos += slider2.width();
+    if (scrollPos >= 0) {
+      leftButton2.hide()
+      scrollPos = 0
+    }
+    rightButton2.show()
+    slider2.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+ 
+ rightButton2.click(function() {
+    scrollPos += slider2.width();
+    if (scrollPos >= 0) {
+      leftButton2.hide()
+      scrollPos = 0
+    }
+    leftButton2.show()
+    slider2.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+
+  rightButton2.click((e) => {
+    scrollPos -= slider2.width();
+    if (scrollPos <= -(items2.innerHeight() - 2) * 15) rightButton2.hide()
+    leftButton2.show()
+    slider2.css('transform', &quot;translate3d(&quot; + scrollPos + &quot;px, 0px, 0px)&quot;)
+  });
+
+});
+                                         </script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;></script>
+<script>
+ //$(document).ready(function() {
+//$('.search-box').focus();
+//});
+
+const wrapper = document.querySelector(&quot;.wrapper&quot;);
+const header = document.querySelector(&quot;.header&quot;);
+
+wrapper.addEventListener(&quot;scroll&quot;, (e) => {
+ e.target.scrollTop > 30
+  ? header.classList.add(&quot;header-shadow&quot;)
+  : header.classList.remove(&quot;header-shadow&quot;);
+});
+
+const toggleButton = document.querySelector(&quot;.dark-light&quot;);
+
+toggleButton.addEventListener(&quot;click&quot;, () => {
+ document.body.classList.toggle(&quot;dark-mode&quot;);
+});
+
+const jobCards = document.querySelectorAll(&quot;.job-card&quot;);
+const logo = document.querySelector(&quot;.logo&quot;);
+const jobLogos = document.querySelector(&quot;.job-logos&quot;);
+const jobDetailTitle = document.querySelector(
+ &quot;.job-explain-content .job-card-title&quot;
+);
+const jobBg = document.querySelector(&quot;.job-bg&quot;);
+
+jobCards.forEach((jobCard) => {
+ jobCard.addEventListener(&quot;click&quot;, () => {
+  const number = Math.floor(Math.random() * 10);
+  const url = `https://unsplash.it/640/425?image=${number}`;
+  jobBg.src = url;
+
+  const logo = jobCard.querySelector(&quot;svg&quot;);
+  const bg = logo.style.backgroundColor;
+  console.log(bg);
+  jobBg.style.background = bg;
+  const title = jobCard.querySelector(&quot;.job-card-title&quot;);
+  jobDetailTitle.textContent = title.textContent;
+  jobLogos.innerHTML = logo.outerHTML;
+  wrapper.classList.add(&quot;detail-page&quot;);
+  wrapper.scrollTop = 0;
+ });
+});
+
+logo.addEventListener(&quot;click&quot;, () => {
+ wrapper.classList.remove(&quot;detail-page&quot;);
+ wrapper.scrollTop = 0;
+   jobBg.style.background = bg;
+});
+
+</script>
+
+<div id=&quot;games&quot;>
+<div class=&quot;HomeDiv&quot;>
+ <div id=&quot;game-list&quot;>    
+ <div class=&quot;wrapper&quot;>
+  <br><br>
+  <div class=&quot;search-menu&quot;>
+   <div class=&quot;search-bar&quot;>
+    <input type=&quot;text&quot; class=&quot;form-control txtShowDiv txtHideDiv search search-bar&quot; Placeholder=&quot;Search&quot;/></div>
+   <button class=&quot;search-button&quot;>Search</button>
+  </div>
+<div class=&quot;sampleDiv&quot;>
+     <div id=&quot;game-list&quot;>
+  <div class=&quot;search-menu-box&quot;>
+     <div class=&quot;list&quot;>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 1</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 2</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 3</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 4</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 5</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 6</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 7</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 8</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 9</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 10</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 11</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 12</p>
+        </gameCount>
+    </div>
+      </div>
+   </div>
+  </div>
+    <div class=&quot;sampleDivhide&quot;>
+  <div class=&quot;main-container&quot;>
+  
+     </div><div class=&quot;searched-show&quot;><h4><b>Top Librarys</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     </div>
+     <div class=&quot;searched-show&quot;><h4><b>Top Games</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+    </div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>Recommended Games for Default Account</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+</div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>All Games</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+    </div> 
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+ 
+<div id=&quot;apps&quot;>
+<div class=&quot;HomeDiv&quot;>
+ <div id=&quot;game-list&quot;>    
+ <div class=&quot;wrapper&quot;>
+   <br><br>
+  <div class=&quot;search-menu&quot;>
+   <div class=&quot;search-bar&quot;>
+    <input type=&quot;text&quot; class=&quot;form-control txtShowDiv txtHideDiv search search-bar&quot; Placeholder=&quot;Search&quot;/></div>
+   <button class=&quot;search-button&quot;>Search</button>
+  </div>
+<div class=&quot;sampleDiv&quot;>
+     <div id=&quot;game-list&quot;>
+  <div class=&quot;search-menu-box&quot;>
+     <div class=&quot;list&quot;>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 1</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 2</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 3</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 4</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 5</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 6</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 7</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 8</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 9</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 10</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 11</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 12</p>
+        </gameCount>
+    </div>
+      </div>
+   </div>
+  </div>
+    <div class=&quot;sampleDivhide&quot;>
+  <div class=&quot;main-container&quot;>
+  
+     </div><div class=&quot;searched-show&quot;><h4><b>Top Librarys</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     </div>
+     <div class=&quot;searched-show&quot;><h4><b>Top Apps</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+    </div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>Recommended Apps for Default Account</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;> 
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+</div>
+     <br>
+     <div class=&quot;searched-show&quot;><h4><b>All Apps</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+    </div> 
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+ 
+<div id=&quot;library&quot;>
+ <div id=&quot;game-list&quot;>    
+ <div class=&quot;wrapper&quot;>
+   <br><br>
+  <div class=&quot;search-menu&quot;>
+   <div class=&quot;search-bar&quot;>
+    <input type=&quot;text&quot; class=&quot;form-control txtShowDiv txtHideDiv search search-bar&quot; Placeholder=&quot;Search&quot;/></div>
+   <button class=&quot;search-button&quot;>Search</button>
+  </div>
+<div class=&quot;sampleDiv&quot;>
+     <div id=&quot;game-list&quot;>
+  <div class=&quot;search-menu-box&quot;>
+     <div class=&quot;list&quot;>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 1</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 2</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 3</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 4</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 5</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 6</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 7</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 8</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 9</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 10</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 11</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 12</p>
+        </gameCount>
+    </div>
+      </div>
+   </div>
+    <div class=&quot;sampleDivhide&quot;>
+  <div class=&quot;main-container&quot;>
+  
+     </div><div class=&quot;searched-show&quot;><h4><b>Sign In First</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+     </div>
+  <br> 
+    </div>
+    </div>
+    </div>
+    </div>
+
+ 
+ 
+ <div id=&quot;user&quot;>
+<div class=&quot;HomeDiv&quot;>
+ <div id=&quot;game-list&quot;>    
+ <div class=&quot;wrapper&quot;>
+  <br><br>
+  <div class=&quot;search-menu&quot;>
+   <div class=&quot;search-bar&quot;>
+    <input type=&quot;text&quot; class=&quot;form-control txtShowDiv txtHideDiv search search-bar&quot; Placeholder=&quot;Search&quot;/></div>
+   <button class=&quot;search-button&quot;>Search</button>
+  </div>
+<div class=&quot;sampleDiv&quot;>
+     <div id=&quot;game-list&quot;>
+  <div class=&quot;search-menu-box&quot;>
+     <div class=&quot;list&quot;>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 1</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 2</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 3</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 4</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 5</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 6</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 7</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 8</p>
+        </gameCount>
+        <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 9</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 10</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 11</p>
+        </gameCount>
+      <gameCount>
+        <p class=&quot;name&quot;><img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;height:16px;&quot;>ㅤGame name 12</p>
+        </gameCount>
+    </div>
+      </div>
+   </div>
+  </div>
+    <div class=&quot;sampleDivhide&quot;>
+  <div class=&quot;main-container&quot;>
+   <div class=&quot;search-type&quot;>
+    <div class=&quot;job-time&quot;>
+     <div class=&quot;job-time-title&quot;></div>
+     <div class=&quot;job-wrapper&quot; style=&quot;align-items: center;&quot;>
+      <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true&quot; style=&quot;width:180pxleft:10px; position: relative;&quot;>
+      <br>
+     </div>
+     </div>
+    </div>
+    
+     
+   <div class=&quot;searched-jobs&quot;>
+    <div class=&quot;searched-bar&quot;>
+     <div class=&quot;searched-show&quot;><h4><b>About</b></h4></div>
+    </div>
+    <!--give new game this class element:  job-card gradient-border--->
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Default Account<span style=&quot;font-size:12px;&quot;>#<span style=&quot;font-size:12;&quot; id=&quot;counter&quot;></span></span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       The Viatic Default Account, it and its replicas are shared among any user that is not logged in.
+      </div>
+      <br><br>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Running From Web</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+      </div>
+     </div>
+   </div>
+     </div>
+     <div class=&quot;searched-show&quot;><h4><b>Trending</b></h4></div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards-small&quot;>
+     <div class=&quot;gradient-border job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>Open
+</button>
+      </div>
+     </div>
+ <div class=&quot;searched-show&quot;><h4><b>Latest News</b></h4></div>
+    </div>
+    <!--give new game this class element:  job-card gradient-border--->
+    <div class=&quot;job-cards&quot;>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+     <div class=&quot;job-card&quot;>
+      <div class=&quot;job-card-header&quot;>
+       <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/viaticwebapplogo.png?raw=true&quot; style=&quot;width:45px&quot;>
+       <div class=&quot;menu-dot&quot;></div>
+      </div>
+      <div class=&quot;job-card-title&quot;><span class=&quot;name&quot;>Game Name</span></div>
+      <div class=&quot;job-card-subtitle&quot;>
+       des...
+      </div>
+      <div class=&quot;job-detail-buttons&quot;>
+       <button class=&quot;search-buttons detail-button&quot;>Version: 0.0.0</button>
+       <button class=&quot;search-buttons detail-button&quot;><span class=&quot;platform&quot;>Dev Name</span></button>
+       <button class=&quot;search-buttons detail-button&quot;>Release Date</button>
+      </div>
+      <div class=&quot;job-card-buttons&quot;>
+       <button class=&quot;search-buttons card-buttons&quot;>View More
+</button>
+      </div>
+     </div>
+    </div>
+  <br>
+   
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+  <br> 
+ </div>
+ 
+   <script>
+	  function btngames() {
+		 		 setTimeout(showgame, 10),
+    		setTimeout(hideapps2, 10),
+		 		 setTimeout(hidelibrary2, 10),
+    	 setTimeout(hideuser2, 10);
+	  }
+    </script>
+   <script>
+   	  function btnapps() {
+      setTimeout(hidegame2, 10),
+		 		 setTimeout(showapps, 10),
+		 		 setTimeout(hidelibrary2, 10),
+    	 setTimeout(hideuser2, 10);
+	  }
+     </script>
+<script>
+   	  function btnlibrary() {
+      setTimeout(hidegame2, 10),
+		 		 setTimeout(hideapps2, 10),
+		 		 setTimeout(showlibrary, 10),
+      setTimeout(hideuser2, 10);
+	  }
+     </script>
+<script>
+   	  function btnuser() {
+      setTimeout(hidegame2, 10),
+		 		 setTimeout(hideapps2, 10),
+		 		 setTimeout(hidelibrary2, 10),
+      setTimeout(showuser, 10);
+	  }    
+     </script>
+<script>
+   	  function btnhome() {
+		 		 setTimeout(hidegame, 10),
+		 		 setTimeout(hideapps, 10),
+		 		 setTimeout(hidelibrary, 10),
+      setTimeout(hideuser, 10);
+	  } 
+     </script>
+<script>
+     function hideinput() {
+         document.getElementById('darkinput').hidden = true
+      }
+ </script>
+ <script>
+      function hidegame() {
+         document.getElementById('games').hidden = true
+         document.getElementById('home').hidden = false
+      }
+      function showgame() {
+         document.getElementById('games').hidden = false
+         document.getElementById('home').hidden = true
+      } 
+     </script>
+<script>
+      function hideapps() {
+         document.getElementById('apps').hidden = true
+         document.getElementById('home').hidden = false
+      }
+      function showapps() {
+         document.getElementById('apps').hidden = false
+         document.getElementById('home').hidden = true
+      } 
+     </script>
+<script>
+      function hidelibrary() {
+         document.getElementById('library').hidden = true
+         document.getElementById('home').hidden = false
+      }
+      function showlibrary() {
+         document.getElementById('library').hidden = false
+         document.getElementById('home').hidden = true
+      } 
+     </script>
+<script>
+      function hideuser() {
+         document.getElementById('user').hidden = true
+         document.getElementById('home').hidden = false
+      }
+      function showuser() {
+         document.getElementById('user').hidden = false
+         document.getElementById('home').hidden = true
+      } 
+     </script>
+<script>
+    function hidegame2() {
+         document.getElementById('games').hidden = true
+         document.getElementById('home').hidden = true
+      }
+     </script>
+<script>
+          function hideapps2() {
+         document.getElementById('apps').hidden = true
+         document.getElementById('home').hidden = true
+      }
+     </script>
+<script>
+          function hidelibrary2() {
+         document.getElementById('library').hidden = true
+         document.getElementById('home').hidden = true  
+      }
+ </script>
+<script>
+         function hideuser2() {
+         document.getElementById('user').hidden = true
+         document.getElementById('home').hidden = true  
+      }
+     </script>
+<script>
+    function showhome2() {
+         document.getElementById('home').hidden = false
+         document.getElementById('user').hidden = true  
+         document.getElementById('apps').hidden = true  
+         document.getElementById('games').hidden = true  
+         document.getElementById('library').hidden = true  
+    }
+	  
+   </script>
+ <script>
+  window.onload = function() {
+  createRandomInt();
+};
+
+function createRandomInt() {
+  var randomNumHold = Math.floor(Math.random() * 9999);
+  document.getElementById(&quot;counter&quot;).innerHTML = randomNumHold;
+  document.getElementById(&quot;counternav&quot;).innerHTML = randomNumHold;
+}
+</script>
+		</div>
+ 
+ 
+ 
+ 						   
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;></script>
+<script>
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// super simple router - go to page specified in hash, otherwise go to &quot;default&quot;
+function router(route) {
+  const pageName = route ? route : $(&quot;.default.page&quot;).attr(&quot;data-page-name&quot;);
+  const $page = $(`[data-page-name=&quot;${pageName}&quot;]`);
+  $(&quot;.page&quot;).css(&quot;display&quot;, &quot;none&quot;);
+  $(&quot;[data-page]&quot;).removeClass(&quot;active&quot;);
+  $(`[data-page=&quot;${pageName}&quot;]`).addClass(&quot;active&quot;);
+  $page.css(&quot;display&quot;, &quot;block&quot;);
+}
+router();
+
+// fake loader
+let progress = 0;
+const fakeLoaderInterval = window.setInterval(function () {
+  const $lp = $(&quot;.loading-progress&quot;);
+  progress = progress + getRandomArbitrary(25, 3);
+  $lp.css(&quot;transform&quot;, `translateX(${progress}%)`);
+
+  if (progress >= 75) {
+    window.clearInterval(fakeLoaderInterval);
+    $lp.css(&quot;transform&quot;, &quot;translateX(100%)&quot;);
+    setTimeout(
+      () => $(&quot;.loading&quot;).css(&quot;transform&quot;, &quot;translateY(calc(100% + 10px))&quot;),
+      400
+    );
+  }
+}, getRandomArbitrary(300, 500));
+
+// navigation
+$(&quot;.main-nav li a&quot;).on(&quot;click&quot;, (e) => {
+  const $this = $(e.currentTarget);
+  const route = $this.attr(&quot;data-page&quot;);
+
+  $(&quot;.main-nav li a&quot;).removeClass(&quot;active&quot;);
+  $this.addClass(&quot;active&quot;);
+  router(route);
+});
+
+</script>
+   
+   
+<style>
+ .loading {
+	 position: fixed;
+	 height: 100%;
+	 width: 100%;
+	 top: 0;
+	 left: 0;
+   right: 0;
+	 background: #a8a8a8;
+	 transition: 0.75s;
+	 z-index: 99999;
+}
+ .loading-title {
+	 margin: 0;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%; 
+	 transform: translate(-50%, -50%);
+}
+ .loading-progress {
+	 height: 11px;
+	 background: #909090;
+	 top:0;
+	 width: 100%;
+	 position: absolute;
+	 transition: 0.35s;
+	 z-index: 10000000000;
+}
+  
+  [data-theme=&quot;dark&quot;] .loading {
+	 background: #202020;
+}
+ [data-theme=&quot;dark&quot;] .loading-progress {
+	 background: #505050;
+}
+</style>
+<head> 
+  <div onmouseover=&quot;btnhome();&quot; class=&quot;loading&quot;>
+    <div class=&quot;loading-title&quot;>
+      <style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<div class=&quot;container&quot;>
+        <img src=&quot;https://github.com/spitriziv/Viatic/blob/main/www/image/Viaticlogononame.png?raw=true&quot;  style=&quot;height:200px;&quot; /><p class=&quot;blink_me&quot;>Loading</p>
+</div>  </div>
+    <div class=&quot;loading-progress&quot;></div>
+</body>
+  
+  
+  
+  
+</body>
+
+</html>" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="accelerometer; camera; encrypted-media; display-capture; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+    </iframe>
+  </div>
