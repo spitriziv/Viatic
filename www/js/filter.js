@@ -80,6 +80,8 @@ function block_blacklist_ip_ban() {
     // Blacklist ip_ban
     const blacklist_ip_ban = [
         "10.26.15.238", //
+        "207.0.0.1", //
+
     ]
 
     // Detecting the users ip_ban
